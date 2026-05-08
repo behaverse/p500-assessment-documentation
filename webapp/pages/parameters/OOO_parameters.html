@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd one Out Parameters - Behaverse Assessment</title>
+    <link rel="stylesheet" href="../../css/parameters.css">
+</head>
+<body>
+<div class="parameters-container">
+<div class="glossary-section">
+<h2>Glossary</h2>
+<table class="glossary-table">
+  <tr>
+    <td class="glossary-term">Set</td>
+    <td class="glossary-definition">the collection of stimuli presented to the user</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Stimulus</td>
+    <td class="glossary-definition">an element of the Set, which can be distinguished by its features</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Features</td>
+    <td class="glossary-definition">color, number (= amount of components) and shape</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Odd One</td>
+    <td class="glossary-definition">the stimulus of the set that can’t be matched to other stimuli of the set</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Rule</td>
+    <td class="glossary-definition">a set of constraints used to group the stimuli, and exclude the Odd One. The constraints are : share color, share shape, share number.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Group</td>
+    <td class="glossary-definition">a subset of the stimuli that are grouped according to the rule</td>
+  </tr>
+</table>
+</div>
+
+    <h2>Parameters</h2>
+    <h3>Constants (2 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">SetSize</h4>
+        <p class="parameter-description">The number of stimuli in the set.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 9</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaxDifficultyLevel</h4>
+        <p class="parameter-description">The number of distinct difficulty levels (see "Difficulty modulation").
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 13</span>
+        </div>
+    </div>
+    <h3>Generation parameters (5 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">DifficultyLevel</h4>
+        <p class="parameter-description">This parameter controls the difficulty by setting the value for GroupCount, GroupFeatureMatch and OddOneExclusiveFeature. Each value of DifficultyLevel maps to different values of these 3 parameters. See Difficulty Modulation.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 1</span>
+            <span><strong>Range:</strong> 1 - MaxDifficulty</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Difficulty can be modulated by modifying multiple parameters together:
+ - Increasing total item count: more combinations means more information to process.
+ - Increasing GroupCount: more distinct groups, of smaller size.
+ - Having groups with GroupFeatureMatch = false: identical items are easy to pair.
+ - Avoiding exclusive properties on the Odd One: unique items are easy to find (OddOneExclusiveFeature).
+
+ It's not guaranteed that this manipulation will work as expected.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">FeatureOrder</h4>
+        <p class="parameter-description">Define the order of the 3 features. The first two features will be used to form groups. The first feature will be the exclusive one if OddOneExclusiveFeature = true.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> Array of feature with values Color, Symbol, Number, ordered randomly (Default). Can also be a fixed order (eg: for tutorial, Color can be first to make it easier).</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">[GroupFeatureMatch]</h4>
+        <p class="parameter-description">f true, items of a group are identical. If false, items of a group only share the feature needed to form the group, the other features can differ within the group.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> This parameter is currently not exposed. Its values are defined by DifficultyLevel</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">[GroupCount]</h4>
+        <p class="parameter-description">The number of groups in the set.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Range:</strong> 1 - 4</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> This parameter is currently not exposed. Its values are defined by DifficultyLevel.
+
+1: one group of 8 items
+2: two groups of 4 items
+3: three groups : 3-3-2 items
+4: four groups of 2 items.
+</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">[OddOneExclusiveFeature]</h4>
+        <p class="parameter-description">Define if the Odd One has an exclusive feature value or not. If not, each of its features values is shared by at least one other object in the set.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> This parameter is currently not exposed. Its values are defined by DifficultyLevel.
+
+If GroupCount == 1, there can be no exclusive feature.
+</div>
+    </div>
+    <h3>User input parameters (1 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaximumIdleTime</h4>
+        <p class="parameter-description">The maximum allowed time to answer. After that, the trial is considered failed.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 30</span>
+            <span><strong>Range:</strong> 1 - Inf</span>
+        </div>
+    </div>
+    <h3>Feedback parameters (4 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyCheckFeedback</h4>
+        <p class="parameter-description">Whether we should show the valid or wrong “check” feedback at the end of a trial</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Always</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowCorrectTrialResponseFeedback</h4>
+        <p class="parameter-description">Whether we should show what the correct response would have been at the end of a trial.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Never</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowPairingFeedback</h4>
+        <p class="parameter-description">Whether we should show users at the end of the trial how the various stimuli on the screen group together according to the current rule (this is implemented using a movement animation and position cards that go together closely in space; see Feedback presentation).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Never</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">PairingDisplayDuration</h4>
+        <p class="parameter-description">Maximum duration of the pairing feedback (see above). The user can skip the feedback.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 10</span>
+            <span><strong>Range:</strong> 0.1 - Inf</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> For consistency with other tasks we might want in the future to color the outline of the clicked element in red or green at the moment of the click. Not to be implemented for now.</div>
+    </div>
+</div>
+</body>
+</html>

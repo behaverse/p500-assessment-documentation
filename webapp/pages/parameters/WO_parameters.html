@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which-One Parameters - Behaverse Assessment</title>
+    <link rel="stylesheet" href="../../css/parameters.css">
+</head>
+<body>
+<div class="parameters-container">
+<div class="glossary-section">
+<h2>Glossary</h2>
+<table class="glossary-table">
+  <tr>
+    <td class="glossary-term">Primary Feature</td>
+    <td class="glossary-definition">the feature (either color or symbol) which is used to categorize the stimulus.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Secondary Feature</td>
+    <td class="glossary-definition">the feature (different from primary; either color, symbol, position or flankers) which is used to create congruent, incongruent or neutral trials.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Stimulus</td>
+    <td class="glossary-definition">one or more visual elements displayed on the screen; one main element defined by its color, symbol and position (left, right or center), plus optional flankers elements which are copies of the main element that may differ along the primary feature dimension.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Flanker</td>
+    <td class="glossary-definition">A copy of the stimulus main element, that may differ along the primary feature dimension; displayed alongside the main element (same line).</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Congruent trial</td>
+    <td class="glossary-definition">trial where the value of the secondary feature for the stimulus maps to the correct button (i.e., both primary and secondary features map to the same button);</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Incongruent trial</td>
+    <td class="glossary-definition">trial where the value of the secondary feature for the stimulus maps to the incorrect button;</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Neutral trial</td>
+    <td class="glossary-definition">trial where the value of the secondary feature for the stimulus does not map to any button;</td>
+  </tr>
+</table>
+</div>
+
+    <h2>Parameters</h2>
+    <h3>Timing parameters (5 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">FixationPointDisplayDuration</h4>
+        <p class="parameter-description">Defines how long the fixation point stays on screen since trial onset.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusOnset</h4>
+        <p class="parameter-description">When the stimulus should be shown in seconds relative to trial onset.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 1</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusDisplayDuration</h4>
+        <p class="parameter-description">Defines how long the stimulus is shown since StimulusOnset.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 1</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">InterTrialInterval</h4>
+        <p class="parameter-description">The duration in seconds between each trial, from the user input to the fixation point onset.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.5</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">TaskPace</h4>
+        <p class="parameter-description">Whether the pace of the game is determined by the player or not.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> PlayerDriven</span>
+        </div>
+    </div>
+    <h3>Task parameters (8 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">PrimaryFeature</h4>
+        <p class="parameter-description">Which feature the user should focus on.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Symbol</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">SecondaryFeature</h4>
+        <p class="parameter-description">Which feature of the stimulus to manipulate to create the congruent, incongruent or neutral conditions.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Color</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> SecondaryFeature must be different from PrimaryFeature. </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">Congruency</h4>
+        <p class="parameter-description">Whether the stimulus is congruent with the buttons, alongside the secondary feature.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Uniform distribution over possible values.</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">CorrectButton</h4>
+        <p class="parameter-description">Which button is the correct one to press.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> once per trial</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ButtonSymbols</h4>
+        <p class="parameter-description">The symbols on the buttons, the first being for the left button, the second for the right button.
+See Behaverse Symbol Names for the full list of symbols.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> BehaverseSymbols</span>
+            <span><strong>Default:</strong> Circle</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Note: the two buttons can display the same symbols (e.g., square).
+Note: specified in file as ButtonSymbols: [“Circle”, “Circle”]</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ButtonColors</h4>
+        <p class="parameter-description">The colors for the button, the first being for the left button, the second for the right button.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> color</span>
+            <span><strong>Default:</strong> White</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Note: the two buttons can display the same colors (e.g., white).
+Note: specified in file as ButtonColors: [“#ffffff”, “#ffffff”]</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">NeutralSymbol</h4>
+        <p class="parameter-description">The symbol used for:
+
+ - The stimulus if the primary feature is not Symbol, and either the congruency is neutral or the secondary feature is also not Symbol;
+ - The flankers if the primary feature is not Symbol or if congruency is neutral.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> BehaverseSymbols</span>
+            <span><strong>Default:</strong> Circle</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">NeutralColor</h4>
+        <p class="parameter-description">The color used for:
+
+ - The stimulus if the primary feature is not Color, and either the congruency is neutral or the secondary feature is also not Color;
+ - The flankers if the primary feature is not Color or if congruency is neutral.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> color</span>
+            <span><strong>Default:</strong> White</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Note: In this task we don’t specify the stimulus directly. Instead we specify the buttons and primary/secondary features and congruency and the stimulus is generated from the sets that are implied by those variables. For example if ButtonSymbols are the left and right arrow, and ButtonColors are black and black, and PrimaryFeature = “Symbol” and SecondaryFeature is “Flanker” and correctButton = “leftButton” and Congruency = “Congruent”, then the stimulus will be a black left arrow surrounded by black left arrows.
+Note: It is not immediately obvious what stimulus is shown given the task parameters; in order to make this clear, the saved data (stimulus presentation event) should contain an explicit description of the actual stimulus (see StimulusShow below).</div>
+    </div>
+    <h3>User input parameters (3 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ButtonCount</h4>
+        <p class="parameter-description">The number of buttons on screen.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> int</span>
+            <span><strong>Default:</strong> 2</span>
+            <span><strong>Range:</strong> 1 - 2</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowButtonContent</h4>
+        <p class="parameter-description">Whether the button content is shown.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "true"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaxResponseTime</h4>
+        <p class="parameter-description">The maximum time the user can take to answer. After that, the trial is considered failed.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 5</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Note: Participants can respond as soon as the stimulus appears.
+</div>
+    </div>
+    <h3>Feedback parameters (2 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyCheckFeedback</h4>
+        <p class="parameter-description">Whether we should show the valid or wrong “check” feedback at the end of a trial
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Always</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowCorrectTrialResponseFeedback</h4>
+        <p class="parameter-description">Whether we should highlight the correct button at the end of a trial.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Never</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stimulus Response Mapping Parameters - Behaverse Assessment</title>
+    <link rel="stylesheet" href="../../css/parameters.css">
+</head>
+<body>
+<div class="parameters-container">
+<div class="glossary-section">
+<h2>Glossary</h2>
+<table class="glossary-table">
+  <tr>
+    <td class="glossary-term">Stimulus box</td>
+    <td class="glossary-definition">A square box that can be lit.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Stimulus</td>
+    <td class="glossary-definition">When a stimulus box lights up.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Stimulus Onset</td>
+    <td class="glossary-definition">The time since the start of trial before the stimulus is lit.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Response button</td>
+    <td class="glossary-definition">A circular button the user can press.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Response time</td>
+    <td class="glossary-definition">The delay between the square lights up until the user presses a button.</td>
+  </tr>
+</table>
+</div>
+
+    <h2>Parameters</h2>
+    <h3>Constants (1 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaxBoxCount</h4>
+        <p class="parameter-description">The maximum number of boxes we can fit on screen and we can expect the player to handle.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 10</span>
+        </div>
+    </div>
+    <h3>Stimulus parameters (10 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusButtonSpacing</h4>
+        <p class="parameter-description">The spacing between the stimuli and the buttons (at 0 they overlap, at 1 they’re as far as possible from each other).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.5</span>
+            <span><strong>Range:</strong> 0 - 1</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusBoxCount</h4>
+        <p class="parameter-description">The number of stimulus boxes (squares).
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 1</span>
+            <span><strong>Range:</strong> 0 - MaxBoxCount</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ResponseButtonCount</h4>
+        <p class="parameter-description">The number of buttons the player can interact with (circles).
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 1</span>
+            <span><strong>Range:</strong> 0 - MaxBoxCount</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> This may be different than StimulusBoxCount, which means some buttons/boxes will not be connected or multiple stimuli may be connected to the same button
+</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">Layout</h4>
+        <p class="parameter-description">Whether the boxes are arranged horizontally or vertically.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Horizontal</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">BoxMapping</h4>
+        <p class="parameter-description">The mapping definition between the stimulus boxes and the response buttons. Each mapping represents in order the response button index each stimulus box is attached to.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> sequence of integers</span>
+            <span><strong>Default:</strong> [1,2,3,4,5,6,7,8,9,10]</span>
+            <span><strong>Range:</strong> 0 - MaxBoxCount</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> 0 means the box is not attached to any button.
+Multiple stimulus boxes can be bound to the same response button, and some boxes or buttons may not be connected.
+</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusIndex</h4>
+        <p class="parameter-description">Which stimulus box will be lit this trial (1 = Left-most box).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 1</span>
+            <span><strong>Range:</strong> 1 - MaxBoxCount</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusDisplayDuration</h4>
+        <p class="parameter-description">The duration in seconds during which the stimulus is visible. If StimulusDisplay > MaxResponseTime, StimulusDisplay = MaxResponseTime.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 2</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">PlayStimulusAppearSound</h4>
+        <p class="parameter-description">Whether we play a sound when the stimulus appears</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">TrialForeperiod</h4>
+        <p class="parameter-description">The duration in seconds between the end of the last trial (after all feedbacks) and displaying the stimulus.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.5</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ConsecutiveSuccessCountToHideLines</h4>
+        <p class="parameter-description">The number of consecutive successes after which the lines hide.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 3</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> If is equal to 0, the lines are hidden by default.</div>
+    </div>
+    <h3>User Input (5 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">UseFocusArea</h4>
+        <p class="parameter-description">Whether or not we require the user to move his cursor inside a focus area at the start of each trial. Set to false for TOVA and SRT and set to true for SRM.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">WaitForUserInput</h4>
+        <p class="parameter-description">Whether we wait for the user input to start the next trial, meaning we skip the time and we will show feedback (if there is any) and then the next trial will start. </p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "true"</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Even if WaitForUserInput is false, only one stimulus box should be lit at any time. If the previous trial is not finished, wait for it before starting the next one.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">DisableButtonsAfterResponse</h4>
+        <p class="parameter-description">Whether the buttons will be disabled after the user answers.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "true"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaxResponseTime</h4>
+        <p class="parameter-description">The duration in seconds during which the player can answer.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 2</span>
+            <span><strong>Range:</strong> 0.01 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ResponseMethod</h4>
+        <p class="parameter-description">How the user should respond to the stimuli.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Press</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> If ResponseMethod = Release, all the fingers must be placed on all the buttons before showing the stimulus, otherwise the game will pause until the player puts all the fingers on response buttons.
+</div>
+    </div>
+    <h3>Feedback parameters (5 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyOnButtonFeedback</h4>
+        <p class="parameter-description">Whether we color the outline of the buttons red or green to indicate whether the response was correct or incorrect. If false, the outline will be white.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "true"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowCorrectTrialResponseFeedback</h4>
+        <p class="parameter-description">Whether we should show the correct button at the end of a trial.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Never</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowLineFeedback</h4>
+        <p class="parameter-description">Whether we want to highlight the line connecting the box to the pressed button after the player pressed it.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "true"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyCheckFeedback</h4>
+        <p class="parameter-description">Whether we should show the valid or wrong “check” feedback at the end of a trial.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Always</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ClickBeforeStimulusBehaviour</h4>
+        <p class="parameter-description">Defines what happens if the user clicks on a button between trials.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> In case of ClickBeforeStimulusBehaviour = Error, if the player pushes any response button in InterstimulusInterval time, then the game will wait until the ISI finishes and then the next trial will consider as a Failure, regardless of the number of times the player pushes the button before ISI finishes.</div>
+    </div>
+</div>
+</body>
+</html>

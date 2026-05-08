@@ -1,0 +1,1898 @@
+
+
+GameName: "Behaverse"
+
+About:
+    Advice:
+        Title: "Advice"
+    Commitments:
+        Title: "Our commitments"
+        Text: "As a public research laboratory, we respect rigorous standards of ethics, data and privacy protection. We do not collect personal or sensitive data. We do not sell anything in this game and there is no advertising."
+    Credits:
+        Title: "Credits"
+        PrincipalInvestigator: "Principal Investigator & Project Leader"
+        CognitiveScience: "Cognitive Sciences of Mathematics"
+        DataScienceAI: "Data Science & AI"
+        GameDesign: "Game Design"
+        SoftwareEngineering: "Software Engineering"
+        GraphicDesign: "Graphic Design"
+        SoundDesign: "Music and Sound Design"
+        ProductionManager: "Production Manager"
+        DataEngineering: "Data protection and Data engineering"
+        Translations: "Translations"
+        SpecialThanks: "Special Thanks"
+        CopyrightedMaterial: "Copyrighted Material"
+        UniversityOfLuxembourg: "University of Luxembourg"
+        ResearchSupportedBy: "This research is supported by"
+        TheFNR: "the Luxembourg National Research Fund (FNR)"
+    Donate:
+        Title: "Donate"
+    HowToPlay:
+        Title: "How to play"
+    Main:
+        About: "About"
+        Text: "As a research laboratory in a public university, we are a non-profit organization and aim to provide the largest number of children with free access to quality educational games, while respecting the highest standards in terms of data protection. Nevertheless, creating games is expensive. By making a donation you are helping to finance future development of good quality games that are free for all."
+    Participate:
+        Title: "Participate"
+        Text: "This game is part of a scientific study to better understand how the human mind works: we invite you to participate."
+        ShareOpinion: "Share your opinion"
+        ForTeachers: "For teachers"
+        ContactText: "Send us your comments by email to contact@xcit.org"
+        RateUs: "Rate us"
+
+Communication:
+    AreYouReady: "Are you ready?"
+    IAmReady: "I am ready!"
+    GoodJob: "Good job!"
+    Bye: "Bye!"
+    Hello: "Hello!"
+    IUnderstand: "I understand"
+    LetsGo: "Let's go!"
+    ThankYou: "Thank you."
+    ReadyForPractice: "Ready for practice?"
+
+Consent:
+    Choice:
+        AgreeButton: "I agree"
+        AgreeSubText: "to participate in this study, and to the game collecting data during play."
+        DisagreeText: "If you do not agree, you may exit this game now."
+    Links:
+        Study: "Tap here to read more about the study"
+        PrivacyPolicy: "Tap here to read our privacy policy"
+    Main:
+        Title: "Consent"
+        Text: "This game is part of a <color=#ffcc44>scientific study</color> to better understand how the human mind works, and we would like to ask you to participate.\n\nIf you agree, the game will collect data on how you play. These data are strictly <color=#44ee99>anonymous</color> and will be treated with the <color=#22aadd>utmost care</color>."
+
+CrashWindow:
+    Title: "An error occurred"
+    Text: "It has been sent to our servers.<br>Click OK to continue."
+
+DateTime:
+    Months:
+        January: "January"
+        February: "February"
+        March: "March"
+        April: "April"
+        May: "May"
+        June: "June"
+        July: "July"
+        August: "August"
+        September: "September"
+        October: "October"
+        November: "November"
+        December: "December"
+    Time:
+        Hour: "hour"
+        Hours: "hours"
+        Minute: "minute"
+        Minutes: "minutes"
+        Second: "second"
+        Seconds: "seconds"
+        And: "and"
+
+Hud:
+    Score: "Score"
+    Block: "Block"
+    Trial: "Trial"
+    Level: "Level"
+
+InactivityWindow:
+    Title: "Are you still there?"
+    Text: "Going back to title screen in <b>{0}</b> seconds..."
+    Button: "I'm there!"
+
+LimitedPlayTime:
+    Title: "Limited play time"
+    Text: "Many organizations recommend limiting time spent on digital devices (for example, tablets, television). Based on these recommendations, we limit the time each child can spend on Mathemarmite to a maximum of 1 hour per day.<br>Scientific data also indicates that, for effective learning, it is better to do a little learning every day than all at once."
+
+Loading:
+    Text: "Loading…"
+
+Menu:
+    Cancel: "Cancel"
+    Exit: "Exit"
+    Ok: "OK"
+    Yes: "Yes"
+    No: "No"
+    Quit: "Quit"
+    QuitConfirmation: "Quit?"
+    Restart: "Restart"
+    Resume: "Resume"
+
+Museum:
+    NextGame: "Next Game:<br>{0}"
+    StartGame: "Start Game"
+
+Numbers:
+    0: "zero"
+    1: "one"
+    2: "two"
+    3: "three"
+    4: "four"
+    5: "five"
+    6: "six"
+    7: "seven"
+    8: "eight"
+    9: "nine"
+
+Options:
+    DeleteProfile:
+        Title: "Delete a profile?"
+        Confirmation: "Do you really want to delete the profile of {0}?"
+    Language:
+        Title: "Language"
+    Version: "Version"
+
+ParentalGate:
+    AskYourParents: "Ask your parents"
+    Instructions: "To continue, tap <color=#ffcc44>{0}</color> then <color=#ffcc44>{1}</color>:"
+
+ProfileCreation:
+    Name: "Name"
+    NamePrompt: "Enter name..."
+    Player: "Player {0}"
+    Gender: "Gender"
+    Boy: "Boy"
+    Girl: "Girl"
+    BirthDate: "Date of birth"
+    CreateButton: "Create"
+
+Punctuation:
+    Dot: "."
+    DotDotDot: "..."
+    QuestionMarkPost: "?"
+    QuestionMarkPre: "NA"
+
+Rules:
+    Title: "Rules"
+
+Tasks:    
+    Common:
+        Titles:
+            Job: "Job"
+            StimulusResponse: "Stimulus"
+            Feedback: "Feedback"
+            Strategy: "Strategy"
+        Instructions:
+            BeFast: "Respond as quickly and accurately as possible."
+            Ready: "Are you ready?"
+            TutorialIntro: "Ready for practice?"
+            TutorialOuttro: "Good job! Now let's try the full game."
+            Adaptive: "The game will constantly attempt to challenge you. When you perform well, the game will become harder; when you perform poorly, the game will become easier."
+            LetsPractice: "Let’s do a few practice trials to warm up."
+            PracticeComplete: "Practice complete!"
+            LetsDoExamples: "Let's do a few examples!"
+            ExamplesComplete: "Examples complete!"
+            LetsStartTest: "You are now ready for the test.\nPress OK to start."
+            TestComplete: "Test complete!"
+            ContinueTest: "Press OK to continue with the test."
+            TakeBreakAndOK: "Take a break!\nPress the OK when you're ready to continue."
+            TrialsInTest: "This test contains {0} trials."
+            MinutesInTest: "This test lasts {0} minutes."
+            BlocksAndTrialsInTest: "This test contains {0} blocks and each block contains {0} trials."
+            BlocksAndMinutesInTest: "This test contains {0} blocks and each block lasts {0} minutes."
+            BlocksInTest: "This test contains {0} blocks."
+        EndRule:
+            Timer: "The game is over when the timer ends."
+            ThreeMistakes: "The game is over when you make three mistakes."
+            Trials: "The game is over once you've completed all the trials."
+            Feedback1: "Each time you respond correctly you will see a green checkmark. Each time you respond incorrectly you will see a red x."
+    
+    BCS:
+        Feature:
+            Color: "Color"
+            Symbol: "Symbol"
+            Number: "Number"
+            Background: "Background"
+        TaskName: "Card Sorting"
+    
+    DS:
+        TaskName: "Digit Span"
+    
+    MOT:
+        TaskName: "Multiple Object Tracking"
+    
+    NB:
+        TaskName: "N-Back"
+    
+    OOO:
+        TaskName: "Odd One Out"
+    
+    OC:
+        TaskName: "Ordered Clicks"
+    
+    SMC:
+        TaskName: "Pattern Comparison"
+    
+    PC:
+        TaskName: "Polygons"
+    
+    BM:
+        TaskName: "Belval Matrices"
+    
+    RE:
+        TaskName: "Regex"
+    
+    TH:
+        TaskName: "Target Hit"
+    
+    SOS:
+        TaskName: "Token Search"
+        ItemCount: "Items"
+    
+    BSAC:
+        TaskName: "Spatial Attention Cueing"
+    
+    RSAC:
+        TaskName: "Recall Spatial Attention Cueing"
+    
+    SART:
+        TaskName: "Sustained Attention to Response Test"
+    
+    SS:
+        TaskName: "Spatial Span"
+    
+    ML:
+        TaskName: "Monkey Ladder"
+    
+    SRM:
+        TaskName: "Stimulus-Response Mapping"
+    
+    TOVA:
+        TaskName: "Test Of Variables of Attention"
+    
+    SRT:
+        TaskName: "Serial Reaction Time"
+    
+    UFOV:
+        TaskName: "Useful Field of View"
+    
+    WO:
+        TaskName: "Which One"
+
+
+XCIT_BCS_01_Test:
+    RulesTitle: "Figure out the rules."
+    GameRules: "You will see a card and several buttons on the screen. Each time you click on a button, a new card will be shown. Your job is to learn which button to click for each card. You will be told after each response whether your choice was correct or not."
+    Introduction: "This test has 3 parts and should take about 36 minutes to complete. Each part will be clearly indicated and there will be several breaks along the way. Press OK to start part 1/3."
+    Job: "Figure out the rules."
+    Stimulus: "You will see a card and several buttons on the screen. Each time you click on a button, a new card will be shown."
+    YourJob: "Your job is to learn which button to click for each card."
+    Feedback: "You will be told after each response whether your choice was correct or not."
+    TerminationRule: "This test contains 64 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_BCS_02_Tutorial:
+    RulesTitle: "Sort the cards."
+    GameRules: "You will see a card and several buttons on the screen. You will also see the word \"number\", \"symbol\" or \"background\" displayed below the card. Your job is to click on the button that shares with the card the property that is named by the word on the screen. For example, if the card shows two symbols and the word says \"symbol\", click on the button that displays the same symbol as the card even if the number of symbols on the card and the button are different. Respond as fast as you can without making too many errors."
+    Introduction: "Press OK to start part 2/3."
+    Job: "Sort the cards."
+    Stimulus: "You will see a card and several buttons on the screen. You will also see the word \"number\", \"symbol\" or \"background\" displayed below the card."
+    YourJob: "Your job is to click on the button that shares with the card the property that is named by the word on the screen."
+    ExampleResponse: "For example, if the card shows two symbols and the word says \"symbol\", click on the button that displays the same symbol as the card even if the number of symbols on the card and the button are different."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_BCS_02_Practice:
+    RulesTitle: "Sort the cards."
+    GameRules: "You will see a card and several buttons on the screen. You will also see the word \"number\", \"symbol\" or \"background\" displayed below the card. Your job is to click on the button that shares with the card the property that is named by the word on the screen. For example, if the card shows two symbols and the word says \"symbol\", click on the button that displays the same symbol as the card even if the number of symbols on the card and the button are different. Respond as fast as you can without making too many errors."
+    Objective: "Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_BCS_02_Test_01:
+    RulesTitle: "Sort the cards."
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 2 blocks and each block contains 60 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_BCS_02_Test_02:
+    RulesTitle: "Sort the cards."
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_BCS_03_Test_01:
+    RulesTitle: "Sort the cards."
+    Introduction: "Press OK to start part 3/3."
+    Stimulus: "This test is very similar to what you just experienced."
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 2 blocks and each block contains 60 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_BCS_03_Test_02:
+    RulesTitle: "Sort the cards."
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_BCS_04_Test_01:
+    RulesTitle: "Sort the cards."
+    Introduction: "Press OK to start part 4/4."
+    Stimulus: "This test is very similar to what you just experienced."
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 2 blocks and each block contains 60 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_BCS_04_Test_02:
+    RulesTitle: "Sort the cards."
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_BCS_05_Tutorial:
+    RulesTitle: "Sort the cards."
+    GameRules: "You will see a card and several buttons on the screen. You will also see the word \"number\" or \"symbol\" displayed below the card. Your job is to click on the button that shares with the card the property that is named by the word on the screen. For example, if the card shows two symbols and the word says \"symbol\", click on the button that displays the same symbol as the card even if the number of symbols on the card and the button are different. Respond as fast as you can without making too many errors."
+    Job: "Sort the cards."
+    Stimulus: "You will see a card and several buttons on the screen. You will also see the word \"number\" or \"symbol\" displayed below the card."
+    YourJob: "Your job is to click on the button that shares with the card the property that is named by the word on the screen."
+    ExampleResponse: "For example, if the card shows two symbols and the word says \"symbol\", click on the button that displays the same symbol as the card even if the number of symbols on the card and the button are different."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_BCS_05_Practice:
+    RulesTitle: "Sort the cards."
+    GameRules: "You will see a card and several buttons on the screen. You will also see the word \"number\" or \"symbol\" displayed below the card. Your job is to click on the button that shares with the card the property that is named by the word on the screen. For example, if the card shows two symbols and the word says \"symbol\", click on the button that displays the same symbol as the card even if the number of symbols on the card and the button are different. Respond as fast as you can without making too many errors."
+    Objective: "Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_BCS_05_Test_01:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 2 blocks and each block contains 60 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_BCS_05_Test_02:
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_BM_01_Tutorial:
+    RulesTitle: "Complete the pattern."
+    GameRules: "You will see a board containing images. But one piece of the board is missing. That piece is presented among a set of other possible pieces below the board. The missing piece completes some pattern on the board, both along the rows and the columns. There is only one piece that completes the pattern, that is, there is only one correct piece among the pieces presented below the board. Your job is to understand the relationships between the images on the board and to find the missing piece. Click on the piece below the board that you think completes the pattern. Respond as fast as you can without making too many errors. Note that you have a limited time to find the missing piece for a given board."
+    Job: "Complete the pattern."
+    Stimulus: "You will see a board containing images. But one piece of the board is missing. That piece is presented among a set of other possible pieces below the board."
+    GenerativeModel: "The missing piece completes some pattern on the board, both along the rows and the columns. There is only one piece that completes the pattern, that is, there is only one correct piece among the pieces presented below the board."
+    YourJob: "Your job is to understand the relationships between the images on the board and to find the missing piece."
+    Response: "Click on the piece below the board that you think completes the pattern."
+    Constraint: "Note that you have a limited time to find the missing piece for a given board."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_BM_01_Practice:
+    RulesTitle: "Complete the pattern."
+    GameRules: "You will see a board containing images. But one piece of the board is missing. That piece is presented among a set of other possible pieces below the board. The missing piece completes some pattern on the board, both along the rows and the columns. There is only one piece that completes the pattern, that is, there is only one correct piece among the pieces presented below the board. Your job is to understand the relationships between the images on the board and to find the missing piece. Click on the piece below the board that you think completes the pattern. Respond as fast as you can without making too many errors. Note that you have a limited time to find the missing piece for a given board."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_BM_01_Test:
+    TerminationRule: "This test lasts 20 minutes."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_BM_02_Tutorial:
+    RulesTitle: "Complete the pattern."
+    GameRules: "You will see a board containing images. But one piece of the board is missing. That piece is presented among a set of other possible pieces below the board. The missing piece completes some pattern on the board, both along the rows and the columns. There is only one piece that completes the pattern, that is, there is only one correct piece among the pieces presented below the board. Your job is to understand the relationships between the images on the board and to find the missing piece. Click on the piece below the board that you think completes the pattern. Respond as fast as you can without making too many errors. Note that you have a limited time to find the missing piece for a given board."
+    Job: "Complete the pattern."
+    Stimulus: "You will see a board containing images. But one piece of the board is missing. That piece is presented among a set of other possible pieces below the board."
+    GenerativeModel: "The missing piece completes some pattern on the board, both along the rows and the columns. There is only one piece that completes the pattern, that is, there is only one correct piece among the pieces presented below the board."
+    YourJob: "Your job is to understand the relationships between the images on the board and to find the missing piece."
+    Response: "Click on the piece below the board that you think completes the pattern."
+    Constraint: "Note that you have a limited time to find the missing piece for a given board."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_BM_02_Test:
+    Objective: "Respond as fast as you can without making too many errors."
+    Constraint: "Note that you have a limited time to find the missing piece for a given board."
+    Feedback: "After each response you will NOT be told whether you were correct or not."
+    TerminationRule: "This test lasts 20 minutes."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_BM_03_Tutorial:
+    RulesTitle: "Complete the pattern."
+    GameRules: "You will see a board containing images. But one piece of the board is missing. That piece is presented among a set of other possible pieces below the board. The missing piece completes some pattern on the board, both along the rows and the columns. There is only one piece that completes the pattern, that is, there is only one correct piece among the pieces presented below the board. Your job is to understand the relationships between the images on the board and to find the missing piece. Click on the piece below the board that you think completes the pattern. Respond as fast as you can without making too many errors. Note that you have a limited time to find the missing piece for a given board."
+    Job: "Complete the pattern."
+    Stimulus: "You will see a board containing images. But one piece of the board is missing. That piece is presented among a set of other possible pieces below the board."
+    GenerativeModel: "The missing piece completes some pattern on the board, both along the rows and the columns. There is only one piece that completes the pattern, that is, there is only one correct piece among the pieces presented below the board."
+    YourJob: "Your job is to understand the relationships between the images on the board and to find the missing piece."
+    Response: "Click on the piece below the board that you think completes the pattern."
+    Constraint: "Note that you have a limited time to find the missing piece for a given board."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_BM_03_Test:
+    Objective: "Respond as fast as you can without making too many errors."
+    Constraint: "Note that you have a limited time to find the missing piece for a given board."
+    Feedback: "After each response you will be told whether you were correct or not."
+    TerminationRule: "This test lasts 20 minutes."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_BM_04_Test:
+    RulesTitle: "Complete the pattern."
+    Introduction: "The next part of the test will be very similar to what you just experienced."
+    Job: "Complete the pattern."
+    YourJob: "Your job is to understand the relationships between the images on the board and to find the missing piece."
+    Response: "Click on the piece below the board that you think completes the pattern."
+    Objective: "Respond as fast as you can without making too many errors."
+    Constraint: "Note that you have a limited time to find the missing piece for a given board."
+    Feedback: "After each response you will NOT be told whether you were correct or not."
+    TerminationRule: "This test lasts 10 minutes."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_BSAC_01_Tutorial:
+    RulesTitle: "Click on the star as fast as you can."
+    GameRules: "You will see a star appear on the left or right side of the screen. Before the star appears, you will see on the center of the screen a square, followed by an arrow. The square means that the star will appear where the arrow is pointing. Your job is to click on the star as soon as it appears. Respond as fast as you can without making too many errors."
+    Introduction: "This test has 3 parts and should take about 26 minutes to complete. Each part will be clearly indicated and there will be several breaks along the way. Press OK to start part 1/3."
+    Job: "Click on the star as fast as you can."
+    Stimulus: "You will see a star appear on the left or right side of the screen. Before the star appears, you will see on the center of the screen a square, followed by an arrow. The square means that the star will appear where the arrow is pointing."
+    YourJob: "Your job is to click on the star as soon as it appears."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_BSAC_01_Test:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 60 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_BSAC_02_Tutorial:
+    RulesTitle: "Click on the star as fast as you can."
+    GameRules: "You will see a star appear on the left or right side of the screen. Before the star appears, you will see on the center of the screen a dashed square, followed by an arrow. The dashed square means that the star will appear in the opposite of where the arrow is pointing. Your job is to click on the star as soon as it appears. Respond as fast as you can without making too many errors."
+    Introduction: "Press OK to start part 2/3."
+    Job: "Click on the star as fast as you can."
+    Stimulus: "You will see a star appear on the left or right side of the screen. Before the star appears, you will see on the center of the screen a dashed square, followed by an arrow. The dashed square means that the star will appear in the opposite of where the arrow is pointing."
+    YourJob: "Your job is to click on the star as soon as it appears."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_BSAC_02_Test:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 60 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_BSAC_03_Tutorial:
+    RulesTitle: "Click on the star as fast as you can."
+    GameRules: "You will see a star appear on the left or right side of the screen. Before the star appears, you will see on the center of the screen a square, followed by an arrow. If the square is complete, the star will appear where the arrow is pointing. If the square is dashed, the star will appear in the opposite of where the arrow is pointing. Your job is to click on the star as soon as it appears. Respond as fast as you can without making too many errors."
+    Introduction: "Press OK to start part 3/3."
+    Job: "Click on the star as fast as you can."
+    Stimulus: "You will see a star appear on the left or right side of the screen. Before the star appears, you will see on the center of the screen a square, followed by an arrow. If the square is complete, the star will appear where the arrow is pointing. If the square is dashed, the star will appear in the opposite of where the arrow is pointing."
+    YourJob: "Your job is to click on the star as soon as it appears."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_BSAC_03_Test_01:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 2 blocks and each block contains 60 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_BSAC_03_Test_02:
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_BSAC_04_Tutorial:
+    RulesTitle: "Click on the star as fast as you can."
+    GameRules: "You will see a star appear on the left or right side of the screen. Before the star appears, you will see a square on the center of the screen, followed by a white circle on one of the sides of the screen. The square means that the star will appear where the circle is. Your job is to click on the star as soon as it appears. Respond as fast as you can without making too many errors."
+    Introduction: "This test has 3 parts and should take about 26 minutes to complete. Each part will be clearly indicated and there will be several breaks along the way. Press OK to start part 1/3."
+    Job: "Click on the star as fast as you can."
+    Stimulus: "You will see a star appear on the left or right side of the screen. Before the star appears, you will see a square on the center of the screen, followed by a white circle on one of the sides of the screen. The square means that the star will appear where the circle is."
+    YourJob: "Your job is to click on the star as soon as it appears."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_BSAC_04_Test:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 60 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_BSAC_05_Tutorial:
+    RulesTitle: "Click on the star as fast as you can."
+    GameRules: "You will see a star appear on the left or right side of the screen. Before the star appears, you will see a dashed square on the center of the screen, followed by a white circle on one of the sides of the screen. The dashed square means that the star will appear on the opposite side of where the circle is. Your job is to click on the star as soon as it appears. Respond as fast as you can without making too many errors."
+    Introduction: "Press OK to start part 2/3."
+    Job: "Click on the star as fast as you can."
+    Stimulus: "You will see a star appear on the left or right side of the screen. Before the star appears, you will see a dashed square on the center of the screen, followed by a white circle on one of the sides of the screen. The dashed square means that the star will appear on the opposite side of where the circle is."
+    YourJob: "Your job is to click on the star as soon as it appears."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_BSAC_05_Test:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 60 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_BSAC_06_Tutorial:
+    RulesTitle: "Click on the star as fast as you can."
+    GameRules: "You will see a star appear on the left or right side of the screen. Before the star appears, you will see a square on the center of the screen, followed by a white circle on one of the sides of the screen. If the square is complete, the star will appear where the circle is. If the square is dashed, the star will appear on the opposite side. Your job is to click on the star as soon as it appears. Respond as fast as you can without making too many errors."
+    Introduction: "Press OK to start part 3/3."
+    Job: "Click on the star as fast as you can."
+    Stimulus: "You will see a star appear on the left or right side of the screen. Before the star appears, you will see a square on the center of the screen, followed by a white circle on one of the sides of the screen. If the square is complete, the star will appear where the circle is. If the square is dashed, the star will appear on the opposite side."
+    YourJob: "Your job is to click on the star as soon as it appears."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_BSAC_06_Test_01:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 2 blocks and each block contains 60 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_BSAC_06_Test_02:
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_BSAC_07_Tutorial:
+    RulesTitle: "Click on the star as fast as you can."
+    GameRules: "You will see a star appear on the left or right side of the screen. Before the star appears, you will see on the center of the screen an arrow that points to the left and/or the right. Most of the time the star will appear where the arrow is pointing but sometimes the arrow will point in the wrong direction. Your job is to click on the star as soon as it appears. Respond as fast as you can without making too many errors."
+    Introduction: "This test has 2 parts and should take about 22 minutes to complete. Each part will be clearly indicated and there will be several breaks along the way. Press OK to start part 1/2."
+    Job: "Click on the star as fast as you can."
+    Stimulus: "You will see a star appear on the left or right side of the screen. Before the star appears, you will see on the center of the screen an arrow that points to the left and/or the right. Most of the time the star will appear where the arrow is pointing but sometimes the arrow will point in the wrong direction."
+    YourJob: "Your job is to click on the star as soon as it appears."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_BSAC_07_Test_01:
+    YourJob: "Your job is to click on the star as soon as it appears."
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 2 blocks and each block contains 60 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_BSAC_07_Test_02:
+    YourJob: "Your job is to click on the star as soon as it appears."
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_BSAC_08_Tutorial:
+    RulesTitle: "Click on the star as fast as you can. Ignore the arrows."
+    GameRules: "The next test will be very similar to what you just experienced. The only difference now is that the arrow is no longer useful. Ignore the arrow and click on the star as soon as it appears. Respond as fast as you can without making too many errors."
+    Introduction: "Press OK to start part 2/2."
+    Stimulus: "The next test will be very similar to what you just experienced. The only difference now is that the arrow is no longer useful. Ignore the arrow and click on the star as soon as it appears."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_BSAC_08_Test_01:
+    YourJob: "Your job is to click on the star as soon as it appears."
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 2 blocks and each block contains 60 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_BSAC_08_Test_02:
+    YourJob: "Your job is to click on the star as soon as it appears."
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_BSAC_09_Tutorial:
+    RulesTitle: "Click on the star as fast as you can."
+    GameRules: "You will see a star appear on the left or right side of the screen. Before the star appears, you will see on the center of the screen an arrow that points to the left and/or the right. Pay attention to this arrow as it indicates where the star will appear. Before the star appears, you may see a white circle appear on one of the two sides. Ignore this white circle. Your job is to click on the star as soon as it appears. Respond as fast as you can without making too many errors."
+    Job: "Click on the star as fast as you can."
+    Stimulus: "You will see a star appear on the left or right side of the screen. Before the star appears, you will see on the center of the screen an arrow that points to the left and/or the right. Pay attention to this arrow as it indicates where the star will appear. Before the star appears, you may see a white circle appear on one of the two sides. Ignore this white circle."
+    YourJob: "Your job is to click on the star as soon as it appears."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_BSAC_09_Test_01:
+    YourJob: "Your job is to click on the star as soon as it appears."
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 2 blocks and each block contains 60 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_BSAC_09_Test_02:
+    YourJob: "Your job is to click on the star as soon as it appears."
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_DS_01_Tutorial:
+    RulesTitle: "Remember the numbers."
+    GameRules: "You will see numbers appear one at a time on the screen. Only the numbers 1 to 9 will be shown and each number appears only once in the sequence, unless the sequence is long and has more than 9 numbers. Your job is to remember that sequence of numbers in order. After all the numbers have been shown, enter the sequence of numbers you remember in their order of appearance using the keypad shown on the screen. For example,\nif you saw 1-2-3-4-5, \nenter 1-2-3-4-5. Try to make as few errors as possible."
+    Introduction: "This test has 2 parts and should take about 10 minutes to complete. Each part will be clearly indicated and there will be several breaks along the way. Press OK to start part 1/2."
+    Job: "Remember the numbers."
+    Stimulus: "You will see numbers appear one at a time on the screen."
+    GenerativeModel: "Only the numbers 1 to 9 will be shown and each number appears only once in the sequence, unless the sequence is long and has more than 9 numbers."
+    YourJob: "Your job is to remember that sequence of numbers in order."
+    Response: "After all the numbers have been shown, enter the sequence of numbers you remember in their order of appearance using the keypad shown on the screen."
+    ExampleResponse: "For example,\nif you saw 1-2-3-4-5, \nenter 1-2-3-4-5."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_DS_01_Practice:
+    RulesTitle: "Remember the numbers."
+    GameRules: "You will see numbers appear one at a time on the screen. Only the numbers 1 to 9 will be shown and each number appears only once in the sequence, unless the sequence is long and has more than 9 numbers. Your job is to remember that sequence of numbers in order. After all the numbers have been shown, enter the sequence of numbers you remember in their order of appearance using the keypad shown on the screen. For example,\nif you saw 1-2-3-4-5, \nenter 1-2-3-4-5. Try to make as few errors as possible."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_DS_01_Test:
+    TerminationRule: "This test contains 20 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_DS_02_Tutorial:
+    RulesTitle: "Remember the numbers backwards."
+    GameRules: "You will see numbers appear one at a time on the screen. Only the numbers 1 to 9 will be shown and each number appears only once in the sequence, unless the sequence is long and has more than 9 numbers. Your job is to remember that sequence of numbers and recall them backwards. After all the numbers have been shown, enter those numbers in the reverse order of their appearance using the keypad shown on the screen. For example,\nif you saw 1-2-3-4-5,\nenter 5-4-3-2-1. Try to make as few errors as possible."
+    Introduction: "Press OK to start part 2/2."
+    Job: "Remember the numbers backwards."
+    Stimulus: "You will see numbers appear one at a time on the screen."
+    GenerativeModel: "Only the numbers 1 to 9 will be shown and each number appears only once in the sequence, unless the sequence is long and has more than 9 numbers."
+    YourJob: "Your job is to remember that sequence of numbers and recall them backwards."
+    Response: "After all the numbers have been shown, enter those numbers in the reverse order of their appearance using the keypad shown on the screen."
+    ExampleResponse: "For example,\nif you saw 1-2-3-4-5,\nenter 5-4-3-2-1."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_DS_02_Practice:
+    RulesTitle: "Remember the numbers backwards."
+    GameRules: "You will see numbers appear one at a time on the screen. Only the numbers 1 to 9 will be shown and each number appears only once in the sequence, unless the sequence is long and has more than 9 numbers. Your job is to remember that sequence of numbers and recall them backwards. After all the numbers have been shown, enter those numbers in the reverse order of their appearance using the keypad shown on the screen. For example,\nif you saw 1-2-3-4-5,\nenter 5-4-3-2-1. Try to make as few errors as possible."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_DS_02_Test:
+    TerminationRule: "This test contains 20 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_DS_03_Tutorial:
+    RulesTitle: "Remember the symbols."
+    GameRules: "You will see symbols appear one at a time on the screen. There are only 9 different symbols and each symbol appears only once in a sequence, unless the sequence is long and has more than 9 symbols. Your job is to remember that sequence of symbols. After all the symbols have been shown, enter the sequence of symbols you remember in their order of appearance using the keypad shown on the screen. For example,\nif you saw triangle-square-circle,\nenter triangle-square-circle. Try to make as few errors as possible."
+    Introduction: "This test has 2 parts and should take about 10 minutes to complete. Each part will be clearly indicated and there will be several breaks along the way. Press OK to start part 1/2."
+    Job: "Remember the symbols."
+    Stimulus: "You will see symbols appear one at a time on the screen."
+    GenerativeModel: "There are only 9 different symbols and each symbol appears only once in a sequence, unless the sequence is long and has more than 9 symbols."
+    YourJob: "Your job is to remember that sequence of symbols."
+    Response: "After all the symbols have been shown, enter the sequence of symbols you remember in their order of appearance using the keypad shown on the screen."
+    ExampleResponse: "For example,\nif you saw triangle-square-circle,\nenter triangle-square-circle."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_DS_03_Practice:
+    RulesTitle: "Remember the symbols."
+    GameRules: "You will see symbols appear one at a time on the screen. There are only 9 different symbols and each symbol appears only once in a sequence, unless the sequence is long and has more than 9 symbols. Your job is to remember that sequence of symbols. After all the symbols have been shown, enter the sequence of symbols you remember in their order of appearance using the keypad shown on the screen. For example,\nif you saw triangle-square-circle,\nenter triangle-square-circle. Try to make as few errors as possible."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_DS_03_Test:
+    TerminationRule: "This test contains 20 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_DS_04_Tutorial:
+    RulesTitle: "Remember the symbols backwards."
+    GameRules: "You will see symbols appear one at a time on the screen. There are only 9 different symbols and each symbol appears only once in a sequence, unless the sequence is long and has more than 9 symbols. Your job is to remember that sequence of symbols. and recall them backwards. After all the symbols have been shown, enter those symbols in the reverse order of their appearance using the keypad shown on the screen. For example,\nif you saw triangle-square-circle,\nenter circle-square-triangle. Try to make as few errors as possible."
+    Introduction: "Press OK to start part 2/2."
+    Job: "Remember the symbols backwards."
+    Stimulus: "You will see symbols appear one at a time on the screen."
+    GenerativeModel: "There are only 9 different symbols and each symbol appears only once in a sequence, unless the sequence is long and has more than 9 symbols."
+    YourJob: "Your job is to remember that sequence of symbols. and recall them backwards."
+    Response: "After all the symbols have been shown, enter those symbols in the reverse order of their appearance using the keypad shown on the screen."
+    ExampleResponse: "For example,\nif you saw triangle-square-circle,\nenter circle-square-triangle."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_DS_04_Practice:
+    RulesTitle: "Remember the symbols backwards."
+    GameRules: "You will see symbols appear one at a time on the screen. There are only 9 different symbols and each symbol appears only once in a sequence, unless the sequence is long and has more than 9 symbols. Your job is to remember that sequence of symbols. and recall them backwards. After all the symbols have been shown, enter those symbols in the reverse order of their appearance using the keypad shown on the screen. For example,\nif you saw triangle-square-circle,\nenter circle-square-triangle. Try to make as few errors as possible."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_DS_04_Test:
+    TerminationRule: "This test contains 20 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_ML_01_Tutorial:
+    RulesTitle: "Remember the order of the buttons."
+    GameRules: "You will see numbers displayed on the screen. Once you click on the number 1, all numbers will be hidden. Your job is to remember where each of the numbers were before they disappeared. Click on the numbers in order, starting with the number 1. Respond as fast as you can without making too many errors."
+    Job: "Remember the order of the buttons."
+    Stimulus: "You will see numbers displayed on the screen. Once you click on the number 1, all numbers will be hidden."
+    YourJob: "Your job is to remember where each of the numbers were before they disappeared."
+    Response: "Click on the numbers in order, starting with the number 1."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_ML_01_Practice:
+    RulesTitle: "Remember the order of the buttons."
+    GameRules: "You will see numbers displayed on the screen. Once you click on the number 1, all numbers will be hidden. Your job is to remember where each of the numbers were before they disappeared. Click on the numbers in order, starting with the number 1. Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_ML_01_Test:
+    TerminationRule: "This test contains 60 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_ML_02_Practice:
+    RulesTitle: "Remember the order of the buttons."
+    GameRules: "You will see numbers displayed on the screen. After a short time, the numbers will disappear. Your job is to remember where each of the numbers were before they disappeared. Click on the numbers in order, starting with the number 1. Respond as fast as you can without making too many errors."
+    Job: "Remember the order of the buttons."
+    Stimulus: "You will see numbers displayed on the screen. After a short time, the numbers will disappear."
+    YourJob: "Your job is to remember where each of the numbers were before they disappeared."
+    Response: "Click on the numbers in order, starting with the number 1."
+    Objective: "Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_ML_02_Test:
+    TerminationRule: "This test contains 25 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_ML_03_Test:
+    TerminationRule: "This test contains 60 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_MOT_01_Tutorial:
+    RulesTitle: "Track the moving diamonds."
+    GameRules: "You will see white dots on the screen. Some contain a diamond, and some are empty. You will briefly be shown where the diamonds are hidden before all dots start moving across the screen. Your job is to keep track of where all the diamonds are. After all the dots have stopped moving, you will be asked whether a particular dot contains a diamond or is empty. Click on the corresponding button to give your response. Try to make as few errors as possible."
+    Job: "Track the moving diamonds."
+    Stimulus: "You will see white dots on the screen. Some contain a diamond, and some are empty. You will briefly be shown where the diamonds are hidden before all dots start moving across the screen."
+    YourJob: "Your job is to keep track of where all the diamonds are."
+    Response: "After all the dots have stopped moving, you will be asked whether a particular dot contains a diamond or is empty. Click on the corresponding button to give your response."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_MOT_01_Practice:
+    RulesTitle: "Track the moving diamonds."
+    GameRules: "You will see white dots on the screen. Some contain a diamond, and some are empty. You will briefly be shown where the diamonds are hidden before all dots start moving across the screen. Your job is to keep track of where all the diamonds are. After all the dots have stopped moving, you will be asked whether a particular dot contains a diamond or is empty. Click on the corresponding button to give your response. Try to make as few errors as possible."
+    Objective: "Try to make as few errors as possible."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_MOT_01_Test:
+    Objective: "Try to make as few errors as possible."
+    TerminationRule: "This test contains 50 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_MOT_02_Tutorial:
+    RulesTitle: "Track the moving diamonds."
+    GameRules: "You will see white dots on the screen. Some contain a diamond, and some are empty. You will briefly be shown where the diamonds are hidden before all dots start moving across the screen. Your job is to keep track of where all the diamonds are. After all the dots have stopped moving, you will be asked to select all the dots that contain a diamond by clicking on them. Try to make as few errors as possible."
+    Job: "Track the moving diamonds."
+    Stimulus: "You will see white dots on the screen. Some contain a diamond, and some are empty. You will briefly be shown where the diamonds are hidden before all dots start moving across the screen."
+    YourJob: "Your job is to keep track of where all the diamonds are."
+    Response: "After all the dots have stopped moving, you will be asked to select all the dots that contain a diamond by clicking on them."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_MOT_02_Practice:
+    RulesTitle: "Track the moving diamonds."
+    GameRules: "You will see white dots on the screen. Some contain a diamond, and some are empty. You will briefly be shown where the diamonds are hidden before all dots start moving across the screen. Your job is to keep track of where all the diamonds are. After all the dots have stopped moving, you will be asked to select all the dots that contain a diamond by clicking on them. Try to make as few errors as possible."
+    Objective: "Try to make as few errors as possible."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_MOT_02_Test:
+    Objective: "Try to make as few errors as possible."
+    TerminationRule: "This test contains 50 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_MOT_03_Test:
+    RulesTitle: "Track the moving diamonds."
+    Job: "Track the moving diamonds."
+    Stimulus: "You will see white dots on the screen. Some contain a diamond, and some are empty. You will briefly be shown where the diamonds are hidden before all dots start moving across the screen."
+    YourJob: "Your job is to keep track of where all the diamonds are."
+    Response: "After all the dots have stopped moving, you will be asked to select all the dots that contain a diamond by clicking on them."
+    Objective: "Try to make as few errors as possible."
+    TerminationRule: "This test contains 25 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_MOT_04_Test:
+    RulesTitle: "Track the moving diamonds."
+    Job: "Track the moving diamonds."
+    Stimulus: "You will see white dots on the screen. Some contain a diamond, and some are empty. You will briefly be shown where the diamonds are hidden before all dots start moving across the screen."
+    YourJob: "Your job is to keep track of where all the diamonds are."
+    Response: "After all the dots have stopped moving, you will be asked to select all the dots that contain a diamond by clicking on them."
+    Objective: "Try to make as few errors as possible."
+    TerminationRule: "This test contains 25 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_MOT_05_Tutorial:
+    RulesTitle: "Remember where the diamonds are."
+    GameRules: "You will see white dots on the screen. Some contain a diamond, and some are empty. You will briefly be shown where the diamonds are hidden before all dots start moving across the screen. Your job is to keep track of where all the diamonds are. After all the dots have stopped moving, you will be asked to select all the dots that contain a diamond by clicking on them. Try to make as few errors as possible."
+    Job: "Remember where the diamonds are."
+    Stimulus: "You will see white dots on the screen. Some contain a diamond, and some are empty. You will briefly be shown where the diamonds are hidden before all dots start moving across the screen."
+    YourJob: "Your job is to keep track of where all the diamonds are."
+    Response: "After all the dots have stopped moving, you will be asked to select all the dots that contain a diamond by clicking on them."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_MOT_05_Test:
+    TerminationRule: "This test contains 25 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_NB_01_Tutorial_A:
+    RulesTitle: "Do the two boxes contain the same number?"
+    GameRules: "You will see a big and a small box on the screen as well as numbers that move from the right to the left of the screen. Your job is to say if the two boxes contain the same number or not. If the numbers in the boxes are the same, click the button (=). If they are different, click the button (≠)."
+    Job: "Do the two boxes contain the same number?"
+    Stimulus: "You will see a big and a small box on the screen as well as numbers that move from the right to the left of the screen."
+    YourJob: "Your job is to say if the two boxes contain the same number or not."
+    Response: "If the numbers in the boxes are the same, click the button (=). If they are different, click the button (≠)."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_NB_01_Tutorial_B:
+    RulesTitle: "Do the two boxes contain the same number?"
+    GameRules: "You will see a big and a small box on the screen as well as numbers that move from the right to the left of the screen. Your job is to say if the two boxes contain the same number or not. If the numbers in the boxes are the same, click the button (=). If they are different, click the button (≠)."
+    Introduction: "What you will see now is very similar to the previous examples, with just one difference."
+    Constraint: "In the previous examples we waited for you to give your response. Now, you must give a response before time runs out."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_NB_01_Tutorial_C:
+    RulesTitle: "Do the two boxes contain the same number?"
+    GameRules: "You will see a big and a small box on the screen as well as numbers that move from the right to the left of the screen. Your job is to say if the two boxes contain the same number or not. If the numbers in the boxes are the same, click the button (=). If they are different, click the button (≠)."
+    Stimulus: "In the previous examples all the numbers were shown. Now, only the number inside the big box will be visible and you will have to use your memory to remember which number is in the smaller box."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_NB_01_Practice:
+    RulesTitle: "Do the two boxes contain the same number?"
+    GameRules: "You will see a big and a small box on the screen as well as numbers that move from the right to the left of the screen. Your job is to say if the two boxes contain the same number or not. If the numbers in the boxes are the same, click the button (=). If they are different, click the button (≠)."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_NB_01_Test_A:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 2 blocks and each block contains 28 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_NB_01_Test_B:
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_NB_02_Tutorial:
+    RulesTitle: "Do the two boxes contain the same number?"
+    GameRules: "You will see a big and a small box on the screen as well as numbers that move from the right to the left of the screen. Your job is to say if the two boxes contain the same number or not. If the numbers in the boxes are the same, click the button (=). If they are different, click the button (≠)."
+    Introduction: "The next part of the test will be very similar to what you just experienced."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_NB_02_Practice:
+    RulesTitle: "Do the two boxes contain the same number?"
+    GameRules: "You will see a big and a small box on the screen as well as numbers that move from the right to the left of the screen. Your job is to say if the two boxes contain the same number or not. If the numbers in the boxes are the same, click the button (=). If they are different, click the button (≠)."
+    Introduction: "What you will see now is very similar to the previous examples, with just one difference."
+    Stimulus: "In the previous examples all the numbers were shown. Now, only the number inside the big box will be visible and you will have to use your memory to remember which number is in the smaller box."
+    Objective: "Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_NB_02_Test_A:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 4 blocks and each block contains 29 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_NB_02_Test_B:
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_NB_02_Test_C:
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_NB_02_Test_D:
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_NB_03_Tutorial:
+    RulesTitle: "Do the two boxes contain the same number?"
+    GameRules: "You will see a big and a small box on the screen as well as numbers that move from the right to the left of the screen. Your job is to say if the two boxes contain the same number or not. If the numbers in the boxes are the same, click the button (=). If they are different, click the button (≠)."
+    Introduction: "The next part of the test will be very similar to what you just experienced."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_NB_03_Practice:
+    RulesTitle: "Do the two boxes contain the same number?"
+    GameRules: "You will see a big and a small box on the screen as well as numbers that move from the right to the left of the screen. Your job is to say if the two boxes contain the same number or not. If the numbers in the boxes are the same, click the button (=). If they are different, click the button (≠)."
+    Introduction: "What you will see now is very similar to the previous examples, with just one difference."
+    Stimulus: "In the previous examples all the numbers were shown. Now, only the number inside the big box will be visible and you will have to use your memory to remember which number is in the smaller box."
+    Objective: "Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_NB_03_Test_A:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 4 blocks and each block contains 30 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_NB_03_Test_B:
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_NB_03_Test_C:
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_NB_03_Test_D:
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_NB_04_Tutorial_A:
+    RulesTitle: "Do the two boxes contain the same symbol?"
+    GameRules: "You will see a big and a small box on the screen as well as symbols that move from the right to the left of the screen. Your job is to say if the two boxes contain the same symbol or not. If the symbols in the boxes are the same, click the button (=). If they are different, click the button (≠). Respond as fast as you can without making too many errors."
+    Job: "Do the two boxes contain the same symbol?"
+    Stimulus: "You will see a big and a small box on the screen as well as symbols that move from the right to the left of the screen."
+    YourJob: "Your job is to say if the two boxes contain the same symbol or not."
+    Response: "If the symbols in the boxes are the same, click the button (=). If they are different, click the button (≠)."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_NB_04_Tutorial_B:
+    RulesTitle: "Do the two boxes contain the same symbol?"
+    GameRules: "You will see a big and a small box on the screen as well as symbols that move from the right to the left of the screen. Your job is to say if the two boxes contain the same symbol or not. If the symbols in the boxes are the same, click the button (=). If they are different, click the button (≠). Respond as fast as you can without making too many errors."
+    Introduction: "What you will see now is very similar to the previous examples, with just one difference."
+    Constraint: "In the previous examples we waited for you to give your response. Now, you must give a response before time runs out."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_NB_04_Tutorial_C:
+    RulesTitle: "Do the two boxes contain the same symbol?"
+    GameRules: "You will see a big and a small box on the screen as well as symbols that move from the right to the left of the screen. Your job is to say if the two boxes contain the same symbol or not. If the symbols in the boxes are the same, click the button (=). If they are different, click the button (≠). Respond as fast as you can without making too many errors."
+    Stimulus: "In the previous examples all the symbols were shown. Now, only the symbol inside the big box will be visible and you will have to use your memory to remember which symbol is in the smaller box."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_NB_04_Practice:
+    RulesTitle: "Do the two boxes contain the same symbol?"
+    GameRules: "You will see a big and a small box on the screen as well as symbols that move from the right to the left of the screen. Your job is to say if the two boxes contain the same symbol or not. If the symbols in the boxes are the same, click the button (=). If they are different, click the button (≠). Respond as fast as you can without making too many errors."
+    Objective: "Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_NB_04_Test_A:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 2 blocks and each block contains 28 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_NB_04_Test_B:
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_NB_05_Tutorial:
+    RulesTitle: "Do the two boxes contain the same symbol?"
+    GameRules: "You will see a big and a small box on the screen as well as symbols that move from the right to the left of the screen. Your job is to say if the two boxes contain the same symbol or not. If the symbols in the boxes are the same, click the button (=). If they are different, click the button (≠). Respond as fast as you can without making too many errors."
+    Introduction: "The next part of the test will be very similar to what you just experienced."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_NB_05_Practice:
+    RulesTitle: "Do the two boxes contain the same symbol?"
+    GameRules: "You will see a big and a small box on the screen as well as symbols that move from the right to the left of the screen. Your job is to say if the two boxes contain the same symbol or not. If the symbols in the boxes are the same, click the button (=). If they are different, click the button (≠). Respond as fast as you can without making too many errors."
+    Introduction: "What you will see now is very similar to the previous examples, with just one difference."
+    Stimulus: "In the previous examples all the symbols were shown. Now, only the symbol inside the big box will be visible and you will have to use your memory to remember which symbol is in the smaller box."
+    Objective: "Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_NB_05_Test_A:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 4 blocks and each block contains 29 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_NB_05_Test_B:
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_NB_05_Test_C:
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_NB_05_Test_D:
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_NB_06_Tutorial:
+    RulesTitle: "Do the two boxes contain the same symbol?"
+    GameRules: "You will see a big and a small box on the screen as well as symbols that move from the right to the left of the screen. Your job is to say if the two boxes contain the same symbol or not. If the symbols in the boxes are the same, click the button (=). If they are different, click the button (≠). Respond as fast as you can without making too many errors."
+    Introduction: "The next part of the test will be very similar to what you just experienced."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_NB_06_Practice:
+    RulesTitle: "Do the two boxes contain the same symbol?"
+    GameRules: "You will see a big and a small box on the screen as well as symbols that move from the right to the left of the screen. Your job is to say if the two boxes contain the same symbol or not. If the symbols in the boxes are the same, click the button (=). If they are different, click the button (≠). Respond as fast as you can without making too many errors."
+    Introduction: "What you will see now is very similar to the previous examples, with just one difference."
+    Stimulus: "In the previous examples all the symbols were shown. Now, only the symbol inside the big box will be visible and you will have to use your memory to remember which symbol is in the smaller box."
+    Objective: "Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_NB_06_Test_A:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 4 blocks and each block contains 30 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_NB_06_Test_B:
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_NB_06_Test_C:
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_NB_06_Test_D:
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_OC_01_Tutorial:
+    RulesTitle: "Click on the buttons in the correct order."
+    GameRules: "You will see 8 white and 8 black buttons on the screen, each with a digit or letter on it. At first, only two buttons are visible and one of them is highlighted in yellow. After you click on the highlighted button, all buttons are shown, and the test begins. Your job is to click all the buttons in the correct order. The correct order is indicated by the first two buttons. If the first two buttons are white, click on all the white buttons in ascending order, then click on all black buttons in ascending order.\n<br>If the first two buttons have different colors, click alternatively on white and black, in ascending order. In this example, because the first button is white with the digit “1” and the second button is white with the digit “2”, you need to click the buttons in this order: In this second example, because the first button is white with the letter “A” and the second button is black with the letter “A”, you need to click the buttons in this order: Finally, in this example, because the first button is white with the letter “A” and the second button is black with the digit “1”, you need to click the buttons in this order: Respond as fast as you can without making too many errors."
+    Job: "Click on the buttons in the correct order."
+    Stimulus: "You will see 8 white and 8 black buttons on the screen, each with a digit or letter on it."
+    Stimulus_2: "At first, only two buttons are visible and one of them is highlighted in yellow."
+    Stimulus_3: "After you click on the highlighted button, all buttons are shown, and the test begins."
+    YourJob: "Your job is to click all the buttons in the correct order. The correct order is indicated by the first two buttons."
+    Response: "If the first two buttons are white, click on all the white buttons in ascending order, then click on all black buttons in ascending order.\n<br>If the first two buttons have different colors, click alternatively on white and black, in ascending order."
+    ExampleResponse: "In this example, because the first button is white with the digit “1” and the second button is white with the digit “2”, you need to click the buttons in this order:"
+    ExampleResponse_2: "In this second example, because the first button is white with the letter “A” and the second button is black with the letter “A”, you need to click the buttons in this order:"
+    ExampleResponse_3: "Finally, in this example, because the first button is white with the letter “A” and the second button is black with the digit “1”, you need to click the buttons in this order:"
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_OC_01_Practice:
+    RulesTitle: "Click on the buttons in the correct order."
+    GameRules: "You will see 8 white and 8 black buttons on the screen, each with a digit or letter on it. At first, only two buttons are visible and one of them is highlighted in yellow. After you click on the highlighted button, all buttons are shown, and the test begins. Your job is to click all the buttons in the correct order. The correct order is indicated by the first two buttons. If the first two buttons are white, click on all the white buttons in ascending order, then click on all black buttons in ascending order.\n<br>If the first two buttons have different colors, click alternatively on white and black, in ascending order. In this example, because the first button is white with the digit “1” and the second button is white with the digit “2”, you need to click the buttons in this order: In this second example, because the first button is white with the letter “A” and the second button is black with the letter “A”, you need to click the buttons in this order: Finally, in this example, because the first button is white with the letter “A” and the second button is black with the digit “1”, you need to click the buttons in this order: Respond as fast as you can without making too many errors."
+    Objective: "Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_OC_01_Test:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 32 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_OOO_01_Tutorial:
+    RulesTitle: "Which card doesn't belong there?"
+    GameRules: "You will see nine cards on the screen. All the cards except one can be grouped together because they share one or more things, for example they have the same shape and color. Your job is to find the card that cannot be grouped with the other cards. Click on the card that cannot be grouped with any other cards. Respond as fast as you can without making too many errors."
+    Job: "Which card doesn't belong there?"
+    Stimulus: "You will see nine cards on the screen."
+    GenerativeModel: "All the cards except one can be grouped together because they share one or more things, for example they have the same shape and color."
+    YourJob: "Your job is to find the card that cannot be grouped with the other cards."
+    Response: "Click on the card that cannot be grouped with any other cards."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_OOO_01_Practice:
+    RulesTitle: "Which card doesn't belong there?"
+    GameRules: "You will see nine cards on the screen. All the cards except one can be grouped together because they share one or more things, for example they have the same shape and color. Your job is to find the card that cannot be grouped with the other cards. Click on the card that cannot be grouped with any other cards. Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_OOO_01_Test:
+    TerminationRule: "This test lasts 5 minutes."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_PC_01_Tutorial:
+    RulesTitle: "Are two of the shapes exactly the same?"
+    GameRules: "You will see a box on the left side and a box on the right side of the screen. Each of these two boxes will show one or more shapes. The shape that is in the box on the right side is either exactly the same as one of the shapes in the left box or not. Your job is to determine if the exact same shape is shown in both boxes or if they are slightly different. If the shapes are the same, click the button (=). If they are different, click the button (≠). Respond as fast as you can without making too many errors."
+    Job: "Are two of the shapes exactly the same?"
+    Stimulus: "You will see a box on the left side and a box on the right side of the screen. Each of these two boxes will show one or more shapes."
+    GenerativeModel: "The shape that is in the box on the right side is either exactly the same as one of the shapes in the left box or not."
+    YourJob: "Your job is to determine if the exact same shape is shown in both boxes or if they are slightly different."
+    Response: "If the shapes are the same, click the button (=). If they are different, click the button (≠)."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_PC_01_Practice:
+    RulesTitle: "Are two of the shapes exactly the same?"
+    GameRules: "You will see a box on the left side and a box on the right side of the screen. Each of these two boxes will show one or more shapes. The shape that is in the box on the right side is either exactly the same as one of the shapes in the left box or not. Your job is to determine if the exact same shape is shown in both boxes or if they are slightly different. If the shapes are the same, click the button (=). If they are different, click the button (≠). Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_PC_01_Test:
+    TerminationRule: "This test contains 50 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_PC_02_Tutorial:
+    RulesTitle: "Are two of the shapes exactly the same?"
+    GameRules: "You will see a shape on the left and on the right side of the screen. These two shapes are either exactly the same shape but shown with a different orientation or they are in fact slightly different shapes. Your job is to determine if the rotated shape on the right is exactly the same or not as the shape on the left. If the shapes are the same, click the button (=). If they are different, click the button (≠). Respond as fast as you can without making too many errors."
+    Job: "Are two of the shapes exactly the same?"
+    Stimulus: "You will see a shape on the left and on the right side of the screen."
+    GenerativeModel: "These two shapes are either exactly the same shape but shown with a different orientation or they are in fact slightly different shapes."
+    YourJob: "Your job is to determine if the rotated shape on the right is exactly the same or not as the shape on the left."
+    Response: "If the shapes are the same, click the button (=). If they are different, click the button (≠)."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_PC_02_Practice:
+    RulesTitle: "Are two of the shapes exactly the same?"
+    GameRules: "You will see a shape on the left and on the right side of the screen. These two shapes are either exactly the same shape but shown with a different orientation or they are in fact slightly different shapes. Your job is to determine if the rotated shape on the right is exactly the same or not as the shape on the left. If the shapes are the same, click the button (=). If they are different, click the button (≠). Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_PC_02_Test:
+    TerminationRule: "This test contains 50 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_RE_01_Tutorial:
+    RulesTitle: "Click the button each time you see 3-5-7."
+    GameRules: "You will see numbers appear on the screen, one after the other. In the middle you will see the numbers 357 and a button. Your job is to click the button each time you see the numbers 3, 5 and 7 appear in a row. In other words, click the button whenever you see 7 that was directly preceded by 5, that was directly preceded by 3. In any other case (for example, 7 not preceded by 5 and 3, or any number that is not 7), do not press the button. Respond as fast as you can without making too many errors. To start a trial, click on the button that says \"Ready?\"."
+    Job: "Click the button each time you see 3-5-7."
+    Stimulus: "You will see numbers appear on the screen, one after the other. In the middle you will see the numbers 357 and a button."
+    YourJob: "Your job is to click the button each time you see the numbers 3, 5 and 7 appear in a row."
+    ExampleResponse: "In other words, click the button whenever you see 7 that was directly preceded by 5, that was directly preceded by 3. In any other case (for example, 7 not preceded by 5 and 3, or any number that is not 7), do not press the button."
+    Preparation: "To start a trial, click on the button that says \"Ready?\"."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_RE_01_Practice:
+    RulesTitle: "Click the button each time you see 3-5-7."
+    GameRules: "You will see numbers appear on the screen, one after the other. In the middle you will see the numbers 357 and a button. Your job is to click the button each time you see the numbers 3, 5 and 7 appear in a row. In other words, click the button whenever you see 7 that was directly preceded by 5, that was directly preceded by 3. In any other case (for example, 7 not preceded by 5 and 3, or any number that is not 7), do not press the button. Respond as fast as you can without making too many errors. To start a trial, click on the button that says \"Ready?\"."
+    Objective: "Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_RE_01_Test_A:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 4 blocks and each block contains 100 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_RE_01_Test_B:
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_RE_01_Test_C:
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_RE_01_Test_D:
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_RE_02_Tutorial:
+    RulesTitle: "Detect when X appears after A."
+    GameRules: "You will see letters appear on the screen, one after the other. Your job is to click on the button (≠) each time a letter appears on the screen, unless that letter is a white X that appears after a white A. In this specific case, click on the button (=). Let’s go over a few examples of sequences of letters, and how you should respond for each of them. In the example below, when you see the white X you should click on (≠) because in this case it was not preceded by a white A. Respond as fast as you can without making too many errors. To start a trial, click on the button that says \"Ready?\"."
+    Job: "Detect when X appears after A."
+    Stimulus: "You will see letters appear on the screen, one after the other."
+    YourJob: "Your job is to click on the button (≠) each time a letter appears on the screen, unless that letter is a white X that appears after a white A. In this specific case, click on the button (=)."
+    ExampleResponse: "Let’s go over a few examples of sequences of letters, and how you should respond for each of them. In the example below, when you see the white X you should click on (≠) because in this case it was not preceded by a white A."
+    ExampleResponse_2: "In this second example, when you see the white Y you should click on (≠) because although it is preceded by a white A, it is not a white X."
+    ExampleResponse_3: "Finally, in this example, when you see the white X you should click on (=) because in this case it was in fact preceded by a white A."
+    Preparation: "To start a trial, click on the button that says \"Ready?\"."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_RE_02_Practice:
+    RulesTitle: "Detect when X appears after A."
+    GameRules: "You will see letters appear on the screen, one after the other. Your job is to click on the button (≠) each time a letter appears on the screen, unless that letter is a white X that appears after a white A. In this specific case, click on the button (=). Let’s go over a few examples of sequences of letters, and how you should respond for each of them. In the example below, when you see the white X you should click on (≠) because in this case it was not preceded by a white A. Respond as fast as you can without making too many errors. To start a trial, click on the button that says \"Ready?\"."
+    Objective: "Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_RE_02_Test_A:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 4 blocks and each block lasts 5 minutes."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_RE_02_Test_B:
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_RE_02_Test_C:
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_RE_02_Test_D:
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_RE_03_Tutorial:
+    RulesTitle: "Detect when X appears after A."
+    GameRules: "You will see white and blue letters appear on the screen, one after the other. Your job is to click on the button (≠) each time a letter appears on the screen, unless that letter is a white X that appears after a white A (no matter what blue letters appeared between them). In this specific case, click on the button (=). Let’s go over a few examples of sequences of letters, and how you should respond for each of them. In the example below, when you see the white X you should click on (≠) because in this case it was not preceded by a white A. Respond as fast as you can without making too many errors. To start a trial, click on the button that says \"Ready?\"."
+    Job: "Detect when X appears after A."
+    Stimulus: "You will see white and blue letters appear on the screen, one after the other."
+    YourJob: "Your job is to click on the button (≠) each time a letter appears on the screen, unless that letter is a white X that appears after a white A (no matter what blue letters appeared between them). In this specific case, click on the button (=)."
+    ExampleResponse: "Let’s go over a few examples of sequences of letters, and how you should respond for each of them. In the example below, when you see the white X you should click on (≠) because in this case it was not preceded by a white A."
+    ExampleResponse_2: "In this second example, when you see the white Y you should click on (≠) because although it is preceded by a white A, it is not a white X."
+    ExampleResponse_3: "Finally, in this example, when you see the white X you should click on (=) because in this case it was in fact preceded by a white A."
+    Preparation: "To start a trial, click on the button that says \"Ready?\"."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_RE_03_Practice:
+    RulesTitle: "Detect when X appears after A."
+    GameRules: "You will see white and blue letters appear on the screen, one after the other. Your job is to click on the button (≠) each time a letter appears on the screen, unless that letter is a white X that appears after a white A (no matter what blue letters appeared between them). In this specific case, click on the button (=). Let’s go over a few examples of sequences of letters, and how you should respond for each of them. In the example below, when you see the white X you should click on (≠) because in this case it was not preceded by a white A. Respond as fast as you can without making too many errors. To start a trial, click on the button that says \"Ready?\"."
+    Objective: "Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_RE_03_Test_A:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 4 blocks and each block lasts 5 minutes."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_RE_03_Test_B:
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_RE_03_Test_C:
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_RE_03_Test_D:
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_SART_01_Tutorial:
+    RulesTitle: "Don't click the button when the number 3 appears."
+    GameRules: "You will see numbers appear on the screen, one after the other. Your job is to click on the button each time a number appears, unless that number is 3. Respond as fast as you can without making too many errors. If you make too many errors, try slowing down. To start a trial, click on the button that says \"Ready?\"."
+    Job: "Don't click the button when the number 3 appears."
+    Stimulus: "You will see numbers appear on the screen, one after the other."
+    YourJob: "Your job is to click on the button each time a number appears, unless that number is 3."
+    Strategy: "If you make too many errors, try slowing down."
+    Preparation: "To start a trial, click on the button that says \"Ready?\"."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_SART_01_Practice:
+    RulesTitle: "Don't click the button when the number 3 appears."
+    GameRules: "You will see numbers appear on the screen, one after the other. Your job is to click on the button each time a number appears, unless that number is 3. Respond as fast as you can without making too many errors. If you make too many errors, try slowing down. To start a trial, click on the button that says \"Ready?\"."
+    Objective: "Respond as fast as you can without making too many errors."
+    Strategy: "If you make too many errors, try slowing down."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_SART_01_Test:
+    Objective: "Respond as fast as you can without making too many errors."
+    Strategy: "If you make too many errors, try slowing down."
+    TerminationRule: "This test contains 225 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_SMC_01_Tutorial:
+    RulesTitle: "Are the two images exactly the same?"
+    GameRules: "You will see two images on the screen that contain various symbols. The images are either exactly the same or there is only one symbol that has a <i><b>different shape</b></i> across the two images. Your job is to determine if the two images are exactly the same or not. If the two images are exactly the same click on the button (=). If there is a difference, click on the button (≠). Respond as fast as you can without making too many errors. You must respond before the timer runs out."
+    Job: "Are the two images exactly the same?"
+    Stimulus: "You will see two images on the screen that contain various symbols."
+    GenerativeModel: "The images are either exactly the same or there is only one symbol that has a <i><b>different shape</b></i> across the two images."
+    YourJob: "Your job is to determine if the two images are exactly the same or not."
+    Response: "If the two images are exactly the same click on the button (=). If there is a difference, click on the button (≠)."
+    Constraint: "You must respond before the timer runs out."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_SMC_01_Practice:
+    RulesTitle: "Are the two images exactly the same?"
+    GameRules: "You will see two images on the screen that contain various symbols. The images are either exactly the same or there is only one symbol that has a <i><b>different shape</b></i> across the two images. Your job is to determine if the two images are exactly the same or not. If the two images are exactly the same click on the button (=). If there is a difference, click on the button (≠). Respond as fast as you can without making too many errors. You must respond before the timer runs out."
+    Objective: "Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_SMC_01_Test:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 50 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_SMC_02_Test:
+    Introduction: "The next part of the test will be very similar to what you just experienced."
+    Stimulus: "You will see two images on the screen that contain various symbols."
+    GenerativeModel: "The images are either exactly the same or there is only one symbol that has a <i><b>different color</b></i> across the two images."
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 50 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_SMC_03_Test:
+    Introduction: "The next part of the test will be very similar to what you just experienced."
+    Stimulus: "You will see two images on the screen that contain various symbols."
+    GenerativeModel: "The images are either exactly the same or there is only one symbol that has either a <i><b>different color or a different shape</b></i> across the two images."
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 50 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_SMC_04_Test:
+    Introduction: "The next part of the test will be very similar to what you just experienced."
+    Stimulus: "You will see two images on the screen that contain various symbols."
+    GenerativeModel: "The images are either exactly the same or there is only one symbol that has <i><b>either a different color or a different shape</b></i> across the two images."
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 50 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_SMC_05_Test:
+    Introduction: "The next part of the test will be very similar to what you just experienced."
+    Stimulus: "You will see two images on the screen that contain various symbols."
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 50 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_SMC_06_Tutorial:
+    RulesTitle: "Are the two images the same except for the rotation?"
+    GameRules: "You will see two images on the screen that contain arrows. The image on the left is either exactly the same as the image on the right, once it is rotated appropriately, or there is exactly one arrow that is different between the two images. Your job is to determine if the two images are exactly the same or not, irrespective of the rotation. If the arrows are the same in both images, click on the button (=). If they are different, click on the button (≠). Respond as fast as you can without making too many errors. You must respond before the timer runs out."
+    Job: "Are the two images the same except for the rotation?"
+    Stimulus: "You will see two images on the screen that contain arrows."
+    GenerativeModel: "The image on the left is either exactly the same as the image on the right, once it is rotated appropriately, or there is exactly one arrow that is different between the two images."
+    YourJob: "Your job is to determine if the two images are exactly the same or not, irrespective of the rotation."
+    Response: "If the arrows are the same in both images, click on the button (=). If they are different, click on the button (≠)."
+    Constraint: "You must respond before the timer runs out."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_SMC_06_Practice:
+    RulesTitle: "Are the two images the same except for the rotation?"
+    GameRules: "You will see two images on the screen that contain arrows. The image on the left is either exactly the same as the image on the right, once it is rotated appropriately, or there is exactly one arrow that is different between the two images. Your job is to determine if the two images are exactly the same or not, irrespective of the rotation. If the arrows are the same in both images, click on the button (=). If they are different, click on the button (≠). Respond as fast as you can without making too many errors. You must respond before the timer runs out."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_SMC_06_Test:
+    TerminationRule: "This test contains 50 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_SMC_07_Practice:
+    RulesTitle: "Are the two images the same except for the rotation?"
+    GameRules: "You will see two images on the screen that contain arrows. The image on the left is either exactly the same as the image on the right, once it is rotated appropriately, or there is exactly one arrow that is different between the two images. Your job is to determine if the two images are exactly the same or not, irrespective of the rotation. If the arrows are the same in both images, click on the button (=). If they are different, click on the button (≠). Respond as fast as you can without making too many errors. You must respond before the timer runs out."
+    Introduction: "The next part of the test will be very similar to what you just experienced."
+    Stimulus: "The only difference now is that the background of the images will no longer indicate how the images have been rotated."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_SMC_07_Test:
+    TerminationRule: "This test contains 50 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_SOS_01_Tutorial:
+    RulesTitle: "Find all the diamonds."
+    GameRules: "You will see several round boxes on the screen. A diamond is hidden in one of them. Once it is found, a new diamond will be hidden in a different box. A diamond is never hidden in the same box twice and once a diamond has been found in each box, a new trial starts. Your job is to find all the diamonds hidden in each box. Search the boxes by clicking on them until you find the diamond. Do not search a box where a diamond was already found, or search the same box twice before you find a new diamond. Respond as fast as you can without making too many errors."
+    Job: "Find all the diamonds."
+    Stimulus: "You will see several round boxes on the screen. A diamond is hidden in one of them. Once it is found, a new diamond will be hidden in a different box."
+    GenerativeModel: "A diamond is never hidden in the same box twice and once a diamond has been found in each box, a new trial starts."
+    YourJob: "Your job is to find all the diamonds hidden in each box."
+    Response: "Search the boxes by clicking on them until you find the diamond. Do not search a box where a diamond was already found, or search the same box twice before you find a new diamond."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_SOS_01_Practice:
+    RulesTitle: "Find all the diamonds."
+    GameRules: "You will see several round boxes on the screen. A diamond is hidden in one of them. Once it is found, a new diamond will be hidden in a different box. A diamond is never hidden in the same box twice and once a diamond has been found in each box, a new trial starts. Your job is to find all the diamonds hidden in each box. Search the boxes by clicking on them until you find the diamond. Do not search a box where a diamond was already found, or search the same box twice before you find a new diamond. Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_SOS_01_Test:
+    TerminationRule: "This test lasts 5 minutes."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_SOS_02_Test:
+    TerminationRule: "This test contains 25 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_SRM_01_Tutorial:
+    RulesTitle: "Click the button when the light goes on."
+    GameRules: "You will see squares and buttons on the screen. At random times, one of the squares will light up. Your job is to click on the button that is connected to the square that lit up. Respond as fast as you can without making too many errors."
+    Job: "Click the button when the light goes on."
+    Stimulus: "You will see squares and buttons on the screen. At random times, one of the squares will light up."
+    YourJob: "Your job is to click on the button that is connected to the square that lit up."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_SRM_01_Practice:
+    RulesTitle: "Click the button when the light goes on."
+    GameRules: "You will see squares and buttons on the screen. At random times, one of the squares will light up. Your job is to click on the button that is connected to the square that lit up. Respond as fast as you can without making too many errors."
+    Objective: "Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_SRM_01_Test:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 80 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_SRM_02_Test:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 80 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_SRM_03_Test:
+    Introduction: "The next part of the test will be very similar to what you just experienced."
+    Stimulus: "In the previous test, there were two squares and two boxes. Now there will be four of each."
+    YourJob: "Your job is to click on the button that is connected to the square that lit up."
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 80 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_SRM_04_Test:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 80 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_SRM_05_Test_A:
+    Introduction: "The next part of the test will be very similar to what you just experienced."
+    Stimulus: "In the previous test, the squares lit up at random times. Now they will light up much faster."
+    YourJob: "Your job is to click on the button that is connected to the square that lit up."
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 2 blocks and each block contains 88 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_SRM_05_Test_B:
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_SRT_01_Tutorial:
+    RulesTitle: "Click the button when the light goes on."
+    GameRules: "You will see a square and a button on the screen. At random times, the square will light up. Your job is to click on the button each time the square lights up. Respond as fast as you can without making too many errors."
+    Job: "Click the button when the light goes on."
+    Stimulus: "You will see a square and a button on the screen. At random times, the square will light up."
+    YourJob: "Your job is to click on the button each time the square lights up."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_SRT_01_Test:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 200 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_SS_01_Tutorial:
+    RulesTitle: "Remember in which order the buttons light up."
+    GameRules: "You will see buttons on the screen. Some of these buttons will light up, one after the other. Each button can be lit only once. Your job is to remember the order in which the buttons light up. Click on the buttons in the same order they were lit up. Try to make as few errors as possible."
+    Job: "Remember in which order the buttons light up."
+    Stimulus: "You will see buttons on the screen. Some of these buttons will light up, one after the other."
+    GenerativeModel: "Each button can be lit only once."
+    YourJob: "Your job is to remember the order in which the buttons light up."
+    Response: "Click on the buttons in the same order they were lit up."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_SS_01_Practice:
+    RulesTitle: "Remember in which order the buttons light up."
+    GameRules: "You will see buttons on the screen. Some of these buttons will light up, one after the other. Each button can be lit only once. Your job is to remember the order in which the buttons light up. Click on the buttons in the same order they were lit up. Try to make as few errors as possible."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_SS_01_Test:
+    TerminationRule: "This test contains 20 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_SS_02_Tutorial:
+    RulesTitle: "Remember in which order the buttons light up."
+    GameRules: "You will see buttons on the screen. Some of these buttons will light up, one after the other. Each button can be lit only once. Your job is to remember the order in which the buttons light up. Click on the buttons in the opposite order they were lit up. This means that the button that was lit up last should be clicked on first and the button that was lit up first should be clicked on last. Try to make as few errors as possible."
+    Job: "Remember in which order the buttons light up."
+    Stimulus: "You will see buttons on the screen. Some of these buttons will light up, one after the other."
+    GenerativeModel: "Each button can be lit only once."
+    YourJob: "Your job is to remember the order in which the buttons light up."
+    Response: "Click on the buttons in the opposite order they were lit up."
+    ExampleResponse: "This means that the button that was lit up last should be clicked on first and the button that was lit up first should be clicked on last."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_SS_02_Practice:
+    RulesTitle: "Remember in which order the buttons light up."
+    GameRules: "You will see buttons on the screen. Some of these buttons will light up, one after the other. Each button can be lit only once. Your job is to remember the order in which the buttons light up. Click on the buttons in the opposite order they were lit up. This means that the button that was lit up last should be clicked on first and the button that was lit up first should be clicked on last. Try to make as few errors as possible."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_SS_02_Test:
+    TerminationRule: "This test contains 20 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_TH_01_Tutorial:
+    RulesTitle: "Catch the star with the disk."
+    GameRules: "You will see a dark circle at the bottom of the screen. Grab it by clicking on it and keeping the mouse button pressed without moving. You will then see a star appear on one of the white circles shown on the screen. Your job is to move your mouse and reach the star while keeping the mouse button clicked. Respond as fast as you can without making too many errors."
+    Job: "Catch the star with the disk."
+    TrialSartCondition: "You will see a dark circle at the bottom of the screen. Grab it by clicking on it and keeping the mouse button pressed without moving."
+    Stimulus: "You will then see a star appear on one of the white circles shown on the screen."
+    YourJob: "Your job is to move your mouse and reach the star while keeping the mouse button clicked."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_TH_01_Practice:
+    RulesTitle: "Catch the star with the disk."
+    GameRules: "You will see a dark circle at the bottom of the screen. Grab it by clicking on it and keeping the mouse button pressed without moving. You will then see a star appear on one of the white circles shown on the screen. Your job is to move your mouse and reach the star while keeping the mouse button clicked. Respond as fast as you can without making too many errors."
+    Objective: "Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_TH_01_Test:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 80 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_TH_02_Test:
+    Introduction: "The next part of the test will be very similar to what you just experienced."
+    Stimulus: "In the previous part there were two white circles on the screen. Now, there are four white circles."
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 80 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_TH_03_Tutorial:
+    RulesTitle: "Catch the star with the disk."
+    GameRules: "You will see a dark circle at the bottom of the screen. Grab it by clicking on it and keeping the mouse button pressed without moving. You will then see a star appear on one of the white circles shown on the screen. Your job is to move your mouse and reach the star while keeping the mouse button clicked. Respond as fast as you can without making too many errors."
+    Job: "Catch the star with the disk."
+    TrialSartCondition: "You will see a dark circle at the bottom of the screen. Grab it by clicking on it and keeping the mouse button pressed without moving."
+    Stimulus: "You will then see a star appear on one of the white circles shown on the screen."
+    YourJob: "Your job is to move your mouse and reach the star while keeping the mouse button clicked."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_TH_03_Practice:
+    RulesTitle: "Catch the star with the disk."
+    GameRules: "You will see a dark circle at the bottom of the screen. Grab it by clicking on it and keeping the mouse button pressed without moving. You will then see a star appear on one of the white circles shown on the screen. Your job is to move your mouse and reach the star while keeping the mouse button clicked. Respond as fast as you can without making too many errors."
+    Objective: "Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_TH_03_Test_A:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 3 blocks and each block contains 49 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_TH_03_Test_B:
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_TH_03_Test_C:
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_TH_04_Tutorial:
+    RulesTitle: "Catch the star with the disk but avoid the red circle."
+    GameRules: "You will see a dark circle at the bottom of the screen. Grab it by clicking on it and keeping the mouse button pressed without moving. You will then see a star appear on one of the white circles shown on the screen. Sometimes, you will also see a red circle appear around the star. Your job is to move your mouse and reach the star while keeping the mouse clicked, but only when there is no red circle around the star. If a red circle appears around the star, stay away from it. Stop moving the mouse and release the mouse button. Don't wait for the red circle to appear! Try to hit the star as fast as you can and try stop your movement when the red circle appears. It's OK if you succeed only half of the time."
+    Job: "Catch the star with the disk but avoid the red circle."
+    TrialSartCondition: "You will see a dark circle at the bottom of the screen. Grab it by clicking on it and keeping the mouse button pressed without moving."
+    Stimulus: "You will then see a star appear on one of the white circles shown on the screen. Sometimes, you will also see a red circle appear around the star."
+    YourJob: "Your job is to move your mouse and reach the star while keeping the mouse clicked, but only when there is no red circle around the star."
+    Response: "If a red circle appears around the star, stay away from it. Stop moving the mouse and release the mouse button."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_TH_04_Practice:
+    RulesTitle: "Catch the star with the disk but avoid the red circle."
+    GameRules: "You will see a dark circle at the bottom of the screen. Grab it by clicking on it and keeping the mouse button pressed without moving. You will then see a star appear on one of the white circles shown on the screen. Sometimes, you will also see a red circle appear around the star. Your job is to move your mouse and reach the star while keeping the mouse clicked, but only when there is no red circle around the star. If a red circle appears around the star, stay away from it. Stop moving the mouse and release the mouse button. Don't wait for the red circle to appear! Try to hit the star as fast as you can and try stop your movement when the red circle appears. It's OK if you succeed only half of the time."
+    Objective: "Don't wait for the red circle to appear! Try to hit the star as fast as you can and try stop your movement when the red circle appears. It's OK if you succeed only half of the time."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_TH_04_Test_01:
+    Objective: "Don't wait for the red circle to appear! Try to hit the star as fast as you can and try stop your movement when the red circle appears. It's OK if you succeed only half of the time."
+    TerminationRule: "This test contains 2 blocks and each block contains 80 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_TH_04_Test_02:
+    Objective: "Don't wait for the red circle to appear! Try to hit the star as fast as you can and try stop your movement when the red circle appears. It's OK if you succeed only half of the time."
+    TestEnd: "Test complete!"
+
+XCIT_TOVA_01_Tutorial:
+    RulesTitle: "Click the button when the square on the right side lights up."
+    GameRules: "You will see two squares and one button on the screen. One of the squares will randomly light up. Your job is to click on the button each time the square on right side lights up. Do not click the button when the left square lights up. Respond as fast as you can without making too many errors."
+    Job: "Click the button when the square on the right side lights up."
+    Stimulus: "You will see two squares and one button on the screen. One of the squares will randomly light up."
+    YourJob: "Your job is to click on the button each time the square on right side lights up. Do not click the button when the left square lights up."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_TOVA_01_Practice:
+    RulesTitle: "Click the button when the square on the right side lights up."
+    GameRules: "You will see two squares and one button on the screen. One of the squares will randomly light up. Your job is to click on the button each time the square on right side lights up. Do not click the button when the left square lights up. Respond as fast as you can without making too many errors."
+    Objective: "Respond as fast as you can without making too many errors."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_TOVA_01_Test_01:
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 2 blocks and each block contains 100 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_TOVA_01_Test_02:
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_UFOV_01_Tutorial:
+    RulesTitle: "Identify the symbol."
+    GameRules: "You will see a circle on the screen with a + in the center. After a brief time, a symbol will be shown and hidden in the center of the circle. There are only two different symbols. Your job is to say which symbol was shown. After the symbol disappears, click on the button that corresponds to the symbol you saw. Try to make as few errors as possible. Keep your eyes focused on the screen center when there is a +."
+    Introduction: "This test has 5 parts and should take about 40 minutes to complete. Each part will be clearly indicated and there will be several breaks along the way. Press OK to start part 1/5."
+    Job: "Identify the symbol."
+    Stimulus: "You will see a circle on the screen with a + in the center. After a brief time, a symbol will be shown and hidden in the center of the circle."
+    GenerativeModel: "There are only two different symbols."
+    YourJob: "Your job is to say which symbol was shown."
+    Response: "After the symbol disappears, click on the button that corresponds to the symbol you saw."
+    Constraint: "Keep your eyes focused on the screen center when there is a +."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_UFOV_01_Practice:
+    RulesTitle: "Identify the symbol."
+    GameRules: "You will see a circle on the screen with a + in the center. After a brief time, a symbol will be shown and hidden in the center of the circle. There are only two different symbols. Your job is to say which symbol was shown. After the symbol disappears, click on the button that corresponds to the symbol you saw. Try to make as few errors as possible. Keep your eyes focused on the screen center when there is a +."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_UFOV_01_Test:
+    TerminationRule: "This test contains 56 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_UFOV_02_Tutorial:
+    RulesTitle: "Locate the star."
+    GameRules: "You will see a circle on the screen with a + in the center. After a brief time, a star will be shown and hidden somewhere on that circle. Your job is to say where the star was shown. After the star disappears, click on the button that matches the position of where you saw the star. Try to make as few errors as possible. Keep your eyes focused on the screen center when there is a +."
+    Introduction: "Press OK to start part 2/5."
+    Job: "Locate the star."
+    Stimulus: "You will see a circle on the screen with a + in the center. After a brief time, a star will be shown and hidden somewhere on that circle."
+    YourJob: "Your job is to say where the star was shown."
+    Response: "After the star disappears, click on the button that matches the position of where you saw the star."
+    Constraint: "Keep your eyes focused on the screen center when there is a +."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_UFOV_02_Practice:
+    RulesTitle: "Locate the star."
+    GameRules: "You will see a circle on the screen with a + in the center. After a brief time, a star will be shown and hidden somewhere on that circle. Your job is to say where the star was shown. After the star disappears, click on the button that matches the position of where you saw the star. Try to make as few errors as possible. Keep your eyes focused on the screen center when there is a +."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_UFOV_02_Test:
+    TerminationRule: "This test contains 56 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_UFOV_03_Tutorial:
+    RulesTitle: "Identify the symbol and locate the star."
+    GameRules: "You will see a circle on the screen with a + in the center. After a brief time, a symbol will be shown and hidden in the center of the circle, and at the same time a star will be shown and hidden somewhere on that circle. There are only two different symbols. Your job is to say both which symbol was shown and where the star was. After the symbol and the star disappear, click on the button that corresponds to the symbol you saw and the button that matches where you saw the star. Try to make as few errors as possible. Keep your eyes focused on the screen center when there is a +."
+    Introduction: "Press OK to start part 3/5."
+    Job: "Identify the symbol and locate the star."
+    Stimulus: "You will see a circle on the screen with a + in the center. After a brief time, a symbol will be shown and hidden in the center of the circle, and at the same time a star will be shown and hidden somewhere on that circle."
+    GenerativeModel: "There are only two different symbols."
+    YourJob: "Your job is to say both which symbol was shown and where the star was."
+    Response: "After the symbol and the star disappear, click on the button that corresponds to the symbol you saw and the button that matches where you saw the star."
+    Constraint: "Keep your eyes focused on the screen center when there is a +."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_UFOV_03_Practice:
+    RulesTitle: "Identify the symbol and locate the star."
+    GameRules: "You will see a circle on the screen with a + in the center. After a brief time, a symbol will be shown and hidden in the center of the circle, and at the same time a star will be shown and hidden somewhere on that circle. There are only two different symbols. Your job is to say both which symbol was shown and where the star was. After the symbol and the star disappear, click on the button that corresponds to the symbol you saw and the button that matches where you saw the star. Try to make as few errors as possible. Keep your eyes focused on the screen center when there is a +."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_UFOV_03_Test:
+    TerminationRule: "This test contains 56 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_UFOV_04_Tutorial:
+    RulesTitle: "Identify the symbol and locate the star."
+    GameRules: "You will see a circle on the screen with a + in the center. After a brief time, a symbol will be shown and hidden in the center of the circle, and at the same time a star will be shown and hidden somewhere on that circle. There are only two different symbols. Your job is to say both which symbol was shown and where the star was. After the symbol and the star disappear, click on the button that corresponds to the symbol you saw and the button that matches where you saw the star. Try to make as few errors as possible. Keep your eyes focused on the screen center when there is a +."
+    Introduction: "Press OK to start part 4/5."
+    Job: "Identify the symbol and locate the star."
+    Stimulus: "You will see a circle on the screen with a + in the center. After a brief time, a symbol will be shown and hidden in the center of the circle, and at the same time a star will be shown and hidden somewhere on that circle."
+    GenerativeModel: "There are only two different symbols."
+    YourJob: "Your job is to say both which symbol was shown and where the star was."
+    Response: "After the symbol and the star disappear, click on the button that corresponds to the symbol you saw and the button that matches where you saw the star."
+    Constraint: "Keep your eyes focused on the screen center when there is a +."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_UFOV_04_Practice:
+    RulesTitle: "Identify the symbol and locate the star."
+    GameRules: "You will see a circle on the screen with a + in the center. After a brief time, a symbol will be shown and hidden in the center of the circle, and at the same time a star will be shown and hidden somewhere on that circle. There are only two different symbols. Your job is to say both which symbol was shown and where the star was. After the symbol and the star disappear, click on the button that corresponds to the symbol you saw and the button that matches where you saw the star. Try to make as few errors as possible. Keep your eyes focused on the screen center when there is a +."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_UFOV_04_Test:
+    TerminationRule: "This test contains 56 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_UFOV_05_Tutorial:
+    RulesTitle: "Identify the symbol in the center and the direction and position of the arrow."
+    GameRules: "You will see a circle on the screen with a + in the center. After a brief time, a symbol will be shown and hidden in the center of the circle, and at the same time an arrow will be shown and hidden somewhere on that circle. The symbol can be one of two types, and the arrow can point one of two ways. Your job is to say which symbol was shown, and where and which direction the arrow was pointing. After the symbol and the arrow disappear, click on the button that corresponds to the symbol you saw and the button that matches the position and direction of the arrow you saw. Try to make as few errors as possible. Keep your eyes focused on the screen center when there is a +."
+    Introduction: "Press OK to start part 5/5."
+    Job: "Identify the symbol in the center and the direction and position of the arrow."
+    Stimulus: "You will see a circle on the screen with a + in the center. After a brief time, a symbol will be shown and hidden in the center of the circle, and at the same time an arrow will be shown and hidden somewhere on that circle."
+    GenerativeModel: "The symbol can be one of two types, and the arrow can point one of two ways."
+    YourJob: "Your job is to say which symbol was shown, and where and which direction the arrow was pointing."
+    Response: "After the symbol and the arrow disappear, click on the button that corresponds to the symbol you saw and the button that matches the position and direction of the arrow you saw."
+    Constraint: "Keep your eyes focused on the screen center when there is a +."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_UFOV_05_Practice:
+    RulesTitle: "Identify the symbol in the center and the direction and position of the arrow."
+    GameRules: "You will see a circle on the screen with a + in the center. After a brief time, a symbol will be shown and hidden in the center of the circle, and at the same time an arrow will be shown and hidden somewhere on that circle. The symbol can be one of two types, and the arrow can point one of two ways. Your job is to say which symbol was shown, and where and which direction the arrow was pointing. After the symbol and the arrow disappear, click on the button that corresponds to the symbol you saw and the button that matches the position and direction of the arrow you saw. Try to make as few errors as possible. Keep your eyes focused on the screen center when there is a +."
+    GetReady: "Let’s do a few practice trials to warm up."
+    TestEnd: "Practice complete!"
+
+XCIT_UFOV_05_Test:
+    TerminationRule: "This test contains 56 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    TestEnd: "Test complete!"
+
+XCIT_WO_01_Tutorial:
+    RulesTitle: "Focus on the central arrow."
+    GameRules: "You will see an arrow appear on the screen center. Your job is to click on the button that displays the same arrow as the one shown on the screen center. Respond as fast as you can without making too many errors."
+    Job: "Focus on the central arrow."
+    Stimulus: "You will see an arrow appear on the screen center."
+    YourJob: "Your job is to click on the button that displays the same arrow as the one shown on the screen center."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_WO_01_Test_A:
+    RulesTitle: "Focus on the central arrow."
+    GameRules: "You will see an arrow appear on the screen center. Your job is to click on the button that displays the same arrow as the one shown on the screen center. Respond as fast as you can without making too many errors."
+    Job: "Focus on the central arrow."
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 6 blocks and each block contains 48 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_WO_01_Test_B:
+    RulesTitle: "Focus on the central arrow."
+    GameRules: "You will see an arrow appear on the screen center. Your job is to click on the button that displays the same arrow as the one shown on the screen center. Respond as fast as you can without making too many errors."
+    Introduction: "The next test is very similar to what you just experienced. The only difference is that the central arrow will now be surrounded by other arrows pointing in the same direction as the central arrow. Focus only on the central arrow."
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_WO_01_Test_C:
+    RulesTitle: "Focus on the central arrow."
+    GameRules: "You will see an arrow appear on the screen center. Your job is to click on the button that displays the same arrow as the one shown on the screen center. Respond as fast as you can without making too many errors."
+    Introduction: "The next test is very similar to what you just experienced. The only difference is that the central arrow will now be surrounded by other arrows pointing in the opposite direction as the central arrow. Focus only on the central arrow."
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_WO_01_Test_D_01:
+    RulesTitle: "Focus on the central arrow."
+    GameRules: "You will see an arrow appear on the screen center. Your job is to click on the button that displays the same arrow as the one shown on the screen center. Respond as fast as you can without making too many errors."
+    Introduction: "The next and final test is very similar to what you just experienced. The only difference now is that the central arrow will be surrounded by other symbols, including arrows pointing either in the same or the opposite direction as the central arrow. Focus only on the central arrow."
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_WO_01_Test_D_02:
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_WO_01_Test_D_03:
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_WO_02_Tutorial:
+    RulesTitle: "Identify the color as fast as you can."
+    GameRules: "You will see a symbol appear on the screen. Click on the button that has the same color as the symbol on the screen. Respond as fast as you can without making too many errors."
+    Job: "Identify the color as fast as you can."
+    Stimulus: "You will see a symbol appear on the screen. Click on the button that has the same color as the symbol on the screen."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_WO_02_Test_A:
+    RulesTitle: "Identify the color as fast as you can."
+    GameRules: "You will see a symbol appear on the screen. Click on the button that has the same color as the symbol on the screen. Respond as fast as you can without making too many errors."
+    Job: "Identify the color as fast as you can."
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 6 blocks and each block contains 48 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_WO_02_Test_B:
+    RulesTitle: "Identify the color as fast as you can."
+    GameRules: "You will see a symbol appear on the screen. Click on the button that has the same color as the symbol on the screen. Respond as fast as you can without making too many errors."
+    Job: "Identify the color as fast as you can."
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_WO_02_Test_C:
+    RulesTitle: "Identify the color as fast as you can."
+    GameRules: "You will see a symbol appear on the screen. Click on the button that has the same color as the symbol on the screen. Respond as fast as you can without making too many errors."
+    Job: "Identify the color as fast as you can."
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_WO_02_Test_D_01:
+    RulesTitle: "Identify the color as fast as you can."
+    GameRules: "You will see a symbol appear on the screen. Click on the button that has the same color as the symbol on the screen. Respond as fast as you can without making too many errors."
+    Job: "Identify the color as fast as you can."
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_WO_02_Test_D_02:
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_WO_02_Test_D_03:
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"
+
+XCIT_WO_03_Tutorial:
+    RulesTitle: "Identify the shape as fast as you can."
+    GameRules: "You will see a symbol appear on the screen center. That symbol has a shape and a color. Your job is to ignore the color and click on the button that has the same shape as the symbol on the screen. Respond as fast as you can without making too many errors."
+    Job: "Identify the shape as fast as you can."
+    Stimulus: "You will see a symbol appear on the screen center. That symbol has a shape and a color."
+    YourJob: "Your job is to ignore the color and click on the button that has the same shape as the symbol on the screen."
+    GetReady: "Let's do a few examples!"
+    TestEnd: "Examples complete!"
+
+XCIT_WO_03_Test_A:
+    RulesTitle: "Identify the shape as fast as you can."
+    GameRules: "You will see a symbol appear on the screen center. That symbol has a shape and a color. Your job is to ignore the color and click on the button that has the same shape as the symbol on the screen. Respond as fast as you can without making too many errors."
+    Job: "Identify the shape as fast as you can."
+    Objective: "Respond as fast as you can without making too many errors."
+    TerminationRule: "This test contains 6 blocks and each block contains 48 trials."
+    GetReady: "You are now ready for the test.\nPress OK to start."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_WO_03_Test_B:
+    RulesTitle: "Identify the shape as fast as you can."
+    GameRules: "You will see a symbol appear on the screen center. That symbol has a shape and a color. Your job is to ignore the color and click on the button that has the same shape as the symbol on the screen. Respond as fast as you can without making too many errors."
+    Job: "Identify the shape as fast as you can."
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_WO_03_Test_C:
+    RulesTitle: "Identify the shape as fast as you can."
+    GameRules: "You will see a symbol appear on the screen center. That symbol has a shape and a color. Your job is to ignore the color and click on the button that has the same shape as the symbol on the screen. Respond as fast as you can without making too many errors."
+    Job: "Identify the shape as fast as you can."
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_WO_03_Test_D_01:
+    RulesTitle: "Identify the shape as fast as you can."
+    GameRules: "You will see a symbol appear on the screen center. That symbol has a shape and a color. Your job is to ignore the color and click on the button that has the same shape as the symbol on the screen. Respond as fast as you can without making too many errors."
+    Job: "Identify the shape as fast as you can."
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_WO_03_Test_D_02:
+    Objective: "Respond as fast as you can without making too many errors."
+    Break: "Take a break!\nPress the OK when you're ready to continue."
+
+XCIT_WO_03_Test_D_03:
+    Objective: "Respond as fast as you can without making too many errors."
+    TestEnd: "Test complete!"

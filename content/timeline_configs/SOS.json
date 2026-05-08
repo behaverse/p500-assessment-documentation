@@ -1,0 +1,470 @@
+{
+	"Id": "SOS",
+	"Scene": "TokenSearch",
+	"Rules": {
+// ---- Begin Rules ----
+"XCIT_SOS_01_Practice_Rules": [
+	{"text": "XCIT_SOS_01_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_SOS_01_Practice.GameRules"}
+],
+"XCIT_SOS_01_Tutorial_Rules": [
+	{"text": "XCIT_SOS_01_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_SOS_01_Tutorial.GameRules"}
+],
+// ---- End Rules ----
+	},
+	"EnumDefinitions": {},
+	"ParameterInfos": {
+		"TrialEndCondition": {
+			"Type": "enum",
+			"Values": [ "OnError", "OnOldToken", "OnOldEmpty", "OnSuccess" ]
+		},
+		"ShowPastTokensCondition": {
+			"Type": "enum",
+			"Values": [ "OnError", "OnOldToken", "OnOldEmpty", "OnNewToken", "Never" ]
+		},
+		"ShowAccuracyCheckFeedback": {
+			"Type": "enum",
+			"Values": [ "Never", "Always" ]
+		},
+		"GridSize": {
+			"Type": "int",
+			"Min": 3,
+			"Max": 5
+		},
+		"BoxCount": {
+			"Type": "int",
+			"Min": 1,
+			"Max": 25
+		},
+		"AvoidFirstTryTokens": {
+			"Type": "enum",
+			"Values": [ "Never", "Always", "Successive" ]
+		},
+		"MaximumTrialDuration": {
+			"Type": "float",
+			"Min": 0
+		},
+		"RevealBoxesOnError": {
+			"Type": "bool"
+		}
+	},
+	"Timelines": {
+// ---- Begin Instructions ----
+"XCIT_SOS_01_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SOS_01_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SOS_01_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SOS_01_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SOS_01_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SOS_01_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_SOS_01_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SOS_01_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SOS_01_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SOS_01_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SOS_01_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_SOS_01_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_SOS_01_Tutorial.GenerativeModel"}]},
+			{"Content": [{"Text": "XCIT_SOS_01_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_SOS_01_Tutorial.Response"}]},
+			{"Content": [{"Text": "XCIT_SOS_01_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SOS_01_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SOS_01_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SOS_02_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SOS_02_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_SOS_02_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SOS_02_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SOS_02_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+// ---- End Instructions ----
+// ---- Begin Timeline ----
+    "XCIT_SOS_01": {
+        "blocks": [
+            {
+                "timeline": "XCIT_SOS_01_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_SOS_01_Tutorial",
+                "rulesName": "XCIT_SOS_01_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_SOS_01_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_SOS_01_Practice_Intro"
+            },
+            {
+                "name": "XCIT_SOS_01_Practice",
+                "rulesName": "XCIT_SOS_01_Practice_Rules",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 5,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_SOS_01_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_SOS_01_Test_Intro"
+            },
+            {
+                "name": "XCIT_SOS_01_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Time": 300
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_SOS_01_Test_Outro"
+            }
+        ]
+    },
+    "XCIT_SOS_02": {
+        "blocks": [
+            {
+                "timeline": "XCIT_SOS_02_Test_Intro"
+            },
+            {
+                "name": "XCIT_SOS_02_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 25,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_SOS_02_Test_Outro"
+            }
+        ]
+    },
+// ---- End Timeline ----
+		"Tutorial": {
+			"Blocks": [
+				{
+					"Name": "Tutorial_OldTokenOnly"
+				},
+				{
+					"Name": "Tutorial_Full"
+				}
+			]
+		},
+		"Debug": {
+			"Blocks": [
+				{
+					"Name": "Debug",
+					"ExitRules": [
+						{ "Time": 300 }
+					]
+				}
+			]
+		},
+		"Demo": {
+			"Blocks": [
+				{
+					"Name": "Demo",
+					"ExitRules": [
+						{ "Trials": 6, "Type": "Failures" },
+						{ "Time": 300 }
+					]
+				}
+			]
+		},
+		"RobotTest": {
+			"Blocks": [
+				{ "Name": "RobotTest" },
+				{ "Name": "RobotTest" },
+				{ "Name": "RobotTest" }
+			]
+		}
+	},
+	"Blocks": {
+		"Default": {
+			"Parameters": {
+				"TrialEndCondition": "OnError",
+				"ShowPastTokensCondition": "Never",
+				"ShowAccuracyCheckFeedback": "Always",
+				"BoxCount": 4,
+				"GridSize": 5,
+				"AvoidFirstTryTokens": "Never",
+				"MaximumTrialDuration": 999,
+				"RevealBoxesOnError": false
+			}
+		},
+		"Tutorial_OldTokenOnly": {
+			"Inherits": "Tutorial_Full",
+			"Parameters": {
+				"TrialEndCondition": "OnOldToken"
+			},
+			"Trials": [
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"BoxCount": 3
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"BoxCount": 4
+					}
+				}
+			]
+		},
+		"Tutorial_Full": {
+			"Inherits": "Default",
+			"Parameters": {
+				"TrialEndCondition": "OnError",
+				"AvoidFirstTryTokens": "Always",
+				"RevealBoxesOnError": true,
+				"BlockTimer_Position": "Hidden",
+				"BlockCounter_Position": "Hidden",
+				"TrialCounter_Position": "Hidden",
+				"LevelLabel_Position": "Hidden"
+			},
+			"Trials": [
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"BoxCount": 3
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"BoxCount": 4
+					}
+				}
+			]
+		},
+		"Debug": {
+			"Inherits": "Default",
+			"Parameters": {
+				"TrialEndCondition": "OnOldEmpty",
+				"ShowPastTokensCondition": "Never",
+				"ShowAccuracyCheckFeedback": "Always",
+				"BoxCount": 4,
+				"AvoidFirstTryTokens": "Never",
+				"MaximumTrialDuration": 5,
+				"RevealBoxesOnError": false,
+				"TaskName_Position": "Hidden",
+				"BlockCounter_Position": "StatusBarLeft",
+				"BlockCounter_Style": "Counter",
+				"TrialResults_Position": "StatusBarRight",
+				"TrialResults_Style": "ColoredDiscrete",
+				"TrialCounter_Position": "StatusBarRight",
+				"TrialCounter_Style": "Counter",
+				"LevelLabel_Position": "StatusBarLeft"
+			}
+		},
+		"Demo": {
+			"Inherits": "Default",
+			"Parameters": {
+				"BoxCount": 4,
+				"AvoidFirstTryTokens": "Successive",
+				"BlockCounter_Position": "Hidden"
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "BoxCount",
+					"StepSize": 1,
+					"NUp": 1,
+					"NDown": 1
+				}
+			]
+		},
+		"XCIT_SOS_Base": {
+			"Inherits": "Default",
+			"Parameters": {
+				"GridSize": 5,
+				"RevealBoxesOnError": false,
+				"AvoidFirstTryTokens": "Successive",
+				"TrialEndCondition": "OnError",
+				"ShowPastTokensCondition": "Never",
+				"ShowAccuracyCheckFeedback": "Always",
+				"MaximumTrialDuration": 9999
+			}
+		},
+		"XCIT_SOS_01_Test": {
+			"Inherits": "XCIT_SOS_Base",
+			"Parameters": {
+				"BoxCount": 4,
+				"BlockTimer_Position": "StatusBarCenter",
+				"BlockTimer_Style": "TimeOnly"
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "BoxCount",
+					"StepSize": 1,
+					"NUp": 2,
+					"NDown": 1
+				}
+			]
+		},
+		"XCIT_SOS_01_Practice": {
+			"Inherits": "XCIT_SOS_Base",
+			"Parameters": {
+				"BoxCount": 3,
+				"RevealBoxesOnError": true
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "BoxCount",
+					"StepSize": 1,
+					"NUp": 2,
+					"NDown": 1
+				}
+			]
+		},
+		"XCIT_SOS_01_Tutorial": {
+			"Inherits": "XCIT_SOS_Base",
+			"Parameters": {
+				"GridSize": 3,
+				"RevealBoxesOnError": true
+			},
+			"Trials": [
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"BoxCount": 2
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"BoxCount": 3
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"BoxCount": 4
+					}
+				}
+			]
+		},
+		"XCIT_SOS_02_Test": {
+			"Inherits": "XCIT_SOS_Base",
+			"Parameters": {
+				"BoxCount": 6,
+				"GridSize": 3,
+				"MaximumTrialDuration": 15,
+				"UserInputTimer_Position": "StatusBarCenter",
+				"UserInputTimer_Style": "Circular"
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "MaximumTrialDuration",
+					"StepFunction": "Multiplicative",
+					"Min": 0,
+					"Max": 30,
+					"StepSize": 0.9,
+					"NUp": 1,
+					"NDown": 1
+				}
+			]
+		},
+		"RobotTest": {
+			"Inherits": "Default",
+			"Parameters": {
+				"TaskName_Position": "StatusBarLeft",
+				"BlockCounter_Position": "StatusBarLeft",
+				"BlockCounter_Style": "Counter",
+				"TrialCounter_Position": "StatusBarLeft",
+				"TrialCounter_Style": "Counter",
+				"TrialResults_Position": "StatusBarRight",
+				"TrialResults_Style": "ColoredDiscrete"
+			},
+			"Trials": [
+				{ "Parameters": {
+					"BoxCount": 1
+				}}, { "Parameters": {
+					"BoxCount": 2
+				}}, { "Parameters": {
+					"BoxCount": 25
+				}}, { "Parameters": {
+					"TrialEndCondition": "OnOldEmpty"
+				}}, { "Parameters": {
+					"TrialEndCondition": "OnOldToken"
+				}}, { "Parameters": {
+					"TrialEndCondition": "OnSuccess"
+				}}, { "Parameters": {
+					"AvoidFirstTryTokens": "Always"
+				}}, { "Parameters": {
+					"AvoidFirstTryTokens": "Always",
+					"BoxCount": 1
+				}}, { "Parameters": {
+					"AvoidFirstTryTokens": "Successive"
+				}}, { "Parameters": {
+					"MaximumTrialDuration": 1
+				}}, { "Parameters": {
+					"ShowPastTokensCondition": "OnOldToken"
+				}}, { "Parameters": {
+					"ShowPastTokensCondition": "OnOldEmpty"
+				}}, { "Parameters": {
+					"ShowPastTokensCondition": "Never"
+				}}, { "Parameters": {
+					"RevealBoxesOnError": true
+				}}
+			]
+		}
+	}
+}

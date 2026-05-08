@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol Matrix Comparison Parameters - Behaverse Assessment</title>
+    <link rel="stylesheet" href="../../css/parameters.css">
+</head>
+<body>
+<div class="parameters-container">
+    <h2>Parameters</h2>
+    <h3>Stimulus parameters (10 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MatrixSize</h4>
+        <p class="parameter-description">The size of the square matrix containing the items.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 5</span>
+            <span><strong>Range:</strong> 2 - 10</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> If ItemCount + 1 > MatrixSize², then MatrixSize will be increased automatically so it can contain all elements (+1 for MoveItem discrepancy type).</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ItemCount</h4>
+        <p class="parameter-description">The number of items in the pattern.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 3</span>
+            <span><strong>Range:</strong> 1 - 25</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">SymbolPoolCount</h4>
+        <p class="parameter-description">The number of different symbols that can be used to generate items.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 5</span>
+            <span><strong>Range:</strong> 1 - 5</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ColorPoolCount</h4>
+        <p class="parameter-description">The number of different colors that can be used to generate items.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 1</span>
+            <span><strong>Range:</strong> 1 - 5</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">InitialItemRotation</h4>
+        <p class="parameter-description">Define the set of possible initial rotation for each individual item (i.e., NOT the discrepancy, NOT the Set Transformation).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> If InitialItemRotation = None, DiscrepancyType cannot be ChangeSymbol and SymbolPoolCount cannot be more than 1.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">HasDiscrepancy</h4>
+        <p class="parameter-description">Whether the two sets are equal, or if there is a discrepancy between the two.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> Bernoulli(p=0.5)</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">DiscrepancyType</h4>
+        <p class="parameter-description">The type of discrepancy between the two sets.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> ChangeSymbol; RotateItem for MR</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">SetTransformation</h4>
+        <p class="parameter-description">The transformation applied to the right set of icons.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> None for PC; RotateClockwise for MR</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowTransformationHelper</h4>
+        <p class="parameter-description">Whether we add indicators (e.g. a black&white bar below the set) on both sets to show the player which transformation has been applied to the second set. (Only for MR).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">AnimateTransformation</h4>
+        <p class="parameter-description">Whether we show the transformation using an animation from non-transformed to transformed state (e.g., for rotation 90°: the right panel rotates over 1 second from its base state to its final rotated 90° state) (Only for MR). If false, the transformation is instantaneous.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> ShowTransformationHelper</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> This parameter should likely have the same value as ShowTransformationHelper (if helper are shown, we animate, else we dont).
+</div>
+    </div>
+    <h3>User input parameters (1 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaxResponseTime</h4>
+        <p class="parameter-description">The maximum time the user can take to answer.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 30</span>
+            <span><strong>Range:</strong> 1 - Inf</span>
+        </div>
+    </div>
+    <h3>Feedback parameters (3 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyCheckFeedback</h4>
+        <p class="parameter-description">Whether we should show the valid or wrong “check” feedback at the end of a trial.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Always</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowDiscrepancyFeedback</h4>
+        <p class="parameter-description">Whether we should show the discrepancy if the user missed it at the end of a trial.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> OnError</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyOnButtonFeedback</h4>
+        <p class="parameter-description">Whether the button highlight shows if the user response is correct/incorrect or instead does not reveal response accuracy. If set to True, the highlight is green for correct responses and red for incorrect responses.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

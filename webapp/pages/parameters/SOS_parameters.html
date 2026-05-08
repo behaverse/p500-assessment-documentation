@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Ordered Search Parameters - Behaverse Assessment</title>
+    <link rel="stylesheet" href="../../css/parameters.css">
+</head>
+<body>
+<div class="parameters-container">
+<div class="glossary-section">
+<h2>Glossary</h2>
+<table class="glossary-table">
+  <tr>
+    <td class="glossary-term">Box</td>
+    <td class="glossary-definition">an interactive element, with a hidden state. The user can click on any box to reveal its state.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Token</td>
+    <td class="glossary-definition">a symbol hidden in one of the boxes.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Trial</td>
+    <td class="glossary-definition">corresponds to a configuration of boxes and an order of tokens. A trial ends if user finds all tokens or fails.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">SearchEpisode</td>
+    <td class="glossary-definition">a trial is composed on several searchEpisodes (at most as many as there are tokens to be found). Each time the user finds a new token a new searchEpisode is triggered and it is now OK to reopen a box that was previously clicked on and did not contain a token.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">State</td>
+    <td class="glossary-definition">the state of the box, an enum in { NewEmpty, OldEmpty, NewToken, OldToken }):</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">NewEmpty</td>
+    <td class="glossary-definition">The box is empty.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">OldEmpty</td>
+    <td class="glossary-definition">The box is empty and has already been clicked during this searchEpisode.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">NewToken</td>
+    <td class="glossary-definition">The box contains the current token to be found.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">OldToken</td>
+    <td class="glossary-definition">The box contains a token the user already found in this trial (during a previous searchEpisode)</td>
+  </tr>
+</table>
+</div>
+
+    <h2>Parameters</h2>
+    <h3>Constants (1 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaxBoxCount</h4>
+        <p class="parameter-description">The maximum number of boxes that can be presented to the user in a given trial. This is determined empirically to avoid cluttering the screen. </p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 25</span>
+        </div>
+    </div>
+    <h3>Stimulus parameters (3 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">GridSize</h4>
+        <p class="parameter-description">The size of the matrix.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 5</span>
+            <span><strong>Range:</strong> 3 - 5</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">BoxCount</h4>
+        <p class="parameter-description">The number of boxes presented to the user.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 4</span>
+            <span><strong>Range:</strong> 1 - MaxBoxCount</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">TrialEndCondition</h4>
+        <p class="parameter-description">Defined when the trial ends depending on user actions.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> OnError</span>
+        </div>
+    </div>
+    <h3>User input parameters (2 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">AvoidFirstTryTokens</h4>
+        <p class="parameter-description">Whether we want to avoid lucky guesses when the player opens the good box on its first click in a search episode. If so, the token is moved in another unexplored box instead of being found in the currently searched box.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Never</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaximumTrialDuration</h4>
+        <p class="parameter-description">The maximum allowed time to complete the trial (find all tokens). After that, the trial is considered failed.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 999</span>
+            <span><strong>Range:</strong> 1 - Inf</span>
+        </div>
+    </div>
+    <h3>Feedback parameters (3 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyCheckFeedback</h4>
+        <p class="parameter-description">Whether we should show the accuracy check feedback at the end of a trial.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Never</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowPastTokensCondition</h4>
+        <p class="parameter-description">Shows the tokens that have been found during this trial.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> OnError</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">RevealBoxesOnError</h4>
+        <p class="parameter-description">Reveal the content of all boxes when the user makes an error.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

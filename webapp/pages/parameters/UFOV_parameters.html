@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Useful Field of View Parameters - Behaverse Assessment</title>
+    <link rel="stylesheet" href="../../css/parameters.css">
+</head>
+<body>
+<div class="parameters-container">
+    <h2>Parameters</h2>
+    <h3>Input data (2 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">PeripheralTask</h4>
+        <p class="parameter-description">If the peripheral task consists of an identification task or a detection task or nothing.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Detection</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> central & peripheral tasks cannot both be None</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">CentralTask</h4>
+        <p class="parameter-description">If the central task consists of an identification task or nothing.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Identification</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> central & peripheral tasks cannot both be None</div>
+    </div>
+    <h3>Stimulus parameters (10 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">FixationPointDisplayDuration</h4>
+        <p class="parameter-description">How long we display a fixation point before any stimulus. If equal to 0, will not display anything. Timing starts from the beginning of the trial. This duration also affects when the first stimulus is shown (i.e., acts like a foreperiod).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 1</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">CentralStimulusSymbolIndex</h4>
+        <p class="parameter-description">There are two possible stimuli that can be shown on any given trial; this variable says which one of the two it was.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> int</span>
+            <span><strong>Default:</strong> Uniform random sampling</span>
+            <span><strong>Range:</strong> 1 - 2</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">CentralStimulusOnset</h4>
+        <p class="parameter-description">Determines when the central stimulus is shown. The duration starts after the end of the fixation period.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.1</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">CentralStimulusDisplayDuration</h4>
+        <p class="parameter-description">How long the central stimulus is shown.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.2</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">PeripheralStimulusSymbolIndex</h4>
+        <p class="parameter-description">When PeripheralTask == DetectionAndIdentification, there are two possible stimuli that can be shown on any given trial (typically different from the stimuli shown for the central task); this variable says which one of the two it was. (1 is out, 2 is in).
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> int</span>
+            <span><strong>Default:</strong> Uniform random sampling</span>
+            <span><strong>Range:</strong> 1 - 2</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> When PeripheralTask == Detection, this vaiable is always set to 1.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">PeripheralStimulusPositionIndex</h4>
+        <p class="parameter-description">Indicate where the peripheral stimulus was shown, out of the 8 possible positions (see General Layout). Although there are 3 circles on which stimuli could appear (and distractor do appear) we only use the outermost radius to display stimuli and hence there are only 8 positions.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> int</span>
+            <span><strong>Default:</strong> Uniform random sampling</span>
+            <span><strong>Range:</strong> 1 - 8</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> The disk on which stimuli are presented in subdivided in 8 pizza-slices; the upper center-right is 1, the next on its right is 2, the next on it's right is 3, etc. until reachint the top center-left value of 8 which is to the left of 1.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">PeripheralStimulusOnset</h4>
+        <p class="parameter-description">Determines when the peripheral stimulus is shown. The duration starts after the end of the fixation period.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.1</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">PeripheralStimulusDisplayDuration</h4>
+        <p class="parameter-description">How long the peripheral stimulus is shown.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.2</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowPeripheralDistractors</h4>
+        <p class="parameter-description">If there are distractors in the periphery or not. If True, all non-stimulus locations are filled by distractors. If False, none are.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaskMinDisplayDuration</h4>
+        <p class="parameter-description">Minimum time during which the masks are displayed. Masks are displayed independently after each stimulus has finished being displayed. All masks are removed at the same time, after each mask has been displayed for at least MaskMinDisplayDuration (see “Timing” above).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.5</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <h3>Feedback parameters (2 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyOnButtonFeedback</h4>
+        <p class="parameter-description">Whether the button highlight shows if the user response is correct/incorrect or instead does not reveal response accuracy. If set to True, the highlight is green for correct responses and red for incorrect responses.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> We want to show the feedback per button only after all the responses were given, NOT immediately after each response.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyCheckFeedback</h4>
+        <p class="parameter-description">Whether we should show the valid or wrong “check” feedback at the end of a trial; this also appears always after the button feedback when ShowAccuracyOnButtonFeedback == True.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Always</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

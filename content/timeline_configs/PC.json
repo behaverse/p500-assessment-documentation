@@ -1,0 +1,709 @@
+{
+	"Id": "PC",
+	"Scene": "Polygons",
+	"Rules": {
+// ---- Begin Rules ----
+"XCIT_PC_01_Practice_Rules": [
+	{"text": "XCIT_PC_01_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_PC_01_Practice.GameRules"}
+],
+"XCIT_PC_01_Tutorial_Rules": [
+	{"text": "XCIT_PC_01_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_PC_01_Tutorial.GameRules"}
+],
+"XCIT_PC_02_Practice_Rules": [
+	{"text": "XCIT_PC_02_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_PC_02_Practice.GameRules"}
+],
+"XCIT_PC_02_Tutorial_Rules": [
+	{"text": "XCIT_PC_02_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_PC_02_Tutorial.GameRules"}
+],
+// ---- End Rules ----
+	},
+	"EnumDefinitions": {},
+	"ParameterInfos": {
+		"DiscrepancyType": {
+			"Type": "Enum",
+			"Values": [ "AllVertices", "SingleVertex" ]
+		},
+		"DiscrepancyMagnitude": {
+			"Type": "float",
+			"Min": 0.05,
+			"Max": 1.0
+		},
+		"RotationMagnitude": {
+			"Type": "float",
+			"Min": 0,
+			"Max": 360
+		},
+		"StimulusVertexCount": {
+			"Type": "int",
+			"Min": 3,
+			"Max": 10
+		},
+		"DistractorPosition": {
+			"Type": "Enum",
+			"Values": [ "Hidden", "Left", "Right" ]
+		},
+		"DistractorVertexCount": {
+			"Type": "int",
+			"Min": 3,
+			"Max": 10
+		},
+		"PolygonRegularity": {
+			"Type": "Enum",
+			"Values": [ "Regular", "Irregular" ]
+		},
+		"HasDiscrepancy": {
+			"Type": "bool"
+		},
+		"ColoredDistractor": {
+			"Type": "bool"
+		},
+		"MaxResponseTime": {
+			"Type": "float",
+			"Min": 1
+		},
+		"ShowAccuracyOnButtonFeedback": {
+			"Type": "bool"
+		},
+		"ShowAccuracyCheckFeedback": {
+			"Type": "Enum",
+			"Values": [ "Never", "Always" ]
+		},
+		"ShowSlidingPolygonFeedback": {
+			"Type": "Enum",
+			"Values": [ "Never", "OnError", "Always" ]
+		}
+	},
+	"Timelines": {
+// ---- Begin Instructions ----
+"XCIT_PC_01_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_PC_01_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_PC_01_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_PC_01_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_PC_01_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_PC_01_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_PC_01_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_PC_01_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_PC_01_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_PC_01_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_PC_01_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_PC_01_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_PC_01_Tutorial.GenerativeModel"}]},
+			{"Content": [{"Text": "XCIT_PC_01_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_PC_01_Tutorial.Response"}]},
+			{"Content": [{"Text": "XCIT_PC_01_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_PC_01_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_PC_01_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_PC_02_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_PC_02_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_PC_02_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_PC_02_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_PC_02_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_PC_02_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_PC_02_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_PC_02_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_PC_02_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_PC_02_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_PC_02_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_PC_02_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_PC_02_Tutorial.GenerativeModel"}]},
+			{"Content": [{"Text": "XCIT_PC_02_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_PC_02_Tutorial.Response"}]},
+			{"Content": [{"Text": "XCIT_PC_02_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_PC_02_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_PC_02_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+// ---- End Instructions ----
+// ---- Begin Timeline ----
+    "XCIT_PC_01": {
+        "blocks": [
+            {
+                "timeline": "XCIT_PC_01_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_PC_01_Tutorial",
+                "rulesName": "XCIT_PC_01_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_PC_01_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_PC_01_Practice_Intro"
+            },
+            {
+                "name": "XCIT_PC_01_Practice",
+                "rulesName": "XCIT_PC_01_Practice_Rules",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 3,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_PC_01_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_PC_01_Test_Intro"
+            },
+            {
+                "name": "XCIT_PC_01_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 50,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_PC_01_Test_Outro"
+            }
+        ]
+    },
+    "XCIT_PC_02": {
+        "blocks": [
+            {
+                "timeline": "XCIT_PC_02_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_PC_02_Tutorial",
+                "rulesName": "XCIT_PC_02_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_PC_02_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_PC_02_Practice_Intro"
+            },
+            {
+                "name": "XCIT_PC_02_Practice",
+                "rulesName": "XCIT_PC_02_Practice_Rules",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 3,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_PC_02_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_PC_02_Test_Intro"
+            },
+            {
+                "name": "XCIT_PC_02_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 50,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_PC_02_Test_Outro"
+            }
+        ]
+    },
+// ---- End Timeline ----
+		"Tutorial": {
+			"Blocks": [
+				{
+					"Name": "Tutorial"
+				}
+			]
+		},
+		"Debug": {
+			"Blocks": [
+				{
+					"Name": "Debug",
+					"ExitRules": [
+						{ "Time": 120 }
+					]
+				}
+			]
+		},
+		"Demo": {
+			"Blocks": [
+				{
+					"Name": "Demo",
+					"ExitRules": [
+						{ "Time": 120 }
+					]
+				}
+			]
+		},
+		"RobotTest": {
+			"Blocks": [
+				{ "Name": "RobotTest" },
+				{ "Name": "RobotTest" }
+			]
+		}
+	},
+	"Blocks": {
+		"Default": {
+			"Parameters": {
+				"HasDiscrepancy": {
+					"Distribution": {
+						"Type": "Bernoulli",
+						"Probability": 0.5
+					}
+				},
+				"RotationMagnitude": 0,
+				"PolygonRegularity": "Irregular",
+				"ShowAccuracyOnButtonFeedback": false,
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowSlidingPolygonFeedback": "OnError",
+				"DiscrepancyType": "AllVertices",
+				"StimulusVertexCount": 5,
+				"DistractorVertexCount": 4,
+				"DiscrepancyMagnitude": 0.4,
+				"DistractorPosition": "Left",
+				"ColoredDistractor": true,
+				"MaxResponseTime": 20
+			}
+		},
+		"Tutorial": {
+			"Inherits": "Default",
+			"Parameters": {
+				"MaxResponseTime": 20,
+				"BlockTimer_Position": "Hidden",
+				"BlockCounter_Position": "Hidden",
+				"TrialResults_Position": "InformationPanel",
+				"TrialResults_Style": "Discrete",
+				"ShowSlidingPolygonFeedback": "Always"
+			},
+			"Trials": [
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusVertexCount": 4,
+						"DistractorPosition": "Hidden",
+						"PolygonRegularity": "Regular",
+						"HasDiscrepancy": true,
+						"DiscrepancyType": "AllVertices",
+						"DistractorVertexCount": 3
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusVertexCount": 5,
+						"DistractorPosition": "Hidden",
+						"PolygonRegularity": "Irregular",
+						"HasDiscrepancy": false,
+						"DistractorVertexCount": 3
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusVertexCount": 5,
+						"DistractorPosition": "Right",
+						"PolygonRegularity": "Irregular",
+						"HasDiscrepancy": false,
+						"DistractorVertexCount": 4
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusVertexCount": 6,
+						"DistractorPosition": "Right",
+						"PolygonRegularity": "Irregular",
+						"HasDiscrepancy": true,
+						"DiscrepancyType": "SingleVertex",
+						"DistractorVertexCount": 5
+					}
+				}
+			]
+		},
+		"Debug": {
+			"Inherits": "Default",
+			"Parameters": {
+				"HasDiscrepancy": true,
+				"DiscrepancyMagnitude": 0.05,
+				"DiscrepancyType": "SingleVertex"
+			},
+			"Trials":[
+				{},
+				{},
+				{}
+			]
+		},
+		"Demo": {
+			"Inherits": "Default",
+			"Parameters": {
+				"HasDiscrepancy": false,
+				"StimulusVertexCount": {
+					"Distribution": {
+						"Type": "Normal",
+						"Mean": 6,
+						"Variance": 1
+					}
+				},
+				"DistractorVertexCount": {
+					"Distribution": {
+						"Type": "Normal",
+						"Mean": 5,
+						"Variance": 1
+					}
+				},
+				"DiscrepancyType": "SingleVertex"
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "DiscrepancyMagnitude",
+					"StepFunction": "Multiplicative",
+					"Min": 0.1,
+					"Max": 1,
+					"StepSize": 0.8,
+					"NUp": 1,
+					"NDown": 1
+				}
+			]
+		},
+		"MentalRotationTest": {
+			"Inherits": "Default",
+			"Parameters": {
+				"StimulusVertexCount": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 6,
+						"Max": 6
+					}
+				},
+				"DistractorVertexCount": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 3,
+						"Max": 6
+					}
+				},
+				"RotationMagnitude": 45,
+				"DiscrepancyMagnitude": 0.5,
+				"DiscrepancyType": "SingleVertex",
+				"DistractorPosition": "Hidden",
+				"ColoredDistractor": false,
+				"MaxResponseTime": 20,
+				"ShowSlidingPolygonFeedback": "OnError",
+				"ShowAccuracyOnButtonFeedback": false,
+				"ShowAccuracyCheckFeedback": "Always",
+				"TrialResults_Position": "Hidden"
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "RotationMagnitude",
+					"StepSize": 10,
+					"NUp": 1,
+					"NDown": 1
+				}
+			]
+		},
+		"XCIT_PC_Base": {
+			"Inherits": "Default",
+			"Parameters": {
+				"DiscrepancyType": "SingleVertex",
+				"StimulusVertexCount": 5,
+				"DistractorVertexCount": 4,
+				"DistractorPosition": "Left",
+				"ColoredDistractor": false,
+				"MaxResponseTime": 999,
+				"ShowSlidingPolygonFeedback": "OnError",
+				"ShowAccuracyOnButtonFeedback": false,
+				"ShowAccuracyCheckFeedback": "Always"
+			}
+		},
+		"XCIT_PC_01_Test": {
+			"Inherits": "XCIT_PC_Base",
+			"Parameters": {
+				"DiscrepancyMagnitude": 0.5
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "DiscrepancyMagnitude",
+					"StepFunction": "Multiplicative",
+					"Min": 0.05,
+					"Max": 1,
+					"StepSize": 0.79,
+					"NUp": 2,
+					"NDown": 1
+				}
+			]
+		},
+		"XCIT_PC_01_Practice": {
+			"Inherits": "XCIT_PC_Base",
+			"Parameters": {
+				"DiscrepancyMagnitude": 0.5
+			}
+		},
+		"XCIT_PC_01_Tutorial": {
+			"Inherits": "XCIT_PC_Base",
+			"Parameters": {
+				"ShowSlidingPolygonFeedback": "Always",
+				"ColoredDistractor": true,
+				"DiscrepancyMagnitude": 0.75
+			},
+			"Trials": [
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"DistractorPosition": "Hidden",
+						"PolygonRegularity": "Regular",
+						"HasDiscrepancy": false
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"DistractorPosition": "Hidden",
+						"PolygonRegularity": "Regular",
+						"HasDiscrepancy": true
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"DistractorPosition": "Left",
+						"PolygonRegularity": "Regular",
+						"HasDiscrepancy": false
+					}
+				},
+				{
+					"DistractorPosition": "Left",
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"PolygonRegularity": "Regular",
+						"HasDiscrepancy": true
+					}
+				},
+				{
+					"DistractorPosition": "Left",
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"PolygonRegularity": "Irregular",
+						"HasDiscrepancy": false
+					}
+				},
+				{
+					"DistractorPosition": "Left",
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"PolygonRegularity": "Irregular",
+						"HasDiscrepancy": true
+					}
+				}
+			]
+		},
+		"XCIT_PC_02_Test": {
+			"Inherits": "XCIT_PC_Base",
+			"Parameters": {
+				"DiscrepancyMagnitude": 0.5,
+				"DistractorPosition": "Hidden",
+				"RotationMagnitude": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 0,
+						"Max": 180
+					}
+				}
+			}
+		},
+		"XCIT_PC_02_Practice": {
+			"Inherits": "XCIT_PC_02_Test",
+			"Parameters": {
+				"DiscrepancyMagnitude": 0.75
+			}
+		},
+		"XCIT_PC_02_Tutorial": {
+			"Inherits": "XCIT_PC_Base",
+			"Parameters": {
+				"DistractorPosition": "Hidden",
+				"ShowSlidingPolygonFeedback": "Always",
+				"ColoredDistractor": true,
+				"DiscrepancyMagnitude": 0.75
+			},
+			"Trials": [
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"RotationMagnitude": 25,
+						"HasDiscrepancy": false
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"RotationMagnitude": 25,
+						"HasDiscrepancy": true
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"RotationMagnitude": 45,
+						"HasDiscrepancy": false
+					}
+				},
+				{
+					"DistractorPosition": "Left",
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"RotationMagnitude": 45,
+						"HasDiscrepancy": true
+					}
+				}
+			]
+		},
+		"RobotTest": {
+			"Inherits": "Default",
+			"Parameters": {
+				"TaskName_Position": "StatusBarLeft",
+				"BlockCounter_Position": "StatusBarLeft",
+				"BlockCounter_Style": "Counter",
+				"TrialCounter_Position": "StatusBarLeft",
+				"TrialCounter_Style": "Counter",
+				"TrialResults_Position": "StatusBarRight",
+				"TrialResults_Style": "ColoredDiscrete"
+			},
+			"Trials": [
+				{ "Parameters": {
+					"StimulusVertexCount": 3
+				}}, { "Parameters": {
+					"StimulusVertexCount": 10
+				}}, { "Parameters": {
+					"PolygonRegularity": "Regular"
+				}}, { "Parameters": {
+					"PolygonRegularity": "Regular",
+					"StimulusVertexCount": 3
+				}}, { "Parameters": {
+					"PolygonRegularity": "Regular",
+					"StimulusVertexCount": 10
+				}}, { "Parameters": {
+					"RotationMagnitude": 90
+				}}, { "Parameters": {
+					"RotationMagnitude": 360
+				}}, { "Parameters": {
+					"DiscrepancyType": "AllVertices"
+				}}, { "Parameters": {
+					"DiscrepancyType": "AllVertices",
+					"StimulusVertexCount": 10
+				}}, { "Parameters": {
+					"DiscrepancyMagnitude": 0.05
+				}}, { "Parameters": {
+					"DiscrepancyMagnitude": 1
+				}}, { "Parameters": {
+					"DiscrepancyType": "AllVertices",
+					"DiscrepancyMagnitude": 1
+				}}, { "Parameters": {
+					"DistractorPosition": "Hidden"
+				}}, { "Parameters": {
+					"DistractorPosition": "Right"
+				}}, { "Parameters": {
+					"DistractorVertexCount": 3
+				}}, { "Parameters": {
+					"DistractorVertexCount": 10
+				}}, { "Parameters": {
+					"ColoredDistractor": false
+				}}, { "Parameters": {
+					"MaxResponseTime": 1
+				}}, { "Parameters": {
+					"MaxResponseTime": 30
+				}}, { "Parameters": {
+					"ShowSlidingPolygonFeedback": "Never"
+				}}, { "Parameters": {
+					"ShowSlidingPolygonFeedback": "Always"
+				}}, { "Parameters": {
+					"ShowAccuracyOnButtonFeedback": true
+				}}, { "Parameters": {
+					"ShowAccuracyCheckFeedback": "Never"
+				}}
+			]
+		}
+	}
+}

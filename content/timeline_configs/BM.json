@@ -1,0 +1,1906 @@
+{
+	"Id": "BM",
+	"Scene": "BelvalMatrices",
+	"Rules": {
+// ---- Begin Rules ----
+"XCIT_BM_01_Practice_Rules": [
+	{"text": "XCIT_BM_01_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_BM_01_Practice.GameRules"}
+],
+"XCIT_BM_01_Tutorial_Rules": [
+	{"text": "XCIT_BM_01_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_BM_01_Tutorial.GameRules"}
+],
+"XCIT_BM_02_Tutorial_Rules": [
+	{"text": "XCIT_BM_02_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_BM_02_Tutorial.GameRules"}
+],
+"XCIT_BM_03_Tutorial_Rules": [
+	{"text": "XCIT_BM_03_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_BM_03_Tutorial.GameRules"}
+],
+"XCIT_BM_04_Test_Rules": [
+	{"text": "XCIT_BM_04_Test.RulesTitle","heading": 2}
+],
+// ---- End Rules ----
+},
+	"Presets":{
+		"ProblemConfig":{
+			"Debug": {
+				"ProblemComment": "Debug",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"FeatureTransformations": [
+						{
+							"Feature": "Color",
+							"Transformation": "HorizontalRepeat"
+						},
+						{
+							"Feature": "Symbol",
+							"Transformation": "HorizontalRepeat"
+						}
+					]
+				}	
+			},
+			// ================= TRANSFO EXAMPLE ==================
+			"Transfo_1": {
+				"ProblemComment": "[example] repeat",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"FeatureTransformations": [
+						{
+							"Feature": "Color",
+							"Transformation": "HorizontalRepeat"
+						},
+						{
+							"Feature": "Symbol",
+							"Transformation": "HorizontalRepeat"
+						}
+					]
+				}	
+			},
+			"Transfo_2": {
+				"ProblemComment": "[example] diagonal (easy)",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"FeatureTransformations": [
+						{
+							"Feature": "Color",
+							"Transformation": "DiagonalTopLeft"
+						},
+						{
+							"Feature": "Symbol",
+							"Transformation": "DiagonalTopLeft"
+						}
+					]
+				}	
+			},
+			"Transfo_3": {
+				"ProblemComment": "[example] 2 layers",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"FeatureTransformations": [
+						{
+							"Feature": "Color",
+							"Transformation": "HorizontalRepeat"
+						},
+						{
+							"Feature": "Symbol",
+							"Transformation": "VerticalRepeat"
+						}
+					]
+				}	
+			},
+			// ================= TRANSFO EASY ==================
+			"Transfo_4": {
+				"ProblemComment": "[easy] diagonal (harder)",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"FeatureTransformations": [
+						{
+							"Feature": "Symbol",
+							"Transformation": "DiagonalBottomLeft"
+						},
+						{
+							"Feature": "Color",
+							"Transformation": "DiagonalBottomLeft"
+						}
+					]
+				}	
+			},
+			"Transfo_5": {
+				"ProblemComment": "[easy] symmetry vertical",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"FeatureTransformations": [
+						{
+							"Feature": "Color",
+							"Transformation": "SymmetryVertical"
+						},
+						{
+							"Feature": "Symbol",
+							"Transformation": "SymmetryVertical"
+						}
+					]
+				}
+			},
+			"Transfo_6": {
+				"ProblemComment": "[easy] bidirectional increase",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"FeatureTransformations": [
+						{
+							"Feature": "Color",
+							"Transformation": "HorizontalRepeat"
+						},
+						{
+							"Feature": "Angle",
+							"Transformation": "IncreaseFromTopLeft"
+						}
+					]
+				}	
+			},
+			"Transfo_7": {
+				"ProblemComment": "[easy] diagonal symmetry",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"FeatureTransformations": [
+						{
+							"Feature": "Color",
+							"Transformation": "SymmetryDiagonalBottomLeft"
+						},
+						{
+							"Feature": "Symbol",
+							"Transformation": "SymmetryDiagonalBottomLeft"
+						}
+					]
+				}		
+			},
+			"Transfo_7_V2": {
+				"ProblemComment": "[easy] diagonal symmetry",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [8],
+					"FeatureTransformations": [
+						{
+							"Feature": "Color",
+							"Transformation": "SymmetryDiagonalBottomLeft"
+						},
+						{
+							"Feature": "Symbol",
+							"Transformation": "SymmetryDiagonalBottomLeft"
+						}
+					]
+				}		
+			},
+			"Transfo_8": {
+				"ProblemComment": "[easy] unidirectional increase",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"FeatureTransformations": [
+						{
+							"Feature": "Color",
+							"Transformation": "HorizontalRepeat"
+						},
+						{
+							"Feature": "Angle",
+							"Transformation": "IncreaseFromTop"
+						}
+					]
+				}	
+			},
+			"Transfo_9": {
+				"ProblemComment": "[easy] central symmetry",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"FeatureTransformations": [
+						{
+							"Feature": "Symbol",
+							"Transformation": "SymmetryCenter4Groups"
+						},
+						{
+							"Feature": "Color",
+							"Transformation": "SymmetryCenter4Groups"
+						}
+					]
+				}	
+			},
+			"Transfo_10": {
+				"ProblemComment": "[easy] distractor",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"FeatureTransformations": [
+						{
+							"Feature": "Symbol",
+							"Transformation": "HorizontalRepeat"
+						}
+					],
+					"DistractorFeatures": ["Color"]
+				}	
+			},
+			// ================= TRANSFO HARD ==================
+			"Transfo_11": {
+				"ProblemComment": "[hard] bidirectional increase + diagonal",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [8],
+					"FeatureTransformations": [
+						{
+							"Feature": "Angle",
+							"Transformation": "IncreaseFromTopRight"
+						},
+						{
+							"Feature": "BackgroundColor",
+							"Transformation": "DiagonalTopLeft"
+						}
+					]
+				}	
+			},
+			"Transfo_12": {
+				"ProblemComment": "[hard] vertical + horizontal symmetry",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"FeatureTransformations": [
+						{
+							"Feature": "Color",
+							"Transformation": "SymmetryHorizontal"
+						},
+						{
+							"Feature": "Symbol",
+							"Transformation": "SymmetryVertical"
+						}
+					]
+				}	
+			},
+			"Transfo_13": {
+				"ProblemComment": "[hard] double diagonal",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [8],
+					"FeatureTransformations": [
+						{
+							"Feature": "Color",
+							"Transformation": "DiagonalBottomLeft"
+						},
+						{
+							"Feature": "Symbol",
+							"Transformation": "DiagonalTopLeft"
+						}
+					]
+				}	
+			},
+			"Transfo_14": {
+				"ProblemComment": "[hard] unidirectional increase + diagonal",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"FeatureTransformations": [
+						{
+							"Feature": "Number",
+							"Transformation": "IncreaseFromLeft"
+						},
+						{
+							"Feature": "Color",
+							"Transformation": "DiagonalTopLeft"
+						}
+					]
+				}
+			},
+			"Transfo_14_V2": {
+				"ProblemComment": "[hard] unidirectional increase + diagonal",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [8],
+					"FeatureTransformations": [
+						{
+							"Feature": "Number",
+							"Transformation": "IncreaseFromLeft"
+						},
+						{
+							"Feature": "BackgroundColor",
+							"Transformation": "DiagonalBottomLeft"
+						}
+					]
+				}
+			},
+			"Transfo_14_V2_Alt": {
+				"ProblemComment": "[hard] unidirectional increase + diagonal",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [8],
+					"FeatureTransformations": [
+						{
+							"Feature": "Number",
+							"Transformation": "IncreaseFromLeft_Mirrored"
+						},
+						{
+							"Feature": "BackgroundColor",
+							"Transformation": "DiagonalTopLeft"
+						}
+					]
+				}
+			},
+			"Transfo_15": {
+				"ProblemComment": "[hard] arrow distractor + background diagonal",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"FeatureTransformations": [
+						{
+							"Feature": "BackgroundColor",
+							"Transformation": "DiagonalBottomLeft"
+						}
+					],
+					"DistractorFeatures": ["Angle"]
+				}	
+			},
+			"Transfo_15_V2": {
+				"ProblemComment": "[hard]",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"FeatureTransformations": [
+						{
+							"Feature": "BackgroundColor",
+							"Transformation": "VerticalRepeat"
+						},
+						{
+							"Feature": "Color",
+							"Transformation": "DiagonalBottomLeft"
+						}
+					]
+				}	
+			},
+			"Transfo_16": {
+				"ProblemComment": "[hard] double diagonal symmetry",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [6],
+					"FeatureTransformations": [
+						{
+							"Feature": "Color",
+							"Transformation": "SymmetryDiagonalTopLeft"
+						},
+						{
+							"Feature": "Symbol",
+							"Transformation": "SymmetryDiagonalBottomLeft"
+						}
+					]
+				}	
+			},
+			"Transfo_16_V2": {
+				"ProblemComment": "[hard] double diagonal symmetry",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [8],
+					"FeatureTransformations": [
+						{
+							"Feature": "Color",
+							"Transformation": "SymmetryDiagonalTopLeft"
+						},
+						{
+							"Feature": "Symbol",
+							"Transformation": "SymmetryDiagonalBottomLeft"
+						}
+					]
+				}	
+			},
+			"Transfo_16_V2_Alt": {
+				"ProblemComment": "[hard] double diagonal symmetry",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [8],
+					"FeatureTransformations": [
+						{
+							"Feature": "Color",
+							"Transformation": "SymmetryDiagonalBottomLeft"
+						},
+						{
+							"Feature": "Symbol",
+							"Transformation": "SymmetryDiagonalTopLeft"
+						}
+					]
+				}	
+			},
+			"Transfo_17": {
+				"ProblemComment": "[hard] arrow progression + background distractor",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"FeatureTransformations": [
+						{
+							"Feature": "Angle",
+							"Transformation": "IncreaseFromRight"
+						}
+					],
+					"DistractorFeatures": ["BackgroundColor"]
+				}	
+			},
+			"Transfo_17_V2": {
+				"ProblemComment": "[hard] arrow progression + background distractor",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"FeatureTransformations": [
+						{
+							"Feature": "Angle",
+							"Transformation": "IncreaseFromRight"
+						},
+						{
+							"Feature": "BackgroundColor",
+							"Transformation": "SymmetryVertical"
+						}
+					]
+				}	
+			},
+			"Transfo_18": {
+				"ProblemComment": "[hard] 2 repeat + diagonal",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [8],
+					"FeatureTransformations": [
+						{
+							"Feature": "BackgroundColor",
+							"Transformation": "DiagonalBottomLeft"
+						},
+						{
+							"Feature": "Color",
+							"Transformation": "HorizontalRepeat"
+						},
+						{
+							"Feature": "Symbol",
+							"Transformation": "DiagonalTopLeft"
+						}
+					]
+				}	
+			},
+			"Transfo_18_Alt": {
+				"ProblemComment": "[hard] 2 repeat + diagonal",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [8],
+					"FeatureTransformations": [
+						{
+							"Feature": "BackgroundColor",
+							"Transformation": "DiagonalTopLeft"
+						},
+						{
+							"Feature": "Color",
+							"Transformation": "VerticalRepeat"
+						},
+						{
+							"Feature": "Symbol",
+							"Transformation": "DiagonalBottomLeft"
+						}
+					]
+				}	
+			},
+			"Transfo_19": {
+				"ProblemComment": "[hard] repeat + diagonal + symmetry",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"FeatureTransformations": [
+						{
+							"Feature": "BackgroundColor",
+							"Transformation": "HorizontalRepeat"
+						},
+						{
+							"Feature": "Color",
+							"Transformation": "DiagonalBottomLeft"
+						},
+						{
+							"Feature": "Symbol",
+							"Transformation": "SymmetryVertical"
+						}
+					]
+				}	
+			},
+			"Transfo_19_V2": {
+				"ProblemComment": "[hard] repeat + diagonal + symmetry", 
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [7],
+					"FeatureTransformations": [
+						{
+							"Feature": "BackgroundColor",
+							"Transformation": "SymmetryHorizontal"
+						},
+						{
+							"Feature": "Color",
+							"Transformation": "SymmetryVertical"
+						},
+						{
+							"Feature": "Symbol",
+							"Transformation": "SymmetryDiagonalTopLeft"
+						}
+					]
+				}	
+			},
+			"Transfo_20": {
+				"ProblemComment": "[hard] diagonal + symmetry + distractor",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [8],
+					"FeatureTransformations": [
+						{
+							"Feature": "Symbol",
+							"Transformation": "DiagonalTopLeft"
+						},
+						{
+							"Feature": "BackgroundColor",
+							"Transformation": "SymmetryCenter4Groups"
+						}
+					],
+					"DistractorFeatures":["Color"]
+				}	
+			},
+			"Transfo_20_V2": {
+				"ProblemComment": "[hard] diagonal + symmetry + distractor",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [8],
+					"FeatureTransformations": [
+						{
+							"Feature": "Symbol",
+							"Transformation": "DiagonalBottomLeft"
+						},
+						{
+							"Feature": "Color",
+							"Transformation": "SymmetryCenter4Groups"
+						},
+						{
+							"Feature": "BackgroundColor",
+							"Transformation": "DiagonalTopLeft"
+						}
+					]
+				}	
+			},
+			"Transfo_21": {
+				"ProblemComment": "[hard] number diagonal",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [8],
+					"FeatureTransformations": [
+						{
+							"Feature": "Number",
+							"Transformation": "DiagonalTopLeft"
+						},
+						{
+							"Feature": "Color",
+							"Transformation": "VerticalRepeat"
+						},
+						{
+							"Feature": "BackgroundColor",
+							"Transformation": "DiagonalBottomLeft"
+						}
+					]
+				}	
+			},
+			"Transfo_21_V2": {
+				"ProblemComment": "[hard] number diagonal",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [8],
+					"FeatureTransformations": [
+						{
+							"Feature": "Number",
+							"Transformation": "DiagonalTopLeft"
+						},
+						{
+							"Feature": "BackgroundColor",
+							"Transformation": "DiagonalBottomLeft"
+						}
+					]
+				}	
+			},
+			"Transfo_22": {
+				"ProblemComment": "[hard] angle symmetry + 2 color symmetry",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"FeatureTransformations": [
+						{
+							"Feature": "Angle",
+							"Transformation": "SymmetryCenter4Groups"
+						},
+						{
+							"Feature": "Color",
+							"Transformation": "SymmetryVertical"
+						},
+						{
+							"Feature": "BackgroundColor",
+							"Transformation": "SymmetryHorizontal"
+						}
+					]
+				}	
+			},
+			"Transfo_22_V2": {
+				"ProblemComment": "[hard] number symmetry",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [5],
+					"FeatureTransformations": [
+						{
+							"Feature": "BackgroundColor",
+							"Transformation": "DiagonalTopLeft"
+						},
+						{
+							"Feature": "Color",
+							"Transformation": "VerticalRepeat"
+						},
+						{
+							"Feature": "Angle",
+							"Transformation": "IncreaseFromTopLeft"
+						}
+					]
+				}	
+			},
+			"Transfo_23": {
+				"ProblemComment": "[hard] symbol distractor + 2 hard symmetry on colors",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [8],
+					"FeatureTransformations": [
+						{
+							"Feature": "BackgroundColor",
+							"Transformation": "SymmetryDiagonalTopLeft"
+						},
+						{
+							"Feature": "Color",
+							"Transformation": "SymmetryCenter4Groups"
+						}
+					],
+					"DistractorFeatures": ["Symbol"]
+				}	
+			},
+			"Transfo_23_V2": {
+				"ProblemComment": "[hard] 2 diag on color",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"FeatureTransformations": [
+						{
+							"Feature": "BackgroundColor",
+							"Transformation": "DiagonalTopleft"
+						},
+						{
+							"Feature": "Color",
+							"Transformation": "DiagonalBottomLeft"
+						},
+						{
+							"Feature": "Symbol",
+							"Transformation": "SymmetryCenter2Groups"
+						}
+					]
+				}	
+			},
+			"Transfo_24": {
+				"ProblemComment": "[hard] 2 color distractors + number symmetry + angle progression",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [8],
+					"FeatureTransformations": [
+						{
+							"Feature": "Number",
+							"Transformation": "SymmetryCenter4Groups"
+						},
+						{
+							"Feature": "Angle",
+							"Transformation": "IncreaseFromBottom"
+						}
+					],
+					"DistractorFeatures": ["Color", "BackgroundColor"]
+				}
+			},
+			"Transfo_25": {
+				"ProblemComment": "[hard] double bidir increase + diag sym",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"FeatureTransformations": [
+						{
+							"Feature": "Number",
+							"Transformation": "IncreaseFromTopLeft"
+						},
+						{
+							"Feature": "BackgroundColor",
+							"Transformation": "VerticalRepeat"
+						},
+						{
+							"Feature": "Angle",
+							"Transformation": "IncreaseFromTopLeft"
+						}
+					]
+				}
+			},
+			"Transfo_26": {
+				"ProblemComment": "[hard] 2 diagonal missing 8",
+				"ProblemType": "FeatureTransformation",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [8],
+					"FeatureTransformations": [
+						{
+							"Feature": "Symbol",
+							"Transformation": "DiagonalTopLeft"
+						},
+						{
+							"Feature": "Color",
+							"Transformation": "DiagonalBottomLeft"
+						}		
+					]
+				}
+			},
+			// ================= LOGIC EXAMPLES ==================
+			"Logic_1": {
+				"ProblemComment": "[example] OR 2 symbols",
+				"ProblemType": "BooleanLogic",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"ColorScheme": "OneColorPerSymbol",
+					"LogicLayers": {
+						"OR": "ABCD"
+					},
+					"Cell1": "A",
+					"Cell2": "B",
+					"Cell4": "A",
+					"Cell5": "B"	
+				}
+			},
+			"Logic_2": {
+				"ProblemComment": "[example] OR 3 symbols",
+				"ProblemType": "BooleanLogic",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"ColorScheme": "OneColorPerSymbol",
+					"LogicLayers": {
+						"OR": "ABCD"
+					},
+					"Cell1": "A",
+					"Cell2": "B",
+					"Cell4": "A",
+					"Cell5": "C"	
+				}
+			},
+			// ================= LOGIC EASY ==================
+			"Logic_3": {
+				"ProblemComment": "[easy] OR 4 symbols",
+				"ProblemType": "BooleanLogic",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"ColorScheme": "OneColorPerSymbol",
+					"LogicLayers": {
+						"OR": "ABCD"
+					},
+					"Cell1": "A",
+					"Cell2": "B",
+					"Cell4": "C",
+					"Cell5": "D"	
+				}
+			},
+			"Logic_3_V2": {
+				"ProblemComment": "[easy] OR 4 symbol, missing 8",
+				"ProblemType": "BooleanLogic",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [8],
+					"ColorScheme": "OneColorPerSymbol",
+					"LogicLayers": {
+						"OR": "ABCD"
+					},
+					"Cell1": "AB",
+					"Cell2": "BC",
+					"Cell4": "BD",
+					"Cell5": "CD"	
+				}
+			},
+			"Logic_4": {
+				"ProblemComment": "[easy] AND null result, 2 symbols in starting cells",
+				"ProblemType": "BooleanLogic",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"ColorScheme": "OneColorPerSymbol",
+					"LogicLayers": {
+						"AND": "ABCD"
+					},
+					"Cell1": "AB",
+					"Cell2": "BC",
+					"Cell4": "AD",
+					"Cell5": "CD"	
+				}
+			},
+			"Logic_5": {
+				"ProblemComment": "[easy] XOR subtraction",
+				"ProblemType": "BooleanLogic",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"ColorScheme": "OneColorPerSymbol",
+					"LogicLayers": {
+						"XOR": "ABCD"
+					},
+					"Cell1": "ABCD",
+					"Cell2": "AB",
+					"Cell4": "AC",
+					"Cell5": "A"	
+				}
+			},
+			"Logic_5_Alt": {
+				"ProblemComment": "[easy] XOR subtraction",
+				"ProblemType": "BooleanLogic",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"ColorScheme": "OneColorPerSymbol",
+					"LogicLayers": {
+						"XOR": "ABCD"
+					},
+					"Cell1": "ABCD",
+					"Cell2": "AB",
+					"Cell4": "AC",
+					"Cell5": "A"	
+				}
+			},
+			// ================= LOGIC HARD ==================
+			"Logic_6": {
+				"ProblemComment": "[hard] XOR subtraction, null result",
+				"ProblemType": "BooleanLogic",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"ColorScheme": "OneColorPerSymbol",
+					"LogicLayers": {
+						"XOR": "ABCD"
+					},
+					"Cell1": "ABC",
+					"Cell2": "BC",
+					"Cell4": "AB",
+					"Cell5": "B"	
+				}
+			},
+			"Logic_7": {
+				"ProblemComment": "[hard] XOR difference",
+				"ProblemType": "BooleanLogic",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"ColorScheme": "OneColorPerSymbol",
+					"LogicLayers": {
+						"XOR": "ABCD"
+					},
+					"Cell1": "A",
+					"Cell2": "AB",
+					"Cell4": "AC",
+					"Cell5": "ABCD"	
+				}
+			},
+			"Logic_7_V2": {
+				"ProblemComment": "[easy] XOR difference, less geometric",
+				"ProblemType": "BooleanLogic",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"ColorScheme": "OneColorPerSymbol",
+					"LogicLayers": {
+						"XOR": "ABCD"
+					},
+					"Cell1": "AB",
+					"Cell2": "BC",
+					"Cell4": "BD",
+					"Cell5": "AB"	
+				}
+			},
+			"Logic_8": {
+				"ProblemComment": "[hard] OR, missing 5",
+				"ProblemType": "BooleanLogic",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [5],
+					"ColorScheme": "OneColorPerSymbol",
+					"LogicLayers": {
+						"OR": "ABCD"
+					},
+					"Cell1": "AB",
+					"Cell2": "B",
+					"Cell4": "C",
+					"Cell5": "AD"	
+				}
+			},
+			"Logic_8_V2": {
+				"ProblemComment": "[hard] OR, missing 5",
+				"ProblemType": "BooleanLogic",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [5],
+					"ColorScheme": "OneColorPerSymbol",
+					"LogicLayers": {
+						"OR": "ABCD"
+					},
+					"Cell1": "AD",
+					"Cell2": "B",
+					"Cell4": "C",
+					"Cell5": "AD"	
+				}
+			},
+			"Logic_8_V2_Alt": {
+				"ProblemComment": "[hard] OR, missing 5",
+				"ProblemType": "BooleanLogic",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [5],
+					"ColorScheme": "OneColorPerSymbol",
+					"LogicLayers": {
+						"OR": "ABCD"
+					},
+					"Cell1": "AB",
+					"Cell2": "C",
+					"Cell4": "D",
+					"Cell5": "AC"	
+				}
+			},
+			"Logic_9": {
+				"ProblemComment": "[hard] AND, missing 5",
+				"ProblemType": "BooleanLogic",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [5],
+					"ColorScheme": "OneColorPerSymbol",
+					"LogicLayers": {
+						"AND": "ABCD"
+					},
+					"Cell1": "ABC",
+					"Cell2": "ABD",
+					"Cell4": "AC",
+					"Cell5": "ACD"	
+				}
+			},
+			"Logic_10": {
+				"ProblemComment": "[hard] XOR, missing 5",
+				"ProblemType": "BooleanLogic",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [5],
+					"ColorScheme": "OneColorPerSymbol",
+					"LogicLayers": {
+						"XOR": "ABCD"
+					},
+					"Cell1": "ABC",
+					"Cell2": "ABD",
+					"Cell4": "ACD",
+					"Cell5": "BCD"	
+				}
+			},
+			"Logic_11": {
+				"ProblemComment": "[hard] dual layer AND XOR",
+				"ProblemType": "BooleanLogic",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [9],
+					"ColorScheme": "OneColorPerLayer",
+					"LogicLayers": {
+						"AND": "AB",
+						"XOR": "CD"
+					},
+					"Cell1": "ABCD",
+					"Cell2": "ABC",
+					"Cell4": "ABD",
+					"Cell5": "ACD"	
+				}
+			},
+			"Logic_12": {
+				"ProblemComment": "[hard] dual layer AND XOR, missing 5",
+				"ProblemType": "BooleanLogic",
+				"ProblemParameters": {
+					"PossibleMissingElementIndices": [5],
+					"ColorScheme": "OneColorPerLayer",
+					"LogicLayers": {
+						"AND": "AB",
+						"XOR": "CD"
+					},
+					"Cell1": "ABC",
+					"Cell2": "BCD",
+					"Cell4": "ACD",
+					"Cell5": "ABD"	
+				}
+			}
+		}			
+	},
+	"EnumDefinitions": {
+		"LogicOperation": [
+			"OR",
+			"AND",
+			"XOR"
+		],
+		"Feature": [
+			"Shape",
+			"Color",
+			"BackgroundColor",
+			"Size",
+			"Number",
+			"Angle"
+		],
+		"Transformation": [
+			"Identity",
+			"VerticalRepeat",
+			"HorizontalRepeat",
+			"DiagonalBottomLeft",
+			"DiagonalTopLeft",
+			"OutwardTopLeft",
+			"OutwardBottomLeft",
+			"OutwardTopRight",
+			"OutwardBottomRight",
+			"SymmetryVerticalRepeat",
+			"SymmetryVerticalRepeatRepeat",
+			"SymmetryDiagonalBottomLeft",
+			"SymmetryDiagonalTopLeft",
+			"SymmetryCenter2Groups",
+			"SymmetryCenter4Groups"
+		],
+		"ShowPatternCompletionFeedback": [
+			"Never",
+			"OnError",
+			"OnCorrect",
+			"Always"
+		]
+	},
+	"ParameterInfos": {
+		"ProblemConfig": {
+			"Type": "Object"
+		},
+		"TargetElementIndex": {
+			"Type": "Int",
+			"Min": 1,
+			"Max": 8
+		},
+		"ShowAccuracyCheckFeedback": {
+			"Type": "Enum",
+			"Name": "ShowAccuracyCheckFeedback"
+		},
+		"ShowCorrectTrialResponseFeedback": {
+			"Type": "Enum",
+			"Name": "ShowCorrectTrialResponseFeedback"
+		},
+		"ShowPatternCompletionFeedback": {
+			"Type": "Enum",
+			"Name": "ShowPatternCompletionFeedback"
+		},
+		"ShowAccuracyOnButtonFeedback": {
+			"Type": "Bool"
+		},
+		"MaxIdleTime": {
+			"Type": "Float",
+			"Min": 1
+		}
+	},
+	"Timelines": {
+// ---- Begin Timeline ----
+    "XCIT_BM_01": {
+        "blocks": [
+            {
+                "timeline": "XCIT_BM_01_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_BM_01_Tutorial",
+                "rulesName": "XCIT_BM_01_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_BM_01_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_BM_01_Practice_Intro"
+            },
+            {
+                "name": "XCIT_BM_01_Practice",
+                "rulesName": "XCIT_BM_01_Practice_Rules",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Time": 600
+                    },
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 10,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_BM_01_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_BM_01_Test_Intro"
+            },
+            {
+                "name": "XCIT_BM_01_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Time": 1200
+                    },
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 21,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_BM_01_Test_Outro"
+            }
+        ]
+    },
+    "XCIT_BM_02": {
+        "blocks": [
+            {
+                "timeline": "XCIT_BM_02_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_BM_02_Tutorial",
+                "rulesName": "XCIT_BM_02_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_BM_02_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_BM_02_Test_Intro"
+            },
+            {
+                "name": "XCIT_BM_02_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Time": 1200
+                    },
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 20,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_BM_02_Test_Outro"
+            }
+        ]
+    },
+    "XCIT_BM_03": {
+        "blocks": [
+            {
+                "timeline": "XCIT_BM_03_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_BM_03_Tutorial",
+                "rulesName": "XCIT_BM_03_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_BM_03_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_BM_03_Test_Intro"
+            },
+            {
+                "name": "XCIT_BM_03_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Time": 1200
+                    },
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 20,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_BM_03_Test_Outro"
+            }
+        ]
+    },
+    "XCIT_BM_04": {
+        "blocks": [
+            {
+                "timeline": "XCIT_BM_04_Test_Intro"
+            },
+            {
+                "name": "XCIT_BM_04_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Time": 600
+                    },
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 10,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_BM_04_Test_Outro"
+            }
+        ]
+    },
+// ---- End Timeline ----
+
+// ---- Begin Instructions ----
+"XCIT_BM_01_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BM_01_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BM_01_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BM_01_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BM_01_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BM_01_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_BM_01_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BM_01_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BM_01_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BM_01_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BM_01_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_BM_01_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_BM_01_Tutorial.GenerativeModel"}]},
+			{"Content": [{"Text": "XCIT_BM_01_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_BM_01_Tutorial.Response"}]},
+			{"Content": [{"Text": "XCIT_BM_01_Tutorial.Constraint"}]},
+			{"Content": [{"Text": "XCIT_BM_01_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BM_01_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BM_01_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BM_02_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BM_02_Test.Objective"}]},
+			{"Content": [{"Text": "XCIT_BM_02_Test.Constraint"}]},
+			{"Content": [{"Text": "XCIT_BM_02_Test.Feedback"}]},
+			{"Content": [{"Text": "XCIT_BM_02_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_BM_02_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BM_02_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BM_02_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BM_02_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BM_02_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_BM_02_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_BM_02_Tutorial.GenerativeModel"}]},
+			{"Content": [{"Text": "XCIT_BM_02_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_BM_02_Tutorial.Response"}]},
+			{"Content": [{"Text": "XCIT_BM_02_Tutorial.Constraint"}]},
+			{"Content": [{"Text": "XCIT_BM_02_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BM_02_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BM_02_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BM_03_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BM_03_Test.Objective"}]},
+			{"Content": [{"Text": "XCIT_BM_03_Test.Constraint"}]},
+			{"Content": [{"Text": "XCIT_BM_03_Test.Feedback"}]},
+			{"Content": [{"Text": "XCIT_BM_03_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_BM_03_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BM_03_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BM_03_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BM_03_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BM_03_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_BM_03_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_BM_03_Tutorial.GenerativeModel"}]},
+			{"Content": [{"Text": "XCIT_BM_03_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_BM_03_Tutorial.Response"}]},
+			{"Content": [{"Text": "XCIT_BM_03_Tutorial.Constraint"}]},
+			{"Content": [{"Text": "XCIT_BM_03_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BM_03_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BM_03_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BM_04_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BM_04_Test.Introduction"}]},
+			{"Content": [{"Text": "XCIT_BM_04_Test.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_BM_04_Test.YourJob"}]},
+			{"Content": [{"Text": "XCIT_BM_04_Test.Response"}]},
+			{"Content": [{"Text": "XCIT_BM_04_Test.Objective"}]},
+			{"Content": [{"Text": "XCIT_BM_04_Test.Constraint"}]},
+			{"Content": [{"Text": "XCIT_BM_04_Test.Feedback"}]},
+			{"Content": [{"Text": "XCIT_BM_04_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_BM_04_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BM_04_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BM_04_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+// ---- End Instructions ----
+		"Debug": {
+			"Blocks": [
+				{
+					"Name": "Debug"
+				}
+			]
+		},
+		"Video": {
+			"Blocks": [{ "Name": "Video" }]
+		},
+		"RobotTest": {
+			"Blocks": [
+				{ "Name": "RobotTest" },
+				{ "Name": "RobotTest" }
+			]
+		},
+		"Tutorial": {
+			"Blocks": [
+				{
+					"Name": "XCIT_BM_01_Tutorial"	
+				}
+			]
+		},
+		"XCIT_BM_Pilot7": {
+			"Blocks": [
+				{
+					"ShowAgainOnNextBlockFailure": true,
+					"Instructions": [
+						{
+							"Content": [
+								{
+									"Text": "The top part of each problem is a pattern with one part cut out of it"
+								}
+							]
+						},
+						{
+							"Content": [
+								{
+									"Text": "Your task is to look at the pattern, think of what the missing part must look like to complete the pattern correctly, and then find the right piece out of the eight shown."
+								}
+							]
+						},
+						{
+							"Content": [
+								{
+									"Text": "Only one of the answer choices is perfectly correct"
+								}
+							],
+							"OK": "Common.IAmReady"
+						}
+					]
+				},
+				{
+					"Name": "XCIT_BM_01_Tutorial"
+				},
+				{
+					"Name": "XCIT_BM_01_Practice",
+					"ExitRules": [
+						{ "Trials": 12 }
+					]	
+				},
+				{
+					"Name": "XCIT_BM_01_Test",
+					"ExitRules": [
+						{ "Trials": 36 },
+						{ "Time": 2160 }
+					]	
+				}
+			]
+		}
+	},
+	"Blocks": {
+		"Default": {
+			"Parameters": {
+				"ProblemConfig": "Transfo_1",
+				"TargetElementIndex": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 1,
+						"Max": 8
+					}
+				},
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ShowPatternCompletionFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": true,
+				"MaxIdleTime": 60
+			}
+		},
+		"Video": {
+			"Inherits": "XCIT_BM_01_Test",
+			"Parameters": {
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowPatternCompletionFeedback": "Always"
+			}
+		},
+		"Debug_Transfo": {
+			"ExitRules": [{"Trials": 24}],
+			"Inherits": "Default",
+			"Parameters": {
+				"ProblemConfig": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [
+							"Transfo_1",
+							"Transfo_2",
+							"Transfo_3",
+							"Transfo_4",
+							"Transfo_5",
+							"Transfo_6",
+							"Transfo_7",
+							"Transfo_8",
+							"Transfo_9",
+							"Transfo_10",
+							"Transfo_11",
+							"Transfo_12",
+							"Transfo_13",
+							"Transfo_14",
+							"Transfo_15",
+							"Transfo_16",
+							"Transfo_17",
+							"Transfo_18",
+							"Transfo_19",
+							"Transfo_20",
+							"Transfo_21",
+							"Transfo_22",
+							"Transfo_23",
+							"Transfo_24"
+						 ]
+					}
+				},
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ShowPatternCompletionFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": false,
+				"MaxIdleTime": 120,
+				"BlockTimer_Position": "Hidden",
+				"UserInputTimer_Position": "StatusBarCenter"
+			}
+		},
+		"Debug": {
+			"Inherits": "Default",
+			"Parameters": {
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ShowPatternCompletionFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": false,
+				"MaxIdleTime": 120,
+				"BlockTimer_Position": "Hidden",
+				"UserInputTimer_Position": "StatusBarCenter"
+			},
+			"Trials":[
+				// {
+				// 	"Parameters":{
+				// 		"ProblemConfig":{
+				// 			"ProblemComment": "[Debug]",
+				// 			"ProblemType": "FeatureTransformation",
+				// 			"ProblemParameters": {
+				// 				"PossibleMissingElementIndices": [9],
+				// 				"FeatureTransformations": [
+				// 					{
+				// 						"Feature": "BackgroundColor",
+				// 						"Transformation": "VerticalRepeat"
+				// 					},
+				// 					{
+				// 						"Feature": "Color",
+				// 						"Transformation": "Identity"
+				// 					},
+				// 					{
+				// 						"Feature": "Angle",
+				// 						"Transformation": "SymmetryCenter4Groups"
+				// 					}
+				// 				]
+				// 			}	
+				// 		}
+				// 	}
+
+				// },
+				{"Parameters":{"ProblemConfig": "Logic_5", "TargetElementIndex": 3}, "Seed":7},
+				{
+					"Parameters": {
+						"ProblemConfig": "Transfo_15_V2"
+					},
+					"Seed": 1
+				},
+				{
+					"Parameters": {
+						"ProblemConfig": "Transfo_19_V2"
+					},
+					"Seed": 0
+				},
+				{
+					"Parameters": {
+						"ProblemConfig": "Logic_8_V2_Alt"
+					},
+					"Seed": 1
+				},
+				{
+					"Parameters": {
+						"ProblemConfig": "Transfo_18"
+					},
+					"Seed": 0
+				},
+				{
+					"Parameters": {
+						"ProblemConfig": "Transfo_18_Alt"
+					},
+					"Seed": 1
+				}
+
+			]
+		},
+		"Debug_Logic": {
+			"ExitRules": [{"Trials": 10}],
+			"Inherits": "Default",
+			"Parameters": {
+				"ProblemConfig": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [
+							"Logic_11",
+							"Logic_12",
+							"Logic_3",
+							"Logic_4",
+							"Logic_5",
+							"Logic_6",
+							"Logic_7",
+							"Logic_8",
+							"Logic_9",
+							"Logic_10"
+						 ]
+					}
+				},
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ShowPatternCompletionFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": false,
+				"MaxIdleTime": 120,
+				"BlockTimer_Position": "Hidden",
+				"UserInputTimer_Position": "StatusBarCenter"
+			}
+		},
+		"XCIT_BM_02_Tutorial": {
+			"Inherits": "Default",
+			"Parameters": {
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ShowPatternCompletionFeedback": "Always",
+				"ShowAccuracyOnButtonFeedback": false,
+				"MaxIdleTime": 120,
+				"BlockTimer_Position": "Hidden",
+				"UserInputTimer_Position": "StatusBarCenter"
+			},
+			"Trials": [
+				{
+					"Parameters": {
+						"ProblemConfig": "Transfo_1"
+					},
+					"Seed": 3,
+					"IncrementSeedOnFailure": true,
+					"MinAccuracyRequired": 1
+				},
+				{
+					"Parameters": {
+						"ProblemConfig": "Transfo_3"	
+					},
+					"Seed": 1,
+					"IncrementSeedOnFailure": true,
+					"MinAccuracyRequired": 1
+				},
+				{
+					"Parameters": {
+						"ProblemConfig": "Transfo_4"
+					},
+					"Seed": 7,
+					"IncrementSeedOnFailure": true,
+					"MinAccuracyRequired": 1
+				},
+				{
+					"Parameters": {
+						"ProblemConfig": "Logic_2"
+					},
+					"Seed": 2,
+					"IncrementSeedOnFailure": true,
+					"MinAccuracyRequired": 1
+				},
+				{
+					"Parameters": {
+						"ProblemConfig": "Transfo_9"
+					},
+					"Seed": 4,
+					"IncrementSeedOnFailure": true,
+					"MinAccuracyRequired": 1
+				}
+			]
+		},
+		"XCIT_BM_02_Test": {
+			"Inherits": "Default",
+			"Parameters": {
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ShowPatternCompletionFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": false,
+				"MaxIdleTime": 120,
+				"BlockTimer_Position": "InformationPanel",
+				"UserInputTimer_Position": "StatusBarCenter"
+			},
+			"Trials":[
+				{"Parameters":{"ProblemConfig": "Transfo_7_V2", "TargetElementIndex": 6}, "Seed":4},
+				{"Parameters":{"ProblemConfig": "Logic_3", "TargetElementIndex": 1}, "Seed":11},
+				{"Parameters":{"ProblemConfig": "Transfo_25", "TargetElementIndex": 8}, "Seed":5},
+				{"Parameters":{"ProblemConfig": "Transfo_12", "TargetElementIndex": 3}, "Seed":3},
+				{"Parameters":{"ProblemConfig": "Transfo_15_V2", "TargetElementIndex": 4}, "Seed":9}, //05
+				{"Parameters":{"ProblemConfig": "Logic_3_V2", "TargetElementIndex": 7}, "Seed":1},
+				{"Parameters":{"ProblemConfig": "Transfo_14_V2", "TargetElementIndex": 2}, "Seed":18},
+				{"Parameters":{"ProblemConfig": "Transfo_16_V2", "TargetElementIndex": 5}, "Seed":7},
+				{"Parameters":{"ProblemConfig": "Transfo_18", "TargetElementIndex": 6}, "Seed":35},
+				{"Parameters":{"ProblemConfig": "Logic_8_V2", "TargetElementIndex": 2}, "Seed":4}, //10
+				{"Parameters":{"ProblemConfig": "Transfo_17_V2", "TargetElementIndex": 5}, "Seed":9},
+				{"Parameters":{"ProblemConfig": "Transfo_21_V2", "TargetElementIndex": 8}, "Seed":123},
+				{"Parameters":{"ProblemConfig": "Transfo_19", "TargetElementIndex": 1}, "Seed":7},
+				{"Parameters":{"ProblemConfig": "Logic_5", "TargetElementIndex": 7}, "Seed":3},
+				{"Parameters":{"ProblemConfig": "Transfo_22_V2", "TargetElementIndex": 6}, "Seed":5}, //15
+				{"Parameters":{"ProblemConfig": "Transfo_23_V2", "TargetElementIndex": 5}, "Seed":14}, 
+				{"Parameters":{"ProblemConfig": "Logic_7_V2", "TargetElementIndex": 2}, "Seed":4},
+				{"Parameters":{"ProblemConfig": "Transfo_19_V2", "TargetElementIndex": 3}, "Seed":9},
+				{"Parameters":{"ProblemConfig": "Transfo_20_V2", "TargetElementIndex": 1}, "Seed":24},
+				{"Parameters":{"ProblemConfig": "Logic_6", "TargetElementIndex": 4}, "Seed":2} //20
+			]
+		},
+		"XCIT_BM_03_Tutorial": {
+			"Inherits": "XCIT_BM_02_Tutorial"
+		},
+		"XCIT_BM_03_Test": {
+			"Inherits": "XCIT_BM_02_Test",
+			"Parameters":{
+				"ShowAccuracyCheckFeedback": "Always"
+			}
+		},
+		"XCIT_BM_04_Test": {
+			"Inherits": "XCIT_BM_02_Test",
+			"Parameters":{},
+			"Trials":[
+				{"Parameters":{"ProblemConfig": "Transfo_16_V2_Alt", "TargetElementIndex": 4}, "Seed":8}, //alt
+				{"Parameters":{"ProblemConfig": "Logic_8_V2", "TargetElementIndex": 2}, "Seed":4},
+				{"Parameters":{"ProblemConfig": "Transfo_18_Alt", "TargetElementIndex": 7}, "Seed":17}, //alt
+				{"Parameters":{"ProblemConfig": "Transfo_14_V2", "TargetElementIndex": 2}, "Seed":18},
+				{"Parameters":{"ProblemConfig": "Logic_5", "TargetElementIndex": 4}, "Seed":5}, //alt
+				{"Parameters":{"ProblemConfig": "Transfo_16_V2", "TargetElementIndex": 5}, "Seed":7},
+				{"Parameters":{"ProblemConfig": "Logic_8_V2", "TargetElementIndex": 1}, "Seed":7}, //alt
+				{"Parameters":{"ProblemConfig": "Transfo_18", "TargetElementIndex": 6}, "Seed":35},
+				{"Parameters":{"ProblemConfig": "Transfo_14_V2_Alt", "TargetElementIndex": 3}, "Seed":123}, //alt
+				{"Parameters":{"ProblemConfig": "Logic_5", "TargetElementIndex": 7}, "Seed":3}
+			]
+		},
+		"XCIT_BM_01_Tutorial": {
+			"Inherits": "Default",
+			"Parameters": {
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ShowPatternCompletionFeedback": "Always",
+				"ShowAccuracyOnButtonFeedback": false,
+				"MaxIdleTime": 120,
+				"BlockTimer_Position": "Hidden",
+				"UserInputTimer_Position": "StatusBarCenter"
+			},
+			"Trials": [
+				{
+					"Parameters": {
+						"ProblemConfig": "Transfo_1"
+					},
+					"MinAccuracyRequired": 1
+				},
+				{
+					"Parameters": {
+						"ProblemConfig": "Logic_1"	
+					},
+					"MinAccuracyRequired": 1
+				},
+				{
+					"Parameters": {
+						"ProblemConfig": "Transfo_2"
+					},
+					"MinAccuracyRequired": 1
+				},
+				{
+					"Parameters": {
+						"ProblemConfig": "Logic_2"
+					},
+					"MinAccuracyRequired": 1
+				},
+				{
+					"Parameters": {
+						"ProblemConfig": "Transfo_3"
+					},
+					"MinAccuracyRequired": 1
+				}
+			]
+		},
+		"XCIT_BM_01_Practice": {
+			"Inherits": "Default",
+			"Parameters": {
+				"ProblemConfig": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [
+							"Transfo_4",
+							"Transfo_5",
+							"Logic_3",
+							"Transfo_6",
+							"Transfo_7",
+							"Logic_4",			
+							"Transfo_8",
+							"Transfo_9",
+							"Logic_5",
+							"Transfo_10"
+						 ]
+					}
+				},
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ShowPatternCompletionFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": false,
+				"MaxIdleTime": 120,
+				"BlockTimer_Position": "Hidden",
+				"UserInputTimer_Position": "StatusBarCenter"
+			}
+		},
+		"XCIT_BM_01_Test": {
+			"Inherits": "Default",
+			"Parameters": {
+				"ProblemConfig": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [
+							"Transfo_11",
+							"Logic_6",
+							"Transfo_12",
+							"Transfo_13",
+							"Logic_7", //5
+							"Transfo_14",
+							"Transfo_15",
+							"Logic_8",
+							"Transfo_16",
+							"Transfo_17",//10
+							"Logic_9",
+							"Transfo_18",
+							"Transfo_19",
+							"Logic_10",
+							"Transfo_20",//15
+							"Transfo_21",
+							"Logic_11",
+							"Transfo_22",
+							"Transfo_23",
+							"Logic_12",//20
+							"Transfo_24"
+						 ]
+					}
+				},
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ShowPatternCompletionFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": false,
+				"MaxIdleTime": 120,
+				"BlockTimer_Position": "InformationPanel",
+				"UserInputTimer_Position": "StatusBarCenter"
+			}
+		},
+		"RobotTest": {
+			"Inherits": "Default",
+			"Parameters": {
+				"TaskName_Position": "StatusBarLeft",
+				"BlockCounter_Position": "StatusBarLeft",
+				"BlockCounter_Style": "Counter",
+				"TrialCounter_Position": "StatusBarLeft",
+				"TrialCounter_Style": "Counter",
+				"TrialResults_Position": "StatusBarRight",
+				"TrialResults_Style": "ColoredDiscrete",
+				"ProblemConfig": {
+					"Replacement": "WithoutInBlock",
+					"Distribution": {
+						"Type": "Uniform"
+					}
+				}
+			},
+			"Trials": [
+				{ "Parameters": {
+					"ShowAccuracyCheckFeedback": "Never"
+				}}, { "Parameters": {
+					"ShowAccuracyOnButtonFeedback": false
+				}}, { "Parameters": {
+					"ShowCorrectTrialResponseFeedback": "OnError"
+				}}, { "Parameters": {
+					"ShowCorrectTrialResponseFeedback": "Always"
+				}}, { "Parameters": {
+					"ShowPatternCompletionFeedback": "OnError"
+				}}, { "Parameters": {
+					"ShowPatternCompletionFeedback": "OnCorrect"
+				}}, { "Parameters": {
+					"ShowPatternCompletionFeedback": "Always"
+				}}, { "Parameters": {
+					"MaxIdleTime": 1
+				}}
+			]
+		}
+	}
+}

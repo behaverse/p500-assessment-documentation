@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button/Recal Spatial Attention Cueing Parameters - Behaverse Assessment</title>
+    <link rel="stylesheet" href="../../css/parameters.css">
+</head>
+<body>
+<div class="parameters-container">
+    <h2>Parameters</h2>
+    <h3>Cue parameters (4 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">EndogenousCueType</h4>
+        <p class="parameter-description">The type of endogenous cue that will be displayed to the user on the screen center.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Arrow</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">EndogenousCueValidity</h4>
+        <p class="parameter-description">Qualifies the type of information given by the cue.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Valid</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> “Valid” will be used for the pro-saccade condition and “Invalid” for the anti-saccade condition.
+“NoGo” cue makes sense only in some specific context. If a user doesn’t press on a NoGo trial it will currently not be considered correct.
+</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ExogenousCueType</h4>
+        <p class="parameter-description">The type of exogenous cue that will be displayed at potential stimulus locations.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Circle</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ExogenousCueValidity</h4>
+        <p class="parameter-description">Qualifies the type of information given by the cue.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Valid</span>
+        </div>
+    </div>
+    <h3>Stimulus parameters (5 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusType</h4>
+        <p class="parameter-description">The type of stimulus that will be displayed (i.e., this is not the cue).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Number</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Button is only available in classic SAC, all others only in RSAC.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MatrixSize</h4>
+        <p class="parameter-description">The size of the matrix (N), if StimulusType = Matrix. If N = 3, the matrix will be 3x3 and will have 9 cells.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 3</span>
+            <span><strong>Range:</strong> 2 - 5</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusValue</h4>
+        <p class="parameter-description">The value of the stimulus.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 1</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> If StimulusType == Number, it’s the number that will be shown.
+If StimulusType == Symbol, it’s the index in the symbol list (indice starts from 0 and ends at 9).
+If StimulusType == VerticalArrow | HorizontalArrow, it’s the index in the symbol list (indices start from 1 end at 2).
+If StimulusType == Matrix, the number of lit cells. If there are more lit cells than the total number of cells, all cells are lit.
+If StimulusType == Button, this parameter is ignored.
+</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusPosition</h4>
+        <p class="parameter-description">The position of the stimulus.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Center</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowDistractor</h4>
+        <p class="parameter-description">Whether we want to show a distractor where the stimulus is not (for example “↑“ on the right if the stimulus is on the left).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> If the stimulus is in the center, there can’t be any distractor.
+</div>
+    </div>
+    <h3>Timing parameters (13 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">FixationPointOnset</h4>
+        <p class="parameter-description">When the fixation point should be shown in seconds relative to trial onset.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">FixationPointOffset</h4>
+        <p class="parameter-description">When the fixation point should be hidden in seconds relative to the first endogenous or exogenous cue onset (or stimulus or user input if both cues are hidden).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Range:</strong> -Inf - inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">TaskCueOnset</h4>
+        <p class="parameter-description">When the task cue should be shown in seconds relative to trial onset.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">TaskCueDisplayDuration</h4>
+        <p class="parameter-description">The time the task cue stays on screen.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">EndogenousCueOnset</h4>
+        <p class="parameter-description">When the endogenous cue should be shown in seconds relative to the stimulus onset.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> -0.5</span>
+            <span><strong>Range:</strong> -Inf - inf</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Because the endogenous cue appears before the stimulus, this value is negative.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">EndogenousDisplayDuration</h4>
+        <p class="parameter-description">The time the endogenous cue stays on screen.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.4</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ExogenousCueOnset</h4>
+        <p class="parameter-description">When the exogenous cue should be shown in seconds relative to the stimulus onset.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> -0.5</span>
+            <span><strong>Range:</strong> -Inf - inf</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Because the exogenous cue appears before the stimulus, this value is negative.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ExogenousCueDisplayDuration</h4>
+        <p class="parameter-description">The time the exogenous cue stays on screen.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.4</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusOnset</h4>
+        <p class="parameter-description">When the stimulus should be shown in seconds relative to trial onset.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.5</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusDisplayDuration</h4>
+        <p class="parameter-description">The time the stimulus stays on screen.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.15</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">NoiseMaskOnset</h4>
+        <p class="parameter-description">When the noise mask should be shown in seconds relative to the end of the stimulus shown (onset + duration). In other words, the delay after the stimulus has been hidden.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.05</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">NoiseMaskDisplayDuration</h4>
+        <p class="parameter-description">The display duration of the noise mask displayed on top of the stimulus.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.15</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">UserInputOnset</h4>
+        <p class="parameter-description">When the user can input his answer in seconds relative to the stimulus onset.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.5 (1 in RSAC)</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <h3>User Input parameters (1 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaxResponseTime</h4>
+        <p class="parameter-description">The maximum time the user can take to answer. After that, the trial is considered failed.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 5</span>
+            <span><strong>Range:</strong> 0.01 - Inf</span>
+        </div>
+    </div>
+    <h3>Feedback parameters (2 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyCheckFeedback</h4>
+        <p class="parameter-description">Whether we should show the valid or wrong “check” feedback at the end of a trial.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Always</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowCorrectTrialResponseFeedback</h4>
+        <p class="parameter-description">Whether we should show the correct response feedback at the end of a trial.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Never</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1085 @@
+{
+	"Id": "OC",
+	"Scene": "OrderedClicks",
+	"Rules": {
+// ---- Begin Rules ----
+"XCIT_OC_01_Practice_Rules": [
+	{"text": "XCIT_OC_01_Practice.RulesTitle","heading": 2},
+	{"text":"XCIT_OC_01_Tutorial.Stimulus"},{"text":"XCIT_OC_01_Tutorial.Stimulus_2"},{"Image": "OC/XCIT_OC_01_instruction_1"},{"text":"XCIT_OC_01_Tutorial.Stimulus_3"},{"Image": "OC/XCIT_OC_01_instruction_2"},{"text":"XCIT_OC_01_Tutorial.YourJob"},{"text":"XCIT_OC_01_Tutorial.Response"},{"text":"XCIT_OC_01_Tutorial.ExampleResponse"},{"Image": "OC/XCIT_OC_01_instruction_3"},{"text":"XCIT_OC_01_Tutorial.ExampleResponse_2"},{"Image": "OC/XCIT_OC_01_instruction_4"},{"text":"XCIT_OC_01_Tutorial.ExampleResponse_3"},{"Image": "OC/XCIT_OC_01_instruction_5"},{"text":"XCIT_OC_01_Practice.Objective"}
+],
+"XCIT_OC_01_Tutorial_Rules": [
+	{"text": "XCIT_OC_01_Tutorial.RulesTitle","heading": 2},
+	{"text":"XCIT_OC_01_Tutorial.Stimulus"},{"text":"XCIT_OC_01_Tutorial.Stimulus_2"},{"Image": "OC/XCIT_OC_01_instruction_1"},{"text":"XCIT_OC_01_Tutorial.Stimulus_3"},{"Image": "OC/XCIT_OC_01_instruction_2"},{"text":"XCIT_OC_01_Tutorial.YourJob"},{"text":"XCIT_OC_01_Tutorial.Response"},{"text":"XCIT_OC_01_Tutorial.ExampleResponse"},{"Image": "OC/XCIT_OC_01_instruction_3"},{"text":"XCIT_OC_01_Tutorial.ExampleResponse_2"},{"Image": "OC/XCIT_OC_01_instruction_4"},{"text":"XCIT_OC_01_Tutorial.ExampleResponse_3"},{"Image": "OC/XCIT_OC_01_instruction_5"},{"text":"XCIT_OC_01_Practice.Objective"}
+],
+// ---- End Rules ----
+},
+	"EnumDefinitions": {},
+	"ParameterInfos": {
+		"SioCount": {
+			"Type": "Int",
+			"Min": 1,
+			"Max": 100
+		},
+		"FeatureType": {
+			"Type": "Enum",
+			"Values": [ "Digits", "Letters" ]
+		},
+		"SioBackgroundColor": {
+			"Type": "Color"
+		},
+		"SioTextColor": {
+			"Type": "Color"
+		},
+		"AscendingOrder": {
+			"Type": "Bool"
+		},
+		"TrackStream": {
+			"Type": "Bool"
+		},
+		"MaxResponseTimeAfterFirstClick": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"OrderingRule": {
+			"Type": "Enum",
+			"Values": [ "Sequential", "Alternate", "Cross" ]
+		},
+		"IgnoreErrorsForFirstSio":{
+			"Type": "Bool"
+		},
+		"FirstClickAction": {
+			"Type": "Enum",
+			"Values": [ "None", "ShowAllSymbols" ]
+		},
+		"ClickedSioVisualState": {
+			"Type": "Enum",
+			"Values": [ "None", "Pressed", "Placeholder", "Disappear" ]
+		},
+		"HideSymbolsDelay": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"SioOrderPresentationDisplayDuration": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"SioOrderPresentationInterval": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"HighlightSio": {
+			"Type": "Enum",
+			"Values": [ "None", "First", "FirstTwo", "All" ]
+		},
+		"HighlightSioDelay": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"StopTrialCondition": {
+			"Type": "Enum",
+			"Values": [ "OnError", "AfterSIOCountResponses", "OnCorrect" ]
+		},
+		"Layout": {
+			"Type": "Enum",
+			"Values": [ "Random", "Preset", "SequentialConstantRadius", "GridRandom", "GridConnection" ]
+		},
+		"FillGrid": {
+			"Type": "Bool"
+		},
+		"GridSize": {
+			"Type": "Int",
+			"Min": 2,
+			"Max": 10
+		},
+		"AllowGridDiagonals": {
+			"Type": "Bool"
+		},
+		"EnableInputDelay": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"DrawTrails": {
+			"Type": "Bool"
+		},
+		"PresetCoordinates": {
+			"Type": "Object"
+		},
+		"ShowAccuracyCheckFeedback": {
+			"Type": "Enum",
+			"Name": "ShowAccuracyCheckFeedback"
+		},
+		"ShowCorrectTrialResponseFeedback": {
+			"Type": "Enum",
+			"Name": "ShowCorrectTrialResponseFeedback"
+		},
+		"ShowAccuracyOnButtonFeedback": {
+			"Type": "Bool"
+		},
+		"ScoreLabel_Position": {
+			"Type": "Enum",
+			"Name": "HudWidgetPosition"
+		}
+	},
+	"Timelines": {
+// ---- Begin Timeline ----
+    "XCIT_OC_01": {
+        "blocks": [
+            {
+                "timeline": "XCIT_OC_01_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_OC_01_Tutorial",
+                "rulesName": "XCIT_OC_01_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_OC_01_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_OC_01_Practice_Intro"
+            },
+            {
+                "name": "XCIT_OC_01_Practice",
+                "rulesName": "XCIT_OC_01_Practice_Rules"
+            },
+            {
+                "timeline": "XCIT_OC_01_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_OC_01_Test_Intro"
+            },
+            {
+                "name": "XCIT_OC_01_Test"
+            },
+            {
+                "timeline": "XCIT_OC_01_Test_Outro"
+            }
+        ]
+    },
+// ---- End Timeline ----
+
+// ---- Begin Instructions ----
+"XCIT_OC_01_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_OC_01_Practice.Objective"}]},
+			{"Content": [{"Text": "XCIT_OC_01_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_OC_01_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_OC_01_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_OC_01_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_OC_01_Test.Objective"}]},
+			{"Content": [{"Text": "XCIT_OC_01_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_OC_01_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_OC_01_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_OC_01_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_OC_01_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_OC_01_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_OC_01_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_OC_01_Tutorial.Stimulus_2"},{"Image": "OC/XCIT_OC_01_instruction_1"}]},
+			{"Content": [{"Text": "XCIT_OC_01_Tutorial.Stimulus_3"},{"Image": "OC/XCIT_OC_01_instruction_2"}]},
+			{"Content": [{"Text": "XCIT_OC_01_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_OC_01_Tutorial.Response"}]},
+			{"Content": [{"Text": "XCIT_OC_01_Tutorial.ExampleResponse"},{"Image": "OC/XCIT_OC_01_instruction_3"}]},
+			{"Content": [{"Text": "XCIT_OC_01_Tutorial.ExampleResponse_2"},{"Image": "OC/XCIT_OC_01_instruction_4"}]},
+			{"Content": [{"Text": "XCIT_OC_01_Tutorial.ExampleResponse_3"},{"Image": "OC/XCIT_OC_01_instruction_5"}]},
+			{"Content": [{"Text": "XCIT_OC_01_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_OC_01_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_OC_01_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+// ---- End Instructions ----
+		"XCIT_OC_Pilot6": {
+			"Blocks": [
+				{
+					"Name": "XCIT_OC_Pilot6",
+					"Parameters":{
+						"BlockTimer_Position": "StatusBarRight",
+						"BlockTimer_Style": "TimeOnly"
+					},
+					"ExitRules": [
+						{	
+							"Time": 300
+						}
+					]
+				}
+			]
+		},
+		"Tutorial": {
+			"Blocks": [
+				{
+					"Name": "TutorialNormal"
+				},
+				{
+					"Name": "TutorialSequential"
+				}
+			]
+		},
+		"DemoRandom": {
+			"Blocks": [
+				{
+					"Name": "DemoRandom"
+				}
+			]
+		},
+		"DemoGridRandom": {
+			"Blocks": [
+				{
+					"Name": "DemoGridRandom"
+				}
+			]
+		},
+		"DemoGridConnection": {
+			"Blocks": [
+				{
+					"Name": "DemoGridConnection"
+				}
+			]
+		},
+
+		"DemoSequentialConstantRadius": {
+			"Blocks": [
+				{
+					"Name": "DemoSequentialConstantRadius"
+				}
+			]
+		},
+		"Debug": {
+			"Blocks": [
+				{
+					"Name": "Debug",
+					"ExitRules": [
+						{
+							"Trials": 10,
+							"Type": "Failures",
+							"Consecutive": true
+						},
+						{ "Trials": 7 }
+					]
+				},
+				{
+					"Name": "Debug2",
+					"ExitRules": [
+						{
+							"Trials": 10,
+							"Type": "Failures",
+							"Consecutive": true
+						},
+						{ "Trials": 20 }
+					]
+				}
+			]
+		},
+		"RobotTest": {
+			"Blocks": [
+				{ "Name": "RobotTest" },
+				{ "Name": "RobotTest" }
+			]
+		}
+	},
+	"Blocks": {
+		"Default": {
+			"Parameters": {
+				"SioCount": 10,
+				"GridSize": 4,
+				"Streams": [
+					{
+						"FeatureType": "Digits",
+						"SioBackgroundColor": "#8A9A9A",
+						"SioTextColor": "#373E48",
+						"AscendingOrder": true,
+						"TrackStream": true
+					}
+				],
+				"PresetCoordinates": { "X": 0.1, "Y": 0.1 },
+				"MaxResponseTimeAfterFirstClick": 9999,
+				"OrderingRule": "Sequential",
+				"FirstClickAction": "None",
+				"IgnoreErrorsForFirstSio": false,
+				"HideSymbolsDelay": 3600,
+				"SioOrderPresentationDisplayDuration": 0,
+				"SioOrderPresentationInterval": 0,
+				"ClickedSioVisualState": "None",
+				"HighlightSio": "None",
+				"HighlightSioDelay": 5,
+				"StopTrialCondition": "OnError",
+				"Layout": "GridConnection",
+				"FillGrid": true,
+				"AllowGridDiagonals": false,
+				"EnableInputDelay": 1,
+				"DrawTrails": false,
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowAccuracyOnButtonFeedback": true,
+				"ShowCorrectTrialResponseFeedback": "OnError",
+				"ScoreLabel_Position": "Hidden"
+			}
+		},
+		"TutorialNormal": {
+			"Inherits": "Default",
+			"Parameters": {
+				"GridSize": 2,
+				"OrderingRule": "Sequential",
+				"FirstClickAction": "None",
+				"ClickedSioVisualState": "Pressed",
+				"HideSymbolsDelay": 3600,
+				"StopTrialCondition": "OnError",
+				"AllowGridDiagonals": false,
+
+				"EnableInputDelay": 0,
+				"Layout": "GridRandom",
+				"FillGrid": false,
+				"DrawTrails": false,
+
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "OnError",
+
+				"TaskName_Position": "Hidden",
+				"BlockCounter_Position": "Hidden",
+				"BlockCounter_Style": "Counter",
+				"TrialResults_Position": "Hidden",
+				"LevelLabel_Position": "Hidden",
+				"TrialCounter_Position": "Hidden",
+				"UserInputTimer_Position": "Hidden"
+			},
+			"Trials": [
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"SioCount": 2,
+						"HighlightSio": "All",
+						"HighlightSioDelay": 2
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"SioCount": 3,
+						"HighlightSio": "First",
+						"HighlightSioDelay": 2
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"SioCount": 4,
+						"HighlightSio": "None"
+					}
+				}
+			]
+		},
+		"TutorialSequential": {
+			"Inherits": "Default",
+			"Parameters": {
+				"SioCount": 10,
+				"Streams": [
+					{
+						"FeatureType": "Letters",
+						"SioBackgroundColor": "#8A9A9A",
+						"SioTextColor": "#373E48",
+						"AscendingOrder": true,
+						"TrackStream": true
+					}
+				],
+				"OrderingRule": "Sequential",
+				"FirstClickAction": "None",
+				"ClickedSioVisualState": "Pressed",
+				"HideSymbolsDelay": 3600,
+				"HighlightSio": "All",
+				"HighlightSioDelay": 2,
+				"StopTrialCondition": "OnError",
+				"AllowGridDiagonals": false,
+				"EnableInputDelay": 0,
+				"DrawTrails": true,
+				"Layout": "SequentialConstantRadius",
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "OnError",
+				"TaskName_Position": "Hidden",
+				"BlockCounter_Position": "Hidden",
+				"BlockCounter_Style": "Counter",
+				"TrialResults_Position": "Hidden",
+				"LevelLabel_Position": "Hidden",
+				"TrialCounter_Position": "Hidden"
+			},
+			"Trials": [
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"SioCount": 4
+					}
+				}
+			]
+		},
+		"DemoRandom": {
+			"Inherits": "Default",
+			"Parameters": {
+				"SioCount": 4,
+				"Streams": [
+					{
+						"FeatureType": "Digits",
+						"SioBackgroundColor": "#8A9A9A",
+						"SioTextColor": "#000000",
+						"AscendingOrder": true,
+						"TrackStream": true
+					}
+				],
+
+				"OrderingRule": "Sequential",
+				"FirstClickAction": "None",
+				"ClickedSioVisualState": "Pressed",
+				"HideSymbolsDelay": 3600,
+
+				"HighlightSio": "None",
+				"StopTrialCondition": "OnError",
+				"AllowGridDiagonals": false,
+
+				"EnableInputDelay": 0,
+				"DrawTrails": false,
+				"Layout": "Random",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"BlockCounter_Position": "Hidden",
+				"LevelLabel_Position": "Hidden"
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "SioCount",
+					"StepSize": 1,
+					"NUp": 1,
+					"NDown": 2
+				}
+			]
+		},
+		"DemoGridRandom": {
+			"Inherits": "Default",
+			"Parameters": {
+				"SioCount": 4,
+				"OrderingRule": "Sequential",
+				"FirstClickAction": "None",
+				"ClickedSioVisualState": "Pressed",
+				"HideSymbolsDelay": 3600,
+
+				"HighlightSio": "None",
+				"StopTrialCondition": "OnError",
+				"AllowGridDiagonals": false,
+
+				"EnableInputDelay": 0,
+				"DrawTrails": false,
+				"Layout": "GridRandom",
+				"FillGrid": false,
+				"BlockCounter_Position": "Hidden",
+				"LevelLabel_Position": "Hidden"
+
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "SioCount",
+					"StepSize": 1,
+					"NUp": 1,
+					"NDown": 2
+				}
+			]
+		},
+		"DemoGridConnection": {
+			"Inherits": "Default",
+			"Parameters": {
+				"SioCount": 4,
+				"Streams": [
+					{
+						"FeatureType": "Digits",
+						"SioBackgroundColor": "#8A9A9A",
+						"SioTextColor": "#373E48",
+						"AscendingOrder": true,
+						"TrackStream": true
+					},
+					{
+						"FeatureType": "Letters",
+						"SioBackgroundColor": "#ffffff",
+						"SioTextColor": "#8A9A9A",
+						"AscendingOrder": true,
+						"TrackStream": true
+					}
+				],
+				"OrderingRule": "Alternate",
+				"FirstClickAction": "None",
+				"ClickedSioVisualState": "Pressed",
+				"HideSymbolsDelay": 3600,
+
+				"HighlightSio": "None",
+				"StopTrialCondition": "OnError",
+				"AllowGridDiagonals": true,
+
+				"EnableInputDelay": 0,
+				"DrawTrails": true,
+				"Layout": "GridConnection",
+				"BlockCounter_Position": "Hidden",
+				"LevelLabel_Position": "Hidden"
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "SioCount",
+					"StepSize": 2,
+					"NUp": 2,
+					"NDown": 2
+				}
+			]
+		},
+		"DemoSequentialConstantRadius": {
+			"Inherits": "Default",
+			"Parameters": {
+				"SioCount": 4,
+				"Streams": [
+					{
+						"FeatureType": "Digits",
+						"SioBackgroundColor": "#8A9A9A",
+						"SioTextColor": "#373E48",
+						"AscendingOrder": true,
+						"TrackStream": true
+					}
+				],
+
+				"OrderingRule": "Sequential",
+				"FirstClickAction": "None",
+				"ClickedSioVisualState": "Pressed",
+
+				"HideSymbolsDelay": 3600,
+
+				"HighlightSio": "First",
+				"StopTrialCondition": "OnError",
+				"AllowGridDiagonals": false,
+				"EnableInputDelay": 0,
+				"DrawTrails": false,
+				"Layout": "SequentialConstantRadius",
+				"BlockCounter_Position": "Hidden",
+				"LevelLabel_Position": "Hidden"
+
+
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "SioCount",
+					"StepSize": 1,
+					"NUp": 1,
+					"NDown": 2
+				}
+			]
+		},
+		"Debug": {
+			"Inherits": "Default",
+			"Parameters": {
+				"SioCount": 4,
+				"Streams": [
+					{
+						"FeatureType": "Digits",
+						"SioBackgroundColor": "#ffffff",
+						"SioTextColor": "#000000",
+						"AscendingOrder": true,
+						"TrackStream": true
+					}
+				],
+				"OrderingRule": "Sequential",
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "Always",
+				"FirstClickAction": "ShowAllSymbols",
+				"HideSymbolsDelay": 3600,
+				"ClickedSioVisualState": "Pressed",
+				"HighlightSio": "First",
+				"HighlightSioDelay": 1,
+				"StopTrialCondition": "OnCorrect",
+				"Layout": "GridConnection",
+				"FillGrid": true,
+				"AllowGridDiagonals": true,
+				"EnableInputDelay": 0,
+				"DrawTrails": true,
+				"ShowAccuracyOnButtonFeedback": false
+			}
+		},
+		"Debug2": {
+			"Inherits": "DemoGridConnection",
+			"Parameters": {
+				"SioCount": 7,
+				"OrderingRule": "Sequential",
+				"FirstClickAction": "None",
+				"ClickedSioVisualState": "Pressed",
+
+				"HighlightSioDelay": 2,
+				"HideSymbolsDelay": 0,
+
+				"HighlightSio": "FirstTwo",
+				"StopTrialCondition": "AfterSIOCountResponses",
+				"AllowGridDiagonals": false,
+				"EnableInputDelay": 0,
+				"DrawTrails": true,
+				"BlockCounter_Position": "Hidden",
+				"LevelLabel_Position": "Hidden",
+				"FillGrid": false,
+				"GridSize": 2
+			}
+		},
+		"XCIT_OC_Base": {
+			"Inherits": "Default",
+			"Parameters": {
+				"SioCount": 16,
+				"FirstClickAction": "ShowAllSymbols",
+				"IgnoreErrorsForFirstSio": true,
+				"ClickedSioVisualState": "Pressed",
+				"UserInputTimer_Position": "StatusBarCenter",
+				"HideSymbolsDelay": 9999,
+				"HighlightSio": "FirstTwo",
+				"HighlightSioDelay": 0.5,
+				"StopTrialCondition": "OnCorrect",
+				"FillGrid": true,
+				"GridSize": 4,
+				"EnableInputDelay": 0,
+				"DrawTrails": false,
+				"Layout": "GridRandom",
+				"ShowCorrectTrialResponseFeedback": "Never"
+			}
+		},
+		"XCIT_OC_Pilot6": {
+			"Inherits": "XCIT_OC_01_Test",
+			"Parameters":{
+				"BlockTimer_Position": "StatusBarRight",
+				"BlockTimer_Style": "TimeOnly"
+			},
+			"TrialOrder": [0,1,2,3,4,5,6,7]
+		},
+		"XCIT_OC_01_Test": {
+			// note: this block has 8 defined trials (8 experimental conditions), we use trialOrder with a "repeat" sequence to produce shuffled pairs of trials
+			// the 32 trials will have the structure: shuffle(00,11,22,33,44,55,66,77) + shuffle(00,11,22,33,44,55,66,77)
+			// such as 1122445533667700 3344665577001122
+			"Inherits": "XCIT_OC_Base",
+			"Parameters":{"MaxResponseTimeAfterFirstClick": 30},
+			"TrialOrder": {
+				"Sequence": { // turns a a sequence such as 21504736 into 2211550044773366
+					"Type": "Repeat",
+					"SequenceLength": 32, 
+					"Repeats": 2,
+					"Values": { // produces a sequence such as 21504736
+						"Replacement": "WithoutInBlock",
+						"Distribution": {
+							"Type": "Uniform"
+						}
+					} 
+				}
+			},
+			"Trials":[ // 8 experimental conditions, DDS DDA LLS LLA DLS DLA LDS LDA
+				{
+					"Parameters": {
+						"Streams": [
+							{
+								"FeatureType": "Digits",
+								"SioBackgroundColor": "#eeeeee",
+								"SioTextColor": "#444444",
+								"AscendingOrder": true,
+								"TrackStream": true
+							},
+							{
+								"FeatureType": "Digits",
+								"SioBackgroundColor": "#444444",
+								"SioTextColor": "#eeeeee",
+								"AscendingOrder": true,
+								"TrackStream": true
+							}
+						],
+						"OrderingRule": "Sequential"
+					}
+				},
+				{
+					"Parameters": {
+						"Streams": [
+							{
+								"FeatureType": "Digits",
+								"SioBackgroundColor": "#eeeeee",
+								"SioTextColor": "#444444",
+								"AscendingOrder": true,
+								"TrackStream": true
+							},
+							{
+								"FeatureType": "Digits",
+								"SioBackgroundColor": "#444444",
+								"SioTextColor": "#eeeeee",
+								"AscendingOrder": true,
+								"TrackStream": true
+							}
+						],
+						"OrderingRule": "Alternate"
+					}
+				},
+				{
+					"Parameters": {
+						"Streams": [
+							{
+								"FeatureType": "Letters",
+								"SioBackgroundColor": "#eeeeee",
+								"SioTextColor": "#444444",
+								"AscendingOrder": true,
+								"TrackStream": true
+							},
+							{
+								"FeatureType": "Letters",
+								"SioBackgroundColor": "#444444",
+								"SioTextColor": "#eeeeee",
+								"AscendingOrder": true,
+								"TrackStream": true
+							}
+						],
+						"OrderingRule": "Sequential"
+					}
+				},
+				{
+					"Parameters": {
+						"Streams": [
+							{
+								"FeatureType": "Letters",
+								"SioBackgroundColor": "#eeeeee",
+								"SioTextColor": "#444444",
+								"AscendingOrder": true,
+								"TrackStream": true
+							},
+							{
+								"FeatureType": "Letters",
+								"SioBackgroundColor": "#444444",
+								"SioTextColor": "#eeeeee",
+								"AscendingOrder": true,
+								"TrackStream": true
+							}
+						],
+						"OrderingRule": "Alternate"
+					}
+				},
+				{
+					"Parameters": {
+						"Streams": [
+							{
+								"FeatureType": "Digits",
+								"SioBackgroundColor": "#eeeeee",
+								"SioTextColor": "#444444",
+								"AscendingOrder": true,
+								"TrackStream": true
+							},
+							{
+								"FeatureType": "Letters",
+								"SioBackgroundColor": "#444444",
+								"SioTextColor": "#eeeeee",
+								"AscendingOrder": true,
+								"TrackStream": true
+							}
+						],
+						"OrderingRule": "Sequential"
+					}
+				},
+				{
+					"Parameters": {
+						"Streams": [
+							{
+								"FeatureType": "Digits",
+								"SioBackgroundColor": "#eeeeee",
+								"SioTextColor": "#444444",
+								"AscendingOrder": true,
+								"TrackStream": true
+							},
+							{
+								"FeatureType": "Letters",
+								"SioBackgroundColor": "#444444",
+								"SioTextColor": "#eeeeee",
+								"AscendingOrder": true,
+								"TrackStream": true
+							}
+						],
+						"OrderingRule": "Alternate"
+					}
+				},
+				{
+					"Parameters": {
+						"Streams": [
+							{
+								"FeatureType": "Letters",
+								"SioBackgroundColor": "#eeeeee",
+								"SioTextColor": "#444444",
+								"AscendingOrder": true,
+								"TrackStream": true
+							},
+							{
+								"FeatureType": "Digits",
+								"SioBackgroundColor": "#444444",
+								"SioTextColor": "#eeeeee",
+								"AscendingOrder": true,
+								"TrackStream": true
+							}
+						],
+						"OrderingRule": "Sequential"
+					}
+				},
+				{
+					"Parameters": {
+						"Streams": [
+							{
+								"FeatureType": "Letters",
+								"SioBackgroundColor": "#eeeeee",
+								"SioTextColor": "#444444",
+								"AscendingOrder": true,
+								"TrackStream": true
+							},
+							{
+								"FeatureType": "Digits",
+								"SioBackgroundColor": "#444444",
+								"SioTextColor": "#eeeeee",
+								"AscendingOrder": true,
+								"TrackStream": true
+							}
+						],
+						"OrderingRule": "Alternate"
+					}
+				}
+			]
+		},
+		"XCIT_OC_01_Practice": {
+			"Inherits": "XCIT_OC_01_Test",
+			"TrialOrder": [2,3,6,7],
+			"Parameters":{
+				"MaxResponseTimeAfterFirstClick": 35
+			}
+		},
+		"XCIT_OC_01_Tutorial": {
+			"Inherits": "XCIT_OC_01_Test",
+			"TrialOrder": [0,1,4,5],
+			"Parameters":{
+				"MaxResponseTimeAfterFirstClick": 40,
+				"HighlightSio": "All",
+				"HighlightSioDelay": 2.0
+			}
+		},
+		"RobotTest": {
+			"Inherits": "Default",
+			"Parameters": {
+				"TaskName_Position": "StatusBarLeft",
+				"BlockCounter_Position": "StatusBarLeft",
+				"BlockCounter_Style": "Counter",
+				"TrialCounter_Position": "StatusBarLeft",
+				"TrialCounter_Style": "Counter",
+				"TrialResults_Position": "StatusBarRight",
+				"TrialResults_Style": "ColoredDiscrete",
+				"SioCount": 9
+			},
+			"Trials": [
+				{ "Parameters": {
+					"SioCount": 1
+				}}, { "Parameters": {
+					"SioCount": 49
+				}}, { "Parameters": {
+					"Streams": [
+						{
+							"FeatureType": "Letters",
+							"SioBackgroundColor": "#3377aa",
+							"SioTextColor": "#000000",
+							"AscendingOrder": true,
+							"TrackStream": true
+						},
+						{
+							"FeatureType": "Digits",
+							"SioBackgroundColor": "#885588",
+							"SioTextColor": "#000000",
+							"AscendingOrder": true,
+							"TrackStream": true
+						}
+					]
+				}}, { "Parameters": {
+					"Streams": [
+						{
+							"FeatureType": "Letters",
+							"SioBackgroundColor": "#558888",
+							"SioTextColor": "#000000",
+							"AscendingOrder": true,
+							"TrackStream": true
+						},
+						{
+							"FeatureType": "Digits",
+							"SioBackgroundColor": "#885588",
+							"SioTextColor": "#000000",
+							"AscendingOrder": true,
+							"TrackStream": true
+						},
+						{
+							"FeatureType": "Digits",
+							"SioBackgroundColor": "#000000",
+							"SioTextColor": "#885588",
+							"AscendingOrder": true,
+							"TrackStream": true
+						}
+					]
+				}}, { "Parameters": {
+					"Streams": [
+						{
+							"FeatureType": "Letters",
+							"SioBackgroundColor": "#558888",
+							"SioTextColor": "#000000",
+							"AscendingOrder": true,
+							"TrackStream": true
+						},
+						{
+							"FeatureType": "Digits",
+							"SioBackgroundColor": "#885588",
+							"SioTextColor": "#000000",
+							"AscendingOrder": false,
+							"TrackStream": true
+						}
+					]
+				}}, { "Parameters": {
+					"Streams": [
+						{
+							"FeatureType": "Letters",
+							"SioBackgroundColor": "#558888",
+							"SioTextColor": "#000000",
+							"AscendingOrder": true,
+							"TrackStream": true
+						},
+						{
+							"FeatureType": "Digits",
+							"SioBackgroundColor": "#885588",
+							"SioTextColor": "#000000",
+							"AscendingOrder": true,
+							"TrackStream": false
+						}
+					]
+				}}, { "Parameters": {
+					"Streams": [
+						{
+							"FeatureType": "Letters",
+							"SioBackgroundColor": "#558888",
+							"SioTextColor": "#000000",
+							"AscendingOrder": true,
+							"TrackStream": true
+						},
+						{
+							"FeatureType": "Digits",
+							"SioBackgroundColor": "#885588",
+							"SioTextColor": "#000000",
+							"AscendingOrder": true,
+							"TrackStream": true
+						}
+					],
+					"OrderingRule": "Alternate"
+				}}, { "Parameters": {
+					"Streams": [
+						{
+							"FeatureType": "Letters",
+							"SioBackgroundColor": "#558888",
+							"SioTextColor": "#000000",
+							"AscendingOrder": true,
+							"TrackStream": true
+						},
+						{
+							"FeatureType": "Digits",
+							"SioBackgroundColor": "#885588",
+							"SioTextColor": "#000000",
+							"AscendingOrder": true,
+							"TrackStream": true
+						}
+					],
+					"OrderingRule": "Cross"
+				}}, { "Parameters": {
+					"FirstClickAction": "ShowAllSymbols"
+				}}, { "Parameters": {
+					"HideSymbolsDelay": 0
+				}}, { "Parameters": {
+					"ClickedSioVisualState": "Pressed"
+				}}, { "Parameters": {
+					"ClickedSioVisualState": "Placeholder"
+				}}, { "Parameters": {
+					"ClickedSioVisualState": "Disappear"
+				}}, { "Parameters": {
+					"HighlightSio": "First"
+				}}, { "Parameters": {
+					"HighlightSio": "FirstTwo"
+				}}, { "Parameters": {
+					"HighlightSio": "All"
+				}}, { "Parameters": {
+					"HighlightSio": "First",
+					"HighlightSioDelay": 1
+				}}, { "Parameters": {
+					"StopTrialCondition": "AfterSIOCountResponses"
+				}}, { "Parameters": {
+					"StopTrialCondition": "OnCorrect"
+				}}, { "Parameters": {
+					"Layout": "Random"
+				}}, { "Parameters": {
+					"Layout": "Preset",
+					"PresetCoordinates": {
+						"Sequence": {
+							"Type": "Ordered",
+							"Values": [
+								{ "X": 0.2, "Y": 0.2 },
+								{ "X": 0.4, "Y": 0.25 },
+								{ "X": 0.6, "Y": 0.35 },
+								{ "X": 0.8, "Y": 0.15 },
+								{ "X": 0.25, "Y": 0.45 },
+								{ "X": 0.45, "Y": 0.65 },
+								{ "X": 0.65, "Y": 0.8 },
+								{ "X": 0.85, "Y": 0.6 },
+								{ "X": 0.15, "Y": 0.65 }
+							]
+						}
+					}
+				}}, { "Parameters": {
+					"Layout": "GridConnection"
+				}}, { "Parameters": {
+					"GridSize": 2
+				}}, { "Parameters": {
+					"GridSize": 6
+				}}, { "Parameters": {
+					"FillGrid": true
+				}}, { "Parameters": {
+					"Layout": "GridConnection",
+					"AllowGridDiagonals": true
+				}}, { "Parameters": {
+					"EnableInputDelay": 10
+				}}, { "Parameters": {
+					"MaxResponseTimeAfterFirstClick": 0
+				}}, { "Parameters": {
+					"DrawTrails": true
+				}}, { "Parameters": {
+					"ShowAccuracyCheckFeedback": "Never"
+				}}, { "Parameters": {
+					"ShowAccuracyOnButtonFeedback": false
+				}}, { "Parameters": {
+					"ShowCorrectTrialResponseFeedback": "Never"
+				}}, { "Parameters": {
+					"ShowCorrectTrialResponseFeedback": "Always"
+				}}
+			]
+		}
+	}
+}

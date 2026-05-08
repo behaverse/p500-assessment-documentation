@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1>Timeline Demo</h1>
+            <div class="subtitle">Testing our new timeline parser functionality</div>
+        </header>
+        <div id="timeline-content" class="timeline-content">
+            <script>
+                var timelineData = [
+                    {
+                        "type": "session",
+                        "timestamp": "2023-03-15T10:00:00Z",
+                        "participantId": "P001",
+                        "sessionId": "S001",
+                        "metadata": {
+                            "device": "desktop",
+                            "browser": "Chrome",
+                            "version": "110.0.5481.177"
+                        }
+                    },
+                    {
+                        "type": "block",
+                        "timestamp": "2023-03-15T10:01:30Z",
+                        "participantId": "P001",
+                        "blockId": "B001",
+                        "blockType": "practice",
+                        "condition": "standard",
+                        "metadata": {
+                            "difficulty": "easy",
+                            "trials": 10
+                        }
+                    },
+                    {
+                        "type": "trial",
+                        "timestamp": "2023-03-15T10:02:15Z",
+                        "participantId": "P001",
+                        "blockId": "B001",
+                        "trialId": "T001",
+                        "stimulusId": "stim_123",
+                        "response": "left",
+                        "responseTime": 450,
+                        "accuracy": 1,
+                        "metadata": {
+                            "stimulusPosition": "center",
+                            "stimulusDuration": 200
+                        }
+                    },
+                    {
+                        "type": "session",
+                        "timestamp": "2023-03-16T14:00:00Z",
+                        "participantId": "P002",
+                        "sessionId": "S002",
+                        "metadata": {
+                            "device": "tablet",
+                            "browser": "Safari",
+                            "version": "15.4"
+                        }
+                    },
+                    {
+                        "type": "log",
+                        "timestamp": "2023-03-16T14:02:00Z",
+                        "participantId": "P002",
+                        "message": "Internet connection unstable",
+                        "severity": "warning",
+                        "metadata": {
+                            "connectionSpeed": "1.2Mbps"
+                        }
+                    }
+                ];
+            </script>
+        </div>
+    </div>
+
+    <script src="timeline.js"></script>
+    <script>
+        // Initialize the timeline
+        document.addEventListener('DOMContentLoaded', function() {
+            // Process the timeline data
+            const processedData = window.TimelineTools.processTimelineData(timelineData);
+            
+            // Render the timeline
+            window.TimelineTools.renderTimeline(processedData, 'timeline-content');
+        });
+    </script>
+</body>
+</html>

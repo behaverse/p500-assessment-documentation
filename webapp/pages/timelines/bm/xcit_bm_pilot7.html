@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XCIT_BM_Pilot7</title>
+    <link rel="stylesheet" href="../../../css/styles.css">
+    <link rel="stylesheet" href="../../../css/parameters.css">
+    <script src="../../../js/timeline.js"></script>
+</head>
+<body>
+    <div class="container">
+    <div class="timeline-content">
+        <div class="timeline-header">
+            <h2>XCIT_BM_Pilot7</h2>
+            
+        </div>
+        
+        
+        <!-- Video/Media Section -->
+        <div class="timeline-media">
+            <div class="video-container">
+                <video controls poster="../../../assets/engines/BM/thumbnail.jpg" preload="metadata">
+                    <source src="../../../assets/engines/BM/video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="timeline-actions">
+                    <button class="test-timeline-btn" onclick="testTimeline('XCIT_BM_Pilot7')">Test this timeline</button>
+                    <span class="timeline-duration">Duration: 5-10 minutes</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- About Section -->
+        <h3 class="section-title">About</h3>
+        <div class="timeline-about">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        </div>
+        
+        <!-- Config Section -->
+        <h3 class="section-title">Config</h3>
+        <div class="timeline-config"></div>
+        </div>
+        
+        <!-- Sample Data Section -->
+        <h3 class="section-title">Sample Data</h3>
+        <div class="timeline-sample-data">
+            <p>You can download a sample dataset <a href="#" class="sample-data-link">here</a></p>
+        </div>
+    </div>
+    </div>
+    <script>
+        function timelineToggleSection(sectionId) {
+            console.log('Toggling section:', sectionId);
+            
+            const section = document.getElementById(sectionId);
+            const content = document.getElementById('content-' + sectionId);
+            const icon = document.getElementById('icon-' + sectionId);
+            
+            if (!section || !content || !icon) {
+                console.log('timelineToggleSection: Missing elements for', sectionId);
+                console.log('Section:', section, 'Content:', content, 'Icon:', icon);
+                return;
+            }
+            
+            if (section.classList.contains('expanded')) {
+                console.log('Collapsing section:', sectionId);
+                section.classList.remove('expanded');
+                content.style.display = 'none';
+            } else {
+                console.log('Expanding section:', sectionId);
+                section.classList.add('expanded');
+                content.style.display = 'block';
+            }
+        }
+
+        // Note: toggleInheritanceDetails function is now defined in timeline.js
+
+        // Initialize sections with proper default states
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Initializing timeline sections...');
+            
+            const sections = document.querySelectorAll('.collapsible-section');
+            console.log('Found', sections.length, 'collapsible sections');
+            
+            sections.forEach(function(section, index) {
+                // Only expand main sections by default, keep others collapsed
+                if (section.classList.contains('main-section')) {
+                    section.classList.add('expanded');
+                    console.log('Initialized main section', section.id, 'as expanded');
+                } else {
+                    // Nested sections (block-section, instruction-section, etc.) start collapsed
+                    section.classList.remove('expanded');
+                    
+                    // Explicitly hide nested content
+                    const content = section.querySelector('.collapsible-content, .block-content, .instruction-content, .params-content');
+                    if (content) {
+                        content.style.display = 'none';
+                    }
+                    console.log('Initialized nested section', section.id, 'as collapsed');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,607 @@
+{
+	"Id": "OOO",
+	"Scene": "OddOneOut",
+	"Rules": {
+// ---- Begin Rules ----
+"XCIT_OOO_01_Practice_Rules": [
+	{"text": "XCIT_OOO_01_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_OOO_01_Practice.GameRules"}
+],
+"XCIT_OOO_01_Tutorial_Rules": [
+	{"text": "XCIT_OOO_01_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_OOO_01_Tutorial.GameRules"}
+],
+// ---- End Rules ----
+	},
+	"EnumDefinitions": {},
+	"ParameterInfos": {
+		"DifficultyLevelType": {
+			"Type": "Enum",
+			"Values": [ "SortedByGroupCount", "SortedByExclusiveFeature", "SortedByUniformGroup", "Test" ]
+		},
+		"FeatureOrder": {
+			"Type": "Enum",
+			"Values": [ "Color", "Symbol", "Number"]
+		},
+		"DifficultyLevel": {
+			"Type": "int",
+			"Min": 1,
+			"Max": 13
+		},
+		"MaximumIdleTime": {
+			"Type": "float",
+			"Min": 1
+		},
+		"PairingDisplayDuration": {
+			"Type": "float",
+			"Min": 0.1
+		},
+		"ShowAccuracyCheckFeedback": {
+			"Type": "Enum",
+			"Values": [ "Never", "Always" ]
+		},
+		"ShowCorrectTrialResponseFeedback": {
+			"Type": "Enum",
+			"Values": [ "Never", "OnError", "Always" ]
+		},
+		"ShowAccuracyOnButtonFeedback": {
+			"Type": "bool"
+		},
+		"ShowPairingFeedback": {
+			"Type": "Enum",
+			"Values": [ "Never", "OnError", "Always" ]
+		},
+		"ScoreLabel_Position": {
+			"Type": "Enum",
+			"Name": "HudWidgetPosition"
+		}
+	},
+	"Timelines": {
+// ---- Begin Instructions ----
+"XCIT_OOO_01_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_OOO_01_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_OOO_01_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_OOO_01_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_OOO_01_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_OOO_01_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_OOO_01_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_OOO_01_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_OOO_01_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_OOO_01_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_OOO_01_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_OOO_01_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_OOO_01_Tutorial.GenerativeModel"}]},
+			{"Content": [{"Text": "XCIT_OOO_01_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_OOO_01_Tutorial.Response"}]},
+			{"Content": [{"Text": "XCIT_OOO_01_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_OOO_01_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_OOO_01_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+// ---- End Instructions ----
+// ---- Begin Timeline ----
+    "XCIT_OOO_01": {
+        "blocks": [
+            {
+                "timeline": "XCIT_OOO_01_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_OOO_01_Tutorial",
+                "rulesName": "XCIT_OOO_01_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_OOO_01_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_OOO_01_Practice_Intro"
+            },
+            {
+                "name": "XCIT_OOO_01_Practice",
+                "rulesName": "XCIT_OOO_01_Practice_Rules",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 5,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_OOO_01_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_OOO_01_Test_Intro"
+            },
+            {
+                "name": "XCIT_OOO_01_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Time": 300
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_OOO_01_Test_Outro"
+            }
+        ]
+    },
+// ---- End Timeline ----
+		"Tutorial": {
+			"Blocks": [
+				{
+					"Name": "Tutorial"
+				}
+			]
+		},
+		"Debug": {
+			"Blocks": [
+				{
+					"Name": "Debug"
+				}
+			]
+		},
+		"RobotTest": {
+			"Blocks": [
+				{ "Name": "RobotTest" },
+				{ "Name": "RobotTest" }
+			]
+		},
+		"Demo": {
+			"Blocks": [
+				{
+					"Name": "Demo",
+					"ExitRules": [
+						{ "Time": 120 }
+					]
+				}
+			]
+		},
+		"CambridgeLike": {
+			"Blocks": [
+				{
+					"Name": "Tutorial_CambridgeLike"
+				},
+				{
+					"Name": "Evaluation_CambridgeLike",
+					"ExitRules": [
+						{ "Time": 240 }
+					]
+				}
+			]
+		},
+		"ScienceFestival2019": {
+			"ExitRules": [
+				{
+					"Action": "EndTimeline",
+					"Blocks": 2,
+					"Type": "Failures",
+					"SuccessAccuracy": 0.1
+				}
+			],
+			"Blocks": [
+				{
+					"ShowAgainOnNextBlockFailure": true,
+					"Instructions":[
+						{"Content":[{"Text": "Tasks.OddOneOut.Instructions.Job"}]},
+						{"Content":[{"Text": "Tasks.OddOneOut.Instructions.StimulusResponse"}]},
+						{"Content":[{"Text": "Tasks.Common.Instructions.TutorialIntro"}], "OK": "Common.IAmReady"}
+					]
+				},
+				{
+					"Name": "Tutorial",
+					"ExitRules": [
+						{
+							"Action": "FailBlock",
+							"Trials": 2,
+							"Type": "Failures"
+						}
+					]
+				},
+				{
+					"Instructions":[
+						{"Content":[{"Text": "Tasks.Common.Instructions.TutorialOuttro"}]},
+						{"Content":[{"Text": "Tasks.Common.Instructions.Ready"}], "OK": "Common.IAmReady"}
+					]
+				},
+				{
+					"Name": "Evaluation_ScienceFestival2019",
+					"ExitRules": [
+						{ "Time": 180 }
+					]
+				},
+				{
+					"Instructions":[
+						{"Content": [{"Text": "Common.ThankYou"}, {"Text": "Instructions.YourScore"}, {"Text": "Common.Bye"}],"OK": "Common.Bye"}
+					]
+				}
+			]
+		}
+	},
+	"Blocks": {
+		"Default": {
+			"Parameters": {
+				"FeatureOrder": {
+					"Replacement": "WithoutInTrial",
+					"Distribution": {
+						"Type": "Uniform",
+						"Values": [
+							"Color",
+							"Symbol",
+							"Number"
+						]
+					}
+				},
+				"DifficultyLevelType": "SortedByUniformGroup",
+				"DifficultyLevel": 1,
+				"MaximumIdleTime": 30,
+				"PairingDisplayDuration": 10,
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ShowPairingFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": false,
+				"ScoreLabel_Position": "Hidden"
+			}
+		},
+		"Tutorial": {
+			"Inherits": "Default",
+			"Parameters": {
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ShowPairingFeedback": "Always",
+				"ShowAccuracyOnButtonFeedback": true
+			},
+			"Trials": [
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"DifficultyLevel": 1,
+						"FeatureOrder": [ "Color", "Symbol", "Number"]
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"DifficultyLevel": 2,
+						"FeatureOrder": [ "Number", "Symbol", "Color"]
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"DifficultyLevel": 3,
+						"FeatureOrder": [ "Symbol", "Color", "Number"]
+					}
+				}
+			]
+		},
+		"Debug": {
+			"Inherits": "Default",
+			"Parameters": {
+				"DifficultyLevelType": "SortedByUniformGroup",
+				"DifficultyLevel": 1,
+				"MaximumIdleTime": 60,
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "Always",
+				"ShowPairingFeedback": "Always",
+				"TaskName_Position": "Hidden",
+				"BlockCounter_Position": "StatusBarLeft",
+				"BlockCounter_Style": "Counter",
+				"TrialResults_Position": "StatusBarRight",
+				"TrialResults_Style": "ColoredDiscrete",
+				"TrialCounter_Position": "StatusBarRight",
+				"TrialCounter_Style": "Counter",
+				"LevelLabel_Position": "StatusBarLeft",
+				"BlockTimer_Position": "InformationPanel"
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "DifficultyLevel",
+					"SuccessAccuracy": 1,
+					"StepSize": 1,
+					"NUp": 1,
+					"NDown": 1
+				}
+			]
+		},
+		"Demo": {
+			"Inherits": "Default",
+			"Parameters": {
+				"ShowCorrectTrialResponseFeedback": "OnError",
+				"ShowPairingFeedback": "OnError",
+				"BlockCounter_Position": "Hidden",
+				"TrialResults_Position": "Hidden"
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "DifficultyLevel",
+					"SuccessAccuracy": 1,
+					"StepSize": 1,
+					"NUp": 1,
+					"NDown": 2
+				}
+			]
+		},
+		"Tutorial_CambridgeLike": {
+			"Inherits": "Default",
+			"Parameters": {
+				"MaximumIdleTime": 30,
+				"DifficultyLevelType": "SortedByUniformGroup",
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowAccuracyOnButtonFeedback": true,
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ShowPairingFeedback": "Always",
+				"BlockCounter_Position": "StatusBarLeft",
+				"TrialResults_Position": "Hidden",
+				"UserInputTimer_Position": "StatusBarCenter",
+				"BlockTimer_Position": "Hidden"
+			},
+			"Trials": [
+				{
+					"Parameters": {
+						"DifficultyLevel": 1
+					},
+					"MinAccuracyRequired": 1
+				},
+				{
+					"Parameters": {
+						"DifficultyLevel": 1
+					},
+					"MinAccuracyRequired": 1
+				},
+				{
+					"Parameters": {
+						"DifficultyLevel": 2
+					},
+					"MinAccuracyRequired": 1
+				},
+				{
+					"Parameters": {
+						"DifficultyLevel": 2
+					},
+					"MinAccuracyRequired": 1
+				}
+			]
+		},
+		"XCIT_OOO_Base": {
+			"Inherits": "Default",
+			"Parameters": {
+				"MaximumIdleTime": 9999,
+				"PairingDisplayDuration": 3,
+				"DifficultyLevelType": "SortedByUniformGroup",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowPairingFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": false,
+				"BlockCounter_Position": "Hidden",
+				"TrialResults_Position": "Hidden",
+				"LevelLabel_Position": "Hidden",
+				"UserInputTimer_Position": "Hidden",
+				"BlockTimer_Position": "Hidden"
+			}
+
+		},
+		"XCIT_OOO_01_Test": {
+			"Inherits": "XCIT_OOO_Base",
+			"Parameters": {
+				"DifficultyLevel": 3,
+				"BlockTimer_Position": "InformationPanel"
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "DifficultyLevel",
+					"SuccessAccuracy": 1,
+					"StepSize": 1,
+					"NUp": 2,
+					"NDown": 1
+				}
+			]
+		},
+		"XCIT_OOO_01_Tutorial": {
+			"Inherits": "XCIT_OOO_Base",
+			"Parameters": {
+				"ShowPairingFeedback": "Always",
+				"ShowAccuracyOnButtonFeedback": true
+			},
+			"Trials":[
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"DifficultyLevel": 1,
+						"FeatureOrder": [ "Color", "Symbol", "Number"]
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"DifficultyLevel": 1,
+						"FeatureOrder": [ "Number", "Symbol", "Color"]
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"DifficultyLevel": 2,
+						"FeatureOrder": [ "Symbol", "Color", "Number"]
+					}
+				}
+			]
+		},
+		"XCIT_OOO_01_Practice": {
+			"Inherits": "XCIT_OOO_Base",
+			"Parameters": {
+				"DifficultyLevel": 2
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "DifficultyLevel",
+					"SuccessAccuracy": 1,
+					"StepSize": 1,
+					"NUp": 2,
+					"NDown": 1
+				}
+			]
+		},
+		"XCIT_OOO_02_Test": {
+			"Inherits": "XCIT_OOO_Base",
+			"Parameters": {
+				"DifficultyLevel": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 10,
+						"Max": 10
+					}
+				},
+				"MaximumIdleTime": 10,
+				"UserInputTimer_Position": "StatusBarCenter",
+				"UserInputTimer_Style": "Circular",
+				"UserInputTimer_CountUp": false,
+				"UserInputTimer_DisplayTime": false
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "MaximumIdleTime",
+					"StepFunction": "Multiplicative",
+					"Min": 0,
+					"Max": 30,
+					"StepSize": 0.79,
+					"NUp": 2,
+					"NDown": 1
+				}
+			]
+		},
+		"Evaluation_CambridgeLike": {
+			"Inherits": "Default",
+			"Parameters": {
+				"DifficultyLevel": 3,
+				"MaximumIdleTime": 9999,
+				"DifficultyLevelType": "SortedByUniformGroup",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowPairingFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": false,
+				"BlockCounter_Position": "StatusBarLeft",
+				"TrialResults_Position": "Hidden",
+				"LevelLabel_Position": "StatusBarLeft",
+				"UserInputTimer_Position": "Hidden",
+				"BlockTimer_Position": "InformationPanel"
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "DifficultyLevel",
+					"SuccessAccuracy": 1,
+					"StepSize": 1,
+					"NUp": 2,
+					"NDown": 1
+				}
+			]
+		},
+		"Evaluation_ScienceFestival2019": {
+			"Inherits": "Default",
+			"Parameters": {
+				"DifficultyLevel": 2,
+				"MaximumIdleTime": 60,
+				"DifficultyLevelType": "SortedByUniformGroup",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowPairingFeedback": "OnError",
+				"ShowAccuracyOnButtonFeedback": true,
+				"BlockCounter_Position": "Hidden",
+				"TrialResults_Position": "Hidden",
+				"LevelLabel_Position": "StatusBarLeft",
+				"UserInputTimer_Position": "StatusBarCenter",
+				"BlockTimer_Position": "InformationPanel",
+				"ScoreLabel_Position": "StatusBarRight"
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "DifficultyLevel",
+					"SuccessAccuracy": 1,
+					"StepSize": 1,
+					"NUp": 1,
+					"NDown": 2
+				}
+			]
+		},
+		"RobotTest": {
+			"Inherits": "Default",
+			"Parameters": {
+				"TaskName_Position": "StatusBarLeft",
+				"BlockCounter_Position": "StatusBarLeft",
+				"BlockCounter_Style": "Counter",
+				"TrialCounter_Position": "StatusBarLeft",
+				"TrialCounter_Style": "Counter",
+				"TrialResults_Position": "StatusBarRight",
+				"TrialResults_Style": "ColoredDiscrete"
+			},
+			"Trials": [
+				{ "Parameters": {
+					"DifficultyLevel": 13
+				}}, { "Parameters": {
+					"FeatureOrder": [ "Color", "Symbol", "Number" ]
+				}}, { "Parameters": {
+					"MaximumIdleTime": 1
+				}}, { "Parameters": {
+					"MaximumIdleTime": 3600
+				}}, { "Parameters": {
+					"ShowAccuracyCheckFeedback": "Never"
+				}}, { "Parameters": {
+					"ShowCorrectTrialResponseFeedback": "OnError"
+				}}, { "Parameters": {
+					"ShowCorrectTrialResponseFeedback": "Always"
+				}}, { "Parameters": {
+					"ShowPairingFeedback": "OnError"
+				}}, { "Parameters": {
+					"ShowPairingFeedback": "Always"
+				}}, { "Parameters": {
+					"ShowCorrectTrialResponseFeedback": "Always",
+					"ShowPairingFeedback": "Always"
+				}}, { "Parameters": {
+					"ShowPairingFeedback": "Always",
+					"PairingDisplayDuration": 0.1
+				}}
+			]
+		}
+	}
+}

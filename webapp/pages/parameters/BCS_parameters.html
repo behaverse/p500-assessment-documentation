@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belval Card Sorting Parameters - Behaverse Assessment</title>
+    <link rel="stylesheet" href="../../css/parameters.css">
+</head>
+<body>
+<div class="parameters-container">
+<div class="glossary-section">
+<h2>Glossary</h2>
+<table class="glossary-table">
+  <tr>
+    <td class="glossary-term">Card</td>
+    <td class="glossary-definition">A pattern with a defined number of features (typically Number, Shape and Color). The screen displays multiple cards, they are either the stimulus card or the reference cards see below.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Feature</td>
+    <td class="glossary-definition">One characteristic that can be used for the sorting (e.g., color).</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Stimulus</td>
+    <td class="glossary-definition">A card that needs to be sorted.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Reference set</td>
+    <td class="glossary-definition">A set of cards all having unique feature levels (i.e., if one card has color = “red”, none of the other cards can have color = “red” but must pick a color from the remaining levels of color).</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Reference card</td>
+    <td class="glossary-definition">the reference set contains a set of cards which individually are called “reference card”</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Rule</td>
+    <td class="glossary-definition">The feature or conjunction of features that assign each Card to any of the Cards in the Reference. This is sometimes called “principle” or “set” in the literature.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">RuleCue</td>
+    <td class="glossary-definition">A cue that indicates what the current rule is. Can be a text and/or an icon. For now we use text only.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Trial</td>
+    <td class="glossary-definition">An episode that starts with the presentation of the cards and asks for one response. The number of trials corresponds to the number of cards to be classified.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Rule Switch Trial</td>
+    <td class="glossary-definition">trial during which the rule has changed relative to the previous trial</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Rule Segment</td>
+    <td class="glossary-definition">A group of consecutive trials with the same rule. A batch start with a Rule Switch Trial, and end just before the next one. This is also sometimes called a “run”.</td>
+  </tr>
+</table>
+</div>
+
+    <h2>Parameters</h2>
+    <h3>Constants (2 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaxFeatureCount</h4>
+        <p class="parameter-description">The maximal number of features that a card can have. This parameter is fixed by design, because each feature needs to be recognizable from one to another.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> int</span>
+            <span><strong>Default:</strong> 4</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> The number of maxFeatureCount is 4:
+
+ - Symbol (e.g., 0)
+ - Color (e.g., orange)
+ - Number (e.g., 2)
+ - Background (e.g., diagonal lines)
+</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaxReferenceCount</h4>
+        <p class="parameter-description">The maximal number of reference cards to be shown on screen. This number is constrained by the number of cards that can be displayed on the screen (in terms of size) and will determine the minimal number of levels (i.e., different values) a feature must have. For example, if we display 6 reference cards we need the features (e.g., color) to have 6 different values so each reference card has its own (here color). </p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> int</span>
+            <span><strong>Default:</strong> 5</span>
+        </div>
+    </div>
+    <h3>Session parameters (17 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">FeaturePool</h4>
+        <p class="parameter-description">A sequence which determines which features can be used to generate the cards (e.g. [ Symbol, Color ] for 2 features).
+
+The Features themselves can take on a limited number of values</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> [Symbol, Color, Number]</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Features that are not used receive constant values (e.g., if Number is not used, each card will display only 1 symbol).
+</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ReferenceCount</h4>
+        <p class="parameter-description">Number of reference cards in the reference set.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> int</span>
+            <span><strong>Default:</strong> 3</span>
+            <span><strong>Range:</strong> 2 - MaxReferenceCount</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> In easier versions of the task for kids, it is usual to set Count(FeaturePool) = 2 (e.g., symbol and color) and to only have two levels for each (and hence only 2 cards in the Reference Set.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">CardSymbols</h4>
+        <p class="parameter-description">The symbols used for the reference cards.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> BehaverseSymbols</span>
+            <span><strong>Default:</strong> [ "Disk", "Triskelion", "HollowSquare", "Cloud", "Hourglass" ]</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> If Symbol is not in the feature pool, the first symbol of the list will be used as the default symbol.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">CardColors</h4>
+        <p class="parameter-description">The colors used for the reference cards.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> color</span>
+            <span><strong>Default:</strong> [ "#F0B40A", "#554BE1", "#D24B4B", "#14C8C8", "#F0F0F0" ]</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> If Color is not in the feature pool, the first color of the list will be used as the default color.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">CardNumbers</h4>
+        <p class="parameter-description">The number of symbols used for the reference cards.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> int</span>
+            <span><strong>Default:</strong> [ 1, 2, 3, 4, 5 ]</span>
+            <span><strong>Range:</strong> 1 - 9</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> If Number is not in the feature pool, the first number of the list will be used as the default number.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">SymbolSize</h4>
+        <p class="parameter-description">Defines the size of the symbols, whether a normal size or big size, which can be useful when there is only one symbol in the card.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Normal</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">CardBackgrounds</h4>
+        <p class="parameter-description">The background patterns used for the reference cards.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> BackgroundPattern</span>
+            <span><strong>Default:</strong> [ "Lines", "Circles", "Waves", "Staircase", "Grid" ]</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> If Background is not in the feature pool, the first background of the list will be used as the default background.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">RequiredConsecutiveSuccesses</h4>
+        <p class="parameter-description">The number of consecutive successes required before changing the sorting rule.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> int</span>
+            <span><strong>Default:</strong> 6</span>
+            <span><strong>Range:</strong> 1 - Inf</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> The rule will change if successes = RequiredConsecutiveSuccesses OR segmentIndex = RuleSegmentLength.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">RuleSegmentLength</h4>
+        <p class="parameter-description">The number of trials (within the same rule segment) required before changing the sorting rule. </p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> int</span>
+            <span><strong>Default:</strong> 999</span>
+            <span><strong>Range:</strong> 1 - Inf</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> The rule will change if successes = RequiredConsecutiveSuccesses OR segmentIndex = RuleSegmentLength.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">InitialRule</h4>
+        <p class="parameter-description">Determines how the first rule is picked.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> FirstChoiceIncorrect</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Some studies make it so that the first pick the users make (e.g., they classify based on color) is the correct one; then after N correct trials they switch. An alternative would be to have the first always be incorrect.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowCardContent</h4>
+        <p class="parameter-description">Whether the card content is shown or not. If not, all buttons will look similar.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "true"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">RuleCueOnset</h4>
+        <p class="parameter-description">After trial start, delay after which the rule is displayed. The rule cue is displayed after RuleCueOnset seconds, for a duration of RuleCueDisplayDuration seconds.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">RuleCueDisplayDuration</h4>
+        <p class="parameter-description">Display duration of the rule cue. The rule cue is displayed after RuleCueOnset seconds, for a duration of RuleCueDisplayDuration seconds.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">UpperCaseRuleCue</h4>
+        <p class="parameter-description">Is the rulecue text uppercase, or not. This is used to add some variety to the cue (avoid automatic response).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusOnset</h4>
+        <p class="parameter-description">After trial start, delay after which the stimulusCard is displayed.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusOffset</h4>
+        <p class="parameter-description">When the stimulus is hidden.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaxIdleTime</h4>
+        <p class="parameter-description">The maximum time the user can wait to make his answer.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 10</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <h3>Generation rules (4 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusGenerationRule</h4>
+        <p class="parameter-description">Defines how the stimulus is generated.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Balanced</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">AvoidExactMatch</h4>
+        <p class="parameter-description">Prevents the stimulus card to correspond exactly (every feature) to a reference card.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "true"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">EnsureDifferentSuccessiveCards</h4>
+        <p class="parameter-description">Ensures successive cards are visually different.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> OneFeature</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> According to the test manual (p19), “no two response cards in succession have the same color, form or number.”</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ChangeCardOnError</h4>
+        <p class="parameter-description">Whether we should draw another card (meaning changing the stimulus card) in case of a failure (i.e., the stimulus card did not match the reference card the user assigned it to). If false, the same card stays on the screen until the user successfully sorts it.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "true"</span>
+        </div>
+    </div>
+    <h3>Feedback parameters (5 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyCheckFeedback</h4>
+        <p class="parameter-description">Whether we show the valid or wrong “check” feedback at the end of a trial on the screen center.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Always</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowCorrectReferenceOnError</h4>
+        <p class="parameter-description">Whether we should show the user which Reference card would have produced a correct response when the user is incorrect.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowCurrentRuleFeedback</h4>
+        <p class="parameter-description">At the end of the trial, whether we should inform the user about what the correct sorting rule is (e.g., “color”)</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Never</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">HighlightRuleOnSwitch</h4>
+        <p class="parameter-description">Whether a change in the sorting rule should be signaled to the user (by applying a tremor effect on the new card to sort).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyOnButtonFeedback</h4>
+        <p class="parameter-description">Whether a feedback is shown if the user is correct or not when he presses a button.
+This feedback would indicate correct/incorrect for each press by changing the color of the border, but would NOT reveal any stimulus (i.e., FeatureValue, e.g., Color). </p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> if ShowButtonFeedback = True, at button click, outline of the buttons is colored red or green for error and correct responses, otherwise button outline is white.</div>
+    </div>
+</div>
+</body>
+</html>

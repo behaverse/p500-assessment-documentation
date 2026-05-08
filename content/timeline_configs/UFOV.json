@@ -1,0 +1,1048 @@
+{
+	"Id": "UFOV",
+	"Scene": "UFOV",
+	"Rules": {
+// ---- Begin Rules ----
+"XCIT_UFOV_01_Practice_Rules": [
+	{"text": "XCIT_UFOV_01_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_UFOV_01_Practice.GameRules"}
+],
+"XCIT_UFOV_01_Tutorial_Rules": [
+	{"text": "XCIT_UFOV_01_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_UFOV_01_Tutorial.GameRules"}
+],
+"XCIT_UFOV_02_Practice_Rules": [
+	{"text": "XCIT_UFOV_02_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_UFOV_02_Practice.GameRules"}
+],
+"XCIT_UFOV_02_Tutorial_Rules": [
+	{"text": "XCIT_UFOV_02_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_UFOV_02_Tutorial.GameRules"}
+],
+"XCIT_UFOV_03_Practice_Rules": [
+	{"text": "XCIT_UFOV_03_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_UFOV_03_Practice.GameRules"}
+],
+"XCIT_UFOV_03_Tutorial_Rules": [
+	{"text": "XCIT_UFOV_03_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_UFOV_03_Tutorial.GameRules"}
+],
+"XCIT_UFOV_04_Practice_Rules": [
+	{"text": "XCIT_UFOV_04_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_UFOV_04_Practice.GameRules"}
+],
+"XCIT_UFOV_04_Tutorial_Rules": [
+	{"text": "XCIT_UFOV_04_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_UFOV_04_Tutorial.GameRules"}
+],
+"XCIT_UFOV_05_Practice_Rules": [
+	{"text": "XCIT_UFOV_05_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_UFOV_05_Practice.GameRules"}
+],
+"XCIT_UFOV_05_Tutorial_Rules": [
+	{"text": "XCIT_UFOV_05_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_UFOV_05_Tutorial.GameRules"}
+],
+// ---- End Rules ----
+	},
+	"EnumDefinitions": {},
+	"ParameterInfos": {
+		"CentralTask": {
+			"Type": "Enum",
+			"Values": [ "None", "Identification" ]
+		},
+		"PeripheralTask": {
+			"Type": "Enum",
+			"Values": [ "None", "Detection", "DetectionAndIdentification" ]
+		},
+		"FixationPointDisplayDuration": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"CentralStimulusDisplayDuration": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"CentralStimulusOnset": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"CentralStimulusSymbolIndex": {
+			"Type": "Int",
+			"Min": 1,
+			"Max": 2
+		},
+		"PeripheralStimulusDisplayDuration": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"PeripheralStimulusOnset": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"PeripheralStimulusPositionIndex": {
+			"Type": "Int",
+			"Min": 1,
+			"Max": 8
+		},
+		"PeripheralStimulusSymbolIndex": {
+			"Type": "Int",
+			"Min": 1,
+			"Max": 2
+		},
+		"MaskMinDisplayDuration": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"ShowPeripheralDistractors": {
+			"Type": "Bool"
+		},
+		"ShowAccuracyOnButtonFeedback": {
+			"Type": "Bool"
+		},
+		"ShowAccuracyCheckFeedback": {
+			"Type": "Enum",
+			"Name": "ShowAccuracyCheckFeedback"
+		}
+	},
+	"Timelines": {
+// ---- Begin Instructions ----
+"XCIT_UFOV_01_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_01_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_01_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_01_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_01_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_01_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_UFOV_01_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_01_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_01_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_01_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_01_Tutorial.Introduction"}]},
+			{"Content": [{"Text": "XCIT_UFOV_01_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_UFOV_01_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_UFOV_01_Tutorial.GenerativeModel"}]},
+			{"Content": [{"Text": "XCIT_UFOV_01_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_UFOV_01_Tutorial.Response"}]},
+			{"Content": [{"Text": "XCIT_UFOV_01_Tutorial.Constraint"}]},
+			{"Content": [{"Text": "XCIT_UFOV_01_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_01_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_01_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_02_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_02_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_02_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_02_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_02_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_02_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_UFOV_02_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_02_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_02_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_02_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_02_Tutorial.Introduction"}]},
+			{"Content": [{"Text": "XCIT_UFOV_02_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_UFOV_02_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_UFOV_02_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_UFOV_02_Tutorial.Response"}]},
+			{"Content": [{"Text": "XCIT_UFOV_02_Tutorial.Constraint"}]},
+			{"Content": [{"Text": "XCIT_UFOV_02_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_02_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_02_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_03_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_03_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_03_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_03_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_03_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_03_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_UFOV_03_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_03_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_03_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_03_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_03_Tutorial.Introduction"}]},
+			{"Content": [{"Text": "XCIT_UFOV_03_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_UFOV_03_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_UFOV_03_Tutorial.GenerativeModel"}]},
+			{"Content": [{"Text": "XCIT_UFOV_03_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_UFOV_03_Tutorial.Response"}]},
+			{"Content": [{"Text": "XCIT_UFOV_03_Tutorial.Constraint"}]},
+			{"Content": [{"Text": "XCIT_UFOV_03_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_03_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_03_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_04_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_04_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_04_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_04_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_04_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_04_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_UFOV_04_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_04_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_04_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_04_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_04_Tutorial.Introduction"}]},
+			{"Content": [{"Text": "XCIT_UFOV_04_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_UFOV_04_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_UFOV_04_Tutorial.GenerativeModel"}]},
+			{"Content": [{"Text": "XCIT_UFOV_04_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_UFOV_04_Tutorial.Response"}]},
+			{"Content": [{"Text": "XCIT_UFOV_04_Tutorial.Constraint"}]},
+			{"Content": [{"Text": "XCIT_UFOV_04_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_04_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_04_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_05_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_05_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_05_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_05_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_05_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_05_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_UFOV_05_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_05_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_05_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_05_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_05_Tutorial.Introduction"}]},
+			{"Content": [{"Text": "XCIT_UFOV_05_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_UFOV_05_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_UFOV_05_Tutorial.GenerativeModel"}]},
+			{"Content": [{"Text": "XCIT_UFOV_05_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_UFOV_05_Tutorial.Response"}]},
+			{"Content": [{"Text": "XCIT_UFOV_05_Tutorial.Constraint"}]},
+			{"Content": [{"Text": "XCIT_UFOV_05_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_UFOV_05_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_UFOV_05_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+// ---- End Instructions ----
+// ---- Begin Timeline ----
+    "XCIT_UFOV_01": {
+        "blocks": [
+            {
+                "timeline": "XCIT_UFOV_01_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_UFOV_01_Tutorial",
+                "rulesName": "XCIT_UFOV_01_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_UFOV_01_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_UFOV_01_Practice_Intro"
+            },
+            {
+                "name": "XCIT_UFOV_01_Practice",
+                "rulesName": "XCIT_UFOV_01_Practice_Rules",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 3,
+                        "Type": "All",
+                        "Consecutive": false
+                    },
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 3,
+                        "Type": "Successes",
+                        "Consecutive": true
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_UFOV_01_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_UFOV_01_Test_Intro"
+            },
+            {
+                "name": "XCIT_UFOV_01_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 56,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_UFOV_01_Test_Outro"
+            }
+        ]
+    },
+    "XCIT_UFOV_02": {
+        "blocks": [
+            {
+                "timeline": "XCIT_UFOV_02_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_UFOV_02_Tutorial",
+                "rulesName": "XCIT_UFOV_02_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_UFOV_02_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_UFOV_02_Practice_Intro"
+            },
+            {
+                "name": "XCIT_UFOV_02_Practice",
+                "rulesName": "XCIT_UFOV_02_Practice_Rules",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 3,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_UFOV_02_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_UFOV_02_Test_Intro"
+            },
+            {
+                "name": "XCIT_UFOV_02_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 56,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_UFOV_02_Test_Outro"
+            }
+        ]
+    },
+    "XCIT_UFOV_03": {
+        "blocks": [
+            {
+                "timeline": "XCIT_UFOV_03_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_UFOV_03_Tutorial",
+                "rulesName": "XCIT_UFOV_03_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_UFOV_03_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_UFOV_03_Practice_Intro"
+            },
+            {
+                "name": "XCIT_UFOV_03_Practice",
+                "rulesName": "XCIT_UFOV_03_Practice_Rules",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 3,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_UFOV_03_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_UFOV_03_Test_Intro"
+            },
+            {
+                "name": "XCIT_UFOV_03_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 56,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_UFOV_03_Test_Outro"
+            }
+        ]
+    },
+    "XCIT_UFOV_04": {
+        "blocks": [
+            {
+                "timeline": "XCIT_UFOV_04_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_UFOV_04_Tutorial",
+                "rulesName": "XCIT_UFOV_04_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_UFOV_04_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_UFOV_04_Practice_Intro"
+            },
+            {
+                "name": "XCIT_UFOV_04_Practice",
+                "rulesName": "XCIT_UFOV_04_Practice_Rules",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 3,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_UFOV_04_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_UFOV_04_Test_Intro"
+            },
+            {
+                "name": "XCIT_UFOV_04_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 56,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_UFOV_04_Test_Outro"
+            }
+        ]
+    },
+    "XCIT_UFOV_05": {
+        "blocks": [
+            {
+                "timeline": "XCIT_UFOV_05_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_UFOV_05_Tutorial",
+                "rulesName": "XCIT_UFOV_05_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_UFOV_05_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_UFOV_05_Practice_Intro"
+            },
+            {
+                "name": "XCIT_UFOV_05_Practice",
+                "rulesName": "XCIT_UFOV_05_Practice_Rules",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 3,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_UFOV_05_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_UFOV_05_Test_Intro"
+            },
+            {
+                "name": "XCIT_UFOV_05_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 56,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_UFOV_05_Test_Outro"
+            }
+        ]
+    },
+// ---- End Timeline ----
+		"Debug": {
+			"Blocks": [
+				{
+					"Name": "Debug",
+					"ExitRules": [
+						{ "Trials": 20 }
+					]
+				},
+				{
+					"Name": "Debug",
+					"ExitRules": [
+						{ "Trials": 50 }
+					]
+				}
+			]
+		},
+		"RobotTest": {
+			"Blocks": [
+				{ "Name": "RobotTest" },
+				{ "Name": "RobotTest" }
+			]
+		}
+	},
+	"Blocks": {
+		"Default": {
+			"Parameters": {
+				"CentralTask": "Identification",
+				"PeripheralTask": "Detection",
+				"CentralStimulusDisplayDuration": 0.25,
+				"CentralStimulusOnset": 0.25,
+				"PeripheralStimulusDisplayDuration": {
+					"Reference": "CentralStimulusDisplayDuration"
+				},
+				"PeripheralStimulusOnset": {
+					"Reference": "CentralStimulusOnset"
+				},
+				"PeripheralStimulusPositionIndex": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 1,
+						"Max": 8
+					}
+				},
+				"PeripheralStimulusSymbolIndex": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 1,
+						"Max": 2
+					}
+				},
+				"CentralStimulusSymbolIndex": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 1,
+						"Max": 2
+					}
+				},
+				"FixationPointDisplayDuration": 1,
+				"MaskMinDisplayDuration": 0.5,
+				"ShowPeripheralDistractors": true,
+				"ShowAccuracyOnButtonFeedback": true,
+				"ShowAccuracyCheckFeedback": "Always"
+			}
+		},
+		"Debug": {
+			"Inherits": "Default",
+			"Parameters": {
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "CentralStimulusDisplayDuration",
+					"SuccessAccuracy": 1,
+					"StepSize": -0.02,
+					"Min": 0.02,
+					"NUp": 1,
+					"NDown": 1
+				}
+			],
+			"Trials":[
+				// {
+				// 	"Parameters":{
+				// 		"CentralTask": "Identification",
+				// 		"PeripheralTask": "DetectionAndIdentification"
+				// 	}
+				// },
+				// {
+				// 	"Parameters":{
+				// 		"CentralTask": "Identification",
+				// 		"PeripheralTask": "DetectionAndIdentification"
+				// 	}
+				// },
+				// {
+				// 	"Parameters":{
+				// 		"CentralTask": "None",
+				// 		"PeripheralTask": "Detection"
+				// 	}
+				// },
+				// {
+				// 	"Parameters":{
+				// 		"CentralTask": "Identification",
+				// 		"PeripheralTask": "None"
+				// 	}
+				// }
+			]
+		},
+		"XCIT_UFOV_Base": {
+			"Inherits": "Default",
+			"Parameters": {
+				"CentralStimulusDisplayDuration": 0.5,
+				"CentralStimulusOnset": 0.25,
+				"FixationPointDisplayDuration": 0.75,
+				"PeripheralStimulusDisplayDuration": {
+					"Reference": "CentralStimulusDisplayDuration"
+				},
+				"PeripheralStimulusOnset": {
+					"Reference": "CentralStimulusOnset"
+				},
+				"PeripheralStimulusPositionIndex": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 1,
+						"Max": 8
+					}
+				},
+				"PeripheralStimulusSymbolIndex": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 1,
+						"Max": 2
+					}
+				},
+				"CentralStimulusSymbolIndex": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 1,
+						"Max": 2
+					}
+				},
+				"MaskMinDisplayDuration": 0.5,
+				"ShowPeripheralDistractors": false,
+				"ShowAccuracyOnButtonFeedback": true,
+				"ShowAccuracyCheckFeedback": "Always"
+			},
+			"Adapt":[
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "CentralStimulusDisplayDuration",
+					"StepFunction": "Multiplicative",
+					"Min": 0.008,
+					"Max": 1.00,
+					"StepSize": 0.794,
+					"NUp": 2,
+					"NDown": 1
+				}
+			]
+		},
+		"XCIT_UFOV_01_Test": {
+			"Inherits": "XCIT_UFOV_Base",
+			"Parameters": {
+				"CentralTask": "Identification",
+				"PeripheralTask": "None",
+				"ShowPeripheralDistractors": false
+			}
+		},
+		"XCIT_UFOV_01_Practice": {
+			"Inherits": "XCIT_UFOV_01_Test",
+			"Parameters": {
+				"CentralStimulusDisplayDuration": 0.75
+			}
+		},
+		"XCIT_UFOV_01_Tutorial": {
+			"Inherits": "XCIT_UFOV_01_Test",
+			"Adapt":[],
+			"Trials":[
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"CentralStimulusDisplayDuration": 3.0
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"CentralStimulusDisplayDuration": 1.5
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"CentralStimulusDisplayDuration": 0.75
+					}
+				}
+			]
+		},
+		"XCIT_UFOV_02_Test": {
+			"Inherits": "XCIT_UFOV_Base",
+			"Parameters": {
+				"CentralTask": "None",
+				"PeripheralTask": "Detection",
+				"ShowPeripheralDistractors": true
+			}
+		},
+		"XCIT_UFOV_02_Practice": {
+			"Inherits": "XCIT_UFOV_02_Test",
+			"Parameters": {
+				"CentralStimulusDisplayDuration": 0.75
+			}
+		},
+		"XCIT_UFOV_02_Tutorial": {
+			"Inherits": "XCIT_UFOV_02_Test",
+			"Adapt":[],
+			"Trials":[
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"CentralStimulusDisplayDuration": 3.0
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"CentralStimulusDisplayDuration": 1.5
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"CentralStimulusDisplayDuration": 0.75
+					}
+				}
+			]
+		},
+		"XCIT_UFOV_03_Test": {
+			"Inherits": "XCIT_UFOV_Base",
+			"Parameters": {
+				"CentralTask": "Identification",
+				"PeripheralTask": "Detection",
+				"ShowPeripheralDistractors": false
+			}
+		},
+		"XCIT_UFOV_03_Practice": {
+			"Inherits": "XCIT_UFOV_03_Test",
+			"Parameters": {
+				"CentralStimulusDisplayDuration": 0.75
+			}
+		},
+		"XCIT_UFOV_03_Tutorial": {
+			"Inherits": "XCIT_UFOV_03_Test",
+			"Adapt":[],
+			"Trials":[
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"CentralStimulusDisplayDuration": 3.0
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"CentralStimulusDisplayDuration": 1.5
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"CentralStimulusDisplayDuration": 0.75
+					}
+				}
+			]
+		},
+		"XCIT_UFOV_04_Test": {
+			"Inherits": "XCIT_UFOV_Base",
+			"Parameters": {
+				"CentralTask": "Identification",
+				"PeripheralTask": "Detection",
+				"ShowPeripheralDistractors": true
+			}
+		},
+		"XCIT_UFOV_04_Practice": {
+			"Inherits": "XCIT_UFOV_04_Test",
+			"Parameters": {
+				"CentralStimulusDisplayDuration": 0.75
+			}
+		},
+		"XCIT_UFOV_04_Tutorial": {
+			"Inherits": "XCIT_UFOV_04_Test",
+			"Adapt":[],
+			"Trials":[
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"CentralStimulusDisplayDuration": 3.0
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"CentralStimulusDisplayDuration": 1.5
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"CentralStimulusDisplayDuration": 0.75
+					}
+				}
+			]
+		},
+		"XCIT_UFOV_05_Test": {
+			"Inherits": "XCIT_UFOV_Base",
+			"Parameters": {
+				"CentralTask": "Identification",
+				"PeripheralTask": "DetectionAndIdentification",
+				"ShowPeripheralDistractors": true
+			}
+		},
+		"XCIT_UFOV_05_Practice": {
+			"Inherits": "XCIT_UFOV_05_Test",
+			"Parameters": {
+				"CentralStimulusDisplayDuration": 0.75
+			}
+		},
+		"XCIT_UFOV_05_Tutorial": {
+			"Inherits": "XCIT_UFOV_05_Test",
+			"Adapt":[],
+			"Trials":[
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"CentralStimulusDisplayDuration": 3.0
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"CentralStimulusDisplayDuration": 1.5
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"CentralStimulusDisplayDuration": 0.75
+					}
+				}
+			]
+		},
+		"RobotTest": {
+			"Inherits": "Default",
+			"Parameters": {
+				"TaskName_Position": "StatusBarLeft",
+				"BlockCounter_Position": "StatusBarLeft",
+				"BlockCounter_Style": "Counter",
+				"TrialCounter_Position": "StatusBarLeft",
+				"TrialCounter_Style": "Counter",
+				"TrialResults_Position": "StatusBarRight",
+				"TrialResults_Style": "ColoredDiscrete"
+			},
+			"Trials": [
+				{ "Parameters": {
+					"CentralTask": "Identification",
+					"PeripheralTask": "None",
+				}}, { "Parameters": {
+					"CentralTask": "None",
+					"PeripheralTask": "Detection",
+				}}, { "Parameters": {
+					"CentralTask": "None",
+					"PeripheralTask": "DetectionAndIdentification",
+				}}, { "Parameters": {
+					"CentralTask": "Identification",
+					"PeripheralTask": "DetectionAndIdentification",
+				}}, { "Parameters": {
+					"FixationPointDisplayDuration": 0
+				}}, { "Parameters": {
+					"FixationPointDisplayDuration": 60
+				}}, { "Parameters": {
+					"CentralStimulusOnset": 0
+				}}, { "Parameters": {
+					"CentralStimulusOnset": 30
+				}}, { "Parameters": {
+					"CentralStimulusDisplayDuration": 0
+				}}, { "Parameters": {
+					"CentralStimulusDisplayDuration": 30
+				}}, { "Parameters": {
+					"PeripheralStimulusOnset": 0
+				}}, { "Parameters": {
+					"PeripheralStimulusOnset": 30
+				}}, { "Parameters": {
+					"PeripheralStimulusDisplayDuration": 0
+				}}, { "Parameters": {
+					"PeripheralStimulusDisplayDuration": 30
+				}}, { "Parameters": {
+					"ShowPeripheralDistractors": true
+				}}, { "Parameters": {
+					"MaskMinDisplayDuration": 0
+				}}, { "Parameters": {
+					"MaskMinDisplayDuration": 30
+				}}, { "Parameters": {
+					"ShowAccuracyOnButtonFeedback": true
+				}}, { "Parameters": {
+					"ShowAccuracyCheckFeedback": "Never"
+				}}
+			]
+		}
+	}
+}

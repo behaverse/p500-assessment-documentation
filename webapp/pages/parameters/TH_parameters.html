@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target Hit Parameters - Behaverse Assessment</title>
+    <link rel="stylesheet" href="../../css/parameters.css">
+</head>
+<body>
+<div class="parameters-container">
+<div class="glossary-section">
+<h2>Glossary</h2>
+<table class="glossary-table">
+  <tr>
+    <td class="glossary-term">Stimulus</td>
+    <td class="glossary-definition">A white disk</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Finger disk</td>
+    <td class="glossary-definition">A white disk showing the starting point for the finger</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Stop Signal</td>
+    <td class="glossary-definition">A signal that appears when the target and finger placeholder mostly overlap</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Stimulus Placeholders</td>
+    <td class="glossary-definition">A placeholder the target stimulus can appear on</td>
+  </tr>
+</table>
+</div>
+
+    <h2>Parameters</h2>
+    <h3>Constants (1 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaxPlaceholderCount</h4>
+        <p class="parameter-description">The maximal number of placeholders that can fit on the screen.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 5</span>
+            <span><strong>Range:</strong> 5 - 5</span>
+        </div>
+    </div>
+    <h3>Input data (1 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">IsStopSignalTask</h4>
+        <p class="parameter-description">Indicate if we are doing a task with shields or not (used for skipAdaptiveAlgorithm).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> we will remove this parameter once we either separate the config file into two tasks, or once we can define conditions for adaptive in psych.</div>
+    </div>
+    <h3>Stimulus parameters (5 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">PlaceholderCount</h4>
+        <p class="parameter-description">The number of possible locations the target might appear at.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 3</span>
+            <span><strong>Range:</strong> 1 - MaxPlaceholderCount</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowPlaceholders</h4>
+        <p class="parameter-description">Whether we want to show the placeholders.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "true"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusType</h4>
+        <p class="parameter-description">How the stimulus is presented to the player.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> VisualAndAuditory</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">TargetPlaceholderIndex</h4>
+        <p class="parameter-description">The index of the placeholder in which the target will appear (index starting from 1 to N).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> Uniform random sampling</span>
+            <span><strong>Range:</strong> 1 - PlaceholderCount</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">HasShield</h4>
+        <p class="parameter-description">Whether the current target will have a “stop” shield when the user approaches it, meaning he has to abort the action and not drag the circle onto it.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> The shield does not have a collider and is only a visual cue.</div>
+    </div>
+    <h3>Timing parameters (3 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusDisplayDelay</h4>
+        <p class="parameter-description">When the stimulus appears after the user pressed his finger on the disk (“foreperiod”).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 1</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShieldActivationDelay</h4>
+        <p class="parameter-description">If the target has a shield, the delay after the stimulus has been displayed after which the shield will be shown.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.25</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> The shield may activate earlier than this, at the moment when the finger disk reaches the target stimulus before ShieldActivationDelay during a trial where HasShield == true.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">InterTrialInterval</h4>
+        <p class="parameter-description">The duration in seconds between the end of a trial and appearance of the disk on the next trial; (because users have to place their finger on the disk, the trials are player-paced).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.5</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <h3>User input parameters (1 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaxResponseTime</h4>
+        <p class="parameter-description">The duration in seconds during which the player can answer, starting at the moment the stimulus appears on the screen(i.e., start of the trial). In trials where the shield appears around the target and the player must not hit the shield, not hitting the shield during the allotted time should lead to a correct response.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 2</span>
+            <span><strong>Range:</strong> 0.01 - Inf</span>
+        </div>
+    </div>
+    <h3>Feedback parameters (2 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyCheckFeedback</h4>
+        <p class="parameter-description">Whether we should show the valid or wrong “check” feedback at the end of a trial.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Always</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyOnTargetFeedback</h4>
+        <p class="parameter-description">Whether we should show color the stimulus green/red depending on trial success. If false, it will remain white.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "true"</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

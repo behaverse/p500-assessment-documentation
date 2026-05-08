@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Object Tracking Parameters - Behaverse Assessment</title>
+    <link rel="stylesheet" href="../../css/parameters.css">
+</head>
+<body>
+<div class="parameters-container">
+    <h2>Parameters</h2>
+    <h3>Constants (1 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaxItemCount</h4>
+        <p class="parameter-description">The maximum number of items that users can see on the screen.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 20</span>
+        </div>
+    </div>
+    <h3>Stimulus parameters (14 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ItemCount</h4>
+        <p class="parameter-description">The number of items displayed on the screen.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 8</span>
+            <span><strong>Range:</strong> 1 - MaxItemCount</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">TargetCount</h4>
+        <p class="parameter-description">The maximum number of targets that the user should track during the game trial.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 4</span>
+            <span><strong>Range:</strong> 1 - MaxItemCount</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">TargetDisplayDuration</h4>
+        <p class="parameter-description">The duration in seconds during which the targets are visible to the user (i.e., the user sees the content of the dots; you are told which dots to track). At the end of this duration, targets will become identical to the non-targets.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 2</span>
+            <span><strong>Range:</strong> 0.01 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MovementStartDelay</h4>
+        <p class="parameter-description">After the initial presentation of targets, the delay after which all items start moving.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 2</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> targets can still be visible when movement starts, if TargetDisplayDuration > MovementStartDelay.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MovementDuration</h4>
+        <p class="parameter-description">For how long (in seconds) the elements move.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 4</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MovementSpeed</h4>
+        <p class="parameter-description">How fast the elements move in screenHeight/second. Speed could be set to 0. Speed is typically set to a constant value within a trial; there’s no modulation of speed by the objects colliding—this feels rather unnatural but might be “cleaner” from an experimental point of view.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 4</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">DotRadius</h4>
+        <p class="parameter-description">The radius of the dot, in unity units.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.2</span>
+            <span><strong>Range:</strong> 0 - 0.5</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong>  the background disk has a radius of 6 uu (unity units); the collider (actual physical boundary, not visible) has a radius of 4.33 uu.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">CollisionRadiusMultiplier</h4>
+        <p class="parameter-description">The radius of the collision circle, relative to the size of the dot.
+A radius of 1 means the visual representation of the dot fits its collision radius.
+A radius of 1.5 means the collision area radius will be 1.5 times the radius of the dot.
+A radius of 0 means that items do not collide at all (i.e., they move through each other).
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 1</span>
+            <span><strong>Range:</strong> 0 - 3</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> This parameter does not affect the collision with the fixation point, but only the collision with other items.
+</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">DirectionChangeProbability</h4>
+        <p class="parameter-description">The probability for each element to change movement direction on any frame (60Hz) (this avoids changes of motion to be synched). 
+0: the dot will always go straight (unless a collision occurs);
+1: there is a change every single frame.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Range:</strong> 0 - 1</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">DirectionChangeMagnitude</h4>
+        <p class="parameter-description">How much (absolute value of angle in degrees) a dot direction can change relative to its current trajectory; the actual direction change angle will be sampled from the range [-1;1]*DirectionChangeMagnitude: 
+0° : no change
+180° : all new directions are possible, past history is erased</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Range:</strong> 0 - 180</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">HasFixationPoint</h4>
+        <p class="parameter-description">Whether we need to show a fixation point or not. (This might be handy for having the safe area around the fixation point as it has been mentioned above).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "true"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">FixationPointColliderRadius</h4>
+        <p class="parameter-description">The radius of the circle collider of the fixation point, to prevent items from floating over it.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 1</span>
+            <span><strong>Range:</strong> 0 - 2</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ItemContainerLayout</h4>
+        <p class="parameter-description">The board layout containing the items.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Circle</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ProbeIsTarget</h4>
+        <p class="parameter-description">In YesNo mode, whether the probed item is a target.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> Bernoulli(p=0.5)</span>
+        </div>
+    </div>
+    <h3>User input parameters (4 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ResponseStartDelay</h4>
+        <p class="parameter-description">The amount of time (in seconds) to wait between the end of the dot movement and the moment the user is asked to respond.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 2</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaxResponseTime</h4>
+        <p class="parameter-description">The duration in seconds during which the user can answer. After this delay, the response is marked as “timed out”.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 999</span>
+            <span><strong>Range:</strong> 0.01 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ResponseMethod</h4>
+        <p class="parameter-description">Different ways of asking the user about what he saw during the trial. </p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> YesNo</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">QuestionCount</h4>
+        <p class="parameter-description">In YesNo mode, the number of questions the user needs to answer within each trial.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 1</span>
+            <span><strong>Range:</strong> 1 - MaxItemCount</span>
+        </div>
+    </div>
+    <h3>Feedback parameters
+ (3 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyCheckFeedback</h4>
+        <p class="parameter-description">Whether we should show the valid or wrong “check” feedback at the end of a trial.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Always</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowResponseFeedback</h4>
+        <p class="parameter-description">Whether we show the colored highlight on the clicked button(s) and reveal the probed item(s) when the user clicks a button.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "true"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">RevealTargetsOnTrialEnd</h4>
+        <p class="parameter-description">Whether we should reveal all the diamonds at the end of a trial.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> OnError</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

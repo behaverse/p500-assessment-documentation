@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polygon Comparison Parameters - Behaverse Assessment</title>
+    <link rel="stylesheet" href="../../css/parameters.css">
+</head>
+<body>
+<div class="parameters-container">
+<div class="glossary-section">
+<h2>Glossary</h2>
+<table class="glossary-table">
+  <tr>
+    <td class="glossary-term">Polygon</td>
+    <td class="glossary-definition">Polygon generated from two parameters: VertexCount and PatternNoise.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">VertexCount</td>
+    <td class="glossary-definition">amount of vertices of the procedural polygon. 3 = triangle, 4 = 4-sided polygon, etc…</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">PatternNoiseRadius</td>
+    <td class="glossary-definition">0 = regular polygon (equilateral triangle, square, pentagon…), 1 = irregular polygon (each vertex will be moved from the regular position).</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Stimulus polygons</td>
+    <td class="glossary-definition">polygons that need to be compared</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Distractor polygon</td>
+    <td class="glossary-definition">polygon that hinders the comparison of stimulus- polygons</td>
+  </tr>
+</table>
+</div>
+
+    <h2>Parameters</h2>
+    <h3>Stimulus parameters (9 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusVertexCount</h4>
+        <p class="parameter-description">Number of vertices in each polygon-stimulus; both polygon-stimuli have the same PatternVertexCount.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 5</span>
+            <span><strong>Range:</strong> 3 - 10</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">PolygonRegularity</h4>
+        <p class="parameter-description">Parameter controls how regular/irregular the generated polygons are (this applies both to stimulus-polygons and distractor-polygons). This is a generic parameter that applies to all types of polygons.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Irregular</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">RotationMagnitude</h4>
+        <p class="parameter-description">Magnitude of the rotation applied to the right polygon-stimulus, as a way to make the task harder (mental rotation).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Range:</strong> 0 - 360</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">HasDiscrepancy</h4>
+        <p class="parameter-description">Whether there is a discrepancy between the two polygon-stimuli.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> Bernoulli(p=0.5)</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">DiscrepancyType</h4>
+        <p class="parameter-description">In case HasDiscrepancy = True, this variable determines whether the two polygon-stimuli differ on only one vertex or on all of the vertices.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> SingleVertex</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">DiscrepancyMagnitude</h4>
+        <p class="parameter-description">Describes how much a vertex of a polygon-stimulus is displaced relative to its original position. If all the vertices are changed (i.e., DiscrepancyType = All) that same amount will be applied to all StimulusVertexCount vertices (so the “total difference” between two polygon-stimuli would be ~StimulusVertexCount*DiscrepancyMagnitude). 
+The discrepancy is expressed as a fraction of the maximum displacement allowed by the implementation: a value of 0 means no displacement, 1 means the largest possible displacement (hard coded parameter). Here we don’t want to impose a lower bound.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.4</span>
+            <span><strong>Range:</strong> 0.05 - 1</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> It may be the case that a value of 0.3 is already very simple: the 0-1 range of DiscrepancyMagnitude does not map to difficulty linearly.
+We might want to describe discrepancy in the same units as the stimulus-size / stimulus-coordinates. This can be done offline and doesn’t need to be part of the specs.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">DistractorPosition</h4>
+        <p class="parameter-description">Possible presentation modes/positions for the distractor-polygon.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Left</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">DistractorVertexCount</h4>
+        <p class="parameter-description">The number of vertices the distractor polygon has.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 4</span>
+            <span><strong>Range:</strong> 3 - 10</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ColoredDistractor</h4>
+        <p class="parameter-description">Whether the polygon-distractor has a different color than the polygon-stimuli.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "true"</span>
+        </div>
+    </div>
+    <h3>User input parameters (1 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaxResponseTime</h4>
+        <p class="parameter-description">Time the user has to give an answer, starting from the moment the user can click.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 20</span>
+            <span><strong>Range:</strong> 1 - 30</span>
+        </div>
+    </div>
+    <h3>Feedback parameters (3 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowSlidingPolygonFeedback</h4>
+        <p class="parameter-description">Whether we create a copy of the left stimulus and make it slide on top of the right stimulus so the user can easily compare them visually.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> OnError</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyOnButtonFeedback</h4>
+        <p class="parameter-description">Whether the button highlight shows if the user response is correct/incorrect or instead does not reveal response accuracy. If set to True, the highlight is green for correct responses and red for incorrect responses.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyCheckFeedback</h4>
+        <p class="parameter-description">Whether we should show the valid or wrong “check” feedback at the end of a trial.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Always</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

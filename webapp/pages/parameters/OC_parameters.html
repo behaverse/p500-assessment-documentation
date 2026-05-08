@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordered Clicks Parameters - Behaverse Assessment</title>
+    <link rel="stylesheet" href="../../css/parameters.css">
+</head>
+<body>
+<div class="parameters-container">
+<div class="glossary-section">
+<h2>Glossary</h2>
+<table class="glossary-table">
+  <tr>
+    <td class="glossary-term">SIO</td>
+    <td class="glossary-definition">a simple interactive object, like a button but which can be in an on/off state and display a colored symbol on a colored background (like the cards in the card sorting test).</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Trial</td>
+    <td class="glossary-definition">corresponds to a configuration of SIOs and an order of SIOs. How a trial ends depends on the particular case: it might end when the user clicked on all SIOs in the correct order, when the user made an error or time ran out (see below).</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">SIOCount</td>
+    <td class="glossary-definition">number of SIOs to be displayed during a trial on the screen.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">SIOStreamCount</td>
+    <td class="glossary-definition">number of different categories of SIOs to be used in a trial. For SIOStreamCount = 2, one category could be digits and the other letters. SIOStreamCount is not a parameter but instead is defined as the length of StreamFeatures.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Feature</td>
+    <td class="glossary-definition">category of ordered symbols to be displayed on a sequence of SIO (e.g. digits, letters).</td>
+  </tr>
+</table>
+</div>
+
+    <h2>Parameters</h2>
+    <h3>Stimulus parameters (23 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">SioCount</h4>
+        <p class="parameter-description">The number of SIOs to be displayed in total. This number should be a multiple of the number of streams.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 24</span>
+            <span><strong>Range:</strong> 1 - 49</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">Streams</h4>
+        <p class="parameter-description">The different sequences of symbols/SIOs to track.
+For example, in part A of the Trail Making Task (TMT) there is only one stream, and users have to click on the SIOs numbered from 1 to 25. In part B, there are 2 streams and users have to alternate between clicking on digits and letters in increasing order.
+</p>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">FeatureType</h4>
+        <p class="parameter-description">The type of the feature to use.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Digits</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">SioBackgroundColor</h4>
+        <p class="parameter-description">The background color of the Sios (colors are defined in the Colors section above).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> color</span>
+            <span><strong>Default:</strong> “light-gray”: rgb(143, 156, 155)</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">SioTextColor</h4>
+        <p class="parameter-description">The text color on the Sios.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> color</span>
+            <span><strong>Default:</strong> “dark-gray”: rgb(56, 62, 71) 
+</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Only for OC & ML.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">AscendingOrder</h4>
+        <p class="parameter-description">Whether the enumeration starts from 1 (or equivalent) and up, or the other way.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> bolean</span>
+            <span><strong>Default:</strong> "true"</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Only for OC & ML.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">TrackStream</h4>
+        <p class="parameter-description">Whether this stream should be tracked by the player. Otherwise, it should be ignored.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "true"</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> At least one stream should be tracked. Otherwise, by default, the first stream is tracked.
+</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">OrderingRule</h4>
+        <p class="parameter-description">Which rule to use to define the order in which the SIO should be clicked. The indices and order of the SIOs within a Stream are defined by StreamFeatures (startValue and increasingOrder).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Sequential</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Only for OC & ML.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">IgnoreErrorsForFirstSio</h4>
+        <p class="parameter-description">Whether all incorrect answers are ignored until the first correct SIO is clicked by the user.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">FirstClickAction</h4>
+        <p class="parameter-description">Determines if a visual change should happen to all symbols after the first SIO (the first correct if IgnoreErrorsForFirstSio=true) has been clicked.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Only for OC & ML.
+When FirstClickAction == ShowAllSymbols, the first two elements in the sequence will be visible from the start of the trial. This is because we want people to see the pattern they are supposed to follow (from the first two of the sequence) and we don’t want them to prepare as long as they want to process all the sequence (hence it is hidden until they press to “start”). Once the first correct element is clicked, all SIO will be shown.
+</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">HideSymbolsDelay</h4>
+        <p class="parameter-description">How long the Symbols should be displayed on SIOs after trial onset.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 3600</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Only for OC & ML.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">SioOrderPresentationDisplayDuration</h4>
+        <p class="parameter-description">The duration in seconds of each stimulus being presented sequentially before the user can respond. Useful for SS, but available to OC and ML.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0; 1.5 for Spatial Span</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> If set to 0, then the SIO presentation is skipped entirely
+</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">SioOrderPresentationInterval</h4>
+        <p class="parameter-description">The interval between the presentation of two consecutive SIOs.
+Useful for SS, but available to OC and ML.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0; 1 for Spatial Span</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong>  Is ignored if SioPresentationDisplayDuration == 0
+</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ReversedSioOrderPresentation</h4>
+        <p class="parameter-description">Whether we show the SIOs in reverse. This parameter is needed for the “backward” version of the Corsi-block/Spatial Span.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Only for SS (Spatial Span).
+
+The logic here is that the stimuli are presented in reverse order, but participants have to report the SIO in the correct order; an equivalent but less elegant strategy would be display one order and reverse the expected responses.
+</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ClickedSioVisualState</h4>
+        <p class="parameter-description">What the SIO should look like once it has been clicked on.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> when ClickedSioVisualState == Pressed, one can press on each SIO only once. If it’s none you can click multiple times on the same SIO.  </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">HighlightSio</h4>
+        <p class="parameter-description">Which SIOs should be highlighted after a short inactivity duration defined by HighlightSioDelay. This highlight is a hint to help players who didn’t understand the rules.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">HighlightSioDelay</h4>
+        <p class="parameter-description">A delay before highlighting a SIO.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StopTrialCondition</h4>
+        <p class="parameter-description">When the trial should be ended. </p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> OnError</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Note: AfterSIOCountResponses is needed for the Spatial Span task where a sequence of locations are shown and participants have to reproduce that sequence. 
+Note: AfterSIOCountResponses only works in SpatialSpan config right now.
+Note: When StopTrialCondition = AfterSIOCountResponses, ClickedSioVisualState must be None. Otherwise, odd scenarios will happen while clicking on the Sios , especially in case of clicking a Sio twice. If ClickedSioVisualState != None then the game forces the value to be Null and print a Log Error. 
+Note: In the future, we may need both parameters to work together (e.g. user has to click N buttons, but they still disappear when we click on one).
+Note: This works ok now. But in the future if we want to have repetition ( clicking the same Sio multiple times according to the pattern itself) then this rule must be applied.
+</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">Layout</h4>
+        <p class="parameter-description">Determines how the SIOs should be distributed in space.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">GridSize</h4>
+        <p class="parameter-description">Determines the grid size. If it’s too small to contain all SIOs, then this parameter is ignored and the grid will be the smallest size possible to contain all SIOs.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 4</span>
+            <span><strong>Range:</strong> 2 - 6</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> When using a grid, the grid size will be computed from the SIO count, using this formula if gridSize is too small:
+GridSize = Ceil(Sqrt(SioCount))
+</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">FillGrid</h4>
+        <p class="parameter-description">Whether we want to fill the grid with empty Sios .
+This is useful for the Spatial Span task.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">AllowGridDiagonals</h4>
+        <p class="parameter-description">Whether we can go diagonally in the grid when Layout is GridConnection.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">PresetCoordinates</h4>
+        <p class="parameter-description">An array of predefined coordinates of the stimuli. These coordinates are used in Layout= Preset. The coordinates should be normalized positions within the scale [0,1] where [0,0] is the bottom left of the board square and [1,1] is the top right of it. </p>
+        <div class="parameter-note"><strong>Note:</strong> If there are multiple streams, the Sios are given in the order the user needs to click them. For example, if OrderingRule=Alternate, the first Sio will be 1, the second A, the third 2, etc.
+Coordinates are expressed relative to central board not the screen overall, with lower left corner of the board being (0,0) and upper right corner being (1,1).</div>
+    </div>
+    <h3>User Input Parameters (2 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">EnableInputDelay</h4>
+        <p class="parameter-description">The delay after the SIO presentation has ended before the user can press the Sios.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaxResponseTimeAfterFirstClick</h4>
+        <p class="parameter-description">The maximum time users have to complete the trial after the first correct Click; after this duration the trial is ended. </p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 20</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <h3>Feedback parameters (4 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">DrawTrails</h4>
+        <p class="parameter-description">Whether a trail should be drawn to connect two SIOs when a SIO is clicked and is the next in the sequence.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyCheckFeedback</h4>
+        <p class="parameter-description">Whether we should show the valid or wrong “check” feedback at the end of a trial.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Always</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyOnButtonFeedback</h4>
+        <p class="parameter-description">Whether we color the outline of the Sio red or green to indicate whether the response was correct or incorrect. If false, the outline will be white.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "true"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowCorrectTrialResponseFeedback</h4>
+        <p class="parameter-description">Whether we should show the correct response feedback at the end of a trial.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> OnError</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expression Parameters - Behaverse Assessment</title>
+    <link rel="stylesheet" href="../../css/parameters.css">
+</head>
+<body>
+<div class="parameters-container">
+    <h2>Parameters</h2>
+    <h3>Stimulus parameters (10 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusType</h4>
+        <p class="parameter-description">The type of stimulus to display.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> UpperCaseLetters</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Oftentimes people don’t use all possible letters but only a specific subset of letters. These subsets will need to be defined somewhere (probably by the sequence generator itself).</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">SequenceLength</h4>
+        <p class="parameter-description">The number of stimuli to be presented to the user.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 60</span>
+            <span><strong>Range:</strong> 1 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ItemSequence</h4>
+        <p class="parameter-description">The actual sequence of symbols to show the user (of size SequenceLength). Only two features of the stimulus are controlled: the identity of the symbol and its foreground color (which is used to signal “distractor”). The values in ItemSequence are indices that refer to a stimulus set defined by StimulusType (i.e., the values [3, 1] could refer to the digits 3 and 1 when StimulusType = Digits and to D and B when StimulusType = UpperCaseLetters). To indicate whether the symbol is a distractor or not, the method used here is to assign a negative value to distractors.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> sequence of integers</span>
+            <span><strong>Range:</strong> -PoolSize-1 - PoorSize</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> PoolSize value depends on StimulusType (e.g.,10 for digits, 26 for the alphabet).
+A positive value represents a stimulus; a value of 0 is “0” in digits and “A” in letters 
+A negative value represents a distractor, which value is equal to (- ItemSequence - 1) (i.e., in digits, -5 is “4”, -1 is “0”)
+For SART, distractors do not exist, therefore range is [0, PoolSize]
+</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusColor</h4>
+        <p class="parameter-description">The color of the main stimuli.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> color</span>
+            <span><strong>Default:</strong> #F5DFC0</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> The default color is close to white.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">DistractorColor</h4>
+        <p class="parameter-description">The color of the distractors.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> color</span>
+            <span><strong>Default:</strong> #618DA6</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> The default color is blueish.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusDisplayDuration</h4>
+        <p class="parameter-description">The duration in seconds during which each stimulus is visible.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.1</span>
+            <span><strong>Range:</strong> 0.01 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">InterstimulusInterval</h4>
+        <p class="parameter-description">The duration in seconds between each stimulus, Starting from the end of StimulusDisplayDuration. </p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.9</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">NoiseMaskDisplayDuration</h4>
+        <p class="parameter-description">The duration of displaying NoiseMask in seconds, starting right after StimulusDisplayDuration  ended.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.3</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> The mask is a static noise texture (gray levels).</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ResponsePatterns</h4>
+        <p class="parameter-description">What patterns should be searched for.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> array of String</span>
+            <span><strong>Default:</strong> ["A"]</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Pattern operators (following classic regexp syntax):
+<letter | digit> : a single character
+!<letter | digit> : Any character except the one given
+. : One character
+? : Zero or one character (except the next character after the question mark)
+* : Any number of any characters (except the next character after the star)
+
+Examples:
+X: Press when X appears
+!X: Press when anything except X appears (e.g. “A”, “B”)
+AX: Press when X appears right after an A (e.g. “AX”)
+A!BX: Press when X after A followed by anything but a B (e.g. “AFX”)
+A..X: Press when X appears after A and two letters (e.g. “ACFX”, “AJAX”)
+A??X: Press when X appears after A and from 0 to 2 letters (e.g. “AX”, “AFX”, “AJAX”)
+A*X: Press when X appears after A and any number of letters (e.g. “AX”, “AFX”, “AJAIX”)
+
+Note:
+Patterns cannot start nor end with “?”, “.” or “*”
+Patterns can be written with upper-case letters or digits (e.g. “A!X” or “1?5”)
+For SART, Patterns consist of only one symbol or its exception: “X” or “!X”</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">HidePatternTrialDelay</h4>
+        <p class="parameter-description">After how many trials we hide the patterns on screen.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 9999</span>
+            <span><strong>Range:</strong> 1 - Inf</span>
+        </div>
+    </div>
+    <h3>User input parameters (1 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">UseNonMatchButton</h4>
+        <p class="parameter-description">Whether to display a “Non-Match” button along with the “Match” button.
+The idea here is to disambiguate user input: when there are no non-match buttons, an absence of a response could mean the user reports a non-match or she did not pay attention to the stimulus.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> If ResponsePatternCount > 1, the number of buttons are multiplied, therefore having a Non-Match button is discouraged for more than one stream.
+
+In SART, is always false.
+</div>
+    </div>
+    <h3>Feedback parameters (4 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyCheckFeedback</h4>
+        <p class="parameter-description">Whether we should show the valid or wrong “check” feedback at the end of an episode (i.e., sequence of symbols).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Always</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyOnButtonFeedback</h4>
+        <p class="parameter-description">What type of feedback we show on the button itself once it is pressed.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Never</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowCorrectTrialResponseFeedback</h4>
+        <p class="parameter-description">Whether we should show the correct response feedback at the end of a trial.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Never</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowBlockStats</h4>
+        <p class="parameter-description">In the current build 1.0.10 at the end of the trial displays a percentage correct. This is not described here; that feedback should not be colored red/green.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Behaverse Assessment Documentation</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/parameters.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Level 1: Engine Navigation -->
+        <nav class="engine-nav" id="engine-nav">
+            <div class="nav-content">
+                <div class="nav-list-container" id="engine-container">
+                    <ul class="engine-list" role="tablist" aria-label="Assessment engines">
+                        <li class="engine-item home-item active" data-engine="HOME" tabindex="0" role="tab" aria-selected="true">ENGINES</li>
+                        <li class="engine-item" data-engine="BCS" tabindex="0" role="tab" aria-selected="false">BCS</li>
+                        <li class="engine-item" data-engine="DS" tabindex="0" role="tab" aria-selected="false">DS</li>
+                        <li class="engine-item" data-engine="NB" tabindex="0" role="tab" aria-selected="false">NB</li>
+                        <li class="engine-item" data-engine="WO" tabindex="0" role="tab" aria-selected="false">WO</li>
+                        <li class="engine-item" data-engine="UFOV" tabindex="0" role="tab" aria-selected="false">UFOV</li>
+                        <li class="engine-item" data-engine="TH" tabindex="0" role="tab" aria-selected="false">TH</li>
+                        <li class="engine-item" data-engine="SRM" tabindex="0" role="tab" aria-selected="false">SRM</li>
+                        <li class="engine-item" data-engine="SOS" tabindex="0" role="tab" aria-selected="false">SOS</li>
+                        <li class="engine-item" data-engine="SMC" tabindex="0" role="tab" aria-selected="false">SMC</li>
+                        <li class="engine-item" data-engine="RE" tabindex="0" role="tab" aria-selected="false">RE</li>
+                        <li class="engine-item" data-engine="BM" tabindex="0" role="tab" aria-selected="false">BM</li>
+                        <li class="engine-item" data-engine="BSAC" tabindex="0" role="tab" aria-selected="false">BSAC</li>
+                        <li class="engine-item" data-engine="MOT" tabindex="0" role="tab" aria-selected="false">MOT</li>
+                        <li class="engine-item" data-engine="OC" tabindex="0" role="tab" aria-selected="false">OC</li>
+                        <li class="engine-item" data-engine="OOO" tabindex="0" role="tab" aria-selected="false">OOO</li>
+                        <li class="engine-item" data-engine="PC" tabindex="0" role="tab" aria-selected="false">PC</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Level 2: Category Navigation -->
+        <nav class="category-nav" id="category-nav">
+            <div class="nav-content">
+                <div class="nav-list-container" id="category-container">
+                    <ul class="category-list" role="tablist" aria-label="Categories">
+                        <li class="category-item active" data-category="description" tabindex="0" role="tab" aria-selected="true">description</li>
+                        <li class="category-item" data-category="parameters" tabindex="0" role="tab" aria-selected="false">parameters</li>
+                        <li class="category-item" data-category="timelines" tabindex="0" role="tab" aria-selected="false">timelines</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Level 3: Sub-navigation (conditional) -->
+        <nav class="sub-nav" id="sub-navigation">
+            <div class="nav-content">
+                <div class="nav-list-container" id="sub-container">
+                    <ul class="sub-list" id="sub-items" role="tablist" aria-label="Sub-items">
+                        <!-- Sub-items will be populated dynamically -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+            <div class="content-header-bar">
+                <div class="header-left">
+                    <button id="nav-toggle" class="nav-toggle-btn" title="Hide Navigation">✕</button>
+                    <h1 class="content-title">Behaverse Assessment Documentation</h1>
+                </div>
+                <div class="header-right">
+                    <button id="search-toggle" class="search-icon-btn" title="Search Documentation">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.35-4.35"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="content-header">
+                <h1 id="page-title">Home</h1>
+            </div>
+            <div class="content-body" id="main-content">
+                <p>Loading...</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Search Modal -->
+    <div id="search-modal" class="search-modal">
+        <div class="search-modal-content">
+            <div class="search-modal-header">
+                <h2>Search Documentation</h2>
+                <button id="close-search" class="close-search-btn">✕</button>
+            </div>
+            <div class="search-form">
+                <div class="search-input-container">
+                    <input type="text" id="search-input" class="search-input-field" placeholder="Enter your search terms..." autofocus>
+                    <button id="search-btn" class="search-submit-btn">Search</button>
+                </div>
+                <div class="search-scope">
+                    <label class="search-scope-label">Search scope:</label>
+                    <div class="search-scope-options">
+                        <label><input type="radio" name="searchScope" value="all" checked> Entire website</label>
+                        <label><input type="radio" name="searchScope" value="engine"> Current engine only</label>
+                        <label><input type="radio" name="searchScope" value="page"> Current page only</label>
+                    </div>
+                </div>
+            </div>
+            <div class="search-results" id="search-results">
+                <!-- Search results will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/timeline.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

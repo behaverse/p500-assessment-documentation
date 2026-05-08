@@ -1,0 +1,535 @@
+{
+	"Id": "SART",
+	"Scene": "Regex",
+	"Rules": {
+// ---- Begin Rules ----
+"XCIT_SART_01_Practice_Rules": [
+	{"text": "XCIT_SART_01_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_SART_01_Practice.GameRules"}
+],
+"XCIT_SART_01_Tutorial_Rules": [
+	{"text": "XCIT_SART_01_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_SART_01_Tutorial.GameRules"}
+],
+// ---- End Rules ----
+},
+	"EnumDefinitions": {},
+	"ParameterInfos": {
+		"StimulusType": {
+			"Type": "Enum",
+			"Values": [ "Digits", "LowerCaseLetters", "UpperCaseLetters", "BehaverseSymbolsDistinct" ]
+		},
+		"SequenceLength": {
+			"Type": "Int",
+			"Min": 1
+		},
+		"ItemSequence": {
+			"Type": "Int",
+			"Min": -11,
+			"Max": 10
+		},
+		"StimulusColor": {
+			"Type": "Color"
+		},
+		"DistractorColor": {
+			"Type": "Color"
+		},
+		"StimulusDisplayDuration": {
+			"Type": "Float",
+			"Min": 0.01
+		},
+		"InterstimulusInterval": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"NoiseMaskDisplayDuration": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"InterstimulusNoiseMask": {
+			"Type": "Bool"
+		},
+		"ResponsePatterns": {
+			"Type": "String",
+			// Pattern is separated into two possibilities:
+			// ([A-Z0-9]|![A-Z0-9]): Special case to handle cases with only one letter (X and !X)
+			// [A-Z0-9]|![A-Z0-9])([A-Z0-9]|![A-Z0-9]|\\?|\\.|\\*)*[A-Z0-9]: All other cases, as such:
+			// 		([A-Z0-9]|![A-Z0-9]): Start with a single letter (X or !X)
+			//		([A-Z0-9]|![A-Z0-9]|\\?|\\.|\\*)*: Follow up with any possible character (X, !X, ?, ., *)
+			//		([A-Z0-9]|![A-Z0-9]): Finish with a single letter (X or !X)
+			"Pattern": "(([A-Za-z0-9]|![A-Za-z0-9])|([A-Za-z0-9]|![A-Za-z0-9])([A-Za-z0-9]|![A-Za-z0-9]|\\?|\\.|\\*)*([A-Za-z0-9]|![A-Za-z0-9]))"
+		},
+		"HidePatternTrialDelay": {
+			"Type": "Int",
+			"Min": 1
+		},
+		"UseNonMatchButton": {
+			"Type": "Bool",
+			"Value": false
+		},
+		"ShowAccuracyCheckFeedback": {
+			"Type": "Enum",
+			"Name": "ShowAccuracyCheckFeedback"
+		},
+		"ShowAccuracyOnButtonFeedback": {
+			"Type": "Enum",
+			"Name": "ShowAccuracyCheckFeedback"
+		},
+		"ShowCorrectTrialResponseFeedback": {
+            "Type": "Enum",
+			"Values": [
+                "Never",
+                "OnError",
+                "OnTimeout",
+                "Always"
+            ]
+		},
+		"ShowBlockStats": {
+			"Type": "Bool"
+		}
+	},
+	"MappingRules": [],
+	"Timelines": {
+// ---- Begin Timeline ----
+    "XCIT_SART_01": {
+        "blocks": [
+            {
+                "timeline": "XCIT_SART_01_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_SART_01_Tutorial",
+                "rulesName": "XCIT_SART_01_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_SART_01_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_SART_01_Practice_Intro"
+            },
+            {
+                "name": "XCIT_SART_01_Practice",
+                "rulesName": "XCIT_SART_01_Practice_Rules"
+            },
+            {
+                "timeline": "XCIT_SART_01_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_SART_01_Test_Intro"
+            },
+            {
+                "name": "XCIT_SART_01_Test"
+            },
+            {
+                "timeline": "XCIT_SART_01_Test_Outro"
+            }
+        ]
+    },
+// ---- End Timeline ----
+
+// ---- Begin Instructions ----
+"XCIT_SART_01_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SART_01_Practice.Objective"}]},
+			{"Content": [{"Text": "XCIT_SART_01_Practice.Strategy"}]},
+			{"Content": [{"Text": "XCIT_SART_01_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SART_01_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SART_01_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SART_01_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SART_01_Test.Objective"}]},
+			{"Content": [{"Text": "XCIT_SART_01_Test.Strategy"}]},
+			{"Content": [{"Text": "XCIT_SART_01_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_SART_01_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SART_01_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SART_01_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SART_01_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SART_01_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_SART_01_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_SART_01_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_SART_01_Tutorial.Strategy"}]},
+			{"Content": [{"Text": "XCIT_SART_01_Tutorial.Preparation"}]},
+			{"Content": [{"Text": "XCIT_SART_01_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SART_01_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SART_01_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+// ---- End Instructions ----
+		"Debug": {
+			"Blocks": [
+				{
+					"Name": "XCIT_SART_01_Test"
+				}
+			]
+		},
+		"Tutorial": {
+			"Blocks": [
+				{
+					"Name": "Tutorial",
+					"MinAccuracyRequired": 0.85,
+					"ExitRules": [
+						{ "Trials": 10 }
+					],
+					"Parameters": {
+						"ItemSequence": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [ 1, 2, 0, 2, 4, 0, 1, 0, 5, 0 ]
+							}
+						},
+						"ResponsePatterns": {
+							"Generate": "Once",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [ "A" ]
+							}
+						},
+						"BlockCounter_Position": "StatusBarLeft"
+					}
+				},
+				{
+					"Name": "Tutorial",
+					"MinAccuracyRequired": 1,
+					"ExitRules": [
+						{ "Trials": 10 }
+					],
+					"Parameters": {
+						"ItemSequence": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [ 1, 2, 0, 1, 4, 0, 4, 0, 1, 5 ]
+							}
+						},
+						"ResponsePatterns": {
+							"Generate": "Once",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [ "B" ]
+							}
+						},
+						"BlockCounter_Position": "StatusBarLeft"
+					}
+				},
+				{
+					"Name": "Tutorial",
+					"MinAccuracyRequired": 1,
+					"ExitRules": [
+						{ "Trials": 10 }
+					],
+					"Parameters": {
+						"ItemSequence": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [ 3, 2, 0, 3, 1, 2, 3, 0, 3, 4 ]
+							}
+						},
+						"ResponsePatterns": {
+							"Generate": "Once",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [ "AD" ]
+							}
+						},
+						"BlockCounter_Position": "StatusBarLeft"
+					}
+				}
+			]
+		},
+		"Demo": {
+			"Blocks": [
+				{
+					"Name": "Demo",
+					"Parameters": {
+						"StimulusType": "UpperCaseLetters",
+						"ResponsePatterns": {
+							"Generate": "Once",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": ["P!J"]
+							}
+						},
+						"ItemSequence": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Regex",
+								"SequenceLength": {
+									"Reference": "SequenceLength"
+								},
+								"ResponsePatterns": {
+									"Reference": "ResponsePatterns"
+								},
+								"StimulusType": {
+									"Reference": "StimulusType"
+								},
+								"DistractorCount": 0,
+								"WildcardDistribution": {
+									"Type": "uniform",
+									"Min": 0,
+									"Max": 5
+								},
+								"QuestionMarkReplacementRate": 0.5,
+								"ReponsePatternsWeights": [ 4]
+							}
+						},
+						"BlockCounter_Position": "StatusBarLeft"
+					}
+				},
+				{
+					"Name": "Demo",
+					"Parameters": {
+						"StimulusType": "Digits",
+						"ResponsePatterns": {
+							"Generate": "Once",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [ "0"]
+							}
+						},
+						"ItemSequence": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Regex",
+								"SequenceLength": {
+									"Reference": "SequenceLength"
+								},
+								"ResponsePatterns": {
+									"Reference": "ResponsePatterns"
+								},
+								"StimulusType": {
+									"Reference": "StimulusType"
+								},
+								"DistractorCount": 0,
+								"WildcardDistribution": {
+									"Type": "uniform",
+									"Min": 0,
+									"Max": 5
+								},
+								"QuestionMarkReplacementRate": 0.5,
+								"ReponsePatternsWeights": [ 5]
+							}
+						},
+						"BlockCounter_Position": "StatusBarLeft"
+					}
+				},
+				{
+					"Name": "Demo",
+					"Parameters": {
+						"StimulusType": "BehaverseSymbolsDistinct",
+						"ResponsePatterns": {
+							"Generate": "Once",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [ "AB"]
+							}
+						},
+						"ItemSequence": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Regex",
+								"SequenceLength": {
+									"Reference": "SequenceLength"
+								},
+								"ResponsePatterns": {
+									"Reference": "ResponsePatterns"
+								},
+								"StimulusType": {
+									"Reference": "StimulusType"
+								},
+								"DistractorCount": 0,
+								"WildcardDistribution": {
+									"Type": "uniform",
+									"Min": 0,
+									"Max": 5
+								},
+								"QuestionMarkReplacementRate": 0.5,
+								"ReponsePatternsWeights": [4]
+							}
+						},
+						"BlockCounter_Position": "StatusBarLeft"
+					}
+				}
+			]
+		}
+	},
+	"Blocks": {
+		"Default": {
+			"Parameters": {
+				"StimulusType": "UpperCaseLetters",
+				"SequenceLength": 60,
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ 0, -1, 1, 2, -4 ]
+					}
+				},
+				"UseNonMatchButton": false,
+				"StimulusColor": "#F5DFC0",
+				"DistractorColor": "#618DA6",
+				"StimulusDisplayDuration": 0.5,
+				"InterstimulusInterval": 0.5,
+				"NoiseMaskDisplayDuration": 0,
+				"ResponsePatterns": "A",
+				"HidePatternTrialDelay": 100,
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowAccuracyOnButtonFeedback": "Never",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ShowBlockStats": false
+			}
+		},
+		"Debug": {
+			"Inherits": "Default",
+			"Parameters": {
+				"StimulusDisplayDuration": 0.25,
+				"InterstimulusInterval": 0.75,
+				"NoiseMaskDisplayDuration": 0.75,
+				"SequenceLength": 12,
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ 1, -1, 1, 2, -4, 0, -1, 2 ]
+					}
+				},
+				"TaskName_Position": "StatusBarLeft",
+				"TrialCounter_Position": "StatusBarRight",
+				"TrialResults_Position": "InformationPanel",
+				"TrialResults_Style": "ColoredDiscrete",
+				"BlockCounter_Position": "StatusBarLeft",
+				"UserInputTimer_Position": "StatusBarCenter",
+			}
+		},
+		"Demo": {
+			"Inherits": "Default",
+			"Parameters": {
+				"SequenceLength": 20,
+				"TaskName_Position": "StatusBarLeft",
+				"TrialCounter_Position": "StatusBarRight",
+				"TrialResults_Position": "InformationPanel",
+				"TrialResults_Style": "ColoredDiscrete",
+				"UserInputTimer_Position": "StatusBarCenter",
+			}
+		},
+		"Tutorial": {
+			"Inherits": "Default",
+			"Parameters": {
+				"SequenceLength": 10,
+				"TaskName_Position": "StatusBarLeft",
+				"TrialCounter_Position": "StatusBarRight",
+				"TrialResults_Position": "InformationPanel",
+				"TrialResults_Style": "ColoredDiscrete",
+				"UserInputTimer_Position": "StatusBarCenter",
+			}
+		},
+		"XCIT_SART_01_Test": {
+			"Inherits": "Default",
+			"Parameters": {
+				"StimulusType": "Digits",
+				"ResponsePatterns": {
+					"Generate": "Once",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ "!3" ]
+					}
+				},
+				"SequenceLength": 225,
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [9, 8, 6, 4, 7, 5, 2, 3, 1, 5, 8, 9, 6, 2, 3, 1, 4, 7, 6, 2, 7, 4, 9, 8, 3, 1, 5, 1, 5, 2, 8, 7, 9, 3, 4, 6, 5, 6, 2, 3, 7, 8, 1, 4, 9, 5, 6, 8, 3, 4, 1, 7, 9, 2, 8, 5, 6, 4, 7, 1, 3, 2, 9, 9, 4, 8, 7, 1, 5, 2, 3, 6, 2, 5, 4, 6, 9, 7, 1, 8, 3, 4, 1, 7, 3, 2, 8, 6, 5, 9, 9, 5, 1, 2, 8, 7, 6, 4, 3, 6, 5, 3, 2, 7, 1, 8, 4, 9, 6, 9, 5, 2, 7, 8, 3, 4, 1, 9, 2, 3, 8, 5, 1, 4, 7, 6, 5, 4, 8, 1, 9, 7, 3, 6, 2, 9, 1, 8, 7, 4, 2, 5, 6, 3, 3, 8, 9, 7, 5, 6, 2, 4, 1, 6, 9, 8, 1, 5, 3, 7, 4, 2, 2, 1, 8, 3, 9, 4, 6, 7, 5, 6, 8, 7, 5, 1, 9, 2, 4, 3, 1, 8, 2, 6, 5, 3, 9, 7, 4, 8, 6, 1, 2, 4, 5, 7, 3, 9, 1, 9, 3, 2, 6, 5, 7, 4, 8, 6, 7, 5, 4, 8, 3, 1, 2, 9, 3, 6, 9, 7, 8, 5, 4, 2, 1]
+					}
+				},
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": "Never",
+				"UseNonMatchButton": false,
+				"StimulusColor": "#F5DFC0",
+				"DistractorColor": "#618DA6",
+				"StimulusDisplayDuration": 0.25,
+				"InterstimulusInterval": 0.75,
+				"NoiseMaskDisplayDuration": 0.75,
+				"HidePatternTrialDelay": 99999
+			}
+		},
+		"XCIT_SART_01_Practice": {
+			"Inherits": "XCIT_SART_01_Test",
+			"Parameters": {
+				"SequenceLength": 18,
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Int",
+						"SequenceLength": {
+							"Reference": "SequenceLength"
+						},
+						"Min": 1,
+						"Max": 9,
+						"AvoidOrderedSequences": false,
+						"AvoidRepeatedItems": true,
+						"PartitionByWindow": true
+					}
+				},
+				"StimulusDisplayDuration": 0.5,
+				"InterstimulusInterval": 1,
+				"NoiseMaskDisplayDuration": 1,
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "OnError"
+			}
+		},
+		"XCIT_SART_01_Tutorial": {
+			"Inherits": "XCIT_SART_01_Test",
+			"MinAccuracyRequired": 1,
+			"Parameters": {
+				"SequenceLength":7,
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": { // can also use hardcoded sequence if needed
+						"Type": "Ordered",
+						"Values":[1,3,5,4,3,9,3]
+					}
+				},
+				"StimulusDisplayDuration": 1,
+				"InterstimulusInterval": 1.5,
+				"NoiseMaskDisplayDuration": 1.5,
+				"ShowAccuracyOnButtonFeedback": "Always",
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "OnError"
+			}
+		}
+	}
+}

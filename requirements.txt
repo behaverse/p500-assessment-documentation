@@ -1,0 +1,12 @@
+# Behaverse Assessment Documentation - Python Dependencies
+
+# Data processing
+pandas>=2.0.0
+openpyxl>=3.1.0  # For Excel file reading
+
+# Configuration parsing
+PyYAML>=6.0
+
+# Optional: Development tools
+# black>=23.0.0  # Code formatting
+# flake8>=6.0.0  # Linting

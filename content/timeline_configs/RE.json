@@ -1,0 +1,1406 @@
+{
+	"Id": "RE",
+	"Scene": "Regex",
+	"Rules": {
+// ---- Begin Rules ----
+"XCIT_RE_01_Practice_Rules": [
+	{"text": "XCIT_RE_01_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_RE_01_Practice.GameRules"}
+],
+"XCIT_RE_01_Tutorial_Rules": [
+	{"text": "XCIT_RE_01_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_RE_01_Tutorial.GameRules"}
+],
+"XCIT_RE_02_Practice_Rules": [
+	{"text": "XCIT_RE_02_Practice.RulesTitle","heading": 2},
+	{"text":"XCIT_RE_02_Tutorial.Stimulus"},{"text":"XCIT_RE_02_Tutorial.YourJob"},{"text":"XCIT_RE_02_Tutorial.ExampleResponse"},{"Image": "RE/XCIT_RE_02_instruction_1", "Height": 200},{"text":"XCIT_RE_02_Tutorial.ExampleResponse_2"},{"Image": "RE/XCIT_RE_02_instruction_2", "Height": 200},{"text":"XCIT_RE_02_Tutorial.ExampleResponse_3"},{"Image": "RE/XCIT_RE_02_instruction_3", "Height": 200},{"text":"XCIT_RE_02_Practice.Objective"}
+],
+"XCIT_RE_02_Tutorial_Rules": [
+	{"text": "XCIT_RE_02_Tutorial.RulesTitle","heading": 2},
+	{"text":"XCIT_RE_02_Tutorial.Stimulus"},{"text":"XCIT_RE_02_Tutorial.YourJob"},{"text":"XCIT_RE_02_Tutorial.ExampleResponse"},{"Image": "RE/XCIT_RE_02_instruction_1", "Height": 200},{"text":"XCIT_RE_02_Tutorial.ExampleResponse_2"},{"Image": "RE/XCIT_RE_02_instruction_2", "Height": 200},{"text":"XCIT_RE_02_Tutorial.ExampleResponse_3"},{"Image": "RE/XCIT_RE_02_instruction_3", "Height": 200},{"text":"XCIT_RE_02_Practice.Objective"}
+],
+"XCIT_RE_03_Practice_Rules": [
+	{"text": "XCIT_RE_03_Practice.RulesTitle","heading": 2},
+	{"text":"XCIT_RE_03_Tutorial.Stimulus"},{"text":"XCIT_RE_03_Tutorial.YourJob"},{"text":"XCIT_RE_03_Tutorial.ExampleResponse"},{"Image": "RE/XCIT_RE_03_instruction_1", "Height": 200},{"text":"XCIT_RE_03_Tutorial.ExampleResponse_2"},{"Image": "RE/XCIT_RE_03_instruction_2", "Height": 200},{"text":"XCIT_RE_03_Tutorial.ExampleResponse_3"},{"Image": "RE/XCIT_RE_03_instruction_3", "Height": 200},{"text":"XCIT_RE_03_Practice.Objective"}
+],
+"XCIT_RE_03_Tutorial_Rules": [
+	{"text": "XCIT_RE_03_Tutorial.RulesTitle","heading": 2},
+	{"text":"XCIT_RE_03_Tutorial.Stimulus"},{"text":"XCIT_RE_03_Tutorial.YourJob"},{"text":"XCIT_RE_03_Tutorial.ExampleResponse"},{"Image": "RE/XCIT_RE_03_instruction_1", "Height": 200},{"text":"XCIT_RE_03_Tutorial.ExampleResponse_2"},{"Image": "RE/XCIT_RE_03_instruction_2", "Height": 200},{"text":"XCIT_RE_03_Tutorial.ExampleResponse_3"},{"Image": "RE/XCIT_RE_03_instruction_3", "Height": 200},{"text":"XCIT_RE_03_Practice.Objective"}
+],
+// ---- End Rules ----
+},
+	"EnumDefinitions": {},
+	"ParameterInfos": {
+		"StimulusType": {
+			"Type": "Enum",
+			"Values": [ "Digits", "LowerCaseLetters", "UpperCaseLetters", "BehaverseSymbolsDistinct" ]
+		},
+		"SequenceLength": {
+			"Type": "Int",
+			"Min": 1
+		},
+		"ItemSequence": {
+			"Type": "Int",
+			"Min": -27,
+			"Max": 26
+		},
+		"StimulusColor": {
+			"Type": "Color"
+		},
+		"DistractorColor": {
+			"Type": "Color"
+		},
+		"StimulusDisplayDuration": {
+			"Type": "Float",
+			"Min": 0.01
+		},
+		"InterstimulusInterval": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"NoiseMaskDisplayDuration": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"ResponsePatterns": {
+			"Type": "String",
+			// Pattern is separated into two possibilities:
+			// ([A-Z0-9]|![A-Z0-9]): Special case to handle cases with only one letter (X and !X)
+			// [A-Z0-9]|![A-Z0-9])([A-Z0-9]|![A-Z0-9]|\\?|\\.|\\*)*[A-Z0-9]: All other cases, as such:
+			// 		([A-Z0-9]|![A-Z0-9]): Start with a single letter (X or !X)
+			//		([A-Z0-9]|![A-Z0-9]|\\?|\\.|\\*){0,3}: Follow up with any possible character (X, !X, ?, ., *), up to 3 times to prevent sequences more than 5 characters long
+			//		([A-Z0-9]|![A-Z0-9]): Finish with a single letter (X or !X)
+			"Pattern": "(([A-Za-z0-9]|![A-Za-z0-9])|([A-Za-z0-9]|![A-Za-z0-9])([A-Za-z0-9]|![A-Za-z0-9]|\\?|\\.|\\*)*([A-Za-z0-9]|![A-Za-z0-9]))"
+		},
+		"HidePatternTrialDelay": {
+			"Type": "Int",
+			"Min": 1
+		},
+		"UseNonMatchButton": {
+			"Type": "Bool"
+		},
+		"ShowAccuracyCheckFeedback": {
+			"Type": "Enum",
+			"Name": "ShowAccuracyCheckFeedback"
+		},
+		"ShowAccuracyOnButtonFeedback": {
+			"Type": "Enum",
+			"Name": "ShowAccuracyCheckFeedback"
+		},
+		"ShowCorrectTrialResponseFeedback": {
+            "Type": "Enum",
+			"Values": [
+                "Never",
+                "OnError",
+                "OnTimeout",
+                "Always"
+            ]
+		},
+		"ShowBlockStats": {
+			"Type": "Bool"
+		}
+	},
+	"MappingRules": [],
+	"Timelines": {
+// ---- Begin Timeline ----
+    "XCIT_RE_01": {
+        "blocks": [
+            {
+                "timeline": "XCIT_RE_01_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_RE_01_Tutorial",
+                "rulesName": "XCIT_RE_01_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_RE_01_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_RE_01_Practice_Intro"
+            },
+            {
+                "name": "XCIT_RE_01_Practice",
+                "rulesName": "XCIT_RE_01_Practice_Rules"
+            },
+            {
+                "timeline": "XCIT_RE_01_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_RE_01_Test_A_Intro"
+            },
+            {
+                "name": "XCIT_RE_01_Test_A"
+            },
+            {
+                "timeline": "XCIT_RE_01_Test_A_Outro"
+            },
+            {
+                "timeline": "XCIT_RE_01_Test_B_Intro"
+            },
+            {
+                "name": "XCIT_RE_01_Test_B"
+            },
+            {
+                "timeline": "XCIT_RE_01_Test_B_Outro"
+            },
+            {
+                "timeline": "XCIT_RE_01_Test_C_Intro"
+            },
+            {
+                "name": "XCIT_RE_01_Test_C"
+            },
+            {
+                "timeline": "XCIT_RE_01_Test_C_Outro"
+            },
+            {
+                "timeline": "XCIT_RE_01_Test_D_Intro"
+            },
+            {
+                "name": "XCIT_RE_01_Test_D"
+            },
+            {
+                "timeline": "XCIT_RE_01_Test_D_Outro"
+            }
+        ]
+    },
+    "XCIT_RE_02": {
+        "blocks": [
+            {
+                "timeline": "XCIT_RE_02_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_RE_02_Tutorial",
+                "rulesName": "XCIT_RE_02_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_RE_02_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_RE_02_Practice_Intro"
+            },
+            {
+                "name": "XCIT_RE_02_Practice",
+                "rulesName": "XCIT_RE_02_Practice_Rules"
+            },
+            {
+                "timeline": "XCIT_RE_02_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_RE_02_Test_A_Intro"
+            },
+            {
+                "name": "XCIT_RE_02_Test_A"
+            },
+            {
+                "timeline": "XCIT_RE_02_Test_A_Outro"
+            },
+            {
+                "timeline": "XCIT_RE_02_Test_B_Intro"
+            },
+            {
+                "name": "XCIT_RE_02_Test_B"
+            },
+            {
+                "timeline": "XCIT_RE_02_Test_B_Outro"
+            },
+            {
+                "timeline": "XCIT_RE_02_Test_C_Intro"
+            },
+            {
+                "name": "XCIT_RE_02_Test_C"
+            },
+            {
+                "timeline": "XCIT_RE_02_Test_C_Outro"
+            },
+            {
+                "timeline": "XCIT_RE_02_Test_D_Intro"
+            },
+            {
+                "name": "XCIT_RE_02_Test_D"
+            },
+            {
+                "timeline": "XCIT_RE_02_Test_D_Outro"
+            }
+        ]
+    },
+    "XCIT_RE_03": {
+        "blocks": [
+            {
+                "timeline": "XCIT_RE_03_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_RE_03_Tutorial",
+                "rulesName": "XCIT_RE_03_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_RE_03_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_RE_03_Practice_Intro"
+            },
+            {
+                "name": "XCIT_RE_03_Practice",
+                "rulesName": "XCIT_RE_03_Practice_Rules"
+            },
+            {
+                "timeline": "XCIT_RE_03_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_RE_03_Test_A_Intro"
+            },
+            {
+                "name": "XCIT_RE_03_Test_A"
+            },
+            {
+                "timeline": "XCIT_RE_03_Test_A_Outro"
+            },
+            {
+                "timeline": "XCIT_RE_03_Test_B_Intro"
+            },
+            {
+                "name": "XCIT_RE_03_Test_B"
+            },
+            {
+                "timeline": "XCIT_RE_03_Test_B_Outro"
+            },
+            {
+                "timeline": "XCIT_RE_03_Test_C_Intro"
+            },
+            {
+                "name": "XCIT_RE_03_Test_C"
+            },
+            {
+                "timeline": "XCIT_RE_03_Test_C_Outro"
+            },
+            {
+                "timeline": "XCIT_RE_03_Test_D_Intro"
+            },
+            {
+                "name": "XCIT_RE_03_Test_D"
+            },
+            {
+                "timeline": "XCIT_RE_03_Test_D_Outro"
+            }
+        ]
+    },
+// ---- End Timeline ----
+
+// ---- Begin Instructions ----
+"XCIT_RE_01_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_01_Practice.Objective"}]},
+			{"Content": [{"Text": "XCIT_RE_01_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_01_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_01_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_01_Test_A_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_01_Test_A.Objective"}]},
+			{"Content": [{"Text": "XCIT_RE_01_Test_A.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_RE_01_Test_A.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_01_Test_A_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_01_Test_A.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_01_Test_B_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_01_Test_B.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_01_Test_B_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_01_Test_B.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_01_Test_C_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_01_Test_C.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_01_Test_C_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_01_Test_C.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_01_Test_D_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_01_Test_D.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_01_Test_D_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_01_Test_D.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_01_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_01_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_RE_01_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_RE_01_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_RE_01_Tutorial.ExampleResponse"}]},
+			{"Content": [{"Text": "XCIT_RE_01_Tutorial.Preparation"}]},
+			{"Content": [{"Text": "XCIT_RE_01_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_01_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_01_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_02_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_02_Practice.Objective"}]},
+			{"Content": [{"Text": "XCIT_RE_02_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_02_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_02_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_02_Test_A_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_02_Test_A.Objective"}]},
+			{"Content": [{"Text": "XCIT_RE_02_Test_A.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_RE_02_Test_A.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_02_Test_A_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_02_Test_A.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_02_Test_B_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_02_Test_B.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_02_Test_B_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_02_Test_B.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_02_Test_C_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_02_Test_C.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_02_Test_C_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_02_Test_C.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_02_Test_D_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_02_Test_D.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_02_Test_D_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_02_Test_D.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_02_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_02_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_RE_02_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_RE_02_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_RE_02_Tutorial.ExampleResponse"},{"Image": "RE/XCIT_RE_02_instruction_1", "Height": 200}]},
+			{"Content": [{"Text": "XCIT_RE_02_Tutorial.ExampleResponse_2"},{"Image": "RE/XCIT_RE_02_instruction_2", "Height": 200}]},
+			{"Content": [{"Text": "XCIT_RE_02_Tutorial.ExampleResponse_3"},{"Image": "RE/XCIT_RE_02_instruction_3", "Height": 200}]},
+			{"Content": [{"Text": "XCIT_RE_02_Tutorial.Preparation"}]},
+			{"Content": [{"Text": "XCIT_RE_02_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_02_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_02_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_03_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_03_Practice.Objective"}]},
+			{"Content": [{"Text": "XCIT_RE_03_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_03_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_03_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_03_Test_A_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_03_Test_A.Objective"}]},
+			{"Content": [{"Text": "XCIT_RE_03_Test_A.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_RE_03_Test_A.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_03_Test_A_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_03_Test_A.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_03_Test_B_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_03_Test_B.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_03_Test_B_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_03_Test_B.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_03_Test_C_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_03_Test_C.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_03_Test_C_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_03_Test_C.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_03_Test_D_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_03_Test_D.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_03_Test_D_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_03_Test_D.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_03_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_03_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_RE_03_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_RE_03_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_RE_03_Tutorial.ExampleResponse"},{"Image": "RE/XCIT_RE_03_instruction_1", "Height": 200}]},
+			{"Content": [{"Text": "XCIT_RE_03_Tutorial.ExampleResponse_2"},{"Image": "RE/XCIT_RE_03_instruction_2", "Height": 200}]},
+			{"Content": [{"Text": "XCIT_RE_03_Tutorial.ExampleResponse_3"},{"Image": "RE/XCIT_RE_03_instruction_3", "Height": 200}]},
+			{"Content": [{"Text": "XCIT_RE_03_Tutorial.Preparation"}]},
+			{"Content": [{"Text": "XCIT_RE_03_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_RE_03_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_RE_03_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+// ---- End Instructions ----
+		"Demo": {
+			"Blocks": [
+				{
+					"Name": "Demo",
+					"Parameters": {
+						"ResponsePatterns": {
+							"Generate": "Once",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [ "Q?D", "P!J" ]
+							}
+						},
+						"ItemSequence": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Regex",
+								"SequenceLength": {
+									"Reference": "SequenceLength"
+								},
+								"ResponsePatterns": {
+									"Reference": "ResponsePatterns"
+								},
+								"StimulusType": {
+									"Reference": "StimulusType"
+								},
+								"DistractorCount": 1,
+								"WildcardDistribution": {
+									"Type": "uniform",
+									"Min": 0,
+									"Max": 5
+								},
+								"QuestionMarkReplacementRate": 0.5,
+								"ReponsePatternsWeights": [ 2, 2 ]
+							}
+						},
+						"BlockCounter_Position": "StatusBarLeft"
+					}
+				},
+				{
+					"Name": "Demo",
+					"Parameters": {
+						"StimulusType": "LowerCaseLetters",
+						"ResponsePatterns": {
+							"Generate": "Once",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [ "S*P", "C.E" ]
+							}
+						},
+						"ItemSequence": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Regex",
+								"SequenceLength": {
+									"Reference": "SequenceLength"
+								},
+								"ResponsePatterns": {
+									"Reference": "ResponsePatterns"
+								},
+								"StimulusType": {
+									"Reference": "StimulusType"
+								},
+								"DistractorCount": 1,
+								"WildcardDistribution": {
+									"Type": "uniform",
+									"Min": 0,
+									"Max": 5
+								},
+								"QuestionMarkReplacementRate": 0.5,
+								"ReponsePatternsWeights": [ 1, 3 ]
+							}
+						},
+						"BlockCounter_Position": "StatusBarLeft"
+					}
+				},
+				{
+					"Name": "Demo",
+					"Parameters": {
+						"StimulusType": "Digits",
+						"NoiseMaskDisplayDuration": 1,
+						"ResponsePatterns": {
+							"Generate": "Once",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [ "2", "87" ]
+							}
+						},
+						"ItemSequence": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Regex",
+								"SequenceLength": {
+									"Reference": "SequenceLength"
+								},
+								"ResponsePatterns": {
+									"Reference": "ResponsePatterns"
+								},
+								"StimulusType": {
+									"Reference": "StimulusType"
+								},
+								"DistractorCount": 3,
+								"WildcardDistribution": {
+									"Type": "uniform",
+									"Min": 0,
+									"Max": 5
+								},
+								"QuestionMarkReplacementRate": 0.5,
+								"ReponsePatternsWeights": [ 4, 2 ]
+							}
+						},
+						"BlockCounter_Position": "StatusBarLeft"
+					}
+				},
+				{
+					"Name": "Symbols",
+					"Parameters": {
+						"BlockCounter_Position": "StatusBarLeft"
+					}
+				}
+			]
+		},
+		"Debug": {
+			"Blocks": [
+				{
+					"Name": "Debug"
+				}
+			]
+		},
+		"Video": {
+			"Blocks": [
+				{
+					"Name": "Video"
+				}
+			]
+		},
+		"Symbols": {
+			"Blocks": [
+				{
+					"Name": "Symbols"
+				}
+			]
+		},
+		"Tutorial": {
+			"Blocks": [
+				{
+					"Name": "Tutorial",
+					"MinAccuracyRequired": 0.85,
+					"Parameters": {
+						"ItemSequence": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [ 1, 2, 0, 2, 4, 0, 1, 0, 5, 0 ]
+							}
+						},
+						"ResponsePatterns": {
+							"Generate": "Once",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [ "A" ]
+							}
+						},
+						"BlockCounter_Position": "StatusBarLeft"
+					}
+				},
+				{
+					"Name": "Tutorial",
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"ItemSequence": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [ 1, 2, 0, 1, 4, 0, 4, 0, 1, 5 ]
+							}
+						},
+						"ResponsePatterns": {
+							"Generate": "Once",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [ "AB" ]
+							}
+						},
+						"BlockCounter_Position": "StatusBarLeft"
+					}
+				},
+				{
+					"Name": "Tutorial",
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"ItemSequence": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [ 4, 2, 0, 1, 4, 2, 3, 0, 4, 3 ]
+							}
+						},
+						"ResponsePatterns": {
+							"Generate": "Once",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [ "A*D" ]
+							}
+						},
+						"BlockCounter_Position": "StatusBarLeft"
+					}
+				}
+			]
+		},
+		"RobotTest": {
+			"Blocks": [
+				{ "Name": "RobotTest", "Parameters": {
+					"StimulusType": "Digits",
+					"ResponsePatterns": [ "01" ]
+				}}, { "Name": "RobotTest", "Parameters": {
+					"StimulusType": "LowerCaseLetters",
+					"ResponsePatterns": [ "ba" ]
+				}}, { "Name": "RobotTest", "Parameters": {
+					"StimulusType": "UpperCaseLetters",
+					"ResponsePatterns": [ "BC" ]
+				}}, { "Name": "RobotTest", "Parameters": {
+					"StimulusType": "BehaverseSymbolsDistinct",
+					"ResponsePatterns": [ "AA" ]
+				}}, { "Name": "RobotTest", "Parameters": {
+					"StimulusType": "Digits",
+					"ResponsePatterns": [ "CA" ]
+				}}, { "Name": "RobotTest", "Parameters": {
+					"StimulusType": "UpperCaseLetters",
+					"ResponsePatterns": [ "21" ]
+				}}, { "Name": "RobotTest", "Parameters": {
+					"StimulusType": "BehaverseSymbolsDistinct",
+					"ResponsePatterns": [ "11" ]
+				}}, { "Name": "RobotTest", "Parameters": {
+					"SequenceLength": 1,
+					"ItemSequence": 0
+				}}, { "Name": "RobotTest", "Parameters": {
+					"SequenceLength": 200
+				}}, { "Name": "RobotTestWithDistractors", "Parameters": {
+					"SequenceLength": 100
+				}}, { "Name": "RobotTestWithDistractors", "Parameters": {
+					"StimulusColor": "#00FF80",
+					"DistractorColor": "#FF3020"
+				}}, { "Name": "RobotTest", "Parameters": {
+					"StimulusDisplayDuration": 0.01
+				}}, { "Name": "RobotTest", "Parameters": {
+					"StimulusDisplayDuration": 5
+				}}, { "Name": "RobotTest", "Parameters": {
+					"InterstimulusInterval": 0
+				}}, { "Name": "RobotTest", "Parameters": {
+					"InterstimulusInterval": 5
+				}}, { "Name": "RobotTest", "Parameters": {
+					"NoiseMaskDisplayDuration": 0
+				}}, { "Name": "RobotTest", "Parameters": {
+					"NoiseMaskDisplayDuration": 5
+				}}, { "Name": "RobotTest", "Parameters": {
+					"ResponsePatterns": [ "A", "B", "C" ]
+				}}, { "Name": "RobotTest", "Parameters": {
+					"ResponsePatterns": [ "!A" ]
+				}}, { "Name": "RobotTest", "Parameters": {
+					"ResponsePatterns": [ "A!B", "AB!C" ]
+				}}, { "Name": "RobotTest", "Parameters": {
+					"ResponsePatterns": [ "A.C" ]
+				}}, { "Name": "RobotTest", "Parameters": {
+					"ResponsePatterns": [ "A..C", "A.B.C", "!A.!B" ]
+				}}, { "Name": "RobotTest", "Parameters": {
+					"ResponsePatterns": [ "A?C" ]
+				}}, { "Name": "RobotTest", "Parameters": {
+					"ResponsePatterns": [ "A??C", "A?B?C", "!A?!C" ]
+				}}, { "Name": "RobotTest", "Parameters": {
+					"ResponsePatterns": [ "A*C" ]
+				}}, { "Name": "RobotTest", "Parameters": {
+					"ResponsePatterns": [ "A*B*C", "!A*!B" ]
+				}}, { "Name": "RobotTest", "Parameters": {
+					"ResponsePatterns": [ "!A.A?A.!A*A" ]
+				}}, { "Name": "RobotTest", "Parameters": {
+					"HidePatternTrialDelay": 1
+				}}, { "Name": "RobotTest", "Parameters": {
+					"HidePatternTrialDelay": 5
+				}}, { "Name": "RobotTest", "Parameters": {
+					"UseNonMatchButton": true
+				}}, { "Name": "RobotTest", "Parameters": {
+					"ResponsePatterns": [ "A", "B", "C" ],
+					"UseNonMatchButton": true
+				}}, { "Name": "RobotTest", "Parameters": {
+					"ShowAccuracyCheckFeedback": "Never"
+				}}, { "Name": "RobotTest", "Parameters": {
+					"ShowAccuracyOnButtonFeedback": "Always"
+				}}, { "Name": "RobotTest", "Parameters": {
+					"ShowCorrectTrialResponseFeedback": "Always"
+				}}, { "Name": "RobotTest", "Parameters": {
+					"ShowCorrectTrialResponseFeedback": "Never"
+				}}, { "Name": "RobotTest", "Parameters": {
+					"ShowCorrectTrialResponseFeedback": "OnError"
+				}}, { "Name": "RobotTest", "Parameters": {
+					"ShowCorrectTrialResponseFeedback": "OnTimeout"
+				}}, { "Name": "RobotTest", "Parameters": {
+					"ShowBlockStats": true
+				}}
+			]
+		}
+	},
+	"Blocks": {
+		"Default": {
+			"Parameters": {
+				"StimulusType": "UpperCaseLetters",
+				"SequenceLength": 60,
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ 0, -1, 1, 2, -4 ]
+					}
+				},
+				"StimulusColor": "#F5DFC0",
+				"DistractorColor": "#618DA6",
+				"StimulusDisplayDuration": 0.1,
+				"InterstimulusInterval": 0.9,
+				"NoiseMaskDisplayDuration": 0.3,
+				"ResponsePatterns": [ "A" ],
+				"HidePatternTrialDelay": 9999,
+				"UseNonMatchButton": false,
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowAccuracyOnButtonFeedback": "Never",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ShowBlockStats": false
+			}
+		},
+		"Debug": {
+			"MinAccuracyRequired": 1,
+			"Inherits": "Default",
+			"Parameters": {
+				"SequenceLength": 12,
+				"ResponsePatterns": [ "A*E", "DD" ],
+				"ItemSequence": [ 3,5,7,3,5,7,3,5,7,1,1,1,3,5,7,3,5,3,5,3,5,7,1,1,1 ],
+				"StimulusDisplayDuration": 1,
+				"NoiseMaskDisplayDuration": 10,
+				"InterstimulusInterval": 2,
+				"UseNonMatchButton": false,
+				"TaskName_Position": "StatusBarLeft",
+				"BlockCounter_Position": "StatusBarLeft",
+				"TrialCounter_Position": "StatusBarRight",
+				"TrialResults_Position": "InformationPanel",
+				"TrialResults_Style": "ColoredDiscrete",
+				"UserInputTimer_Position": "StatusBarCenter"
+			}
+		},
+		"Symbols": {
+			"MinAccuracyRequired": 1,
+			"Inherits": "Default",
+			"Parameters": {
+				"StimulusType": "BehaverseSymbolsDistinct",
+				"SequenceLength": 16,
+				"ResponsePatterns": {
+					"Generate": "Once",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ "E", "BA" ]
+					}
+				},
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Regex",
+						"SequenceLength": {
+							"Reference": "SequenceLength"
+						},
+						"ResponsePatterns": {
+							"Reference": "ResponsePatterns"
+						},
+						"StimulusType": {
+							"Reference": "StimulusType"
+						},
+						"DistractorCount": 2,
+						"WildcardDistribution": {
+							"Type": "uniform",
+							"Min": 0,
+							"Max": 5
+						},
+						"QuestionMarkReplacementRate": 0.5,
+						"ReponsePatternsWeights": [ 4, 2 ]
+					}
+				},
+				"TaskName_Position": "StatusBarLeft",
+				"TrialCounter_Position": "StatusBarRight",
+				"TrialResults_Position": "InformationPanel",
+				"TrialResults_Style": "ColoredDiscrete",
+				"UserInputTimer_Position": "StatusBarCenter"
+			}
+		},
+		"Tutorial": {
+			"Inherits": "Default",
+			"Parameters": {
+				"SequenceLength": 10,
+				"TaskName_Position": "StatusBarLeft",
+				"TrialCounter_Position": "StatusBarRight",
+				"TrialResults_Position": "InformationPanel",
+				"TrialResults_Style": "ColoredDiscrete",
+				"UserInputTimer_Position": "StatusBarCenter"
+			}
+		},
+		"Demo": {
+			"Inherits": "Default",
+			"Parameters": {
+				"SequenceLength": 20,
+				"TaskName_Position": "StatusBarLeft",
+				"TrialCounter_Position": "StatusBarRight",
+				"TrialResults_Position": "InformationPanel",
+				"TrialResults_Style": "ColoredDiscrete",
+				"UserInputTimer_Position": "StatusBarCenter"
+			}
+		},
+		"XCIT_RE_01_Test_A":{
+			"Inherits": "Default",
+			"Parameters": {
+				"StimulusType": "Digits",
+				"ResponsePatterns": {
+					"Generate": "Once",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ "357" ]
+					}
+				},
+				"SequenceLength": 100,
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values":[3, 5, 7, 3, 5, 7, 4, 6, 8, 2, 4, 6, 2, 4, 6, 7, 9, 7, 9, 3, 4, 6, 8, 3, 5, 7, 3, 5, 7, 3, 5, 7, 5, 4, 6, 8, 9, 2, 4, 6, 5, 4, 6, 8, 7, 2, 4, 6, 3, 5, 7, 2, 4, 6, 2, 9, 7, 6, 2, 4, 6, 4, 6, 8, 6, 5, 4, 3, 5, 7, 4, 6, 8, 2, 4, 6, 4, 6, 8, 3, 5, 7, 4, 6, 8, 2, 4, 6, 4, 3, 5, 7, 2, 4, 6, 4, 6, 8, 6, 5]
+					}
+				},
+				"StimulusColor": "#ffffff",
+				"StimulusDisplayDuration": 0.6,
+				"InterstimulusInterval": 0,
+				"NoiseMaskDisplayDuration": 0,
+				"UseNonMatchButton": false,
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": "Never"
+			}
+		},
+		"XCIT_RE_01_Test_B":{
+			"Inherits": "XCIT_RE_01_Test_A",
+			"Parameters": {
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values":[3, 5, 7, 8, 2, 4, 6, 4, 6, 8, 5, 2, 4, 6, 2, 4, 6, 5, 3, 2, 4, 6, 7, 4, 6, 3, 5, 7, 4, 6, 8, 3, 5, 7, 3, 5, 2, 5, 3, 5, 7, 6, 3, 5, 7, 4, 6, 8, 4, 6, 8, 2, 4, 6, 3, 4, 6, 8, 6, 3, 5, 7, 4, 6, 8, 4, 6, 8, 3, 5, 7, 2, 4, 6, 3, 2, 4, 6, 2, 4, 6, 4, 9, 4, 6, 8, 3, 5, 7, 4, 6, 8, 3, 5, 7, 6, 8, 2, 4, 6]
+					}
+				}
+			}
+		},
+		"XCIT_RE_01_Test_C":{
+			"Inherits": "XCIT_RE_01_Test_A",
+			"Parameters": {
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values":[9, 4, 6, 8, 6, 2, 4, 6, 2, 3, 5, 7, 2, 4, 6, 2, 4, 6, 2, 4, 6, 4, 6, 8, 3, 2, 4, 6, 4, 6, 8, 2, 4, 6, 5, 3, 5, 7, 9, 4, 6, 8, 7, 2, 9, 3, 5, 7, 4, 6, 8, 2, 4, 6, 7, 9, 4, 6, 8, 9, 3, 5, 7, 3, 5, 7, 4, 9, 3, 5, 7, 4, 6, 8, 2, 3, 5, 7, 2, 4, 6, 4, 5, 2, 4, 6, 4, 6, 8, 2, 3, 5, 7, 5, 3, 5, 7, 4, 6, 8]
+					}
+				}
+			}
+		},
+		"XCIT_RE_01_Test_D":{
+			"Inherits": "XCIT_RE_01_Test_A",
+			"Parameters": {
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values":[5, 4, 9, 7, 5, 2, 4, 6, 4, 6, 8, 5, 3, 5, 7, 9, 6, 4, 6, 8, 4, 6, 8, 3, 4, 6, 8, 4, 6, 8, 4, 6, 8, 2, 4, 6, 7, 6, 4, 6, 8, 5, 3, 5, 7, 3, 5, 7, 5, 2, 4, 6, 4, 6, 8, 3, 5, 7, 2, 4, 6, 3, 5, 7, 5, 7, 2, 4, 6, 4, 2, 4, 6, 5, 3, 5, 7, 3, 5, 7, 2, 4, 6, 3, 5, 7, 4, 3, 5, 7, 2, 4, 6, 2, 4, 6, 4, 6, 8, 6]
+					}
+				}
+			}
+		},
+		"XCIT_RE_01_Practice":{
+			"Inherits": "XCIT_RE_01_Test_A",
+			"Parameters": {
+				"SequenceLength": 30,
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values":[8,5,3,5,7,4,6,7,5,7,3,5,7,2,9,6,5,7,2,3,5,7,5,7,3,5,7,4,8,5]
+					}
+				},
+				"StimulusDisplayDuration": 1,
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "OnTimeout"
+			}
+		},
+		"XCIT_RE_01_Tutorial":{
+			"Inherits": "XCIT_RE_01_Test_A",
+			"ExitRules": [{ "Trials": 2, "Type": "Failures", "Action": "FailBlock" }],
+			"Parameters": {
+				"SequenceLength": 12,
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [3,5,7,3,5,7,3,5,8,3,5,7]
+					}
+				},
+				"StimulusDisplayDuration": 1.5,
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowAccuracyOnButtonFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "OnTimeout",
+				"BlockCounter_Position": "Hidden"
+			}
+		},
+		"Video":{
+			"Inherits": "XCIT_RE_01_Tutorial",
+			"Parameters": {
+				"SequenceLength": 10,
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [3,5,7,3,5,8,3,4,5,7]
+					}
+				},
+				"StimulusDisplayDuration": 0.5,
+				"InterstimulusInterval": 0,
+				"NoiseMaskDisplayDuration": 0,
+				"ShowAccuracyCheckFeedback": "Never"
+			}
+		},
+		"XCIT_RE_02_Test_A":{
+			"Inherits": "Default",
+			"ExitRules": [{ "Time": 300, "Action": "DoNothing" }],
+			"Parameters": {
+				"BlockTimer_Position": "StatusBarRight",
+				"TrialCounter_Position": "Hidden",
+				"StimulusType": "UpperCaseLetters",
+				"ResponsePatterns": {
+					"Generate": "Once",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ "AX" ]
+					}
+				},
+				"SequenceLength": 80,
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ 1, 23, 0, 24, 1, 23, 1, 24, 1, 24, 0, 23, 0, 23, 1, 24, 1, 24, 1, 23, 0, 23, 1, 24, 0, 23, 0, 24, 1, 23, 0, 23, 1, 23, 1, 24, 0, 23, 0, 23, 1, 24, 1, 24, 0, 23, 0, 23, 1, 24, 1, 24, 0, 23, 1, 24, 1, 23, 0, 23, 1, 24, 0, 23, 1, 24, 1, 24, 1, 24, 0, 23, 0, 23, 1, 24, 0, 23, 1, 23 ]
+					}
+				},
+				"StimulusColor": "#ffffff",
+				"DistractorColor": "#618DA6",
+				"StimulusDisplayDuration": 0.5,
+				"InterstimulusInterval": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ 4.5, 2 ]
+					}
+				},
+				"NoiseMaskDisplayDuration": 0,
+				"UseNonMatchButton": true,
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": "Never"
+			}
+		},
+		"XCIT_RE_02_Test_B":{
+			"Inherits": "XCIT_RE_02_Test_A",
+			"Parameters": {
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ 0, 23, 0, 23, 1, 24, 1, 24, 0, 23, 1, 24, 0, 24, 1, 24, 1, 24, 0, 23, 0, 24, 1, 24, 1, 23, 1, 24, 0, 23, 1, 24, 0, 23, 0, 23, 0, 24, 1, 24, 0, 23, 1, 24, 0, 23, 0, 23, 1, 24, 0, 23, 0, 24, 1, 24, 1, 24, 0, 23, 0, 23, 0, 23, 0, 23, 1, 24, 0, 23, 0, 24, 0, 23, 1, 24, 1, 24, 0, 23 ]
+					}
+				}
+			}
+		},
+		"XCIT_RE_02_Test_C":{
+			"Inherits": "XCIT_RE_02_Test_A",
+			"Parameters": {
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ 0, 24, 1, 24, 1, 24, 1, 24, 0, 23, 0, 23, 0, 24, 1, 24, 0, 23, 1, 24, 1, 24, 0, 23, 1, 23, 0, 24, 1, 23, 0, 23, 0, 24, 1, 24, 1, 24, 0, 23, 1, 24, 0, 24, 1, 24, 1, 23, 0, 23, 0, 23, 0, 23, 0, 23, 1, 24, 1, 24, 0, 23, 1, 24, 1, 24, 1, 24, 0, 24, 1, 24, 0, 23, 0, 23, 0, 23, 1, 24 ]
+					}
+				}
+			}
+		},
+		"XCIT_RE_02_Test_D":{
+			"Inherits": "XCIT_RE_02_Test_A",
+			"Parameters": {
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ 0, 23, 0, 23, 1, 24, 0, 24, 1, 23, 0, 23, 1, 23, 0, 23, 0, 23, 0, 24, 1, 23, 0, 23, 1, 24, 1, 24, 0, 24, 1, 24, 1, 24, 1, 24, 1, 24, 0, 23, 1, 24, 1, 24, 0, 23, 0, 23, 0, 23, 1, 24, 0, 23, 1, 24, 0, 23, 1, 24, 0, 23, 1, 23, 0, 23, 0, 23, 0, 23, 1, 24, 0, 23, 1, 23, 1, 24, 1, 24 ]
+					}
+				}
+			}
+		},
+		"XCIT_RE_02_Practice":{
+			"Inherits": "XCIT_RE_02_Test_A",
+			"ExitRules": [],
+			"Parameters": {
+				"TrialCounter_Position": "StatusBarRight",
+				"SequenceLength": 16,
+				"ItemSequence": { 
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values":  [ 0,24,0,23,0,23,1,24, 1,23,0,23,0,23,0,24 ]
+					}
+				},
+				"ShowAccuracyOnButtonFeedback": "Always",
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowCorrectTrialResponseFeedback": "OnTimeout"
+			}
+		},
+		"XCIT_RE_02_Tutorial":{
+			"Inherits": "XCIT_RE_02_Test_A",
+			"ExitRules": [{ "Trials": 2, "Type": "Failures", "Action": "FailBlock" }],
+			"Parameters": {
+				"TrialCounter_Position": "StatusBarRight",
+				"SequenceLength": 12,
+				"ItemSequence": { 
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values":  [ 0,23,0,23,0,24,0,23,1,23,0,23]
+					}
+				},
+				"StimulusDisplayDuration": 1.5,
+				"InterstimulusInterval": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ 2.0, 1 ]
+					}
+				},
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowAccuracyOnButtonFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "OnError",
+				"BlockCounter_Position": "Hidden"
+			}
+		},
+		"XCIT_RE_03_Test_A":{
+			"Inherits": "Default",
+			"ExitRules": [{ "Time": 300, "Action": "DoNothing" }],
+			"Parameters": {
+				"BlockTimer_Position": "StatusBarRight",
+				"TrialCounter_Position": "Hidden",
+				"StimulusType": "UpperCaseLetters",
+				"ResponsePatterns": {
+					"Generate": "Once",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ "AX" ]
+					}
+				},
+				"SequenceLength": 200,
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ 1, -7, -14, -12, 24, 0, -10, -17, -15, 24, 1, -16, -3, -4, 24, 1, -16, -20, -12, 24, 1, -21, -17, -10, 24, 0, -3, -15, -17, 23, 0, -8, -5, -21, 23, 0, -12, -14, -7, 23, 1, -13, -14, -19, 23, 1, -6, -5, -12, 24, 1, -5, -15, -19, 24, 0, -3, -23, -8, 23, 0, -21, -19, -18, 23, 1, -14, -20, -18, 23, 0, -8, -3, -4, 24, 0, -6, -20, -7, 23, 1, -18, -16, -5, 24, 0, -13, -9, -5, 23, 1, -7, -3, -18, 24, 1, -21, -7, -13, 23, 1, -14, -12, -4, 24, 0, -15, -12, -6, 23, 0, -17, -3, -20, 23, 0, -16, -7, -19, 23, 1, -14, -5, -9, 24, 1, -15, -4, -11, 24, 1, -20, -13, -6, 24, 0, -12, -6, -9, 24, 1, -19, -10, -9, 24, 1, -14, -19, -21, 24, 1, -19, -13, -6, 23, 1, -23, -3, -5, 24, 0, -22, -3, -6, 24, 1, -23, -3, -21, 24, 1, -19, -9, -7, 24, 1, -11, -13, -9, 23, 0, -19, -9, -4, 24, 1, -3, -11, -6, 24, 0, -16, -5, -20, 23, 1, -21, -12, -15, 24 ]
+					}
+				},
+				"StimulusColor": "#ffffff",
+				"DistractorColor": "#618DC6",
+				"StimulusDisplayDuration": 0.5,
+				"InterstimulusInterval": { 
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ 0.75, 0.75, 0.75, 0.75, 2 ]
+					}
+				},
+				"NoiseMaskDisplayDuration": 0,
+				"HidePatternTrialDelay": 99999,
+				"UseNonMatchButton": true,
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": "Never"
+			}
+		},
+		"XCIT_RE_03_Test_B":{
+			"Inherits": "XCIT_RE_03_Test_A",
+			"Parameters": {
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ 0, -5, -4, -18, 23, 1, -14, -16, -7, 23, 0, -21, -9, -11, 23, 0, -16, -11, -21, 23, 0, -22, -14, -15, 23, 0, -10, -4, -12, 24, 0, -9, -20, -4, 23, 1, -3, -12, -17, 24, 1, -4, -9, -16, 24, 1, -13, -12, -22, 24, 0, -19, -9, -8, 23, 0, -8, -6, -12, 23, 1, -15, -18, -6, 24, 1, -8, -4, -3, 24, 1, -18, -11, -12, 24, 1, -3, -11, -13, 24, 0, -22, -3, -20, 23, 0, -14, -3, -16, 23, 0, -4, -22, -11, 23, 1, -4, -15, -21, 24, 1, -14, -15, -6, 24, 0, -21, -23, -15, 23, 0, -6, -11, -12, 23, 0, -11, -3, -9, 23, 0, -17, -10, -9, 23, 1, -9, -6, -8, 24, 1, -16, -7, -10, 24, 0, -17, -15, -20, 23, 0, -18, -23, -10, 23, 1, -5, -20, -11, 24, 0, -4, -22, -9, 23, 0, -13, -3, -8, 23, 0, -12, -8, -20, 24, 0, -9, -6, -4, 23, 0, -3, -23, -5, 23, 0, -15, -18, -3, 23, 1, -7, -20, -10, 24, 0, -11, -4, -10, 23, 0, -6, -11, -13, 23, 0, -7, -15, -4, 23]
+					}
+				}
+			}
+		},
+		"XCIT_RE_03_Test_C":{
+			"Inherits": "XCIT_RE_03_Test_A",
+			"Parameters": {
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ 0, -19, -8, -6, 24, 1, -17, -23, -5, 23, 0, -4, -7, -8, 23, 0, -15, -14, -17, 23, 1, -6, -5, -15, 23, 0, -16, -15, -9, 23, 0, -4, -12, -13, 23, 1, -19, -22, -16, 23, 1, -13, -4, -3, 24, 1, -17, -5, -19, 24, 1, -14, -10, -5, 24, 1, -10, -7, -12, 24, 1, -5, -3, -13, 23, 1, -3, -15, -9, 24, 0, -22, -15, -12, 23, 0, -16, -12, -4, 23, 1, -21, -18, -20, 24, 0, -19, -17, -4, 24, 0, -7, -11, -3, 23, 1, -12, -23, -8, 24, 0, -9, -12, -21, 23, 0, -16, -18, -10, 23, 1, -22, -6, -23, 24, 1, -4, -23, -6, 24, 0, -3, -11, -19, 23, 1, -12, -5, -20, 24, 0, -16, -14, -20, 24, 1, -19, -5, -22, 24, 0, -7, -14, -3, 23, 1, -12, -3, -18, 24, 1, -18, -16, -22, 24, 1, -19, -3, -12, 24, 1, -6, -18, -17, 23, 0, -17, -15, -14, 23, 0, -20, -10, -6, 23, 1, -10, -15, -6, 24, 1, -8, -6, -15, 24, 1, -7, -22, -19, 24, 1, -19, -4, -3, 24, 0, -11, -3, -13, 23]
+					}
+				}
+			}
+		},
+		"XCIT_RE_03_Test_D":{
+			"Inherits": "XCIT_RE_03_Test_A",
+			"Parameters": {
+				"ItemSequence": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ 1, -7, -20, -5, 24, 1, -11, -7, -19, 24, 0, -13, -17, -9, 23, 0, -20, -17, -5, 23, 1, -6, -18, -17, 24, 1, -14, -18, -8, 24, 0, -16, -20, -4, 24, 0, -17, -3, -23, 23, 1, -19, -14, -12, 24, 0, -21, -6, -8, 24, 1, -3, -19, -23, 23, 0, -17, -8, -7, 24, 0, -20, -15, -22, 23, 1, -14, -16, -11, 24, 0, -11, -15, -6, 23, 1, -18, -3, -5, 24, 0, -12, -18, -5, 24, 1, -4, -19, -13, 23, 0, -21, -4, -23, 23, 1, -23, -11, -8, 24, 1, -20, -23, -11, 24, 0, -18, -21, -4, 24, 0, -7, -10, -17, 23, 0, -5, -11, -4, 23, 0, -23, -7, -16, 23, 1, -22, -14, -5, 24, 1, -6, -5, -8, 24, 0, -10, -13, -20, 23, 0, -23, -20, -17, 24, 0, -6, -10, -20, 23, 1, -17, -19, -7, 24, 1, -23, -19, -13, 23, 0, -23, -7, -20, 23, 0, -3, -10, -16, 23, 0, -22, -18, -17, 23, 1, -3, -13, -12, 23, 0, -5, -19, -6, 23, 1, -5, -12, -9, 24, 1, -23, -16, -10, 24, 1, -10, -13, -18, 23]
+					}
+				}
+			}
+		},
+		"XCIT_RE_03_Practice":{
+			"Inherits": "XCIT_RE_03_Test_A",
+			"ExitRules": [],
+			"Parameters": {
+				"TrialCounter_Position": "StatusBarRight",
+				"SequenceLength": 25,
+				"ItemSequence": { 
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values":  [ 0, -16, -15, -9, 23, 0, -16, -20, -4, 24, 1, -3, -12, -17, 24, 0, -9, -20, -4, 23, 0, -4, -12, -13, 23  ]
+					}
+				},
+				"ShowAccuracyOnButtonFeedback": "Always",
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowCorrectTrialResponseFeedback": "OnTimeout"
+			}
+		},
+		"XCIT_RE_03_Tutorial":{
+			"Inherits": "XCIT_RE_03_Test_A",
+			"ExitRules": [{ "Trials": 2, "Type": "Failures", "Action": "FailBlock" }],
+			"Parameters": {
+				"TrialCounter_Position": "StatusBarRight",
+				"SequenceLength": 15,
+				"ItemSequence": { 
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values":  [ 0, -19, -8, -6, 23, 0, -13, -17, -9, 24, 0, -4, -9, -20, 23 ]
+					}
+				},
+				"StimulusDisplayDuration": 1,
+				"InterstimulusInterval": { 
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ 1.25, 1.25, 1.25, 1.25, 2 ]
+					}
+				},
+				"ShowAccuracyOnButtonFeedback": "Always",
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "OnError",
+				"BlockCounter_Position": "Hidden"
+			}
+		},
+		"RobotTest": {
+			"Inherits": "Default",
+			"Parameters": {
+				"TaskName_Position": "StatusBarLeft",
+				"BlockCounter_Position": "StatusBarLeft",
+				"BlockCounter_Style": "Counter",
+				"TrialCounter_Position": "StatusBarLeft",
+				"TrialCounter_Style": "Counter",
+				"TrialResults_Position": "StatusBarRight",
+				"TrialResults_Style": "ColoredDiscrete",
+				"SequenceLength": 10,
+				"ItemSequence": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 0,
+						"Max": 2
+					}
+				}
+			}
+		},
+		"RobotTestWithDistractors": {
+			"Inherits": "RobotTest",
+			"Parameters": {
+				"ItemSequence": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": -3,
+						"Max": 2
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,1736 @@
+{
+	"Id": "BSAC",
+	"Scene": "SpatialAttentionCueing",
+	"Rules": {
+// ---- Begin Rules ----
+"XCIT_BSAC_01_Tutorial_Rules": [
+	{"text": "XCIT_BSAC_01_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_BSAC_01_Tutorial.GameRules"}
+],
+"XCIT_BSAC_02_Tutorial_Rules": [
+	{"text": "XCIT_BSAC_02_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_BSAC_02_Tutorial.GameRules"}
+],
+"XCIT_BSAC_03_Tutorial_Rules": [
+	{"text": "XCIT_BSAC_03_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_BSAC_03_Tutorial.GameRules"}
+],
+"XCIT_BSAC_04_Tutorial_Rules": [
+	{"text": "XCIT_BSAC_04_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_BSAC_04_Tutorial.GameRules"}
+],
+"XCIT_BSAC_05_Tutorial_Rules": [
+	{"text": "XCIT_BSAC_05_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_BSAC_05_Tutorial.GameRules"}
+],
+"XCIT_BSAC_06_Tutorial_Rules": [
+	{"text": "XCIT_BSAC_06_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_BSAC_06_Tutorial.GameRules"}
+],
+"XCIT_BSAC_07_Tutorial_Rules": [
+	{"text": "XCIT_BSAC_07_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_BSAC_07_Tutorial.GameRules"}
+],
+"XCIT_BSAC_08_Tutorial_Rules": [
+	{"text": "XCIT_BSAC_08_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_BSAC_08_Tutorial.GameRules"}
+],
+"XCIT_BSAC_09_Tutorial_Rules": [
+	{"text": "XCIT_BSAC_09_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_BSAC_09_Tutorial.GameRules"}
+],
+// ---- End Rules ----
+	},
+	"EnumDefinitions": {},
+	"ParameterInfos": {
+		"EndogenousCueType": {
+			"Type": "Enum",
+			"Values": [ "Eyes", "Arrow" ]
+		},
+		"EndogenousCueValidity": {
+			"Type": "Enum",
+			"Values": [ "Valid", "Invalid", "Neutral" ]
+		},
+		"ExogenousCueType": {
+			"Type": "Enum",
+			"Values": [ "Circle", "Rectangle" ]
+		},
+		"ExogenousCueValidity": {
+			"Type": "Enum",
+			"Values": [ "Valid", "Invalid", "Neutral" ]
+		},
+		"StimulusType": {
+			"Type": "Enum",
+			"Values": [ "Button" ]
+		},
+		"ShowAccuracyCheckFeedback": {
+			"Type": "Enum",
+			"Name": "ShowAccuracyCheckFeedback"
+		},
+		"ShowCorrectTrialResponseFeedback": {
+			"Type": "Enum",
+			"Name": "ShowCorrectTrialResponseFeedback"
+		},
+		"StimulusPosition": {
+			"Type": "Enum",
+			"Values": [ "Left", "Right" ]
+		},
+		"FixationPointOnset": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"FixationPointOffset": {
+			"Type": "Float",
+			"Max": 0
+		},
+		"TaskCueOnset": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"TaskCueDisplayDuration": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"EndogenousCueOnset": {
+			"Type": "Float",
+			"Max": 0
+		},
+		"EndogenousCueDisplayDuration": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"ExogenousCueOnset": {
+			"Type": "Float",
+			"Max": 0
+		},
+		"ExogenousCueDisplayDuration": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"UserInputOnset": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"MaxResponseTime": {
+			"Type": "Float",
+			"Min": 0.01
+		}
+
+	},
+	"Timelines": {
+// ---- Begin Instructions ----
+"XCIT_BSAC_01_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_01_Test.Objective"}]},
+			{"Content": [{"Text": "XCIT_BSAC_01_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_BSAC_01_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_01_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_01_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_01_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_01_Tutorial.Introduction"}]},
+			{"Content": [{"Text": "XCIT_BSAC_01_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_BSAC_01_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_BSAC_01_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_BSAC_01_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_01_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_01_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_02_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_02_Test.Objective"}]},
+			{"Content": [{"Text": "XCIT_BSAC_02_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_BSAC_02_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_02_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_02_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_02_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_02_Tutorial.Introduction"}]},
+			{"Content": [{"Text": "XCIT_BSAC_02_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_BSAC_02_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_BSAC_02_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_BSAC_02_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_02_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_02_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_03_Test_01_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_03_Test_01.Objective"}]},
+			{"Content": [{"Text": "XCIT_BSAC_03_Test_01.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_BSAC_03_Test_01.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_03_Test_01_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_03_Test_01.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_03_Test_02_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_03_Test_02.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_03_Test_02_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_03_Test_02.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_03_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_03_Tutorial.Introduction"}]},
+			{"Content": [{"Text": "XCIT_BSAC_03_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_BSAC_03_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_BSAC_03_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_BSAC_03_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_03_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_03_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_04_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_04_Test.Objective"}]},
+			{"Content": [{"Text": "XCIT_BSAC_04_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_BSAC_04_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_04_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_04_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_04_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_04_Tutorial.Introduction"}]},
+			{"Content": [{"Text": "XCIT_BSAC_04_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_BSAC_04_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_BSAC_04_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_BSAC_04_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_04_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_04_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_05_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_05_Test.Objective"}]},
+			{"Content": [{"Text": "XCIT_BSAC_05_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_BSAC_05_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_05_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_05_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_05_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_05_Tutorial.Introduction"}]},
+			{"Content": [{"Text": "XCIT_BSAC_05_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_BSAC_05_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_BSAC_05_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_BSAC_05_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_05_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_05_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_06_Test_01_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_06_Test_01.Objective"}]},
+			{"Content": [{"Text": "XCIT_BSAC_06_Test_01.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_BSAC_06_Test_01.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_06_Test_01_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_06_Test_01.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_06_Test_02_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_06_Test_02.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_06_Test_02_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_06_Test_02.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_06_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_06_Tutorial.Introduction"}]},
+			{"Content": [{"Text": "XCIT_BSAC_06_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_BSAC_06_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_BSAC_06_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_BSAC_06_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_06_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_06_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_07_Test_01_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_07_Test_01.YourJob"}]},
+			{"Content": [{"Text": "XCIT_BSAC_07_Test_01.Objective"}]},
+			{"Content": [{"Text": "XCIT_BSAC_07_Test_01.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_BSAC_07_Test_01.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_07_Test_01_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_07_Test_01.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_07_Test_02_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_07_Test_02.YourJob"}]},
+			{"Content": [{"Text": "XCIT_BSAC_07_Test_02.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_07_Test_02_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_07_Test_02.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_07_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_07_Tutorial.Introduction"}]},
+			{"Content": [{"Text": "XCIT_BSAC_07_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_BSAC_07_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_BSAC_07_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_BSAC_07_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_07_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_07_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_08_Test_01_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_08_Test_01.YourJob"}]},
+			{"Content": [{"Text": "XCIT_BSAC_08_Test_01.Objective"}]},
+			{"Content": [{"Text": "XCIT_BSAC_08_Test_01.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_BSAC_08_Test_01.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_08_Test_01_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_08_Test_01.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_08_Test_02_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_08_Test_02.YourJob"}]},
+			{"Content": [{"Text": "XCIT_BSAC_08_Test_02.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_08_Test_02_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_08_Test_02.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_08_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_08_Tutorial.Introduction"}]},
+			{"Content": [{"Text": "XCIT_BSAC_08_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_BSAC_08_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_08_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_08_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_09_Test_01_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_09_Test_01.YourJob"}]},
+			{"Content": [{"Text": "XCIT_BSAC_09_Test_01.Objective"}]},
+			{"Content": [{"Text": "XCIT_BSAC_09_Test_01.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_BSAC_09_Test_01.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_09_Test_01_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_09_Test_01.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_09_Test_02_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_09_Test_02.YourJob"}]},
+			{"Content": [{"Text": "XCIT_BSAC_09_Test_02.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_09_Test_02_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_09_Test_02.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_09_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_09_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_BSAC_09_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_BSAC_09_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_BSAC_09_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_BSAC_09_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_BSAC_09_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+// ---- End Instructions ----
+// ---- Begin Timeline ----
+    "XCIT_BSAC_01": {
+        "blocks": [
+            {
+                "timeline": "XCIT_BSAC_01_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_01_Tutorial",
+                "rulesName": "XCIT_BSAC_01_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_BSAC_01_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_BSAC_01_Test_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_01_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 60,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_BSAC_01_Test_Outro"
+            }
+        ]
+    },
+    "XCIT_BSAC_02": {
+        "blocks": [
+            {
+                "timeline": "XCIT_BSAC_02_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_02_Tutorial",
+                "rulesName": "XCIT_BSAC_02_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_BSAC_02_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_BSAC_02_Test_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_02_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 60,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_BSAC_02_Test_Outro"
+            }
+        ]
+    },
+    "XCIT_BSAC_03": {
+        "blocks": [
+            {
+                "timeline": "XCIT_BSAC_03_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_03_Tutorial",
+                "rulesName": "XCIT_BSAC_03_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_BSAC_03_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_BSAC_03_Test_01_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_03_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 60,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_BSAC_03_Test_01_Outro"
+            },
+            {
+                "timeline": "XCIT_BSAC_03_Test_02_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_03_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 60,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_BSAC_03_Test_02_Outro"
+            }
+        ]
+    },
+    "XCIT_BSAC_04": {
+        "blocks": [
+            {
+                "timeline": "XCIT_BSAC_04_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_04_Tutorial",
+                "rulesName": "XCIT_BSAC_04_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_BSAC_04_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_BSAC_04_Test_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_04_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 60,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_BSAC_04_Test_Outro"
+            }
+        ]
+    },
+    "XCIT_BSAC_05": {
+        "blocks": [
+            {
+                "timeline": "XCIT_BSAC_05_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_05_Tutorial",
+                "rulesName": "XCIT_BSAC_05_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_BSAC_05_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_BSAC_05_Test_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_05_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 60,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_BSAC_05_Test_Outro"
+            }
+        ]
+    },
+    "XCIT_BSAC_06": {
+        "blocks": [
+            {
+                "timeline": "XCIT_BSAC_06_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_06_Tutorial",
+                "rulesName": "XCIT_BSAC_06_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_BSAC_06_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_BSAC_06_Test_01_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_06_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 60,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_BSAC_06_Test_01_Outro"
+            },
+            {
+                "timeline": "XCIT_BSAC_06_Test_02_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_06_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 60,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_BSAC_06_Test_02_Outro"
+            }
+        ]
+    },
+    "XCIT_BSAC_07": {
+        "blocks": [
+            {
+                "timeline": "XCIT_BSAC_07_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_07_Tutorial",
+                "rulesName": "XCIT_BSAC_07_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_BSAC_07_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_BSAC_07_Test_01_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_07_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 60,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_BSAC_07_Test_01_Outro"
+            },
+            {
+                "timeline": "XCIT_BSAC_07_Test_02_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_07_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 60,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_BSAC_07_Test_02_Outro"
+            }
+        ]
+    },
+    "XCIT_BSAC_08": {
+        "blocks": [
+            {
+                "timeline": "XCIT_BSAC_08_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_08_Tutorial",
+                "rulesName": "XCIT_BSAC_08_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_BSAC_08_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_BSAC_08_Test_01_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_08_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 60,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_BSAC_08_Test_01_Outro"
+            },
+            {
+                "timeline": "XCIT_BSAC_08_Test_02_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_08_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 60,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_BSAC_08_Test_02_Outro"
+            }
+        ]
+    },
+    "XCIT_BSAC_09": {
+        "blocks": [
+            {
+                "timeline": "XCIT_BSAC_09_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_09_Tutorial",
+                "rulesName": "XCIT_BSAC_09_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_BSAC_09_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_BSAC_09_Test_01_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_09_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 60,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_BSAC_09_Test_01_Outro"
+            },
+            {
+                "timeline": "XCIT_BSAC_09_Test_02_Intro"
+            },
+            {
+                "name": "XCIT_BSAC_09_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 60,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_BSAC_09_Test_02_Outro"
+            }
+        ]
+    },
+// ---- End Timeline ----
+		"Tutorial": {
+			"Blocks": [
+				{
+					"Name": "Tutorial"
+				}
+			]
+		},
+		"Debug": {
+			"Blocks": [
+				{
+					"Name": "Debug"
+				}
+			]
+		},
+		"Demo": {
+			"Blocks": [
+				{
+					"Name": "Demo",
+					"ExitRules": [
+						{ "Time": 60 }
+					]
+				}
+			]
+		},
+		"RobotTest": {
+			"Blocks": [
+				{ "Name": "RobotTest" },
+				{ "Name": "RobotTest" }
+			]
+		}
+	},
+	"Blocks": {
+		"Default": {
+			"Parameters": {
+				"EndogenousCueType": "Arrow",
+				"EndogenousCueValidity": "Valid",
+				"ExogenousCueType": "Circle",
+				"ExogenousCueValidity": "Valid",
+				"StimulusType": "Button",
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"StimulusPosition": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Values": [ "Left", "Right" ]
+					}
+				},
+				"FixationPointOnset": 0,
+				"FixationPointOffset": 0,
+				"TaskCueOnset": 0,
+				"TaskCueDisplayDuration": 0,
+				"EndogenousCueOnset": -0.5,
+				"EndogenousCueDisplayDuration": 0.4,
+				"ExogenousCueOnset": -0.5,
+				"ExogenousCueDisplayDuration": 0.4,
+				"UserInputOnset": 0.5,
+				"MaxResponseTime": 0.5
+			}
+		},
+		"Tutorial": {
+			"Inherits": "Default",
+			"Parameters": {
+				"LevelLabel_Position": "Hidden",
+				"TrialCounter_Position": "Hidden",
+
+				"FixationPointOnset": 0,
+				"FixationPointOffset": -0.2,
+				"TaskCueOnset": 2,
+				"TaskCueDisplayDuration": 1,
+				"EndogenousCueOnset": -1.5,
+				"EndogenousCueDisplayDuration": 1,
+				"ExogenousCueOnset": -1.5,
+				"ExogenousCueDisplayDuration": 1,
+				"ShowCorrectTrialResponseFeedback": "OnError",
+				"UserInputOnset": 4.5,
+
+				"MaxResponseTime": 0.5
+			},
+			"Trials": [
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Right",
+						"ExogenousCueValidity": "Valid",
+						"EndogenousCueDisplayDuration": 0
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Right",
+						"ExogenousCueValidity": "Invalid",
+						"EndogenousCueDisplayDuration": 0
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Right",
+						"EndogenousCueValidity": "Valid",
+						"ExogenousCueDisplayDuration": 0
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Right",
+						"EndogenousCueValidity": "Invalid",
+						"ExogenousCueDisplayDuration": 0
+					}
+				}
+			]
+		},
+		"XCIT_BSAC_Common": {
+			"Inherits": "Default",
+			"Parameters": {
+				"FixationPointOnset": 0.0,
+				"FixationPointOffset": -0.2,
+
+				"TaskCueOnset": 0,
+				"TaskCueDisplayDuration": 0,
+
+				"EndogenousCueType": "Arrow",
+				"ExogenousCueType": "Circle",
+				"EndogenousCueDisplayDuration": 0,
+				"ExogenousCueDisplayDuration": 0,
+
+				"MaxResponseTime": 2.5,
+				"UserInputOnset": {
+					// [1, 3] seconds after Task offset (which is after 1.2s, therefore the [2.2, 4.2] range)
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 1,
+						"Max": 3
+					}
+				}
+			}
+		},
+		"XCIT_BSAC_Common_With_Task": {
+			"Inherits": "XCIT_BSAC_Common",
+			"Parameters": {
+				"TaskCueOnset": 0.2,
+				"TaskCueDisplayDuration": 1.0,
+
+				"UserInputOnset": {
+					// [1, 3] seconds after Task offset (which is after 1.2s, therefore the [2.2, 4.2] range)
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 2.2,
+						"Max": 4.2
+					}
+				}
+			}
+		},
+		"XCIT_BSAC_Common_Endo": {
+			"Inherits": "XCIT_BSAC_Common",
+			"Description": "Endogenous arrow cues",
+			"Parameters": {
+				"EndogenousCueOnset": -0.5,
+				"EndogenousCueDisplayDuration": 0.250
+			}
+		},
+		"XCIT_BSAC_Common_Endo_With_Task": {
+			"Inherits": "XCIT_BSAC_Common_With_Task",
+			"Description": "Task cue + Endogenous arrow cues",
+			"Parameters": {
+				"EndogenousCueOnset": -0.5,
+				"EndogenousCueDisplayDuration": 0.250
+			}
+		},
+		"XCIT_BSAC_01_Test": {
+			"Inherits": "XCIT_BSAC_Common_Endo_With_Task",
+			"Description": "Pro-saccade, endogenous arrow cues",
+			"Parameters": {
+				"EndogenousCueValidity": "Valid"
+			}
+		},
+		"XCIT_BSAC_01_Tutorial": {
+			"Inherits": "XCIT_BSAC_01_Test",
+			"Description": "Pro-saccade, endogenous arrow cues",
+			"Parameters": {
+				"UserInputOnset": 3.2
+			},
+			"Trials":[
+				{
+
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Right"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Left"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Left"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Right"
+					}
+				}
+			]
+		},
+		"XCIT_BSAC_02_Test": {
+			"Inherits": "XCIT_BSAC_Common_Endo_With_Task",
+			"Description": "Anti-saccade, endogenous arrow cues",
+			"Parameters": {
+				"EndogenousCueValidity": "Invalid"
+			}
+		},
+		"XCIT_BSAC_02_Tutorial": {
+			"Inherits": "XCIT_BSAC_02_Test",
+			"Parameters": {
+				"UserInputOnset": 3.2
+			},
+			"Trials":[
+				{
+
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Left"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Right"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Left"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Right"
+					}
+				}
+			]
+		},
+		"XCIT_BSAC_03_Test": {
+			"Inherits": "XCIT_BSAC_Common_Endo_With_Task",
+			"Description": "Mix Pro/Anti-saccade, endogenous arrow cues",
+			"Parameters": {
+				"EndogenousCueValidity": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ "Valid", "Valid", "Invalid", "Invalid" ]
+					}
+				}
+			}
+		},
+		"XCIT_BSAC_03_Tutorial": {
+			"Inherits": "XCIT_BSAC_03_Test",
+			"Parameters": {
+				"UserInputOnset": 3.2
+			},
+			"Trials":[
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Left",
+						"EndogenousCueValidity": "Valid"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Left",
+						"EndogenousCueValidity": "Invalid"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Right",
+						"EndogenousCueValidity": "Invalid"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Left",
+						"EndogenousCueValidity": "Valid"
+					}
+				}
+			]
+		},
+		"XCIT_BSAC_Common_Exo": {
+			"Inherits": "XCIT_BSAC_Common",
+			"Description": "Exogenous circle cues",
+			"Parameters": {
+				"ExogenousCueOnset": -0.150,
+				"ExogenousCueDisplayDuration": 0.050
+			}
+		},
+		"XCIT_BSAC_Common_Exo_With_Task": {
+			"Inherits": "XCIT_BSAC_Common_With_Task",
+			"Description": "Task cue + Exogenous circle cues",
+			"Parameters": {
+				"ExogenousCueOnset": -0.150,
+				"ExogenousCueDisplayDuration": 0.050
+			}
+		},
+		"XCIT_BSAC_04_Test": {
+			"Description": "Pro-saccade, exogenous circle cues",
+			"Inherits": "XCIT_BSAC_Common_Exo_With_Task",
+			"Parameters": {
+				"ExogenousCueValidity": "Valid"
+			}
+		},
+		"XCIT_BSAC_04_Tutorial": {
+			"Inherits": "XCIT_BSAC_04_Test",
+			"Parameters": {
+				"UserInputOnset": 3.2
+			},
+			"Trials":[
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Left"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Right"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Right"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Left"
+					}
+				}
+			]
+		},
+		"XCIT_BSAC_05_Test": {
+			"Description": "Anti-saccade, exogenous circle cues",
+			"Inherits": "XCIT_BSAC_Common_Exo_With_Task",
+			"Parameters": {
+				"ExogenousCueValidity": "Invalid"
+			}
+		},
+		"XCIT_BSAC_05_Tutorial": {
+			"Inherits": "XCIT_BSAC_05_Test",
+			"Parameters": {
+				"UserInputOnset": 3.2
+			},
+			"Trials":[
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Right"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Left"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Left"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Right"
+					}
+				}
+			]
+		},
+		"XCIT_BSAC_06_Test": {
+			"Description": "Mix Pro/Anti-saccade, exogenous circle cues",
+			"Inherits": "XCIT_BSAC_Common_Exo_With_Task",
+			"Parameters": {
+				"ExogenousCueValidity": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ "Valid", "Valid", "Invalid", "Invalid" ]
+					}
+				}
+			}
+		},
+		"XCIT_BSAC_06_Tutorial": {
+			"Inherits": "XCIT_BSAC_06_Test",
+			"Parameters": {
+				"UserInputOnset": 3.2
+			},
+			"Trials":[
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Right",
+						"ExogenousCueValidity": "Valid"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Left",
+						"ExogenousCueValidity": "Invalid"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Right",
+						"ExogenousCueValidity": "Invalid"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Left",
+						"ExogenousCueValidity": "Valid"
+					}
+				}
+			]
+		},
+		"XCIT_BSAC_07_Test": {
+			"Inherits": "XCIT_BSAC_Common_Endo",
+			"Description": "Posner Attentional Cueing Paradigm, 80/20/20, endogenous arrow cues",
+			"TrialOrder": {
+				"Replacement": "WithoutInBlock",
+				"ItemOccurrences": 10,
+				"Distribution": {
+					"Type": "Uniform"
+				}
+			},
+			"Trials": [
+				{ "Parameters": { "EndogenousCueValidity": "Valid" }},
+				{ "Parameters": { "EndogenousCueValidity": "Valid" }},
+				{ "Parameters": { "EndogenousCueValidity": "Valid" }},
+				{ "Parameters": { "EndogenousCueValidity": "Valid" }},
+				{ "Parameters": { "EndogenousCueValidity": "Invalid" }},
+				{ "Parameters": { "EndogenousCueValidity": "Neutral" }}
+			]
+		},
+		"XCIT_BSAC_07_Tutorial": {
+			"Inherits": "XCIT_BSAC_07_Test",
+			"Parameters": {
+				"UserInputOnset": 3.2
+			},
+			"TrialOrder": [0, 1, 2, 3],
+			"Trials": [
+				{
+
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"EndogenousCueValidity": "Valid"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"EndogenousCueValidity": "Invalid"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"EndogenousCueValidity": "Valid"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"EndogenousCueValidity": "Neutral"
+					}
+				}
+			]
+		},
+		"XCIT_BSAC_08_Test": {
+			"Inherits": "XCIT_BSAC_Common_Endo",
+			"Description": "Bialystok Endogenous Distractor Suppression, 50/50/20, endogenous arrow cues",
+			"TrialOrder": {
+				"Replacement": "WithoutInBlock",
+				"ItemOccurrences": 5,
+				"Distribution": {
+					"Type": "Uniform"
+				}
+			},
+			"Trials": [
+				{ "Parameters": { "EndogenousCueValidity": "Valid" }},
+				{ "Parameters": { "EndogenousCueValidity": "Valid" }},
+				{ "Parameters": { "EndogenousCueValidity": "Valid" }},
+				{ "Parameters": { "EndogenousCueValidity": "Valid" }},
+				{ "Parameters": { "EndogenousCueValidity": "Valid" }},
+				{ "Parameters": { "EndogenousCueValidity": "Invalid" }},
+				{ "Parameters": { "EndogenousCueValidity": "Invalid" }},
+				{ "Parameters": { "EndogenousCueValidity": "Invalid" }},
+				{ "Parameters": { "EndogenousCueValidity": "Invalid" }},
+				{ "Parameters": { "EndogenousCueValidity": "Invalid" }},
+				{ "Parameters": { "EndogenousCueValidity": "Neutral" }},
+				{ "Parameters": { "EndogenousCueValidity": "Neutral" }}
+			]
+		},
+		"XCIT_BSAC_08_Tutorial": {
+			"Inherits": "XCIT_BSAC_08_Test",
+			"Parameters": {
+				"UserInputOnset": 3.2
+			},
+			"TrialOrder": [0, 1, 2],
+			"Trials": [
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"EndogenousCueValidity": "Valid"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"EndogenousCueValidity": "Invalid"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"EndogenousCueValidity": "Neutral"
+					}
+				}
+			]
+		},
+		"XCIT_BSAC_09_Test": {
+			"Inherits": "XCIT_BSAC_Common_Endo",
+			"Description": "Endogenous arrow cues, Exogenous distractor",
+			"Parameters": {
+				"ExogenousCueOnset": -0.3,
+				"ExogenousCueDisplayDuration": 0.050
+			},
+			"TrialOrder": {
+				"Replacement": "WithoutInBlock",
+				"ItemOccurrences": 5,
+				"Distribution": {
+					"Type": "Uniform"
+				}
+			},
+			"Trials": [
+				{ "Parameters": {
+					"StimulusPosition": "Right",
+					"EndogenousCueValidity": "Valid",
+					"ExogenousCueValidity": "Invalid"
+				}},
+				{ "Parameters": {
+					"StimulusPosition": "Right",
+					"EndogenousCueValidity": "Valid",
+					"ExogenousCueValidity": "Valid"
+				}},
+				{ "Parameters": {
+					"StimulusPosition": "Right",
+					"EndogenousCueValidity": "Valid",
+					"ExogenousCueDisplayDuration": 0
+				}},
+				{ "Parameters": {
+					"StimulusPosition": "Left",
+					"EndogenousCueValidity": "Valid",
+					"ExogenousCueValidity": "Invalid"
+				}},
+				{ "Parameters": {
+					"StimulusPosition": "Left",
+					"EndogenousCueValidity": "Valid",
+					"ExogenousCueValidity": "Valid"
+				}},
+				{ "Parameters": {
+					"StimulusPosition": "Left",
+					"EndogenousCueValidity": "Valid",
+					"ExogenousCueDisplayDuration": 0
+				}},
+				{ "Parameters": {
+					"StimulusPosition": "Right",
+					"EndogenousCueValidity": "Neutral",
+					"ExogenousCueValidity": "Invalid"
+				}},
+				{ "Parameters": {
+					"StimulusPosition": "Right",
+					"EndogenousCueValidity": "Neutral",
+					"ExogenousCueValidity": "Valid"
+				}},
+				{ "Parameters": {
+					"StimulusPosition": "Right",
+					"EndogenousCueValidity": "Neutral",
+					"ExogenousCueDisplayDuration": 0
+				}},
+				{ "Parameters": {
+					"StimulusPosition": "Left",
+					"EndogenousCueValidity": "Neutral",
+					"ExogenousCueValidity": "Invalid"
+				}},
+				{ "Parameters": {
+					"StimulusPosition": "Left",
+					"EndogenousCueValidity": "Neutral",
+					"ExogenousCueValidity": "Valid"
+				}},
+				{ "Parameters": {
+					"StimulusPosition": "Left",
+					"EndogenousCueValidity": "Neutral",
+					"ExogenousCueDisplayDuration": 0
+				}},
+			]
+		},
+		"XCIT_BSAC_09_Tutorial": {
+			"Inherits": "XCIT_BSAC_09_Test",
+			"Parameters": {
+				"UserInputOnset": 3.2
+			},
+			"TrialOrder": [0, 1, 2, 3],
+			"Trials": [
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"EndogenousCueValidity": "Valid",
+						"ExogenousCueValidity": "Valid"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"EndogenousCueValidity": "Valid",
+						"ExogenousCueValidity": "Invalid"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"EndogenousCueValidity": "Neutral",
+						"ExogenousCueValidity": "Invalid"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"EndogenousCueValidity": "Neutral",
+						"ExogenousCueValidity": "Valid"
+					}
+				}
+			]
+		},
+		"Demo": {
+			"Inherits": "Default",
+			"Parameters": {
+				"EndogenousCueValidity": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Values": [ "Valid", "Invalid", "Neutral" ]
+					}
+				},
+				"EndogenousCueType": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Values": [ "Eyes", "Arrow" ]
+					}
+				},
+				"ExogenousCueValidity": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Values": [ "Valid", "Invalid", "Neutral" ]
+					}
+				},
+				"BlockTimer_Position": "InformationPanel",
+
+				"ShowAccuracyCheckFeedback": "Never",
+				"FixationPointOnset": 0,
+				"FixationPointOffset": -0.2,
+				"TaskCueOnset": 1,
+				"TaskCueDisplayDuration": 0.75,
+				"EndogenousCueOnset": -2,
+				"EndogenousCueDisplayDuration": 0.75,
+				"ExogenousCueOnset": -1,
+
+				"ExogenousCueDisplayDuration": 0.75,
+				"UserInputOnset": 4,
+				"MaxResponseTime": 0.5
+			}
+		},
+		"Debug": {
+			"Inherits": "Default",
+			"Parameters": {
+				"FixationPointOnset": 0,
+				"FixationPointOffset": -0.2,
+
+				"TaskCueOnset": 0,
+				"TaskCueDisplayDuration": 1.5,
+
+				"EndogenousCueType": "Eyes",
+				"EndogenousCueValidity": "Valid",
+				"EndogenousCueOnset": -1,
+				"EndogenousCueDisplayDuration": 1,
+
+				"ExogenousCueValidity": "Valid",
+				"ExogenousCueOnset": -0.5,
+				"ExogenousCueDisplayDuration": 0.25,
+
+				"UserInputOnset": 4,
+				"MaxResponseTime": 0.5,
+
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "Always"
+			},
+			"Trials": [
+				{
+					"Parameters": {
+						"StimulusPosition": "Right"
+					}
+				},
+				{
+					"Parameters": {
+						"StimulusPosition": "Left"
+
+					}
+				},
+				{
+					"Parameters": {
+						"StimulusPosition": "Right"
+					}
+				}
+			]
+		},
+		"RobotTest": {
+			"Inherits": "Default",
+			"Parameters": {
+				"TaskName_Position": "StatusBarLeft",
+				"BlockCounter_Position": "StatusBarLeft",
+				"BlockCounter_Style": "Counter",
+				"TrialCounter_Position": "StatusBarLeft",
+				"TrialCounter_Style": "Counter",
+				"TrialResults_Position": "StatusBarRight",
+				"TrialResults_Style": "ColoredDiscrete"
+			},
+			"Trials": [
+				{ "Parameters": {
+					"EndogenousCueType": "Arrow"
+				}}, { "Parameters": {
+					"EndogenousCueType": "Eyes"
+				}}, { "Parameters": {
+					"EndogenousCueValidity": "Valid"
+				}}, { "Parameters": {
+					"EndogenousCueValidity": "Invalid"
+				}}, { "Parameters": {
+					"EndogenousCueValidity": "Neutral"
+				}}, { "Parameters": {
+					"ExogenousCueType": "Circle"
+				}}, { "Parameters": {
+					"ExogenousCueType": "Rectangle"
+				}}, { "Parameters": {
+					"ExogenousCueValidity": "Valid"
+				}}, { "Parameters": {
+					"ExogenousCueValidity": "Invalid"
+				}}, { "Parameters": {
+					"ExogenousCueValidity": "Neutral"
+				}}, { "Parameters": {
+					"StimulusPosition": "Left"
+				}}, { "Parameters": {
+					"StimulusPosition": "Right"
+				}}, { "Parameters": {
+					"FixationPointOnset": 0,
+					"FixationPointOffset": 0
+				}}, { "Parameters": {
+					"FixationPointOnset": 10,
+					"FixationPointOnset": 0
+				}}, { "Parameters": {
+					"FixationPointOnset": 0,
+					"FixationPointOffset": -10
+				}}, { "Parameters": {
+					"TaskCueOnset": 10,
+					"TaskCueDisplayDuration": 1
+				}}, { "Parameters": {
+					"TaskCueDisplayDuration": 10
+				}}, { "Parameters": {
+					"EndogenousCueOnset": 0
+				}}, { "Parameters": {
+					"EndogenousCueOnset": -10
+				}}, { "Parameters": {
+					"ExogenousCueOnset": 0
+				}}, { "Parameters": {
+					"ExogenousCueOnset": -10
+				}}, { "Parameters": {
+					"ExogenousCueDisplayDuration": 0
+				}}, { "Parameters": {
+					"ExogenousCueDisplayDuration": 10
+				}}, { "Parameters": {
+					"UserInputOnset": 0
+				}}, { "Parameters": {
+					"UserInputOnset": 10
+				}}, { "Parameters": {
+					"MaxResponseTime": 0.01
+				}}, { "Parameters": {
+					"MaxResponseTime": 10
+				}}, { "Parameters": {
+					"ShowAccuracyCheckFeedback": "Never"
+				}}, { "Parameters": {
+					"ShowCorrectTrialResponseFeedback": "OnError"
+				}}, { "Parameters": {
+					"ShowCorrectTrialResponseFeedback": "Always"
+				}}
+			]
+		}
+	}
+}

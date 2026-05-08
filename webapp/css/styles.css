@@ -1,0 +1,1473 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Futura', 'Trebuchet MS', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* App Container - Enhanced navigation states */
+.app-container {
+    display: grid;
+    grid-template-columns: 150px 180px 0px 1fr;
+    grid-template-areas: "engines categories sub-nav content";
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    transition: grid-template-columns 0.3s ease;
+    min-height: 0; /* Important for Firefox */
+}
+
+.app-container.sub-nav-visible {
+    grid-template-columns: 150px 180px 200px 1fr;
+}
+
+.app-container.nav-collapsed {
+    grid-template-columns: 0px 0px 0px 1fr;
+}
+
+.app-container.nav-collapsed.sub-nav-visible {
+    grid-template-columns: 0px 0px 0px 1fr;
+}
+
+/* Navigation Common Styles - Firefox fixes */
+nav {
+    background: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-width: 0; /* Important for Firefox grid */
+    min-height: 0; /* Important for Firefox grid */
+}
+
+.nav-header {
+    padding: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-family: 'Futura', 'Century Gothic', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* All nav headers now need dark text on light backgrounds */
+.engine-nav .nav-header, 
+.category-nav .nav-header,
+.sub-nav .nav-header {
+    color: #495057;
+}
+
+.nav-content {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    min-height: 0; /* Important for Firefox */
+}
+
+.nav-list-container {
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    height: 100%;
+    min-height: 0; /* Important for Firefox */
+}
+
+.nav-list-container::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+
+
+/* Remove old collapse controls */
+
+/* Navigation panel collapsed state */
+nav.collapsed {
+    width: 0;
+    min-width: 0;
+    overflow: hidden;
+    border-right: none;
+}
+
+/* Remove old header styles - no longer needed */
+
+/* Level 1: Engine Navigation */
+.engine-nav {
+    grid-area: engines;
+    background: #e9ecef; /* Light gray - subtle darkening */
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 30;
+}
+
+.engine-nav .nav-header {
+    background: #dee2e6; /* Slightly darker header */
+}
+
+.engine-list, .category-list, .sub-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.engine-item, .category-item, .sub-item {
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-weight: 400;
+    color: #2c3e50;
+    font-size: 0.85rem;
+    line-height: 1.2;
+}
+
+.engine-item {
+    color: #495057; /* Dark text on light background */
+    font-weight: 500;
+}
+
+.engine-item.home-item {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+    background: rgba(0, 0, 0, 0.05);
+    color: #495057;
+}
+
+.category-item {
+    color: #495057; /* Dark text on light background */
+}
+
+.sub-item {
+    color: #495057; /* Dark text on light background */
+}
+
+.engine-item:hover, .category-item:hover {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.engine-item.active, .category-item.active {
+    background: rgba(0, 0, 0, 0.12);
+    border-left: 3px solid #495057;
+}
+
+.sub-item:hover {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.sub-item.active {
+    background: rgba(0, 0, 0, 0.12);
+    border-left: 3px solid #495057;
+}
+
+/* Level 2: Category Navigation */
+.category-nav {
+    grid-area: categories;
+    background: #f1f3f4; /* Very light gray - subtle difference */
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 20;
+}
+
+.category-nav .nav-header {
+    background: #e9ecef; /* Slightly darker header */
+}
+
+/* Level 3: Sub Navigation */
+.sub-nav {
+    grid-area: sub-nav;
+    background: #f8f9fa; /* Lightest gray - very subtle difference */
+    display: flex; /* Always flex, visibility controlled by grid columns */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 10;
+}
+
+.sub-nav.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sub-nav .nav-header {
+    background: #f1f3f4; /* Slightly darker header */
+}
+
+/* Main Content Area - Enhanced with header bar */
+.content-area {
+    grid-area: content;
+    background: #f8f9fa; /* Very light gray background */
+    display: flex;
+    flex-direction: column;
+    min-width: 0; /* Important for Firefox */
+    min-height: 0; /* Important for Firefox */
+    overflow: hidden;
+}
+
+.content-header-bar {
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    padding: 0.4rem 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    min-height: auto;
+    height: 36px; /* Same height as navigation items */
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.search-icon-btn {
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #495057;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.search-icon-btn:hover {
+    color: #343a40;
+    transform: scale(1.1);
+}
+
+.search-icon-btn:active {
+    transform: scale(0.95);
+}
+
+/* Search Modal Styles */
+.search-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+}
+
+.search-modal.active {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 10vh;
+}
+
+.search-modal-content {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+    background: #f8f9fa;
+}
+
+.search-modal-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #495057;
+}
+
+.close-search-btn {
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #6c757d;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.close-search-btn:hover {
+    color: #495057;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.search-form {
+    padding: 1.5rem;
+}
+
+.search-input-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.search-input-field {
+    flex: 1;
+    padding: 0.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.search-input-field:focus {
+    border-color: #495057;
+}
+
+.search-submit-btn {
+    padding: 0.75rem 1.5rem;
+    background: #495057;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.search-submit-btn:hover {
+    background: #343a40;
+}
+
+.search-scope {
+    margin-bottom: 1rem;
+}
+
+.search-scope-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #495057;
+}
+
+.search-scope-options {
+    display: flex;
+    gap: 1rem;
+}
+
+.search-scope-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.search-scope-options input[type="radio"] {
+    margin: 0;
+}
+
+.search-results {
+    flex: 1;
+    padding: 0 1.5rem 1.5rem;
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+.search-results:empty::before {
+    content: "Enter search terms and click Search to find documentation.";
+    color: #9ca3aa;
+    font-style: italic;
+    display: block;
+    text-align: center;
+    padding: 2rem;
+}
+
+.search-result-item {
+    padding: 1rem;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.search-result-item:hover {
+    background: #f8f9fa;
+    border-color: #495057;
+}
+
+.search-result-title {
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 0.25rem;
+}
+
+.search-result-excerpt {
+    font-size: 0.9rem;
+    color: #6c757d;
+    line-height: 1.4;
+}
+
+.search-result-path {
+    font-size: 0.8rem;
+    color: #9ca3aa;
+    margin-top: 0.25rem;
+}
+
+.no-results {
+    text-align: center;
+    color: #9ca3aa;
+    padding: 2rem;
+    font-style: italic;
+}
+
+.search-result-summary {
+    font-size: 0.85rem;
+    color: #6c757d;
+    padding: 0.5rem 0 0.75rem;
+    border-bottom: 1px solid #e9ecef;
+    margin-bottom: 0.75rem;
+}
+
+.search-result-excerpt mark {
+    background: #fff3a8;
+    color: inherit;
+    padding: 0 0.1rem;
+    border-radius: 2px;
+}
+
+.search-result-item:focus {
+    outline: 2px solid #495057;
+    outline-offset: 2px;
+}
+
+.nav-toggle-btn {
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #495057;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.nav-toggle-btn:hover {
+    color: #343a40;
+    transform: scale(1.1);
+}
+
+.nav-toggle-btn:active {
+    transform: scale(0.95);
+}
+
+.content-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #495057;
+    margin: 0;
+}
+
+.content-header {
+    padding: 0.3rem 1rem;
+    border-bottom: 1px solid #e9ecef;
+    background: #f8f9fa;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.content-header h1 {
+    font-weight: 300;
+    font-size: 0.85rem;
+    color: #9ca3aa;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.content-body {
+    padding: 1rem;
+    flex: 1;
+    line-height: 1.4;
+    min-height: 0; /* Important for Firefox */
+    overflow-y: auto;
+    /* Scrollbar styling for Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: #333333 #f1f1f1;
+    /* Ensure full width for proper scrollbar positioning */
+    box-sizing: border-box;
+    width: 100%;
+    /* Force scrollbar to always be visible for testing */
+    min-height: calc(100vh - 100px);
+}
+
+/* Enhanced content body styling when navigation collapsed - center content to match video */
+.app-container.nav-collapsed .content-body {
+    padding: 2rem; /* Uniform padding */
+    margin: 0; /* Remove all margins to allow scrollbar at edge */
+    max-width: none;
+    /* Center all content to match the video width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ensure text content has same max-width as video for alignment */
+.app-container.nav-collapsed .content-body > * {
+    max-width: 800px; /* Match video max-width */
+    width: 100%;
+}
+
+.content-body h2 {
+    color: #495057;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.content-body h3 {
+    color: #6c757d;
+    font-weight: 400;
+    margin-bottom: 0.4rem;
+    font-size: 1.1rem;
+}
+
+.content-body p {
+    margin-bottom: 0.5rem;
+    color: #6c757d;
+}
+
+/* Responsive Design - Enhanced Firefox compatibility */
+@media (max-width: 1200px) {
+    .app-container {
+        grid-template-columns: 130px 160px 0px 1fr;
+    }
+    
+    .app-container.sub-nav-visible {
+        grid-template-columns: 130px 160px 180px 1fr;
+    }
+    
+    .engine-nav .collapse-btn {
+        left: 130px;
+    }
+    
+    .category-nav .collapse-btn {
+        left: 290px;
+    }
+    
+    .sub-nav .collapse-btn {
+        left: 470px;
+    }
+}
+
+@media (max-width: 900px) {
+    .app-container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    nav {
+        max-height: 150px;
+        border-right: none;
+        border-bottom: 1px solid #e9ecef;
+        flex-shrink: 0;
+    }
+    
+    .content-area {
+        flex: 1;
+        min-height: 60vh;
+    }
+    
+    .scroll-controls {
+        right: 10px;
+    }
+    
+    .collapse-btn {
+        display: none !important;
+    }
+    
+    /* Reset collapsed states on mobile */
+    nav.collapsed {
+        width: auto;
+        overflow: visible;
+        max-height: 150px;
+    }
+}
+
+/* Loading State */
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #6c757d;
+}
+
+.empty-state h3 {
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+/* Engine Header Styles */
+.engine-header {
+    margin-bottom: 2rem;
+    text-align: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.engine-name {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #343a40;
+    margin: 0 0 1rem 0;
+    text-align: center;
+}
+
+.engine-image {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.engine-image:hover {
+    transform: scale(1.02);
+}
+
+/* Engine Video Styling */
+.engine-video {
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    background: transparent;
+    outline: none;
+    display: block;
+    margin: 0 auto; /* Center the video by default */
+}
+
+/* When navigation is collapsed, let video flow naturally with text */
+.app-container.nav-collapsed .engine-video {
+    margin: 0; /* Remove auto centering to align with text */
+}
+
+.engine-video:hover {
+    transform: scale(1.005);
+}
+
+.engine-video:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Description Sections Styling */
+.description-sections {
+    max-width: 800px;
+    margin: 0 auto; /* Center by default to match video */
+}
+
+/* When navigation is collapsed, align description sections with video */
+.app-container.nav-collapsed .description-sections {
+    margin: 0; /* Remove auto centering to align with video and text */
+}
+
+.overview-text {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+    line-height: 1.6;
+    color: #495057;
+}
+
+.description-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.description-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.description-section h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000000;
+    margin: 0 0 0.5rem 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.description-section p {
+    line-height: 1.6;
+    color: #495057;
+}
+
+/* Glossary Styling */
+.glossary-list {
+    margin: 0;
+    padding: 0;
+}
+
+.glossary-term {
+    font-weight: 700;
+    color: #000000;
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+}
+
+.glossary-term:first-child {
+    margin-top: 0;
+}
+
+.glossary-definition {
+    margin: 0 0 0.75rem 1rem;
+    line-height: 1.5;
+    color: #495057;
+    padding-left: 0.5rem;
+    border-left: 2px solid #e9ecef;
+}
+
+.glossary-definition:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive adjustments for engine content */
+@media (max-width: 768px) {
+    .engine-name {
+        font-size: 1.4rem;
+    }
+    
+    .engine-image {
+        max-width: 300px;
+    }
+    
+    .engine-video {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .description-section h2 {
+        font-size: 0.9rem;
+    }
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom Scrollbar Styling */
+/* Webkit browsers (Chrome, Safari, Edge) */
+.content-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.content-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.content-body::-webkit-scrollbar-thumb {
+    background: #333333;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+.content-body::-webkit-scrollbar-thumb:hover {
+    background: #000000;
+}
+
+/* Timeline page hierarchical collapsible styles - Original gray disk style */
+.timeline-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Futura', 'Trebuchet MS', Arial, sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.timeline-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.timeline-header h2 {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.timeline-description {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Section Title Styling - Match parameters page style exactly */
+.section-title {
+    background: none;
+    color: #666;
+    margin: 2rem 0 1rem 0;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    border: none;
+}
+
+/* Timeline Media Section */
+.timeline-media {
+    margin: 0 0 2rem 0;
+}
+
+.timeline-media .video-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-media video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Timeline Actions Section - Now inline with video */
+.timeline-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 10px 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.test-timeline-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.test-timeline-btn:hover {
+    background: #0056b3;
+}
+
+.timeline-duration {
+    color: #6c757d;
+    font-size: 0.85rem;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Timeline About Section */
+.timeline-about {
+    margin: 0 0 2rem 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    background: none;
+    padding: 0;
+    border: none;
+}
+
+.timeline-about p {
+    color: #495057;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+.timeline-about p:last-child {
+    margin-bottom: 0;
+}
+
+/* Timeline Config Section */
+.timeline-config {
+    margin: 0 0 2rem 0;
+}
+
+/* Timeline Sample Data Section */
+.timeline-sample-data {
+    margin: 0 0 2rem 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    background: none;
+    padding: 0;
+    border: none;
+}
+
+.timeline-sample-data p {
+    color: #495057;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+.sample-data-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.sample-data-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Collapsible section base styles - Match parameters style */
+.collapsible-section {
+    background: white;
+    border-radius: 8px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.collapsible-section:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.collapsible-header {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    user-select: none;
+    gap: 0.75rem;
+}
+
+.collapsible-header:hover {
+    background: #f8f9fa;
+}
+
+.collapse-icon {
+    background: none;
+    color: #999;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: color 0.2s ease;
+}
+
+/* Default collapsed state - right arrow - high specificity */
+.collapsible-section .collapse-icon::before,
+.main-section .collapse-icon::before,
+.block-section .collapse-icon::before,
+.instruction-section .collapse-icon::before,
+.test-parameters .collapse-icon::before {
+    content: '▶' !important;
+}
+
+/* Expanded state - down arrow - only for direct child collapse icons */
+.collapsible-section.expanded > .collapsible-header > .collapse-icon::before,
+.main-section.expanded > .main-section-header > .collapse-icon::before,
+.block-section.expanded > .block-header > .collapse-icon::before,
+.instruction-section.expanded > .instruction-header > .collapse-icon::before,
+.test-parameters.expanded > .params-header > .collapse-icon::before {
+    content: '▼' !important;
+}
+
+/* Collapsible content - hidden by default */
+div.collapsible-content {
+    display: none !important;
+    padding: 0;
+}
+
+/* Collapsible content - shown when parent has expanded class */
+.collapsible-section.expanded > div.collapsible-content,
+.main-section.expanded > .main-section-content,
+.block-section.expanded > .block-content,
+.instruction-section.expanded > .instruction-content,
+.test-parameters.expanded > .params-content,
+.trials-info.expanded > .trials-content,
+.test-rules.expanded > .rules-content,
+.exit-rules.expanded > .exit-rules-content {
+    display: block !important;
+    padding: 0 1rem 1rem 1rem;
+}
+
+/* Level headers */
+.main-section-header h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.main-section-number {
+    display: none; /* Hide since we're using the disk */
+}
+
+.block-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #495057;
+}
+
+.block-number {
+    display: none; /* Hide since we're using the disk */
+}
+
+.instruction-header h4 {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #495057;
+}
+
+.instruction-number {
+    display: none; /* Hide since we're using the disk */
+}
+
+.params-header h4, .exit-rules-header h4, .trials-header h4, .rules-header h4 {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #6c757d;
+}
+
+/* Nested sections styling */
+.block-section, .instruction-section, .test-parameters, .exit-rules, .trials-info, .test-rules {
+    margin-bottom: 1rem;
+}
+
+/* Ensure block sections are clearly separated as siblings */
+.main-section-content > .block-section {
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+/* Instruction content styling - Match original */
+.instruction-item {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #f1f3f4;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.instruction-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.instruction-item .instruction-number {
+    flex-shrink: 0;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 2px;
+}
+
+.instruction-item .number-circle {
+    background: #adb5bd;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.instruction-item .instruction-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.content-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.instruction-text {
+    color: #495057;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.instruction-image {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.instruction-image img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+/* Content styling */
+.no-content {
+    padding: 1rem;
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Timeline Parameters Table - Match parameter pages styling */
+.parameters-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+.parameters-table tr {
+    border: none;
+}
+
+.parameters-table td {
+    padding: 0.75rem;
+    vertical-align: baseline;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    border: none;
+}
+
+.param-name {
+    font-weight: 600;
+    color: #6c757d;
+    width: 20%;
+    text-align: right;
+    padding-right: 1rem;
+    vertical-align: baseline;
+}
+
+.param-value {
+    color: #666;
+    width: 80%;
+    vertical-align: baseline;
+}
+
+.param-value pre {
+    background: #f9fafb;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin: 0.5rem 0 0 0;
+    color: #4b5563;
+    border: 1px solid #e5e7eb;
+}
+
+/* Nested parameter dictionary styling */
+.param-dict {
+    margin: 0.25rem 0;
+}
+
+.param-dict-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin: 0.25rem 0;
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.param-dict-item.indent-0 { margin-left: 0; }
+.param-dict-item.indent-1 { margin-left: 1rem; }
+.param-dict-item.indent-2 { margin-left: 2rem; }
+.param-dict-item.indent-3 { margin-left: 3rem; }
+.param-dict-item.indent-4 { margin-left: 4rem; }
+
+.param-key {
+    font-weight: 600;
+    color: #6c757d;
+    min-width: fit-content;
+    flex-shrink: 0;
+}
+
+.param-list {
+    margin: 0.25rem 0;
+}
+
+.param-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin: 0.125rem 0;
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.param-index {
+    font-weight: 500;
+    color: #6c757d;
+    min-width: fit-content;
+    flex-shrink: 0;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.75rem;
+}
+
+.param-val {
+    color: #666;
+}
+
+/* Parameters page specific styles */
+.parameters-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.glossary-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+}
+
+.glossary-section h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #212529;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.glossary-section .glossary-list {
+    margin: 0;
+}
+
+.glossary-section .glossary-term {
+    font-weight: 600;
+    color: #495057;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.glossary-section .glossary-definition {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    color: #6c757d;
+    line-height: 1.5;
+    border-left: none;
+    padding-left: 0;
+}
+
+.parameters-summary {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #e9ecef;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.parameters-summary p {
+    margin: 0;
+    color: #495057;
+    font-size: 16px;
+}
+
+.parameter-group {
+    margin-bottom: 30px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.parameter-group-title {
+    background: #495057;
+    color: white;
+    margin: 0;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.parameter-group-content {
+    padding: 20px;
+}
+
+.parameter-item {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.parameter-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.parameter-name {
+    margin: 0 0 10px 0;
+    color: #212529;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.parameter-description {
+    margin: 0 0 15px 0;
+    color: #495057;
+    line-height: 1.6;
+}
+
+.parameter-detail {
+    margin: 8px 0;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.parameter-detail strong {
+    color: #495057;
+}
+
+.parameter-detail code {
+    background: #f8f9fa;
+    padding: 2px 6px;
+    border-radius: 3px;
+    border: 1px solid #e9ecef;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 13px;
+    color: #e83e8c;
+}
+
+.parameter-options {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.parameter-options li {
+    margin: 5px 0;
+    color: #495057;
+    line-height: 1.4;
+}
+
+.parameter-options code {
+    background: #f8f9fa;
+    padding: 2px 6px;
+    border-radius: 3px;
+    border: 1px solid #e9ecef;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 13px;
+    color: #e83e8c;
+    margin-right: 8px;
+}
+
+.parameter-note {
+    margin: 10px 0;
+    padding: 10px;
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 4px;
+    color: #856404;
+    font-size: 14px;
+}
+
+.parameter-note strong {
+    color: #856404;
+}
+
+/* Responsive adjustments for parameters */
+@media (max-width: 768px) {
+    .parameters-container {
+        padding: 10px;
+    }
+    
+    .parameter-group-content {
+        padding: 15px;
+    }
+    
+    .glossary-section {
+        padding: 15px;
+    }
+}

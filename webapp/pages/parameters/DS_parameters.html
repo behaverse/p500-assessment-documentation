@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digit Span Parameters - Behaverse Assessment</title>
+    <link rel="stylesheet" href="../../css/parameters.css">
+</head>
+<body>
+<div class="parameters-container">
+    <h2>Parameters</h2>
+    <h3>Constants (1 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaxStimuliOnScreen</h4>
+        <p class="parameter-description">The maximum number of stimuli that can be displayed on the screen at once.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> This should be at least 12 (the maximum score for players on CBS DigitSpan task).</div>
+    </div>
+    <h3>Stimulus Parameters (9 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusType</h4>
+        <p class="parameter-description">The type of stimulus to display.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Digits</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">SequenceLength</h4>
+        <p class="parameter-description">The number of stimuli for the user to remember.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 3</span>
+            <span><strong>Range:</strong> 1 - Inf</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Normal people remember around 7 but with training/technique may remember up to 80 stimuli, the world record being 465.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ItemSequence</h4>
+        <p class="parameter-description">The sequence to show the user.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer sequence</span>
+            <span><strong>Range:</strong> 0 - PoolSize-1</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> It should be a sequence of SequenceLength; PoolSize value depends on StimulusType, either 10 or 26.
+</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusPackSize</h4>
+        <p class="parameter-description">How many stimuli are displayed to the user simultaneously. For example, a pack size of 2 could produce this sequence:  “12 / 73 / 19”</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 1</span>
+            <span><strong>Range:</strong> 1 - 5</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> 5 is the maximum we will support showing on the screen. We will usually use a size of 1 or 2, going to 5 may already be overkill.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusDisplayDuration</h4>
+        <p class="parameter-description">The duration in seconds during which each stimulus is visible.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.5</span>
+            <span><strong>Range:</strong> 0.01 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">InterstimulusInterval</h4>
+        <p class="parameter-description">The duration in seconds between each stimulus</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.5</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ColorScheme</h4>
+        <p class="parameter-description">The type of colorization of the stimuli.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Neutral</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ColorMapping</h4>
+        <p class="parameter-description">The mapping of a stimulus value to a color.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Forward</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ColorSaturation</h4>
+        <p class="parameter-description">The color saturation, 0 being gray and 1 being vivid colors.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 1</span>
+            <span><strong>Range:</strong> 0 - 1</span>
+        </div>
+    </div>
+    <h3>User Input parameters (8 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">RetentionDelay</h4>
+        <p class="parameter-description">The delay after all stimuli have been shown (i.e., offset of the last stimulus) before the input panel is enabled, in seconds.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 1</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaxIdleTime</h4>
+        <p class="parameter-description">The maximum time the user can be idle. After that, the trial is considered failed.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 30</span>
+            <span><strong>Range:</strong> 1 - Inf</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Note that the idle timer resets only when a new input has been made by the user, but not when the user erases a character to write another character.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ColoredButtons</h4>
+        <p class="parameter-description">Whether the symbols on buttons are presented with the color they were shown (e.g., if “5” was red, then the “5” key will be red as well) or their default color.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">RevealStimuli</h4>
+        <p class="parameter-description">Whether the stimuli are revealed or hidden.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowUserInputSequence</h4>
+        <p class="parameter-description">Whether we want to show on screen the current input sequence as it’s typed by the user.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "true"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">RecallOrder</h4>
+        <p class="parameter-description">The order in which the player should recall the sequence (e.g., 1, 2, 3, 4)
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Forward</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">HighlightCorrectButton</h4>
+        <p class="parameter-description">Which SIOs should be highlighted after a short inactivity duration defined by HighlightSioDelay. This highlight is a hint to help players who didn’t understand the rules.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">HighlightCorrectButtonDelay</h4>
+        <p class="parameter-description">A delay before highlighting the next correct button.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <h3>Feedback parameters (2 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyCheckFeedback</h4>
+        <p class="parameter-description">Whether we should show the valid or wrong “check” feedback at the end of a trial.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Always</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowCorrectTrialResponseFeedback</h4>
+        <p class="parameter-description">Whether we should show the correct response feedback at the end of a trial.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> OnError</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

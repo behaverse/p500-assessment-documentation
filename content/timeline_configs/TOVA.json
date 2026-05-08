@@ -1,0 +1,525 @@
+{
+	"Id": "TOVA",
+	"Scene": "StimulusResponseMapping",
+	"Rules": {
+// ---- Begin Rules ----
+"XCIT_TOVA_01_Practice_Rules": [
+	{"text": "XCIT_TOVA_01_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_TOVA_01_Practice.GameRules"}
+],
+"XCIT_TOVA_01_Tutorial_Rules": [
+	{"text": "XCIT_TOVA_01_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_TOVA_01_Tutorial.GameRules"}
+],
+// ---- End Rules ----
+	},
+	"EnumDefinitions": {},
+	"ParameterInfos": {
+		"StimulusBoxCount": {
+			"Type": "Int",
+			"Min": 0,
+			"Max": 10
+		},
+		"ResponseButtonCount": {
+			"Type": "Int",
+			"Min": 1,
+			"Max": 10
+		},
+		"Layout": {
+			"Type": "Enum",
+			"Values": [ "Horizontal", "Vertical" ]
+		},
+		"BoxMapping": {
+			"Type": "Int",
+			"Min": 0,
+			"Max": 10
+		},
+		"StimulusIndex": {
+			"Type": "Int",
+			"Min": 1,
+			"Max": 10
+		},
+		"TrialForeperiod": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"WaitForUserInput": {
+			"Type": "Bool"
+		},
+		"DisableButtonsAfterResponse": {
+			"Type": "Bool"
+		},
+		"StimulusDisplayDuration": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"PlayStimulusAppearSound": {
+			"Type": "Bool"
+		},
+		"MaxResponseTime": {
+			"Type": "Float",
+			"Min": 0.01
+		},
+		"UseFocusArea": {
+			"Type": "Bool"
+		},
+		"ConsecutiveSuccessCountToHideLines": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"ResponseMethod": {
+			"Type": "Enum",
+			"Values": [ "Press", "Release" ]
+		},
+		"ResponseButtonKeys": {
+			"Type": "Enum",
+			"Name": "KeyCode"
+		},
+		"ShowCorrectTrialResponseFeedback": {
+			"Type": "Enum",
+			"Name": "ShowCorrectTrialResponseFeedback"
+		},
+		"ShowLineFeedback": {
+			"Type": "Bool"
+		},
+		"ShowAccuracyOnButtonFeedback": {
+			"Type": "Bool"
+		},
+		"ShowAccuracyCheckFeedback": {
+			"Type": "Enum",
+			"Name": "ShowAccuracyCheckFeedback"
+		},
+		"ClickBeforeStimulusBehaviour": {
+			"Type": "Enum",
+			"Values": [ "Ignore", "Error" ]
+		}
+	},
+
+	"Timelines": {
+// ---- Begin Instructions ----
+"XCIT_TOVA_01_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_TOVA_01_Practice.Objective"}]},
+			{"Content": [{"Text": "XCIT_TOVA_01_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_TOVA_01_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_TOVA_01_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_TOVA_01_Test_01_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_TOVA_01_Test_01.Objective"}]},
+			{"Content": [{"Text": "XCIT_TOVA_01_Test_01.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_TOVA_01_Test_01.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_TOVA_01_Test_01_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_TOVA_01_Test_01.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_TOVA_01_Test_02_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_TOVA_01_Test_02.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_TOVA_01_Test_02_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_TOVA_01_Test_02.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_TOVA_01_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_TOVA_01_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_TOVA_01_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_TOVA_01_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_TOVA_01_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_TOVA_01_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_TOVA_01_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+// ---- End Instructions ----
+// ---- Begin Timeline ----
+    "XCIT_TOVA_01": {
+        "blocks": [
+            {
+                "timeline": "XCIT_TOVA_01_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_TOVA_01_Tutorial",
+                "rulesName": "XCIT_TOVA_01_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_TOVA_01_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_TOVA_01_Practice_Intro"
+            },
+            {
+                "name": "XCIT_TOVA_01_Practice",
+                "rulesName": "XCIT_TOVA_01_Practice_Rules",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 5,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_TOVA_01_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_TOVA_01_Test_01_Intro"
+            },
+            {
+                "name": "XCIT_TOVA_01_Test"
+            },
+            {
+                "timeline": "XCIT_TOVA_01_Test_01_Outro"
+            },
+            {
+                "timeline": "XCIT_TOVA_01_Test_02_Intro"
+            },
+            {
+                "name": "XCIT_TOVA_01_Test"
+            },
+            {
+                "timeline": "XCIT_TOVA_01_Test_02_Outro"
+            }
+        ]
+    },
+// ---- End Timeline ----
+		"Tutorial": {
+			"Blocks": [
+				{
+					"Name": "Tutorial"
+				}
+			]
+		},
+		"Demo": {
+			"Blocks": [
+				{
+					"Name": "Demo",
+					"ExitRules": [
+						{
+							"Trials": 3,
+							"Type": "Failures",
+							"Consecutive": true
+						},
+						{ "Trials": 30 }
+					]
+				},
+				{
+					"Name": "Demo",
+					"ExitRules": [
+						{
+							"Trials": 3,
+							"Type": "Failures",
+							"Consecutive": true
+						},
+						{ "Trials": 30 }
+					]
+				},
+				{
+					"Name": "Demo",
+					"ExitRules": [
+						{
+							"Trials": 3,
+							"Type": "Failures",
+							"Consecutive": true
+						},
+						{ "Trials": 30 }
+					]
+				}
+			]
+		},
+		"Debug": {
+			"Blocks": [
+				{
+					"Name": "Debug",
+					"ExitRules": [
+						{
+							"Trials": 30,
+							"Type": "Failures",
+							"Consecutive": true
+						},
+						{ "Trials": 30 }
+					]
+				},
+				{
+					"Name": "Debug",
+					"ExitRules": [
+						{
+							"Trials": 20,
+							"Type": "Failures",
+							"Consecutive": true
+						},
+						{ "Trials": 20 }
+					]
+				}
+			]
+		}
+	},
+	"Blocks": {
+		"Default": {
+			"Parameters": {
+				"UseFocusArea": false,
+				"StimulusBoxCount": 2,
+				"ResponseButtonCount": 1,
+				"BoxMapping": {
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ 0, 1 ]
+					}
+				},
+				"StimulusIndex": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 1,
+						"Max": 2
+					}
+				},
+				"Layout": "Horizontal",
+				"TrialForeperiod": 1,
+				"WaitForUserInput": false,
+				"DisableButtonsAfterResponse": true,
+				"StimulusDisplayDuration": 2,
+				"PlayStimulusAppearSound": false,
+				"MaxResponseTime": 2,
+				"ConsecutiveSuccessCountToHideLines": 0,
+				"ResponseMethod": "Press",
+				"ResponseButtonKeys": ["Space"],
+				"ShowLineFeedback": false,
+				"ClickBeforeStimulusBehaviour": "Ignore",
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": true
+			}
+		},
+		"Tutorial": {
+			"Inherits": "Default",
+			"Parameters": {
+				"TrialForeperiod": 3,
+				"StimulusDisplayDuration": 3,
+				"WaitForUserInput": false,
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "Always",
+				"TaskName_Position": "Hidden",
+				"BlockCounter_Position": "StatusBarLeft",
+				"BlockCounter_Style": "Counter",
+				"TrialResults_Position": "InformationPanel",
+				"TrialResults_Style": "Discrete",
+				"LevelLabel_Position": "Hidden",
+				"TrialCounter_Position": "Hidden",
+				"BlockTimer_Position": "Hidden",
+				"UserInputTimer_Position": "StatusBarCenter",
+				"UserInputTimer_Style": "Circular",
+				"UserInputTimer_CountUp": false,
+				"UserInputTimer_DisplayTime": false
+			},
+			"Trials": [
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusIndex": 1
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusIndex": 2
+					}
+				},
+
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusIndex": 2
+					}
+				},
+
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusIndex": 1
+					}
+				}
+			]
+		},
+		"Demo": {
+			"Inherits": "Default",
+			"Parameters": {
+
+				"TrialForeperiod": 1,
+				"StimulusDisplayDuration": 0.5,
+				"MaxResponseTime": 3,
+				"BlockTimer_Position": "Hidden"
+			}
+		},
+		"Debug": {
+
+			"Inherits": "Default",
+			"Parameters": {
+				"TrialForeperiod": 1,
+				"WaitForUserInput": false,
+				"StimulusDisplayDuration": 2,
+				"MaxResponseTime": 1,
+				"ResponseMethod": "Press",
+				"ShowLineFeedback": false,
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowCorrectTrialResponseFeedback": "OnError"
+			}
+
+		},
+		"XCIT_TOVA_Base": {
+			"Inherits": "Default",
+			"Parameters": {
+				"Layout": "Vertical",
+				"ShowLineFeedback": false,
+				"ClickBeforeStimulusBehaviour": "Ignore",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": true,
+				"TrialForeperiod": 0.2,
+				"WaitForUserInput": false,
+				"StimulusDisplayDuration": 0.1,
+				"MaxResponseTime": 1.7,
+				"ConsecutiveSuccessCountToHideLines": 0,
+				"ShowAccuracyCheckFeedback": "Never",
+				"StimulusBoxCount": 2,
+				"ResponseButtonCount": 1
+			}
+		},
+		"XCIT_TOVA_01_Practice": {
+			"Inherits": "XCIT_TOVA_Base",
+			"Parameters": {
+				"ConsecutiveSuccessCountToHideLines": 0,
+				"StimulusDisplayDuration": 0.2,
+				"MaxResponseTime": 2,
+				"UserInputTimer_Position": "StatusBarCenter",
+				"UserInputTimer_Style": "Circular"
+			}
+		},
+		"XCIT_TOVA_01_Tutorial": {
+			"Inherits": "XCIT_TOVA_Base",
+			"Parameters": {
+				"ConsecutiveSuccessCountToHideLines": 999,
+				"ShowAccuracyCheckFeedback": "Always",
+				"StimulusDisplayDuration": 0.5,
+				"MaxResponseTime": 2,
+				"UserInputTimer_Position": "StatusBarCenter",
+				"UserInputTimer_Style": "Circular"
+			},
+			"Trials": [
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusIndex": 1
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusIndex": 2
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusIndex": 1
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusIndex": 2
+					}
+				}
+			]
+		},
+		"XCIT_TOVA_01_Test": {
+			"Inherits": "XCIT_TOVA_Base",
+			"Parameters": {
+				"ShowAccuracyOnButtonFeedback": false
+			},
+			"TrialOrder": {
+				"Sequence": { // 200 trials total, 100 trialA (index 0), 100 trialB (index 1)
+					"Type": "Repeat",
+					"SequenceLength": 200,
+					"Repeats": 100,
+					"Values": [0,1]
+				}
+			},
+			"Trials": [
+				{
+					"Parameters": {
+						"StimulusIndex": {
+							"Distribution": {
+								"Type": "Weighted",
+								"Values": [
+									{
+										"Value": 1,
+										"Weight": 0.2
+									},
+									{
+										"Value": 2,
+										"Weight": 0.8
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"Parameters": {
+						"StimulusIndex": {
+							"Distribution": {
+								"Type": "Weighted",
+								"Values": [
+									{
+										"Value": 1,
+										"Weight": 0.8
+									},
+									{
+										"Value": 2,
+										"Weight": 0.2
+									}
+								]
+							}
+						}
+					}
+				}
+			]
+		}
+	}
+}

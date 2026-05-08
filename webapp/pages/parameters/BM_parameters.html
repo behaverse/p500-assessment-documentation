@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belval Matrices Parameters - Behaverse Assessment</title>
+    <link rel="stylesheet" href="../../css/parameters.css">
+</head>
+<body>
+<div class="parameters-container">
+    <h2>Parameters</h2>
+    <h3>Input data (1 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ProblemType</h4>
+        <p class="parameter-description">The type algorithm used to create the item/problem. </p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> BooleanLogic</span>
+        </div>
+    </div>
+    <h3>User input parameters (1 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaxIdleTime</h4>
+        <p class="parameter-description">The maximum allowed time (in seconds) for the user to enter a response. If he/she does not respond in time, the trial is considered as failed.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 60</span>
+            <span><strong>Range:</strong> 1 - Inf</span>
+        </div>
+    </div>
+    <h3>Feedback parameters (4 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyCheckFeedback</h4>
+        <p class="parameter-description">Whether we show the valid or wrong “check” feedback at the end of a trial on the screen center.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Always</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyOnButtonFeedback</h4>
+        <p class="parameter-description">Whether we color the outline of the ResponseElements red or green to indicate whether the response was correct or incorrect. If false, the outline will be white.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "true"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowCorrectTrialResponseFeedback</h4>
+        <p class="parameter-description">highlight the ResponseElement that would have been the correct response.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Never</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Currently the highlighting animation involves a period change of the button size (~20%). We will want to change this in the future and use yellow outlining to be more consistent with other tasks. As this animation is currently not being used; this change in animation is postponed.
+</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowPatternCompletionFeedback</h4>
+        <p class="parameter-description">Move the ResponseElement that would have been the correct response into the gap of the stimulus matrix.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Never</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,760 @@
+{
+	"Id": "SRT",
+	"Scene": "StimulusResponseMapping",
+	"Rules": {
+// ---- Begin Rules ----
+"XCIT_SRT_01_Tutorial_Rules": [
+	{"text": "XCIT_SRT_01_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_SRT_01_Tutorial.GameRules"}
+],
+// ---- End Rules ----
+	},
+	"EnumDefinitions": {},
+	"ParameterInfos": {
+		"StimulusBoxCount": {
+			"Type": "Int",
+			"Min": 0,
+			"Max": 10
+		},
+		"ResponseButtonCount": {
+			"Type": "Int",
+			"Min": 1,
+			"Max": 10
+		},
+		"Layout": {
+			"Type": "Enum",
+			"Values": [ "Horizontal", "Vertical" ]
+		},
+		"BoxMapping": {
+			"Type": "Int",
+			"Min": 0,
+			"Max": 10
+		},
+		"StimulusIndex": {
+			"Type": "Int",
+			"Min": 1,
+			"Max": 10
+		},
+		"TrialForeperiod": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"WaitForUserInput": {
+			"Type": "Bool"
+		},
+		"DisableButtonsAfterResponse": {
+			"Type": "Bool"
+		},
+		"StimulusDisplayDuration": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"PlayStimulusAppearSound": {
+			"Type": "Bool"
+		},
+		"MaxResponseTime": {
+			"Type": "Float",
+			"Min": 0.01
+		},
+		"ConsecutiveSuccessCountToHideLines": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"ResponseMethod": {
+			"Type": "Enum",
+			"Values": [ "Press", "Release" ]
+		},
+		"ResponseButtonKeys": {
+			"Type": "Enum",
+			"Name": "KeyCode"
+		},
+		"UseFocusArea": {
+			"Type": "Bool"
+		},
+		"ShowCorrectTrialResponseFeedback": {
+			"Type": "Enum",
+			"Name": "ShowCorrectTrialResponseFeedback"
+		},
+		"ShowLineFeedback": {
+			"Type": "Bool"
+		},
+		"ShowAccuracyOnButtonFeedback": {
+			"Type": "Bool"
+		},
+		"ShowAccuracyCheckFeedback": {
+			"Type": "Enum",
+			"Values": [ "Always", "OnError", "Never" ]
+		},
+		"ClickBeforeStimulusBehaviour": {
+			"Type": "Enum",
+			"Values": [ "Ignore", "Error" ]
+		}
+	},
+
+	"Timelines": {
+// ---- Begin Instructions ----
+"XCIT_SRT_01_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SRT_01_Test.Objective"}]},
+			{"Content": [{"Text": "XCIT_SRT_01_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_SRT_01_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SRT_01_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SRT_01_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SRT_01_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SRT_01_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_SRT_01_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_SRT_01_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_SRT_01_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SRT_01_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SRT_01_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+// ---- End Instructions ----
+// ---- Begin Timeline ----
+    "XCIT_SRT_01": {
+        "blocks": [
+            {
+                "timeline": "XCIT_SRT_01_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_SRT_01_Tutorial",
+                "rulesName": "XCIT_SRT_01_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_SRT_01_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_SRT_01_Test_Intro"
+            },
+            {
+                "name": "XCIT_SRT_01_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 200,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_SRT_01_Test_Outro"
+            }
+        ]
+    },
+// ---- End Timeline ----
+		"Tutorial": {
+			"Blocks": [
+				{
+					"Name": "Tutorial"
+				}
+			]
+		},
+		"Demo": {
+			"Blocks": [
+				{
+					"Name": "Demo_1",
+					"ExitRules": [
+						{
+							"Trials": 8,
+							"Type": "Failures"
+						},
+						{ "Trials": 30 }
+					]
+				},
+				{
+					"Name": "Demo_2",
+					"ExitRules": [
+						{
+							"Trials": 6,
+							"Type": "Failures"
+						},
+						{ "Trials": 30 }
+					]
+				},
+				{
+					"Name": "Demo_3",
+					"ExitRules": [
+						{
+							"Trials": 3,
+							"Type": "Failures"
+						},
+						{ "Trials": 30 }
+					]
+				}
+			]
+		},
+		"FriedA_MaxTap": {
+			"Blocks": [
+				{
+					"Instructions":[
+						{"Content": [{"Text": "FriedA.MaxTap.Instructions"}], "OK": "FriedA.Common.OkSpace"},
+						{"Content": [{"Text": "FriedA.Common.BlockCount"}], "OK": "FriedA.Common.OkSpace"},
+						{"Content": [{"Text": "Communication.AreYouReady"}], "OK": "FriedA.Common.OkSpace"},
+						{"Content": [{"Text": "FriedA.MaxTap.Go"}], "OK": "Menu.Ok"}
+					]
+				},
+				{
+					"Name": "FriedA_MaxTap",
+					"ExitRules": [{ "Time": 10 }]
+				},
+				{
+					"Instructions":[
+						{"Content": [{"Text": "FriedA.Common.Pause10"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause9"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause8"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause7"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause6"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause5"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause4"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause3"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause2"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause1"}], "MinReadingTime": 1, "AutoContinue": true}
+					]
+				},
+				{
+					"Name": "FriedA_MaxTap",
+					"ExitRules": [{ "Time": 10 }]
+				},
+				{
+					"Instructions":[
+						{"Content": [{"Text": "FriedA.Common.Pause10"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause9"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause8"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause7"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause6"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause5"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause4"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause3"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause2"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause1"}], "MinReadingTime": 1, "AutoContinue": true}
+					]
+				},
+				{
+					"Name": "FriedA_MaxTap",
+					"ExitRules": [{ "Time": 10 }]
+				},
+				{
+					"Instructions":[
+						{"Content": [{"Text": "FriedA.Common.Pause10"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause9"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause8"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause7"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause6"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause5"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause4"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause3"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause2"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause1"}], "MinReadingTime": 1, "AutoContinue": true}
+					]
+				},
+				{
+					"Name": "FriedA_MaxTap",
+					"ExitRules": [{ "Time": 10 }]
+				},
+				{
+					"Instructions":[
+						{"Content": [{"Text": "FriedA.Common.Pause10"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause9"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause8"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause7"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause6"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause5"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause4"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause3"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause2"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause1"}], "MinReadingTime": 1, "AutoContinue": true}
+					]
+				},
+				{
+					"Name": "FriedA_MaxTap",
+					"ExitRules": [{ "Time": 10 }]
+				},
+				{
+					"Instructions":[
+						{"Content": [{"Text": "Communication.ThankYou"}], "MinReadingTime": 1.5}
+					]
+				}
+			]
+		},
+		"FriedA_VisualTap": {
+			"Blocks": [
+				{
+					"Instructions":[
+						{"Content": [{"Text": "FriedA.VisualTap.Instructions"}], "OK": "FriedA.Common.OkSpace"},
+						{"Content": [{"Text": "FriedA.Common.BlockCount"}], "OK": "FriedA.Common.OkSpace"},
+						{"Content": [{"Text": "Communication.AreYouReady"}], "OK": "Communication.IAmReady"}
+					]
+				},
+				{
+					"Name": "FriedA_VisualTap",
+					"ExitRules": [{ "Trials": 25 }]
+				},
+				{
+					"Instructions":[
+						{"Content": [{"Text": "FriedA.Common.Pause10"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause9"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause8"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause7"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause6"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause5"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause4"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause3"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause2"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause1"}], "MinReadingTime": 1, "AutoContinue": true}
+					]
+				},
+				{
+					"Name": "FriedA_VisualTap",
+					"ExitRules": [{ "Trials": 25 }]
+				},
+				{
+					"Instructions":[
+						{"Content": [{"Text": "FriedA.Common.Pause10"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause9"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause8"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause7"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause6"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause5"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause4"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause3"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause2"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause1"}], "MinReadingTime": 1, "AutoContinue": true}
+					]
+				},
+				{
+					"Name": "FriedA_VisualTap",
+					"ExitRules": [{ "Trials": 25 }]
+				},
+				{
+					"Instructions":[
+						{"Content": [{"Text": "FriedA.Common.Pause10"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause9"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause8"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause7"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause6"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause5"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause4"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause3"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause2"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause1"}], "MinReadingTime": 1, "AutoContinue": true}
+					]
+				},
+				{
+					"Name": "FriedA_VisualTap",
+					"ExitRules": [{ "Trials": 25 }]
+				},
+				{
+					"Instructions":[
+						{"Content": [{"Text": "Communication.ThankYou"}], "MinReadingTime": 1}
+					]
+				}
+			]
+		},
+		"FriedA_SelfPacedTap": {
+			"Blocks": [
+				{
+					"Instructions":[
+						{"Content": [{"Text": "FriedA.SelfPacedTap.Instructions"}], "OK": "FriedA.Common.OkSpace"},
+						{"Content": [{"Text": "Communication.AreYouReady"}], "OK": "Communication.IAmReady"}
+					]
+				},
+				{
+					"Name": "FriedA_SelfPacedTap",
+					"ExitRules": [{ "Trials": 25 }]
+				},
+				{
+					"Instructions":[
+						{"Content": [{"Text": "FriedA.Common.Pause10"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause9"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause8"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause7"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause6"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause5"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause4"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause3"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause2"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause1"}], "MinReadingTime": 1, "AutoContinue": true}
+					]
+				},
+				{
+					"Name": "FriedA_SelfPacedTap",
+					"ExitRules": [{ "Trials": 25 }]
+				},
+				{
+					"Instructions":[
+						{"Content": [{"Text": "FriedA.Common.Pause10"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause9"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause8"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause7"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause6"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause5"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause4"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause3"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause2"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause1"}], "MinReadingTime": 1, "AutoContinue": true}
+					]
+				},
+				{
+					"Name": "FriedA_SelfPacedTap",
+					"ExitRules": [{ "Trials": 25 }]
+				},
+				{
+					"Instructions":[
+						{"Content": [{"Text": "FriedA.Common.Pause10"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause9"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause8"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause7"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause6"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause5"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause4"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause3"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause2"}], "MinReadingTime": 1, "AutoContinue": true},
+						{"Content": [{"Text": "FriedA.Common.Pause1"}], "MinReadingTime": 1, "AutoContinue": true}
+					]
+				},
+				{
+					"Name": "FriedA_SelfPacedTap",
+					"ExitRules": [{ "Trials": 25 }]
+				},
+				{
+					"Instructions":[
+						{"Content": [{"Text": "Communication.ThankYou"}], "MinReadingTime": 1}
+					]
+				}
+			]
+		},
+		"Debug": {
+			"Blocks": [
+				{
+					"Name": "Debug",
+					"ExitRules": [
+						{
+							"Trials": 30,
+							"Type": "Failures",
+							"Consecutive": true
+						},
+						{ "Trials": 30 }
+					]
+				},
+				{
+					"Name": "Debug",
+					"ExitRules": [
+						{
+							"Trials": 20,
+							"Type": "Failures",
+							"Consecutive": true
+						},
+						{ "Trials": 20 }
+					]
+				}
+			]
+		},
+		"DearyLiewald": {
+			"Blocks": [
+				{
+					"Name": "Tutorial"
+				},
+				{
+					"Name": "DearyLiewald",
+					"ExitRules": [
+						{
+							"Trials": 20
+						}
+					]
+				}
+			]
+		}
+	},
+	"Blocks": {
+		"Default": {
+			"Parameters": {
+				"UseFocusArea": false,
+				"StimulusBoxCount": 1,
+				"ResponseButtonCount": 1,
+				"BoxMapping": 1,
+				"StimulusIndex": 1,
+				"Layout": "Horizontal",
+				"TrialForeperiod": 0.5,
+				"WaitForUserInput": true,
+				"DisableButtonsAfterResponse": true,
+				"StimulusDisplayDuration": 2,
+				"PlayStimulusAppearSound": false,
+				"MaxResponseTime": 2,
+				"ConsecutiveSuccessCountToHideLines": 0,
+				"ResponseMethod": "Press",
+				"ResponseButtonKeys": ["Space"],
+				"ShowLineFeedback": false,
+				"ClickBeforeStimulusBehaviour": "Ignore",
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": true
+			}
+		},
+		"Tutorial": {
+			"Inherits": "Default",
+			"Parameters": {
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "OnError",
+				"ClickBeforeStimulusBehaviour": "Ignore",
+				"LevelLabel_Position": "Hidden",
+				"TrialCounter_Position": "Hidden",
+				"BlockTimer_Position": "Hidden",
+				"UserInputTimer_Position": "StatusBarCenter",
+				"UserInputTimer_Style": "Circular",
+				"UserInputTimer_CountUp": true,
+				"UserInputTimer_DisplayTime": false,
+				"TrialResults_Position": "InformationPanel",
+				"TrialResults_Style": "Discrete"
+			},
+			"Trials": [
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"TrialForeperiod": 3,
+						"StimulusDisplayDuration": 2,
+						"MaxResponseTime": 2
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"TrialForeperiod": 2,
+						"StimulusDisplayDuration": 2,
+						"MaxResponseTime": 2
+					}
+				},
+
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"TrialForeperiod": 2,
+						"StimulusDisplayDuration": 1,
+						"MaxResponseTime": 1
+					}
+				},
+
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"TrialForeperiod": 1,
+						"StimulusDisplayDuration": 1,
+						"MaxResponseTime": 1
+					}
+				}
+			]
+		},
+		"Demo_1": {
+			"Inherits": "Default",
+			"Parameters": {
+
+				"TrialForeperiod": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 1.5,
+						"Max": 3
+					}
+				},
+				"WaitForUserInput": false,
+				"StimulusDisplayDuration": 1.5,
+				"MaxResponseTime": 2,
+				"BlockTimer_Position": "Hidden"
+			}
+		},
+		"Demo_2": {
+			"Inherits": "Default",
+			"Parameters": {
+
+				"TrialForeperiod": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 1.5,
+						"Max": 3
+					}
+				},
+				"WaitForUserInput": false,
+				"StimulusDisplayDuration": 1,
+				"MaxResponseTime": 1.5,
+				"BlockTimer_Position": "Hidden"
+			}
+		},
+		"Demo_3": {
+			"Inherits": "Default",
+			"Parameters": {
+
+				"TrialForeperiod": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 1,
+						"Max": 2
+					}
+				},
+				"WaitForUserInput": false,
+				"StimulusDisplayDuration": 1,
+				"MaxResponseTime": 1,
+				"BlockTimer_Position": "Hidden"
+			}
+		},
+		"Debug": {
+			"Inherits": "Default",
+			"Parameters": {
+				"StimulusBoxCount": 1,
+				"ResponseButtonCount": 1,
+				"BoxMapping": {
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [ 1 ]
+					}
+				},
+				"StimulusIndex": 1,
+				"Layout": "Vertical",
+				"TrialForeperiod": 1,
+				"StimulusDisplayDuration": 2,
+				"MaxResponseTime": 3,
+				"ConsecutiveSuccessCountToHideLines": 1,
+				"ResponseMethod": "Press",
+				"ShowLineFeedback": false,
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "Always"
+			}
+
+		},
+		"DearyLiewald": {
+			"Inherits": "Default",
+			"Parameters": {
+				"TrialForeperiod": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 1,
+						"Max": 3
+					}
+				},
+				"StimulusDisplayDuration": 1.5,
+				"MaxResponseTime": 1.5,
+				"ConsecutiveSuccessCountToHideLines": 0,
+				"ShowAccuracyCheckFeedback": "Never",
+				"TrialResults_Position": "InformationPanel",
+				"TrialResults_Style": "Discrete"
+			}
+		},
+		"XCIT_SRT_01_Test":{
+			"Inherits": "Default",
+			"Parameters": {
+				"Layout": "Vertical",
+				"TrialForeperiod": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 1,
+						"Max": 3
+					}
+				},
+				"StimulusDisplayDuration": 0.1,
+				"MaxResponseTime": 2,
+				"ConsecutiveSuccessCountToHideLines": 9999,
+				"ClickBeforeStimulusBehaviour": "Error",
+				"ShowAccuracyOnButtonFeedback": true,
+				"ShowAccuracyCheckFeedback": "OnError"
+			}
+		},
+		"XCIT_SRT_01_Tutorial":{
+			"Inherits": "XCIT_SRT_01_Test",
+			"Parameters": {
+				"UserInputTimer_Position": "StatusBarCenter",
+				"ClickBeforeStimulusBehaviour": "Error",
+				"MaxResponseTime": 1,
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowAccuracyOnButtonFeedback": true
+			},
+			"Trials": [
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						
+					}
+				}
+			]
+		},
+		"FriedA_MaxTap": {
+			"Inherits": "Default",
+			"Parameters": {
+				"InputDevice": "Keyboard",
+				"Layout": "Vertical",
+				"StimulusBoxCount": 0,
+				"TrialForeperiod": 0,
+				"MaxResponseTime": 10,
+				"ShowAccuracyOnButtonFeedback": false,
+				"ShowLineFeedback": false,
+				"ShowAccuracyCheckFeedback": "Never"
+			}
+		},
+		"FriedA_VisualTap": {
+			"Inherits": "Default",
+			"Parameters": {
+				"InputDevice": "Keyboard",
+				"Layout": "Vertical",
+				"TrialForeperiod": 1.4,
+				"StimulusDisplayDuration": 0.1,
+				"PlayStimulusAppearSound": true,
+				"MaxResponseTime": 0.1,
+				"WaitForUserInput": false,
+				"DisableButtonsAfterResponse": false,
+				"ClickBeforeStimulusBehaviour": "Error",
+				"ShowAccuracyOnButtonFeedback": false,
+				"ShowLineFeedback": false,
+				"ShowAccuracyCheckFeedback": "Never",
+				"TrialCounter_Position": "Hidden"
+			}
+		},
+		"FriedA_SelfPacedTap": {
+			"Inherits": "FriedA_VisualTap",
+			"Parameters": {
+				"StimulusDisplayDuration": {
+					"Generate": "OncePerBlock",
+					"Sequence": {
+						"Type": "Ordered",
+						"Values": [
+							0.1, 0.1, 0.1, 0.1, 0.1, 0.1,
+							0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+							0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+							0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+							0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+						]
+					}
+				}
+			}
+		}
+	}
+}

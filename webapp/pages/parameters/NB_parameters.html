@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N-back Parameters - Behaverse Assessment</title>
+    <link rel="stylesheet" href="../../css/parameters.css">
+</head>
+<body>
+<div class="parameters-container">
+<div class="glossary-section">
+<h2>Glossary</h2>
+<table class="glossary-table">
+  <tr>
+    <td class="glossary-term">Stimulus</td>
+    <td class="glossary-definition">One ensemble of elements (their number is depending on StreamCount) that appear/play periodically and need to be matched to the n-previous stimuli.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Stream</td>
+    <td class="glossary-definition">Sequence of stimuli of the same modality/feature. For example, in the standard dual N-back there’s a visual and an auditory stream.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Feature</td>
+    <td class="glossary-definition">A feature of the stimulus that users have to pay attention to in order to determine if that feature-value is the same as the one N-trials back. Features include among others GridPosition, Sound, Color, Shape, Number and SpokenLetters. Each feature has a certain number of possible values (e.g., 8 positions on a grid). Across features that number might not be the same. It is common to use 8 feature levels.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Trial</td>
+    <td class="glossary-definition">A trial comprises the presentation of a stimulus and possibly a user input and a feedback signal. A trial ends with the presentation of the next stimulus in the sequence.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">Sequence</td>
+    <td class="glossary-definition">A sequences defines a set of stimuli to be presented in a specific order. The Generative model focuses mainly on generating sequences that satisfy certain properties. Other names for “sequence” found in the literature are trial, block, run.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">StreamCount</td>
+    <td class="glossary-definition">The number of different features the user has to track (e.g. 2 in classic dual N-back: position on a grid & auditory letters).</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">TrialType</td>
+    <td class="glossary-definition">Researchers typically distinguish different types of trials in the N-back task:</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">MatchTrial (aka “target” trial)</td>
+    <td class="glossary-definition">trial where the current stimulus matches the stimulus presented N trials ago.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">NonMatchTrial (aka “nontarget”)</td>
+    <td class="glossary-definition">trial where the current stimulus is different from the one presented N trials ago.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">LureTrial</td>
+    <td class="glossary-definition">is a kind of NonMatchTrial; the trial would have a been a N-i or N+i match.</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">i = 1</td>
+    <td class="glossary-definition">recent lures</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">i > i</td>
+    <td class="glossary-definition">non-recent lures</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">MatchTrialCount</td>
+    <td class="glossary-definition">number of MatchTrial in a sequence of trials;</td>
+  </tr>
+  <tr>
+    <td class="glossary-term">LureTrialCount</td>
+    <td class="glossary-definition">number of LureTrial in a sequence of trials.</td>
+  </tr>
+</table>
+</div>
+
+    <h2>Parameters</h2>
+    <h3>Session parameters (1 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">NValue</h4>
+        <p class="parameter-description">The “N” value, which determines how many trials back the user should compare the current stimulus to.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 1</span>
+            <span><strong>Range:</strong> 1 - 7</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> The max value of NValue is determined by the visual setup we chose; beyond that max we won’t be able to display all the boxes on the screen.
+</div>
+    </div>
+    <h3>Stimulus parameters (6 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">Streams</h4>
+        <p class="parameter-description">The definition of every stream the user has to track (1 for N-Back, 2 for Dual-N-Back, etc.).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> array of size [1,4] (defual = 1) of Feature</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">Feature</h4>
+        <p class="parameter-description">Which feature will be used </p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Letters</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusValue</h4>
+        <p class="parameter-description">The value of the current stimulus (as an index in the set depending on the feature type).
+Letters: 1 = A
+Digits: 1 = 1
+Colors: The index of the color in a set of defined colors (depending on FeatureValuesCount)
+GridPosition8: The index of the lit cell (starting from top-left to bottom-right)
+GridPosition4: The index of the lit cell (starting from top-left to bottom-right)
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 1</span>
+            <span><strong>Range:</strong> 1 - 100</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StreamSize</h4>
+        <p class="parameter-description">The number of stimuli inside a stream.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 30</span>
+            <span><strong>Range:</strong> 1 - 200</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> the maximum value is approximative. The current generation algorithm freezes the game for a noticeable duration for StreamSize > 200. Needs to be tested on low-end devices.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">FeatureValuesCount</h4>
+        <p class="parameter-description">The number of different values to use for each feature. The same FeatureValuesCount applies to all Streams.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> integer</span>
+            <span><strong>Default:</strong> 8</span>
+            <span><strong>Range:</strong> 1 - 100</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> There are some limitations according to the Feature type for this variable. 
+
+ - Letters:  FeatureValueCount <= 26 
+ - Colors: FeatureValueCount <= 5
+ - GridPosition8:  FeatureValueCount <= 8
+ - GridPosition4: FeatureValueCount <= 4
+ - Symbols: FeatureValueCount <= 5
+
+</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">RevealBoxContent</h4>
+        <p class="parameter-description">When we want to show the content of the boxes to the user.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> StimulusOnly</span>
+        </div>
+    </div>
+    <h3>User input parameters (3 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">UseNonMatchButton</h4>
+        <p class="parameter-description">Whether we want to have a “Non-Match” button along with the “Match” button.
+The idea here is to disambiguate user input: when there are no non-match buttons, an absence of a response could mean the user reports a non-match or she did not pay attention to the stimulus.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> If StreamCount > 1, the number of buttons are multiplied, therefore having a Non-Match button is discouraged for more than one stream.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">PlayerPaced</h4>
+        <p class="parameter-description">Whether a user response is required to trigger the next trial.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Ignored if UseNonMatchButton = false</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">MaxResponseTime</h4>
+        <p class="parameter-description">The maximum time the user has to respond when PlayerPaced is true. After that, the trial is considered failed.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 5</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> Ignored if PlayerPaced = false
+If StimulusDuration > MaxResponseTime, MaxResponseTime is ignored and user can answer for the whole StimulusDuration
+</div>
+    </div>
+    <h3>Feedback parameters (5 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyOnButtonFeedback</h4>
+        <p class="parameter-description">Whether we color the outline of the buttons red or green to indicate whether the response was correct or incorrect. If false, outline will be white.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "true"</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowMissedTrialFeedback</h4>
+        <p class="parameter-description">Whether a feedback is shown in the case when there is no NonMatchButton, the trial is a matchTrial and the user didn’t press the MatchButton during the period separating the current stimulus presentation and the onset of the next stimulus presentation (i.e., elapsed time > MaxResponseTime).</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> boolean</span>
+            <span><strong>Default:</strong> "false"</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> If set to True, this Feedback presentation should be followed by InterStimulusInterval and not the immediate presentation of the next stimulus which would be confusing.
+If ShowMissedTrialFeedback = True, show central red cross.
+</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowAccuracyCheckFeedback</h4>
+        <p class="parameter-description">Whether we should show the valid or wrong “check” feedback at the end of a trial.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> Never</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">ShowCorrectTrialResponseFeedback</h4>
+        <p class="parameter-description">Whether we should show the correct response feedback at the end of a trial.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> OnError</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> To visualize this variable, after finishing the answer period, In case of UseNonMatchButton= false, if the user was supposed to press the equal button but failed to do so (i.e., miss), then the button border will light up with yellow color.</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">RevealNBackBoxContentFeedback</h4>
+        <p class="parameter-description">Whether we should show the content of the N-Back box at the end of a trial so the player can compare with the current stimulus.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> enum</span>
+            <span><strong>Default:</strong> OnError</span>
+        </div>
+    </div>
+    <h3>Temporal parameters (4 parameters)</h3>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusDisplayDuration</h4>
+        <p class="parameter-description">How long each stimulus should be displayed. When stimuli are auditory files (e.g., the word “cat”), the sounds should be played only once in integrity (and not be repeated to fill up StimulusDuration). Any stimulus sound should be cut before playing another.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.5</span>
+            <span><strong>Range:</strong> 0.01 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">InterStimulusInterval</h4>
+        <p class="parameter-description">Time interval starting after the presentation of a stimulus and ending with either
+
+ - presentation of the feedback (then foreperiod, then the next stimulus)
+ - presentation of the foreperiod (then the next stimulus)
+
+When the task is PlayerPaced, the user response will trigger the presentation of the feedback and thus shortcut the InterStimulusInterval.
+</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 2.5</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> InterStimulusInterval is sometimes NOT the actual delay between the offset of a stimulus and the onset of the next. It turns out that in the general case this cannot be easily set given the way things are currently implemented (e.g., unknown how long different feedback types last, additional delays added by the state machines). It should be possible to compute the InterStimulusInterval using the events; we might then need to manually adjust the value of InterStimulusInterval so we get the actual ISI we want.
+</div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">TrialForeperiod</h4>
+        <p class="parameter-description">A time interval between feedbacks and the onset of the next trial. When feedbacks are absent, the TrialForeperiod still exists.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.5</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+    </div>
+    <div class="parameter-item">
+        <h4 class="parameter-name">StimulusMovingAnimationDuration</h4>
+        <p class="parameter-description">The duration of the sliding animation within the stimuli queue.</p>
+        <div class="parameter-details">
+            <span><strong>Type:</strong> float</span>
+            <span><strong>Default:</strong> 0.1</span>
+            <span><strong>Range:</strong> 0 - Inf</span>
+        </div>
+        <div class="parameter-note"><strong>Note:</strong> If it is bigger than StimulusDisplay then the amount will set to StimulusDisplay itself.</div>
+    </div>
+</div>
+</body>
+</html>

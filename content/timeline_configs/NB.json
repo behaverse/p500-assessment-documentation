@@ -1,0 +1,2737 @@
+{
+	"Id": "NB",
+	"Scene": "NBack",
+	"Rules": {
+// ---- Begin Rules ----
+"XCIT_NB_01_Practice_Rules": [
+	{"text": "XCIT_NB_01_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_NB_01_Practice.GameRules"}
+],
+"XCIT_NB_01_Tutorial_A_Rules": [
+	{"text": "XCIT_NB_01_Tutorial_A.RulesTitle","heading": 2},
+	{"text": "XCIT_NB_01_Tutorial_A.GameRules"}
+],
+"XCIT_NB_01_Tutorial_B_Rules": [
+	{"text": "XCIT_NB_01_Tutorial_B.RulesTitle","heading": 2},
+	{"text": "XCIT_NB_01_Tutorial_B.GameRules"}
+],
+"XCIT_NB_01_Tutorial_C_Rules": [
+	{"text": "XCIT_NB_01_Tutorial_C.RulesTitle","heading": 2},
+	{"text": "XCIT_NB_01_Tutorial_C.GameRules"}
+],
+"XCIT_NB_02_Practice_Rules": [
+	{"text": "XCIT_NB_02_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_NB_02_Practice.GameRules"}
+],
+"XCIT_NB_02_Tutorial_Rules": [
+	{"text": "XCIT_NB_02_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_NB_02_Tutorial.GameRules"}
+],
+"XCIT_NB_03_Practice_Rules": [
+	{"text": "XCIT_NB_03_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_NB_03_Practice.GameRules"}
+],
+"XCIT_NB_03_Tutorial_Rules": [
+	{"text": "XCIT_NB_03_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_NB_03_Tutorial.GameRules"}
+],
+"XCIT_NB_04_Practice_Rules": [
+	{"text": "XCIT_NB_04_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_NB_04_Practice.GameRules"}
+],
+"XCIT_NB_04_Tutorial_A_Rules": [
+	{"text": "XCIT_NB_04_Tutorial_A.RulesTitle","heading": 2},
+	{"text": "XCIT_NB_04_Tutorial_A.GameRules"}
+],
+"XCIT_NB_04_Tutorial_B_Rules": [
+	{"text": "XCIT_NB_04_Tutorial_B.RulesTitle","heading": 2},
+	{"text": "XCIT_NB_04_Tutorial_B.GameRules"}
+],
+"XCIT_NB_04_Tutorial_C_Rules": [
+	{"text": "XCIT_NB_04_Tutorial_C.RulesTitle","heading": 2},
+	{"text": "XCIT_NB_04_Tutorial_C.GameRules"}
+],
+"XCIT_NB_05_Practice_Rules": [
+	{"text": "XCIT_NB_05_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_NB_05_Practice.GameRules"}
+],
+"XCIT_NB_05_Tutorial_Rules": [
+	{"text": "XCIT_NB_05_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_NB_05_Tutorial.GameRules"}
+],
+"XCIT_NB_06_Practice_Rules": [
+	{"text": "XCIT_NB_06_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_NB_06_Practice.GameRules"}
+],
+"XCIT_NB_06_Tutorial_Rules": [
+	{"text": "XCIT_NB_06_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_NB_06_Tutorial.GameRules"}
+],
+// ---- End Rules ----
+},
+	"EnumDefinitions": {},
+	"ParameterInfos": {
+		"NValue": {
+			"Type": "Int",
+			"Min": 1,
+			"Max": 200
+		},
+		"Streams": {
+			"Type": "Object"
+		},
+		"Feature": {
+			"Type": "Enum",
+			"Values": [
+				"Letters",
+				"Digits",
+				"Colors",
+				"GridPosition8",
+				"GridPosition4",
+				"Symbols"
+			]
+		},
+		"StimulusValue": {
+			"Type": "Int",
+			"Min": 1,
+			"Max": 100
+		},
+		"StreamSize": {
+			"Type": "Int",
+			"Min": 1,
+			"Max": 200
+		},
+		"FeatureValuesCount": {
+			"Type": "Int",
+			"Min": 1,
+			"Max": 100
+		},
+		"SequenceGenerationRule": {
+			"Type": "Enum",
+			"Values": [
+				"Match",
+				"Lure1",
+				"Lure2",
+				"NonMatch",
+				"NA"
+			]
+		},
+		"ItemSequence": {
+			"Type": "Int",
+			"Min": 0
+		},
+		"UseNonMatchButton": {
+			"Type": "Bool"
+		},
+		"PlayerPaced": {
+			"Type": "Bool"
+		},
+		"MaxResponseTime": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"ResponseType": {
+			"Type": "Enum",
+			"Values": [
+				"Hit",
+				"Miss",
+				"FalseAlarm",
+				"CorrectRejection",
+				"TimeOut"
+			]
+		},
+		"ShowAccuracyOnButtonFeedback": {
+			"Type": "Bool"
+		},
+		"ShowMissedTrialFeedback": {
+			"Type": "Bool"
+		},
+		"ErrorTimeOutDuration": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"ShowSequenceComparison": {
+			"Type": "Bool"
+		},
+		"StimulusDisplayDuration": {
+			"Type": "Float",
+			"Min": 0.01
+		},
+		"InterStimulusInterval": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"TrialForeperiod": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"StimulusMovingAnimationDuration": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"RevealBoxContent": {
+			"Type": "Enum",
+			"Values": [
+				"StimulusOnly",
+				"StimulusAndCompared",
+				"All"
+			]
+		},
+		"RevealNBackBoxContentFeedback": {
+			"Type": "Enum",
+			"Values": [
+				"Never",
+				"OnError",
+				"Always"
+			]
+		},
+		"ShowAccuracyCheckFeedback": {
+			"Type": "Enum",
+			"Name": "ShowAccuracyCheckFeedback"
+		},
+		"ShowCorrectTrialResponseFeedback": {
+            "Type": "Enum",
+			"Values": [
+                "Never",
+                "OnError",
+                "OnTimeout",
+                "Always"
+            ]
+		},
+		"ScoreLabel_Position": {
+			"Type": "Enum",
+			"Name": "HudWidgetPosition"
+		}
+	},
+	"Timelines": {
+// ---- Begin Timeline ----
+    "XCIT_NB_01": {
+        "blocks": [
+            {
+                "timeline": "XCIT_NB_01_Tutorial_A_Intro"
+            },
+            {
+                "name": "XCIT_NB_01_Tutorial_A",
+                "rulesName": "XCIT_NB_01_Tutorial_A_Rules"
+            },
+            {
+                "timeline": "XCIT_NB_01_Tutorial_A_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_01_Tutorial_B_Intro"
+            },
+            {
+                "name": "XCIT_NB_01_Tutorial_B",
+                "rulesName": "XCIT_NB_01_Tutorial_B_Rules"
+            },
+            {
+                "timeline": "XCIT_NB_01_Tutorial_B_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_01_Tutorial_C_Intro"
+            },
+            {
+                "name": "XCIT_NB_01_Tutorial_C",
+                "rulesName": "XCIT_NB_01_Tutorial_C_Rules"
+            },
+            {
+                "timeline": "XCIT_NB_01_Tutorial_C_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_01_Practice_Intro"
+            },
+            {
+                "name": "XCIT_NB_01_Practice",
+                "rulesName": "XCIT_NB_01_Practice_Rules"
+            },
+            {
+                "timeline": "XCIT_NB_01_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_01_Test_A_Intro"
+            },
+            {
+                "name": "XCIT_NB_01_Test_A"
+            },
+            {
+                "timeline": "XCIT_NB_01_Test_A_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_01_Test_B_Intro"
+            },
+            {
+                "name": "XCIT_NB_01_Test_B"
+            },
+            {
+                "timeline": "XCIT_NB_01_Test_B_Outro"
+            }
+        ]
+    },
+    "XCIT_NB_02": {
+        "blocks": [
+            {
+                "timeline": "XCIT_NB_02_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_NB_02_Tutorial",
+                "rulesName": "XCIT_NB_02_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_NB_02_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_02_Practice_Intro"
+            },
+            {
+                "name": "XCIT_NB_02_Practice",
+                "rulesName": "XCIT_NB_02_Practice_Rules"
+            },
+            {
+                "timeline": "XCIT_NB_02_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_02_Test_A_Intro"
+            },
+            {
+                "name": "XCIT_NB_02_Test_A"
+            },
+            {
+                "timeline": "XCIT_NB_02_Test_A_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_02_Test_B_Intro"
+            },
+            {
+                "name": "XCIT_NB_02_Test_B"
+            },
+            {
+                "timeline": "XCIT_NB_02_Test_B_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_02_Test_C_Intro"
+            },
+            {
+                "name": "XCIT_NB_02_Test_C"
+            },
+            {
+                "timeline": "XCIT_NB_02_Test_C_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_02_Test_D_Intro"
+            },
+            {
+                "name": "XCIT_NB_02_Test_D"
+            },
+            {
+                "timeline": "XCIT_NB_02_Test_D_Outro"
+            }
+        ]
+    },
+    "XCIT_NB_03": {
+        "blocks": [
+            {
+                "timeline": "XCIT_NB_03_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_NB_03_Tutorial",
+                "rulesName": "XCIT_NB_03_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_NB_03_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_03_Practice_Intro"
+            },
+            {
+                "name": "XCIT_NB_03_Practice",
+                "rulesName": "XCIT_NB_03_Practice_Rules"
+            },
+            {
+                "timeline": "XCIT_NB_03_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_03_Test_A_Intro"
+            },
+            {
+                "name": "XCIT_NB_03_Test_A"
+            },
+            {
+                "timeline": "XCIT_NB_03_Test_A_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_03_Test_B_Intro"
+            },
+            {
+                "name": "XCIT_NB_03_Test_B"
+            },
+            {
+                "timeline": "XCIT_NB_03_Test_B_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_03_Test_C_Intro"
+            },
+            {
+                "name": "XCIT_NB_03_Test_C"
+            },
+            {
+                "timeline": "XCIT_NB_03_Test_C_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_03_Test_D_Intro"
+            },
+            {
+                "name": "XCIT_NB_03_Test_D"
+            },
+            {
+                "timeline": "XCIT_NB_03_Test_D_Outro"
+            }
+        ]
+    },
+    "XCIT_NB_04": {
+        "blocks": [
+            {
+                "timeline": "XCIT_NB_04_Tutorial_A_Intro"
+            },
+            {
+                "name": "XCIT_NB_04_Tutorial_A",
+                "rulesName": "XCIT_NB_04_Tutorial_A_Rules"
+            },
+            {
+                "timeline": "XCIT_NB_04_Tutorial_A_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_04_Tutorial_B_Intro"
+            },
+            {
+                "name": "XCIT_NB_04_Tutorial_B",
+                "rulesName": "XCIT_NB_04_Tutorial_B_Rules"
+            },
+            {
+                "timeline": "XCIT_NB_04_Tutorial_B_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_04_Tutorial_C_Intro"
+            },
+            {
+                "name": "XCIT_NB_04_Tutorial_C",
+                "rulesName": "XCIT_NB_04_Tutorial_C_Rules"
+            },
+            {
+                "timeline": "XCIT_NB_04_Tutorial_C_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_04_Practice_Intro"
+            },
+            {
+                "name": "XCIT_NB_04_Practice",
+                "rulesName": "XCIT_NB_04_Practice_Rules"
+            },
+            {
+                "timeline": "XCIT_NB_04_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_04_Test_A_Intro"
+            },
+            {
+                "name": "XCIT_NB_04_Test_A"
+            },
+            {
+                "timeline": "XCIT_NB_04_Test_A_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_04_Test_B_Intro"
+            },
+            {
+                "name": "XCIT_NB_04_Test_B"
+            },
+            {
+                "timeline": "XCIT_NB_04_Test_B_Outro"
+            }
+        ]
+    },
+    "XCIT_NB_05": {
+        "blocks": [
+            {
+                "timeline": "XCIT_NB_05_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_NB_05_Tutorial",
+                "rulesName": "XCIT_NB_05_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_NB_05_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_05_Practice_Intro"
+            },
+            {
+                "name": "XCIT_NB_05_Practice",
+                "rulesName": "XCIT_NB_05_Practice_Rules"
+            },
+            {
+                "timeline": "XCIT_NB_05_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_05_Test_A_Intro"
+            },
+            {
+                "name": "XCIT_NB_05_Test_A"
+            },
+            {
+                "timeline": "XCIT_NB_05_Test_A_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_05_Test_B_Intro"
+            },
+            {
+                "name": "XCIT_NB_05_Test_B"
+            },
+            {
+                "timeline": "XCIT_NB_05_Test_B_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_05_Test_C_Intro"
+            },
+            {
+                "name": "XCIT_NB_05_Test_C"
+            },
+            {
+                "timeline": "XCIT_NB_05_Test_C_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_05_Test_D_Intro"
+            },
+            {
+                "name": "XCIT_NB_05_Test_D"
+            },
+            {
+                "timeline": "XCIT_NB_05_Test_D_Outro"
+            }
+        ]
+    },
+    "XCIT_NB_06": {
+        "blocks": [
+            {
+                "timeline": "XCIT_NB_06_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_NB_06_Tutorial",
+                "rulesName": "XCIT_NB_06_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_NB_06_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_06_Practice_Intro"
+            },
+            {
+                "name": "XCIT_NB_06_Practice",
+                "rulesName": "XCIT_NB_06_Practice_Rules"
+            },
+            {
+                "timeline": "XCIT_NB_06_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_06_Test_A_Intro"
+            },
+            {
+                "name": "XCIT_NB_06_Test_A"
+            },
+            {
+                "timeline": "XCIT_NB_06_Test_A_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_06_Test_B_Intro"
+            },
+            {
+                "name": "XCIT_NB_06_Test_B"
+            },
+            {
+                "timeline": "XCIT_NB_06_Test_B_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_06_Test_C_Intro"
+            },
+            {
+                "name": "XCIT_NB_06_Test_C"
+            },
+            {
+                "timeline": "XCIT_NB_06_Test_C_Outro"
+            },
+            {
+                "timeline": "XCIT_NB_06_Test_D_Intro"
+            },
+            {
+                "name": "XCIT_NB_06_Test_D"
+            },
+            {
+                "timeline": "XCIT_NB_06_Test_D_Outro"
+            }
+        ]
+    },
+// ---- End Timeline ----
+
+// ---- Begin Instructions ----
+"XCIT_NB_01_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_01_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_01_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_01_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_01_Test_A_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_01_Test_A.Objective"}]},
+			{"Content": [{"Text": "XCIT_NB_01_Test_A.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_NB_01_Test_A.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_01_Test_A_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_01_Test_A.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_01_Test_B_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_01_Test_B.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_01_Test_B_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_01_Test_B.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_01_Tutorial_A_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_01_Tutorial_A.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_NB_01_Tutorial_A.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_NB_01_Tutorial_A.YourJob"}]},
+			{"Content": [{"Text": "XCIT_NB_01_Tutorial_A.Response"}]},
+			{"Content": [{"Text": "XCIT_NB_01_Tutorial_A.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_01_Tutorial_A_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_01_Tutorial_A.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_01_Tutorial_B_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_01_Tutorial_B.Introduction"}]},
+			{"Content": [{"Text": "XCIT_NB_01_Tutorial_B.Constraint"}]},
+			{"Content": [{"Text": "XCIT_NB_01_Tutorial_B.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_01_Tutorial_B_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_01_Tutorial_B.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_01_Tutorial_C_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_01_Tutorial_C.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_NB_01_Tutorial_C.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_01_Tutorial_C_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_01_Tutorial_C.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_02_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_02_Practice.Introduction"}]},
+			{"Content": [{"Text": "XCIT_NB_02_Practice.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_NB_02_Practice.Objective"}]},
+			{"Content": [{"Text": "XCIT_NB_02_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_02_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_02_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_02_Test_A_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_02_Test_A.Objective"}]},
+			{"Content": [{"Text": "XCIT_NB_02_Test_A.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_NB_02_Test_A.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_02_Test_A_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_02_Test_A.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_02_Test_B_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_02_Test_B.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_02_Test_B_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_02_Test_B.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_02_Test_C_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_02_Test_C.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_02_Test_C_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_02_Test_C.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_02_Test_D_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_02_Test_D.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_02_Test_D_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_02_Test_D.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_02_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_02_Tutorial.Introduction"}]},
+			{"Content": [{"Text": "XCIT_NB_02_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_02_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_02_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_03_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_03_Practice.Introduction"}]},
+			{"Content": [{"Text": "XCIT_NB_03_Practice.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_NB_03_Practice.Objective"}]},
+			{"Content": [{"Text": "XCIT_NB_03_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_03_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_03_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_03_Test_A_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_03_Test_A.Objective"}]},
+			{"Content": [{"Text": "XCIT_NB_03_Test_A.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_NB_03_Test_A.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_03_Test_A_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_03_Test_A.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_03_Test_B_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_03_Test_B.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_03_Test_B_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_03_Test_B.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_03_Test_C_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_03_Test_C.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_03_Test_C_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_03_Test_C.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_03_Test_D_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_03_Test_D.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_03_Test_D_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_03_Test_D.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_03_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_03_Tutorial.Introduction"}]},
+			{"Content": [{"Text": "XCIT_NB_03_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_03_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_03_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_04_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_04_Practice.Objective"}]},
+			{"Content": [{"Text": "XCIT_NB_04_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_04_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_04_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_04_Test_A_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_04_Test_A.Objective"}]},
+			{"Content": [{"Text": "XCIT_NB_04_Test_A.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_NB_04_Test_A.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_04_Test_A_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_04_Test_A.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_04_Test_B_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_04_Test_B.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_04_Test_B_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_04_Test_B.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_04_Tutorial_A_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_04_Tutorial_A.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_NB_04_Tutorial_A.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_NB_04_Tutorial_A.YourJob"}]},
+			{"Content": [{"Text": "XCIT_NB_04_Tutorial_A.Response"}]},
+			{"Content": [{"Text": "XCIT_NB_04_Tutorial_A.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_04_Tutorial_A_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_04_Tutorial_A.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_04_Tutorial_B_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_04_Tutorial_B.Introduction"}]},
+			{"Content": [{"Text": "XCIT_NB_04_Tutorial_B.Constraint"}]},
+			{"Content": [{"Text": "XCIT_NB_04_Tutorial_B.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_04_Tutorial_B_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_04_Tutorial_B.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_04_Tutorial_C_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_04_Tutorial_C.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_NB_04_Tutorial_C.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_04_Tutorial_C_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_04_Tutorial_C.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_05_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_05_Practice.Introduction"}]},
+			{"Content": [{"Text": "XCIT_NB_05_Practice.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_NB_05_Practice.Objective"}]},
+			{"Content": [{"Text": "XCIT_NB_05_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_05_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_05_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_05_Test_A_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_05_Test_A.Objective"}]},
+			{"Content": [{"Text": "XCIT_NB_05_Test_A.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_NB_05_Test_A.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_05_Test_A_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_05_Test_A.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_05_Test_B_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_05_Test_B.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_05_Test_B_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_05_Test_B.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_05_Test_C_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_05_Test_C.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_05_Test_C_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_05_Test_C.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_05_Test_D_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_05_Test_D.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_05_Test_D_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_05_Test_D.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_05_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_05_Tutorial.Introduction"}]},
+			{"Content": [{"Text": "XCIT_NB_05_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_05_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_05_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_06_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_06_Practice.Introduction"}]},
+			{"Content": [{"Text": "XCIT_NB_06_Practice.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_NB_06_Practice.Objective"}]},
+			{"Content": [{"Text": "XCIT_NB_06_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_06_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_06_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_06_Test_A_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_06_Test_A.Objective"}]},
+			{"Content": [{"Text": "XCIT_NB_06_Test_A.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_NB_06_Test_A.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_06_Test_A_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_06_Test_A.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_06_Test_B_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_06_Test_B.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_06_Test_B_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_06_Test_B.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_06_Test_C_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_06_Test_C.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_06_Test_C_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_06_Test_C.Break"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_06_Test_D_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_06_Test_D.Objective"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_06_Test_D_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_06_Test_D.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_06_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_06_Tutorial.Introduction"}]},
+			{"Content": [{"Text": "XCIT_NB_06_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_NB_06_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_NB_06_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+// ---- End Instructions ----
+		"Tutorial_1Back": {
+			"Blocks": [
+				{
+					"ShowAgainOnNextBlockFailure": true,
+					"Instructions": [
+						{
+							"Content": [
+								{
+									"Text": "Tasks.NBack.Instructions.Job"
+								}
+							]
+						},
+						{
+							"Content": [
+								{
+									"Text": "Tasks.Common.Instructions.TutorialIntro"
+								}
+							],
+							"OK": "Common.IAmReady"
+						}
+					]
+				},
+				{
+					"Name": "Tutorial_1Back_Revealed",
+					"MinAccuracyRequired": 1,
+					"ExitRules": [
+						{
+							"Action": "FailBlock",
+							"Trials": 1,
+							"Type": "Failures"
+						}
+					]
+				},
+				{
+					"Name": "Tutorial_1Back_Hidden",
+					"MinAccuracyRequired": 1,
+					"ExitRules": [
+						{
+							"Action": "FailBlock",
+							"Trials": 2,
+							"Type": "Failures"
+						}
+					]
+				}
+			]
+		},
+		"Tutorial_2Back": {
+			"Blocks": [
+				{
+					"Name": "Tutorial_2Back",
+					"MinAccuracyRequired": 1,
+					"ExitRules": [
+						{
+							"Action": "FailBlock",
+							"Trials": 1,
+							"Type": "Failures"
+						}
+					]
+				}
+			]
+		},
+		"Demo": {
+			"Blocks": [
+				{
+					"Name": "Demo_A",
+					"ExitRules": [
+						{
+							"Trials": 10,
+							"Type": "Successes",
+							"Consecutive": false
+						}
+					]
+				},
+				{
+					"Name": "Demo_B",
+					"ExitRules": [
+						{
+							"Trials": 7,
+							"Type": "Successes",
+							"Consecutive": true
+						}
+					]
+				},
+				{
+					"Name": "Demo_C",
+					"ExitRules": [
+						{
+							"Trials": 10,
+							"Type": "Successes",
+							"Consecutive": false
+						}
+					]
+				}
+			]
+		},
+		"Debug": {
+			"Blocks": [
+				{
+					"Name": "Debug",
+					"ExitRules": [
+						{
+							"Trials": 16
+						}
+					]
+				},
+				{
+					"Seed": 45,
+					"Name": "Debug",
+					"ExitRules": [
+						{
+							"Trials": 16
+						}
+					]
+				}
+			]
+		},
+        "Video": {
+            "Blocks": [{ "Name": "Video" }]
+        },
+        "ScienceFestival2019": {
+            "Description": "N-back Demo for Science Festival 2019. 4 letters, 20 trials, N=2, Presentation=2.5s, ISI=.5s",
+            "ExitRules": [
+                {
+                    "Action": "EndTimeline",
+                    "Blocks": 3,
+                    "Type": "Failures",
+                    "SuccessAccuracy": 0.1
+                }
+            ],
+            "Blocks": [
+                {
+                    "ShowAgainOnNextBlockFailure": true,
+                    "Instructions": [
+                        {
+                            "Content": [
+                                {
+                                    "Text": "Tasks.NBack.Instructions.Job"
+                                }
+                            ]
+                        },
+                        {
+                            "Content": [
+                                {
+                                    "Text": "Tasks.NBack.Instructions.StimulusResponse2"
+                                }
+                            ]
+                        },
+                        {
+                            "Content": [
+                                {
+                                    "Text": "Tasks.Common.Instructions.TutorialIntro"
+                                }
+                            ],
+                            "OK": "Common.IAmReady"
+                        }
+                    ]
+                },
+                {
+                    "Name": "Tutorial_2Back",
+                    "ExitRules": [
+                        {
+                            "Action": "FailBlock",
+                            "Trials": 1,
+                            "Type": "Failures"
+                        }
+                    ]
+                },
+                {
+                    "Instructions": [
+                        {
+                            "Content": [
+                                {
+                                    "Text": "Tasks.Common.Instructions.TutorialOuttro"
+                                }
+                            ]
+                        },
+                        {
+                            "Content": [
+                                {
+                                    "Text": "Tasks.Common.Instructions.Ready"
+                                }
+                            ],
+                            "OK": "Common.IAmReady"
+                        }
+                    ]
+                },
+                {
+                    "Name": "ScienceFestival2019",
+                    "Parameters": {
+                        "FeatureValuesCount": 4
+                    }
+                },
+                {
+                    "Name": "ScienceFestival2019",
+                    "Parameters": {
+                        "FeatureValuesCount": 6
+                    }
+                },
+                {
+                    "Name": "ScienceFestival2019",
+                    "Parameters": {
+                        "FeatureValuesCount": 8
+                    }
+                },
+                {
+                    "Instructions": [
+                        {
+                            "Content": [
+                                {
+                                    "Text": "Common.ThankYou"
+                                },
+                                {
+                                    "Text": "Instructions.YourScore"
+                                },
+                                {
+                                    "Text": "Common.Bye"
+                                }
+                            ],
+                            "OK": "Common.Bye"
+                        }
+                    ]
+                }
+            ]
+        },
+        "Dual2Back": {
+            "Blocks": [
+                {
+                    "Name": "Dual2Back"
+                }
+            ]
+        },
+		"Test": {
+			"Blocks": [
+				{
+					"ShowAgainOnNextBlockFailure": true,
+					"Instructions": [
+						{
+							"Content": [
+								{
+									"Text": "Tasks.NBack.Instructions.Job"
+								}
+							]
+						},
+						{
+							"Content": [
+								{
+									"Text": "Tasks.Common.Instructions.TutorialIntro"
+								}
+							],
+							"OK": "Common.IAmReady"
+						}
+					]
+				},
+				{
+					"Name": "Tutorial_2Back",
+					"MinAccuracyRequired": 1,
+					"ExitRules": [
+						{
+							"Trials": 2
+						},
+						{
+							"Action": "FailBlock",
+							"Trials": 67,
+							"Type": "Failures"
+						}
+					]
+				},
+				{
+					"Name": "Tutorial_1Back_Hidden",
+					"MinAccuracyRequired": 1,
+					"ExitRules": [
+						{
+							"Trials": 2
+						},
+						{
+							"Action": "FailBlock",
+							"Trials": 45,
+							"Type": "Failures"
+						}
+					]
+				},
+				{
+					"Name": "Tutorial_2Back",
+					"MinAccuracyRequired": 1,
+					"ExitRules": [
+						{
+							"Trials": 2
+						},
+						{
+							"Action": "FailBlock",
+							"Trials": 67,
+							"Type": "Failures"
+						}
+					]
+				}
+			]
+		},
+		"RobotTest": {
+			"Blocks": [
+				{
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"NValue": 2
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"NValue": 7
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"Streams": [{
+							"Feature": "Letters",
+							"StimulusValue": {
+								"Sequence": {
+									"Type": "Ordered",
+									"Values": [ 1, 2, 2, 3, 1, 3, 1, 1 ]
+								}
+							}
+						}]
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"FeatureValuesCount": 5,
+						"Streams": [{
+							"Feature": "Colors",
+							"StimulusValue": {
+								"Sequence": {
+									"Type": "Ordered",
+									"Values": [ 1, 2, 2, 3, 1, 3, 1, 1 ]
+								}
+							}
+						}]
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"FeatureValuesCount": 4,
+						"Streams": [{
+							"Feature": "GridPosition4",
+							"StimulusValue": {
+								"Sequence": {
+									"Type": "Ordered",
+									"Values": [ 1, 2, 2, 3, 1, 3, 1, 1 ]
+								}
+							}
+						}]
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"Streams": [{
+							"Feature": "GridPosition8",
+							"StimulusValue": {
+								"Sequence": {
+									"Type": "Ordered",
+									"Values": [ 1, 2, 2, 3, 1, 3, 1, 1 ]
+								}
+							}
+						}]
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"FeatureValuesCount": 5,
+						"Streams": [{
+							"Feature": "Symbols",
+							"StimulusValue": {
+								"Sequence": {
+									"Type": "Ordered",
+									"Values": [ 1, 2, 2, 3, 1, 3, 1, 1 ]
+								}
+							}
+						}]
+					}
+				}, {
+					"Name": "RobotTest_2"
+				}, {
+					"Name": "RobotTest_3"
+				}, {
+					"Name": "RobotTest_1",
+					"ExitRules": [{ "Trials": 1 }]
+				}, {
+					"Name": "RobotTest_1",
+					"ExitRules": [{ "Trials": 4 }]
+				}, {
+					"Name": "RobotTest_1",
+					"ExitRules": [{ "Trials": 8 }]
+				}, {
+					"Name": "RobotTest_1",
+					"ExitRules": [{ "Trials": 12 }]
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"StreamSize": 2,
+						"Streams": [{
+							"Feature": "Digits",
+							"StimulusValue": 6
+						}]
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"RevealBoxContent": "StimulusAndCompared"
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"RevealBoxContent": "All"
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"UseNonMatchButton": true
+					}
+				}, {
+					"Name": "RobotTest_3",
+					"Parameters": {
+						"UseNonMatchButton": true
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"UseNonMatchButton": true,
+						"PlayerPaced": true
+					}
+				}, {
+					"Name": "RobotTest_3",
+					"Parameters": {
+						"UseNonMatchButton": true,
+						"PlayerPaced": true
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"ShowAccuracyOnButtonFeedback": false
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"ShowMissedTrialFeedback": true
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"ShowAccuracyCheckFeedback": "Always"
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"ShowCorrectTrialResponseFeedback": "Never"
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"ShowCorrectTrialResponseFeedback": "Always"
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"RevealNBackBoxContentFeedback": "Never"
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"RevealNBackBoxContentFeedback": "Always"
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"StimulusDisplayDuration": 0.01
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"StimulusDisplayDuration": 10
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"InterStimulusInterval": 0
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"InterStimulusInterval": 10
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"TrialForeperiod": 0
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"TrialForeperiod": 10
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"StimulusMovingAnimationDuration": 0
+					}
+				}, {
+					"Name": "RobotTest_1",
+					"Parameters": {
+						"StimulusMovingAnimationDuration": 8,
+						"StimulusDisplayDuration": 10
+					}
+				}
+			]
+		}
+	},
+	"Blocks": {
+		"Default": {
+			"Parameters": {
+				"NValue": 1,
+				"Streams": [
+					{
+						"Feature": "Digits",
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "NBack",
+								"NValue": {
+									"Reference": "NValue"
+								},
+								"StreamSize": {
+									"Reference": "StreamSize"
+								},
+								"MatchCount": 10,
+								"PostLureCount": 10,
+								"PreLureCount": 10,
+								"FeatureValuesCount": {
+									"Reference": "FeatureValuesCount"
+								}
+							}
+						}
+					}
+				],
+				"StreamSize": 30,
+				"FeatureValuesCount": 8,
+				"UseNonMatchButton": false,
+				"PlayerPaced": false,
+				"MaxResponseTime": 5,
+				"ShowAccuracyOnButtonFeedback": false,
+				"ShowMissedTrialFeedback": false,
+				"ErrorTimeOutDuration": 0,
+				"ShowSequenceComparison": false,
+				"StimulusDisplayDuration": 0.5,
+				"InterStimulusInterval": 2.5,
+				"TrialForeperiod": 0.5,
+				"StimulusMovingAnimationDuration": 0.1,
+				"RevealBoxContent": "StimulusOnly",
+				"RevealNBackBoxContentFeedback": "Never",
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ScoreLabel_Position": "Hidden"
+			}
+		},
+		"Tutorial": {
+			"Inherits": "Default",
+			"Parameters": {
+				"NValue": 1,
+				"FeatureValuesCount": 4,
+				"UseNonMatchButton": true,
+				"PlayerPaced": true,
+				"MaxResponseTime": 10,
+				"RevealBoxContent": "All",
+				"ShowAccuracyOnButtonFeedback": true,
+				"StimulusDisplayDuration": 2,
+				"InterStimulusInterval": 0.25,
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "OnError",
+				"TrialResults_Position": "InformationPanel",
+				"TrialResults_Style": "ColoredDiscrete",
+				"UserInputTimer_Position": "Hidden",
+				"UserInputTimer_Style": "Circular",
+				"UserInputTimer_CountUp": true,
+				"UserInputTimer_DisplayTime": false
+			}
+		},
+		"Tutorial_1Back_Revealed": {
+			"Inherits": "Tutorial",
+			"Parameters": {
+				"NValue": 1,
+				"StreamSize": 7,
+				"RevealBoxContent": "StimulusAndCompared",
+				"Streams": [
+					{
+						"Feature": "Letters",
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [ 1, 1, 2, 3, 3, 2, 2 ]
+							}
+						}
+					}
+				],
+				"FeatureValuesCount": 4
+			}
+		},
+		"Tutorial_1Back_Hidden": {
+			"Inherits": "Tutorial",
+			"Parameters": {
+				"StreamSize": 7,
+				"NValue": 1,
+				"RevealBoxContent": "StimulusOnly",
+				"Streams": [
+					{
+						"Feature": "Letters",
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [ 3, 2, 2, 3, 3, 1, 2 ]
+							}
+						}
+					}
+				]
+			}
+		},
+		"Tutorial_2Back": {
+			"Inherits": "Tutorial",
+			"Parameters": {
+				"StreamSize": 9,
+				"NValue": 2,
+				"UseNonMatchButton": false,
+				"PlayerPaced": false,
+				"ShowAccuracyOnButtonFeedback": true,
+				"StimulusDisplayDuration": 2,
+				"InterStimulusInterval": 0.25,
+				"ShowAccuracyCheckFeedback": "Never",
+				"RevealBoxContent": "All",
+				"Streams": [
+					{
+						"Feature": "Letters",
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [ 3, 1, 2, 1, 3, 2, 3, 2, 1 ]
+							}
+						}
+					}
+				]
+			}
+		},
+		"Demo": {
+			"Inherits": "Default",
+			"Parameters": {
+				"NValue": 1,
+				"StreamSize": 16,
+				"FeatureValuesCount": 8,
+				"UseNonMatchButton": true,
+				"PlayerPaced": true,
+				"MaxResponseTime": 5,
+				"ShowAccuracyOnButtonFeedback": true,
+				"StimulusDisplayDuration": 2,
+				"InterStimulusInterval": 1,
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"TaskName_Position": "StatusBarLeft",
+				"TrialResults_Position": "InformationPanel",
+				"TrialResults_Style": "ColoredDiscrete",
+				"BlockCounter_Position": "StatusBarLeft",
+				"BlockCounter_Style": "Counter",
+				"TrialCounter_Position": "Hidden",
+				"TrialCounter_Style": "Counter",
+				"LevelLabel_Position": "Hidden",
+				"UserInputTimer_Position": "Hidden",
+				"UserInputTimer_Style": "Circular",
+				"UserInputTimer_CountUp": true,
+				"UserInputTimer_DisplayTime": false
+			}
+		},
+		"Demo_A": {
+			"Inherits": "Demo",
+			"Parameters": {
+				"NValue": 1,
+				"Streams": [
+					{
+						"Feature": "GridPosition4",
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "NBack",
+								"NValue": {
+									"Reference": "NValue"
+								},
+								"StreamSize": {
+									"Reference": "StreamSize"
+								},
+								"MatchCount": 5,
+								"PostLureCount": 0,
+								"PreLureCount": 5,
+								"FeatureValuesCount": {
+									"Reference": "FeatureValuesCount"
+								}
+							}
+						}
+					}
+				],
+				"StreamSize": 16,
+				"FeatureValuesCount": 4
+			}
+		},
+		"Demo_B": {
+			"Inherits": "Demo",
+			"Parameters": {
+				"NValue": 2,
+				"Streams": [
+					{
+						"Feature": "Letters",
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "NBack",
+								"NValue": {
+									"Reference": "NValue"
+								},
+								"StreamSize": {
+									"Reference": "StreamSize"
+								},
+								"MatchCount": 5,
+								"PostLureCount": 3,
+								"PreLureCount": 2,
+								"FeatureValuesCount": {
+									"Reference": "FeatureValuesCount"
+								}
+							}
+						}
+					}
+				],
+				"FeatureValuesCount": 6,
+				"UseNonMatchButton": false,
+				"PlayerPaced": false,
+				"ShowAccuracyOnButtonFeedback": true
+			}
+		},
+		"Demo_C": {
+			"Inherits": "Demo",
+			"Parameters": {
+				"NValue": 1,
+				"Streams": [
+					{
+						"Feature": "Symbols",
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "NBack",
+								"NValue": {
+									"Reference": "NValue"
+								},
+								"StreamSize": {
+									"Reference": "StreamSize"
+								},
+								"MatchCount": 5,
+								"PostLureCount": 0,
+								"PreLureCount": 5,
+								"FeatureValuesCount": {
+									"Reference": "FeatureValuesCount"
+								}
+							}
+						}
+					},
+					{
+						"Feature": "Colors",
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "NBack",
+								"NValue": {
+									"Reference": "NValue"
+								},
+								"StreamSize": {
+									"Reference": "StreamSize"
+								},
+								"MatchCount": 5,
+								"PostLureCount": 0,
+								"PreLureCount": 5,
+								"FeatureValuesCount": {
+									"Reference": "FeatureValuesCount"
+								}
+							}
+						}
+					}
+				],
+				"FeatureValuesCount": 6,
+				"UseNonMatchButton": false,
+				"PlayerPaced": false,
+				"ShowAccuracyOnButtonFeedback": true
+			}
+		},
+		"Debug": {
+			"Inherits": "Default",
+			"Parameters": {
+				"NValue": 1,
+				"Streams": [
+					{
+						"Feature": "Digits",
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [
+									4,
+									4,
+									2,
+									3,
+									2,
+									2,
+									1,
+									1,
+									4,
+									1,
+									4,
+									2,
+									4,
+									1,
+									4,
+									4,
+									1
+								]
+							}
+						}
+					},
+					{
+						"Feature": "Digits",
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Ordered",
+								"Values": [
+									4,
+									4,
+									2,
+									3,
+									2,
+									2,
+									1,
+									1,
+									4,
+									1,
+									4,
+									2,
+									4,
+									1,
+									4,
+									4,
+									1
+								]
+							}
+						}
+					}
+				],
+				"StreamSize": 17,
+				"FeatureValuesCount": 4,
+				"UseNonMatchButton": true,
+				"PlayerPaced": false,
+				"StimulusDisplayDuration": 0.5,
+				"InterStimulusInterval": 1,
+				"TrialForeperiod": 0,
+				"StimulusMovingAnimationDuration": 0.2,
+				"MaxResponseTime": 2,
+				"ShowAccuracyOnButtonFeedback": true,
+				"RevealBoxContent": "StimulusOnly",
+				"RevealNBackBoxContentFeedback": "Never",
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowCorrectTrialResponseFeedback": "Always",
+				"ShowMissedTrialFeedback": true,
+				"TrialResults_Position": "InformationPanel",
+				"TrialResults_Style": "ColoredDiscrete",
+				"BlockCounter_Position": "StatusBarLeft",
+				"BlockCounter_Style": "Counter",
+				"TrialCounter_Position": "Hidden",
+				"TrialCounter_Style": "Counter",
+				"LevelLabel_Position": "Hidden",
+				"UserInputTimer_Position": "StatusBarCenter",
+				"UserInputTimer_Style": "Circular",
+				"UserInputTimer_CountUp": true,
+				"UserInputTimer_DisplayTime": false
+			}
+		},
+        "Video": {
+            "Inherits": "Default",
+            "Parameters": {
+                "StreamSize": 6,
+                "NValue": 2,
+                "UseNonMatchButton": false,
+                "PlayerPaced": false,
+                "ShowAccuracyOnButtonFeedback": true,
+                "StimulusDisplayDuration": 0.75,
+                "InterStimulusInterval": 0.25,
+                "ShowAccuracyCheckFeedback": "Never",
+                "RevealBoxContent": "StimulusOnly",
+                "Streams": [
+                    {
+                        "Feature": "Letters",
+                        "StimulusValue": {
+                            "Generate": "OncePerBlock",
+                            "Sequence": {
+                                "Type": "Ordered",
+                                "Values": [ 1, 2, 1, 2, 3, 2 ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "ScienceFestival2019": {
+            "Inherits": "Default",
+            "Parameters": {
+                "NValue": 2,
+                "Streams": [
+                    {
+                        "Feature": "Letters",
+                        "StimulusValue": {
+                            "Generate": "OncePerBlock",
+                            "Sequence": {
+                                "Type": "NBack",
+                                "NValue": {
+                                    "Reference": "NValue"
+                                },
+                                "StreamSize": {
+                                    "Reference": "StreamSize"
+                                },
+                                "MatchCount": 5,
+                                "PostLureCount": 1,
+                                "PreLureCount": 1,
+                                "FeatureValuesCount": {
+                                    "Reference": "FeatureValuesCount"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "FeatureValuesCount": 4,
+                "StreamSize": 12,
+                "UseNonMatchButton": false,
+                "PlayerPaced": false,
+                "ShowMissedTrialFeedback": false,
+                "ErrorTimeOutDuration": 3,
+                "ShowSequenceComparison": false,
+                "StimulusDisplayDuration": 2,
+                "InterStimulusInterval": 0.25,
+                "ShowAccuracyOnButtonFeedback": true,
+                "TrialResults_Position": "InformationPanel",
+                "TrialResults_Style": "ColoredDiscrete",
+                "UserInputTimer_Position": "Hidden",
+                "UserInputTimer_CountUp": false,
+                "ScoreLabel_Position": "StatusBarRight"
+            }
+        },
+        "Dual2Back": {
+            "Inherits": "Default",
+            "Parameters": {
+                "NValue": 2,
+                "Streams": [
+                    {
+                        "Feature": "Letters",
+                        "StimulusValue": {
+                            "Generate": "OncePerBlock",
+                            "Sequence": {
+                                "Type": "NBack",
+                                "NValue": { "Reference": "NValue" },
+                                "StreamSize": { "Reference": "StreamSize" },
+                                "MatchCount": 5,
+                                "PostLureCount": 1,
+                                "PreLureCount": 1,
+                                "FeatureValuesCount": { "Reference": "FeatureValuesCount" }
+                            }
+                        }
+                    }, {
+                        "Feature": "Digits",
+                        "StimulusValue": {
+                            "Generate": "OncePerBlock",
+                            "Sequence": {
+                                "Type": "NBack",
+                                "NValue": { "Reference": "NValue" },
+                                "StreamSize": { "Reference": "StreamSize" },
+                                "MatchCount": 5,
+                                "PostLureCount": 1,
+                                "PreLureCount": 1,
+                                "FeatureValuesCount": { "Reference": "FeatureValuesCount" }
+                            }
+                        }
+                    }
+                ],
+                "FeatureValuesCount": 4,
+                "StreamSize": 12,
+                "UseNonMatchButton": false,
+                "PlayerPaced": false,
+                "ShowMissedTrialFeedback": false,
+                "ErrorTimeOutDuration": 3,
+                "ShowSequenceComparison": false,
+                "StimulusDisplayDuration": 1.75,
+                "InterStimulusInterval": 0.25,
+                "ShowAccuracyOnButtonFeedback": true,
+                "TrialResults_Position": "InformationPanel",
+                "TrialResults_Style": "ColoredDiscrete",
+                "UserInputTimer_Position": "Hidden",
+                "UserInputTimer_CountUp": false,
+                "ScoreLabel_Position": "StatusBarRight"
+            }
+        },
+		"XCIT_NB_Base": {
+			"Inherits": "Default",
+			"Parameters": {
+				"NValue": 1,
+				"Feature": "Digits",
+				"FeatureValuesCount": 9,
+				"UseNonMatchButton": true,
+				"PlayerPaced": false,
+				"StimulusDisplayDuration": 0.5,
+				"InterStimulusInterval": 2.2,
+				"TrialForeperiod": 0,
+				"StimulusMovingAnimationDuration": 0.3,
+				"MaxResponseTime": 3,
+				"ShowAccuracyOnButtonFeedback": false,
+				"RevealBoxContent": "StimulusOnly",
+				"RevealNBackBoxContentFeedback": "Never",
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"ShowMissedTrialFeedback": false
+			}
+		},
+		"XCIT_NB_01_Test_A": {
+			"Inherits": "XCIT_NB_Base",
+			"Parameters": {
+				"Feature": "Digits",
+				"Streams": [
+					{
+						"Feature": { "Reference": "Feature" },
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Ordered",		
+								"Values": [5, 5, 2, 5, 5, 9, 7, 7, 7, 8, 3, 8, 4, 4, 3, 4, 3, 2, 2, 6, 6, 9, 9, 8, 1, 6, 1, 1]
+							}
+						}
+					}
+				],
+				"StreamSize": 28,
+				"NValue": 1
+			}
+		},
+		"XCIT_NB_01_Test_B": {
+			"Inherits": "XCIT_NB_Base",
+			"Parameters": {
+				"Feature": "Digits",
+				"Streams": [
+					{
+						"Feature": { "Reference": "Feature" },
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Ordered",		
+								"Values": [4, 5, 4, 4, 9, 3, 3, 3, 1, 1, 4, 1, 2, 9, 9, 5, 6, 5, 6, 6, 7, 7, 8, 8, 8, 2, 7, 2]
+							}
+						}
+					}
+				],
+				"StreamSize": 28,
+				"NValue": 1
+			}
+		},
+		"XCIT_NB_01_Practice": {
+			"Inherits": "XCIT_NB_01_Test_A",
+			"Parameters": {
+				"Streams": [
+					{
+						"Feature": { "Reference": "Feature" },
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "NBack",
+								"NValue": {
+									"Reference": "NValue"
+								},
+								"StreamSize": {
+									"Reference": "StreamSize"
+								},
+								"MatchCount": 6,
+								"PostLureCount": 5,
+								"PreLureCount": 5,
+								"FeatureValuesCount": {
+									"Reference": "FeatureValuesCount"
+								}
+							}
+						}
+					}
+				],
+				"ShowAccuracyOnButtonFeedback": true,
+				"ShowCorrectTrialResponseFeedback": "OnTimeout",
+                "StreamSize": 14
+			}
+		},
+		"XCIT_NB_Tutorial_Base": {
+			"Inherits": "XCIT_NB_Base",
+			"MinAccuracyRequired": 1,
+			"Parameters": {
+				"Streams": [
+					{
+						"Feature": { "Reference": "Feature" },
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "NBack",
+								"NValue": {
+									"Reference": "NValue"
+								},
+								"StreamSize": {
+									"Reference": "StreamSize"
+								},
+								"MatchCount": 3,
+								"PostLureCount": 3,
+								"PreLureCount": 2,
+								"FeatureValuesCount": {
+									"Reference": "FeatureValuesCount"
+								}
+							}
+						}
+					}
+				],
+				"StreamSize": 8,
+				"StimulusDisplayDuration": 3,
+				"InterStimulusInterval": 0,
+				"StimulusMovingAnimationDuration": 0.5,
+				"RevealBoxContent": "All",
+				"ShowAccuracyOnButtonFeedback": true,
+				"MaxResponseTime": 5,
+                "BlockCounter_Position": "Hidden"
+			}
+		},
+		"XCIT_NB_01_Tutorial_A": {
+			"Inherits": "XCIT_NB_Tutorial_Base",
+			"Parameters": {
+				"Feature": "Digits",
+				"NValue": 1,
+				"MaxResponseTime": 999,
+                "StimulusDisplayDuration": 1,
+				"PlayerPaced": true
+			}
+		},
+		"XCIT_NB_01_Tutorial_B": {
+			"Inherits": "XCIT_NB_Tutorial_Base",
+			"Parameters": {
+				"ShowCorrectTrialResponseFeedback": "OnTimeout"
+			}
+		},
+		"XCIT_NB_01_Tutorial_C": {
+			"Inherits": "XCIT_NB_Tutorial_Base",
+			"Parameters": {
+				"ShowCorrectTrialResponseFeedback": "OnTimeout",
+				"StimulusDisplayDuration": 1.5,
+				"InterStimulusInterval": 1.5,
+				"RevealBoxContent": "StimulusOnly"	
+			}
+		},
+		"XCIT_NB_02_Test_A": {
+			"Inherits": "XCIT_NB_Base",
+			"Parameters": {
+				"Feature": "Digits",
+				"Streams": [
+					{
+						"Feature": { "Reference": "Feature" },
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Ordered",		
+								"Values": [7, 3, 7, 7, 3, 7, 6, 5, 5, 6, 5, 6, 3, 9, 3, 8, 2, 2, 8, 2, 4, 8, 4, 4, 9, 1, 9, 1, 1]
+							}
+						}
+					}
+				],
+				"StreamSize": 29,
+				"NValue": 2
+			}
+		},
+		"XCIT_NB_02_Test_B": {
+			"Inherits": "XCIT_NB_Base",
+			"Parameters": {
+				"Feature": "Digits",
+				"Streams": [
+					{
+						"Feature": { "Reference": "Feature" },
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Ordered",		
+								"Values": [1, 4, 4, 4, 5, 4, 7, 5, 5, 7, 5, 7, 2, 9, 2, 6, 9, 6, 3, 3, 6, 3, 1, 1, 1, 8, 9, 8, 8]
+							}
+						}
+					}
+				],
+				"StreamSize": 29,
+				"NValue": 2
+			}
+		},
+		"XCIT_NB_02_Test_C": {
+			"Inherits": "XCIT_NB_Base",
+			"Parameters": {
+				"Feature": "Digits",
+				"Streams": [
+					{
+						"Feature": { "Reference": "Feature" },
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Ordered",		
+								"Values": [8, 2, 2, 2, 7, 2, 1, 7, 1, 7, 7, 1, 9, 6, 8, 6, 6, 8, 9, 8, 4, 9, 4, 4, 3, 5, 3, 5, 5]
+							}
+						}
+					}
+				],
+				"StreamSize": 29,
+				"NValue": 2
+			}
+		},
+		"XCIT_NB_02_Test_D": {
+			"Inherits": "XCIT_NB_Base",
+			"Parameters": {
+				"Feature": "Digits",
+				"Streams": [
+					{
+						"Feature": { "Reference": "Feature" },
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Ordered",		
+								"Values": [2, 9, 2, 2, 9, 2, 3, 4, 3, 4, 4, 3, 5, 9, 5, 7, 1, 1, 7, 1, 6, 7, 6, 6, 8, 9, 8, 5, 8]
+							}
+						}
+					}
+				],
+				"StreamSize": 29,
+				"NValue": 2
+			}
+		},
+		"XCIT_NB_02_Practice": {
+			"Inherits": "XCIT_NB_01_Practice",
+			"Parameters": {
+				"Feature": "Digits",
+				"NValue": 2,
+                "StreamSize": 15
+			}
+		},
+		"XCIT_NB_02_Tutorial": {
+			"Inherits": "XCIT_NB_01_Tutorial_B",
+			"Parameters": {
+				"Feature": "Digits",
+				"NValue": 2
+			}
+		},
+		"XCIT_NB_03_Test_A": {
+			"Inherits": "XCIT_NB_Base",
+			"Parameters": {
+				"Feature": "Digits",
+				"Streams": [
+					{
+						"Feature": { "Reference": "Feature" },
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Ordered",		
+								"Values": [3, 7, 4, 3, 7, 3, 4, 4, 7, 4, 7, 7, 8, 9, 5, 8, 2, 5, 2, 8, 5, 1, 2, 1, 3, 9, 1, 6, 9, 6]
+							}
+						}
+					}
+				],
+				"StreamSize": 30,
+				"NValue": 3
+			}
+		},
+		"XCIT_NB_03_Test_B": {
+			"Inherits": "XCIT_NB_Base",
+			"Parameters": {
+				"Feature": "Digits",
+				"Streams": [
+					{
+						"Feature": { "Reference": "Feature" },
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Ordered",		
+								"Values": [9, 7, 4, 9, 7, 3, 7, 9, 3, 9, 7, 3, 5, 1, 8, 5, 1, 5, 8, 8, 4, 2, 4, 4, 2, 2, 6, 1, 6, 6]
+							}
+						}
+					}
+				],
+				"StreamSize": 30,
+				"NValue": 3
+			}
+		},
+		"XCIT_NB_03_Test_C": {
+			"Inherits": "XCIT_NB_Base",
+			"Parameters": {
+				"Feature": "Digits",
+				"Streams": [
+					{
+						"Feature": { "Reference": "Feature" },
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Ordered",		
+								"Values": [7, 1, 1, 7, 1, 8, 1, 7, 8, 1, 8, 7, 2, 6, 9, 2, 9, 6, 6, 9, 3, 4, 3, 3, 4, 4, 5, 5, 2, 5]
+							}
+						}
+					}
+				],
+				"StreamSize": 30,
+				"NValue": 3
+			}
+		},
+		"XCIT_NB_03_Test_D": {
+			"Inherits": "XCIT_NB_Base",
+			"Parameters": {
+				"Feature": "Digits",
+				"Streams": [
+					{
+						"Feature": { "Reference": "Feature" },
+						"StimulusValue": {
+							"Generate": "OncePerBlock",
+							"Sequence": {
+								"Type": "Ordered",		
+								"Values": [9, 3, 1, 9, 1, 1, 4, 9, 4, 1, 9, 4, 8, 8, 7, 8, 6, 8, 7, 6, 5, 7, 5, 6, 3, 2, 2, 3, 3, 2]
+							}
+						}
+					}
+				],
+				"StreamSize": 30,
+				"NValue": 3
+			}
+		},
+		"XCIT_NB_03_Practice": {
+			"Inherits": "XCIT_NB_01_Practice",
+			"Parameters": {
+				"Feature": "Digits",
+				"NValue": 3,
+                "StreamSize": 16
+			}
+		},
+		"XCIT_NB_03_Tutorial": {
+			"Inherits": "XCIT_NB_01_Tutorial_B",
+			"Parameters": {
+				"Feature": "Digits",
+				"NValue": 3
+			}
+		},
+		"XCIT_NB_04_Test_A": {
+			"Inherits": "XCIT_NB_01_Test_A",
+			"Parameters": {
+				"Feature": "Symbols"
+			}
+		},
+		"XCIT_NB_04_Test_B": {
+			"Inherits": "XCIT_NB_01_Test_B",
+			"Parameters": {
+				"Feature": "Symbols"
+			}
+		},
+		"XCIT_NB_04_Practice": {
+			"Inherits": "XCIT_NB_01_Practice",
+			"Parameters": {
+				"Feature": "Symbols"
+			}
+		},
+		"XCIT_NB_04_Tutorial_A": {
+			"Inherits": "XCIT_NB_01_Tutorial_A",
+			"Parameters": {
+				"Feature": "Symbols"
+			}
+		},
+		"XCIT_NB_04_Tutorial_B": {
+			"Inherits": "XCIT_NB_01_Tutorial_B",
+			"Parameters": {
+				"Feature": "Symbols"
+			}
+		},
+		"XCIT_NB_04_Tutorial_C": {
+			"Inherits": "XCIT_NB_01_Tutorial_C",
+			"Parameters": {
+				"Feature": "Symbols"
+			}
+		},
+		"XCIT_NB_05_Test_A": {
+			"Inherits": "XCIT_NB_02_Test_A",
+			"Parameters": {
+				"Feature": "Symbols"
+			}
+		},
+		"XCIT_NB_05_Test_B": {
+			"Inherits": "XCIT_NB_02_Test_B",
+			"Parameters": {
+				"Feature": "Symbols"
+			}
+		},
+		"XCIT_NB_05_Test_C": {
+			"Inherits": "XCIT_NB_02_Test_C",
+			"Parameters": {
+				"Feature": "Symbols"
+			}
+		},
+		"XCIT_NB_05_Test_D": {
+			"Inherits": "XCIT_NB_02_Test_D",
+			"Parameters": {
+				"Feature": "Symbols"
+			}
+		},
+		"XCIT_NB_05_Practice": {
+			"Inherits": "XCIT_NB_02_Practice",
+			"Parameters": {
+				"Feature": "Symbols"
+			}
+		},
+		"XCIT_NB_05_Tutorial": {
+			"Inherits": "XCIT_NB_02_Tutorial",
+			"Parameters": {
+				"Feature": "Symbols"
+			}
+		},
+		"XCIT_NB_06_Test_A": {
+			"Inherits": "XCIT_NB_03_Test_A",
+			"Parameters": {
+				"Feature": "Symbols"
+			}
+		},
+		"XCIT_NB_06_Test_B": {
+			"Inherits": "XCIT_NB_03_Test_B",
+			"Parameters": {
+				"Feature": "Symbols"
+			}
+		},
+		"XCIT_NB_06_Test_C": {
+			"Inherits": "XCIT_NB_03_Test_C",
+			"Parameters": {
+				"Feature": "Symbols"
+			}
+		},
+		"XCIT_NB_06_Test_D": {
+			"Inherits": "XCIT_NB_03_Test_D",
+			"Parameters": {
+				"Feature": "Symbols"
+			}
+		},
+		"XCIT_NB_06_Practice": {
+			"Inherits": "XCIT_NB_03_Practice",
+			"Parameters": {
+				"Feature": "Symbols"
+			}
+		},
+		"XCIT_NB_06_Tutorial": {
+			"Inherits": "XCIT_NB_03_Tutorial",
+			"Parameters": {
+				"Feature": "Symbols"
+			}
+		},
+		"RobotTest": {
+			"Inherits": "Default",
+			"Parameters": {
+				"TaskName_Position": "StatusBarLeft",
+				"BlockCounter_Position": "StatusBarLeft",
+				"BlockCounter_Style": "Counter",
+				"TrialCounter_Position": "StatusBarLeft",
+				"TrialCounter_Style": "Counter",
+				"TrialResults_Position": "StatusBarRight",
+				"TrialResults_Style": "ColoredDiscrete"
+			}
+		},
+		"RobotTest_1": {
+			"Inherits": "RobotTest",
+			"Parameters": {
+				"StreamSize": 8,
+				"Streams": [{
+					"Feature": "Digits",
+					"StimulusValue": {
+						"Sequence": {
+							"Type": "Ordered",
+							"Values": [ 1, 2, 2, 3, 1, 3, 1, 1 ]
+						}
+					}
+				}]
+			}
+		},
+		"RobotTest_2": {
+			"Inherits": "RobotTest",
+			"Parameters": {
+				"StreamSize": 8,
+				"Streams": [{
+					"Feature": "Letters",
+					"StimulusValue": {
+						"Sequence": {
+							"Type": "Ordered",
+							"Values": [ 1, 2, 2, 3, 1, 3, 1, 1 ]
+						}
+					}
+				}, {
+					"Feature": "GridPosition8",
+					"StimulusValue": {
+						"Sequence": {
+							"Type": "Ordered",
+							"Values": [ 3, 5, 8, 8, 5, 8, 3, 1 ]
+						}
+					}
+				}]
+			}
+		},
+		"RobotTest_3": {
+			"Inherits": "RobotTest",
+			"Parameters": {
+				"StreamSize": 8,
+				"FeatureValuesCount": 5,
+				"Streams": [{
+					"Feature": "Letters",
+					"StimulusValue": {
+						"Sequence": {
+							"Type": "Ordered",
+							"Values": [ 1, 2, 2, 3, 1, 3, 1, 1 ]
+						}
+					}
+				}, {
+					"Feature": "GridPosition8",
+					"StimulusValue": {
+						"Sequence": {
+							"Type": "Ordered",
+							"Values": [ 3, 5, 4, 4, 5, 4, 3, 1 ]
+						}
+					}
+				}, {
+					"Feature": "Colors",
+					"StimulusValue": {
+						"Sequence": {
+							"Type": "Ordered",
+							"Values": [ 3, 2, 2, 1, 2, 1, 1, 3 ]
+						}
+					}
+				}]
+			}
+		}
+	}
+}

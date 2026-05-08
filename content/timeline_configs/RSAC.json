@@ -1,0 +1,748 @@
+{
+	"Id": "RSAC",
+	"Scene": "SpatialAttentionCueing",
+	"Rules": {
+				// --Rules
+	},
+	"EnumDefinitions": {},
+	"ParameterInfos": {
+		"EndogenousCueType": {
+			"Type": "Enum",
+			"Values": [ "Eyes", "Arrow" ]
+		},
+		"EndogenousCueValidity": {
+			"Type": "Enum",
+			"Values": [ "Valid", "Invalid", "Neutral", "NoGo" ]
+		},
+		"ExogenousCueType": {
+			"Type": "Enum",
+			"Values": [ "Circle", "Rectangle" ]
+		},
+		"ExogenousCueValidity": {
+			"Type": "Enum",
+			"Values": [ "Valid", "Invalid", "Neutral" ]
+		},
+		"StimulusType": {
+			"Type": "Enum",
+			"Values": [ "Matrix", "HorizontalArrow", "VerticalArrow", "Symbol", "Number" ]
+		},
+		"ShowAccuracyCheckFeedback": {
+			"Type": "Enum",
+			"Name": "ShowAccuracyCheckFeedback"
+		},
+		"ShowCorrectTrialResponseFeedback": {
+			"Type": "Enum",
+			"Name": "ShowCorrectTrialResponseFeedback"
+		},
+		"MatrixSize": {
+			"Type": "Int",
+			"Min": 2,
+			"Max": 5
+		},
+		"StimulusValue": {
+			"Type": "int",
+			"Min": 0
+		},
+		"StimulusPosition": {
+			"Type": "Enum",
+			"Values": [ "Left", "Center", "Right" ]
+		},
+		"ShowDistractor": {
+			"Type": "Bool"
+		},
+		"FixationPointOnset": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"FixationPointOffset": {
+			"Type": "Float",
+			"Max": 0
+		},
+		"TaskCueOnset": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"TaskCueDisplayDuration": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"EndogenousCueOnset": {
+			"Type": "Float",
+			"Max": 0
+		},
+		"EndogenousCueDisplayDuration": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"ExogenousCueOnset": {
+			"Type": "Float",
+			"Max": 0
+		},
+		"ExogenousCueDisplayDuration": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"StimulusOnset": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"StimulusDisplayDuration": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"NoiseMaskOnset": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"NoiseMaskDisplayDuration": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"UserInputOnset": {
+			"Type": "Float",
+			"Min": 0
+		},
+		"MaxResponseTime": {
+			"Type": "Float",
+			"Min": 0.01
+		}
+	},
+	"Timelines": {
+// --Instructions
+// --Timelines
+		"Tutorial": {
+			"Blocks": [
+				{
+					"Name": "Tutorial"
+				}
+			]
+		},
+		"Debug": {
+			"Blocks": [
+				{
+					"Name": "Debug"
+				},
+				{
+					"Name": "Debug"
+				}
+			]
+		},
+		"Demo": {
+			"Blocks": [
+				{
+					"Name": "Demo"
+				}
+			]
+		},
+		"DellaSalaLike": {
+			"Blocks": [
+				{
+					"Name": "DellaSala"
+				}
+			]
+		},
+		"Kane2016Like": {
+			"Blocks": [
+				{
+					"Name": "Kane"
+				}
+			]
+		},
+		"RobotTest": {
+			"Blocks": [
+				{ "Name": "RobotTest" },
+				{ "Name": "RobotTest" }
+			]
+		}
+	},
+	"Blocks": {
+		"Default": {
+			"Parameters": {
+				"EndogenousCueType": "Arrow",
+				"EndogenousCueValidity": "Valid",
+				"ExogenousCueType": "Rectangle",
+				"ExogenousCueValidity": "Valid",
+				"StimulusType": "Number",
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "Never",
+				"MatrixSize": 3,
+				"StimulusValue": 1,
+				"StimulusPosition": "Center",
+				"ShowDistractor": false,
+				"FixationPointOnset": 0,
+				"FixationPointOffset": 0,
+				"TaskCueOnset": 0,
+				"TaskCueDisplayDuration": 0,
+				"EndogenousCueOnset": -0.5,
+				"EndogenousCueDisplayDuration": 0.4,
+				"ExogenousCueOnset": -0.5,
+				"ExogenousCueDisplayDuration": 0.4,
+				"StimulusOnset": 0.5,
+				"StimulusDisplayDuration": 0.15,
+				"NoiseMaskOnset": 0.05,
+				"NoiseMaskDisplayDuration": 0.15,
+				"UserInputOnset": 1,
+				"MaxResponseTime": 5
+			}
+		},
+		"Tutorial": {
+			"Inherits": "Default",
+			"Parameters": {
+				"ShowCorrectTrialResponseFeedback": "OnError",
+
+				"StimulusValue": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 3,
+						"Max": 6
+					}
+				},
+
+				"FixationPointOnset": 0,
+				"FixationPointOffset": -0.2,
+				"TaskCueOnset": 1,
+				"TaskCueDisplayDuration": 1,
+				"EndogenousCueOnset": -2,
+				"EndogenousCueDisplayDuration": 1,
+				"ExogenousCueOnset": -1,
+				"ExogenousCueDisplayDuration": 1,
+				"StimulusOnset": 4,
+				"StimulusDisplayDuration": 2,
+				"NoiseMaskOnset": 1.5,
+				"NoiseMaskDisplayDuration": 0.6,
+				"UserInputOnset": 3,
+
+				"MaxResponseTime": 10
+			},
+			"Trials": [
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Left"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Left",
+						"EndogenousCueValidity": "Invalid",
+						"ExogenousCueValidity": "Invalid"
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Right",
+						"ShowDistractor": true,
+
+						"TaskCueOnset": 1,
+						"TaskCueDisplayDuration": 0.5,
+						"EndogenousCueOnset": -0.5,
+						"EndogenousCueDisplayDuration": 0.5,
+
+						"ExogenousCueDisplayDuration": 0,
+
+						"StimulusOnset": 2,
+						"StimulusDisplayDuration": 1.5,
+						"NoiseMaskOnset": 1,
+						"NoiseMaskDisplayDuration": 0.6,
+						"UserInputOnset": 2.5,
+
+						"MaxResponseTime": 10
+
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"StimulusPosition": "Right",
+						"EndogenousCueValidity": "Invalid",
+						"ShowDistractor": true,
+
+						"TaskCueOnset": 1,
+						"TaskCueDisplayDuration": 0.5,
+						"EndogenousCueOnset": -0.5,
+						"EndogenousCueDisplayDuration": 0.5,
+
+						"ExogenousCueDisplayDuration": 0,
+
+						"StimulusOnset": 2,
+						"StimulusDisplayDuration": 1.5,
+						"NoiseMaskOnset": 1,
+						"NoiseMaskDisplayDuration": 0.6,
+						"UserInputOnset": 2.5,
+
+						"MaxResponseTime": 10
+					}
+				}
+			]
+		},
+
+		"Demo": {
+			"Inherits": "Default",
+			"Parameters": {
+				"FixationPointOnset": 0,
+				"FixationPointOffset": -0.2,
+				"TaskCueOnset": 1,
+				"TaskCueDisplayDuration": 0.5,
+				"EndogenousCueOnset": -0.6,
+				"EndogenousCueDisplayDuration": 0.3,
+				"ExogenousCueOnset": -0.3,
+				"ExogenousCueDisplayDuration": 0.3,
+				"StimulusOnset": 2.1,
+				"StimulusDisplayDuration": 0.5,
+				"NoiseMaskOnset": 0,
+				"NoiseMaskDisplayDuration": 0.2,
+				"UserInputOnset": 1,
+
+				"MaxResponseTime": 5
+			},
+			"Trials": [
+				{
+					"Parameters": {
+						"EndogenousCueDisplayDuration": 0,
+						"ExogenousCueOnset": -0.3,
+						"ExogenousCueDisplayDuration": 0.3,
+						"StimulusOnset": 1.8,
+						"StimulusDisplayDuration": 0.5,
+
+						"StimulusValue": {
+							"Distribution": {
+								"Type": "Uniform",
+								"Min": 3,
+								"Max": 6
+							}
+						}
+					}
+				},
+				{
+					"Parameters": {
+						"ExogenousCueDisplayDuration": 0,
+						"EndogenousCueOnset": -0.3,
+						"EndogenousCueDisplayDuration": 0.3,
+						"StimulusOnset": 1.8,
+						"StimulusDisplayDuration": 0.5,
+
+						"MaxResponseTime": 6,
+
+						"EndogenousCueValidity": "Invalid",
+
+						"StimulusType": "Number",
+						"StimulusPosition": "Left",
+
+						"StimulusValue": {
+							"Distribution": {
+								"Type": "Uniform",
+								"Min": 1000,
+								"Max": 9999
+							}
+						}
+					}
+				},
+				{
+					"Parameters": {
+						"ExogenousCueOnset": 0,
+						"ExogenousCueDisplayDuration": 0,
+
+						"EndogenousCueOnset": -0.3,
+						"EndogenousCueDisplayDuration": 0.3,
+						"StimulusOnset": 1.8,
+						"StimulusDisplayDuration": 0.5,
+
+						"EndogenousCueType": "Eyes",
+						"StimulusType": "Symbol",
+						"StimulusPosition": "Left",
+						"ShowDistractor": true,
+
+						"StimulusValue": {
+							"Distribution": {
+								"Type": "Uniform",
+								"Min": 0,
+								"Max": 4
+							}
+						}
+					}
+				},
+				{
+					"Parameters": {
+						"ExogenousCueOnset": -0.6,
+						"ExogenousCueDisplayDuration": 0.3,
+						"EndogenousCueOnset": -0.3,
+						"EndogenousCueDisplayDuration": 0.3,
+						"StimulusOnset": 2.1,
+						"StimulusDisplayDuration": 0.5,
+
+						"MaxResponseTime": 8,
+
+						"EndogenousCueValidity": "Invalid",
+						"ExogenousCueValidity": "Invalid",
+
+						"StimulusType": "Number",
+						"StimulusPosition": "Right",
+						"ShowDistractor": true,
+
+						"StimulusValue": {
+							"Distribution": {
+								"Type": "Uniform",
+								"Min": 10000,
+								"Max": 99999
+							}
+						}
+					}
+				},
+				{
+					"Parameters": {
+						"EndogenousCueOnset": -0.6,
+						"EndogenousCueDisplayDuration": 0.3,
+						"ExogenousCueOnset": -0.3,
+						"ExogenousCueDisplayDuration": 0.3,
+						"StimulusOnset": 2.1,
+						"StimulusDisplayDuration": 0.5,
+
+						"MaxResponseTime": 4,
+
+						"StimulusType": "VerticalArrow",
+						"StimulusPosition": "Right",
+						"ShowDistractor": true,
+
+						"StimulusValue": {
+							"Distribution": {
+								"Type": "Uniform",
+								"Min": 1,
+								"Max": 2
+							}
+						}
+					}
+				},
+				{
+					"Parameters": {
+						"ExogenousCueDisplayDuration": 0,
+						"EndogenousCueOnset": -0.3,
+						"EndogenousCueDisplayDuration": 0.3,
+						"StimulusOnset": 1.8,
+						"StimulusDisplayDuration": 0.5,
+
+						"MaxResponseTime": 8,
+
+						"MatrixSize": 3,
+						"StimulusPosition": "Left",
+
+						"StimulusValue": {
+							"Distribution": {
+								"Type": "Uniform",
+								"Min": 3,
+								"Max": 6
+							}
+						}
+					}
+				},
+				{
+					"Parameters": {
+						"ExogenousCueOnset": -0.6,
+						"ExogenousCueDisplayDuration": 0.3,
+						"EndogenousCueOnset": -0.3,
+						"EndogenousCueDisplayDuration": 0.3,
+						"StimulusOnset": 2.1,
+						"StimulusDisplayDuration": 0.5,
+
+						"EndogenousCueValidity": "Valid",
+						"ExogenousCueValidity": "Valid",
+
+						"EndogenousCueType": "Eyes",
+
+						"StimulusValue": {
+							"Distribution": {
+								"Type": "Uniform",
+								"Min": 3,
+								"Max": 6
+							}
+						}
+					}
+				},
+				{
+					"Parameters": {
+						"EndogenousCueDisplayDuration": 0,
+						"ExogenousCueOnset": -0.3,
+						"ExogenousCueDisplayDuration": 0.3,
+						"StimulusOnset": 1.8,
+						"StimulusDisplayDuration": 0.5,
+
+						"MaxResponseTime": 5,
+
+						"ExogenousCueValidity": "Invalid",
+
+						"StimulusType": "Symbol",
+						"StimulusPosition": "Right",
+						"ShowDistractor": true,
+
+						"StimulusValue": {
+							"Distribution": {
+								"Type": "Uniform",
+								"Min": 0,
+								"Max": 4
+							}
+						}
+					}
+				},
+				{
+					"Parameters": {
+						"ExogenousCueDisplayDuration": 0,
+						"EndogenousCueOnset": -0.3,
+						"EndogenousCueDisplayDuration": 0.3,
+						"StimulusOnset": 1.8,
+						"StimulusDisplayDuration": 0.5,
+
+						"MaxResponseTime": 4,
+
+						"EndogenousCueType": "Eyes",
+						"StimulusType": "HorizontalArrow",
+						"StimulusPosition": "Left",
+						"ShowDistractor": true,
+
+						"StimulusValue": {
+							"Distribution": {
+								"Type": "Uniform",
+								"Min": 1,
+								"Max": 2
+							}
+						}
+					}
+				},
+				{
+					"Parameters": {
+						"EndogenousCueOnset": -0.6,
+						"EndogenousCueDisplayDuration": 0.3,
+						"ExogenousCueOnset": -0.3,
+						"ExogenousCueDisplayDuration": 0.3,
+						"StimulusOnset": 2.1,
+						"StimulusDisplayDuration": 0.5,
+
+						"MaxResponseTime": 4,
+
+						"EndogenousCueValidity": "Invalid",
+						"ExogenousCueValidity": "Invalid",
+
+						"EndogenousCueType": "Eyes",
+						"StimulusType": "VerticalArrow",
+
+						"StimulusValue": {
+							"Distribution": {
+								"Type": "Uniform",
+								"Min": 1,
+								"Max": 2
+							}
+						}
+					}
+				}
+			]
+		},
+		"DellaSala": {
+			"Inherits": "Default",
+			"Parameters": {
+				"EndogenousCueOnset": 0,
+				"EndogenousCueDisplayDuration": 0,
+				"ExogenousCueOnset": 0,
+				"ExogenousCueDisplayDuration": 0,
+				"FixationPointOnset": 0,
+				"FixationPointOffset": -0.2,
+				"TaskCueOnset": 1,
+				"TaskCueDisplayDuration": 0.5,
+				"StimulusOnset": 1.5,
+				"StimulusDisplayDuration": 2.6,
+				"NoiseMaskOnset": 1,
+				"NoiseMaskDisplayDuration": 1,
+				"UserInputOnset": 6.6,
+
+				"MatrixSize": 2,
+				"StimulusValue": 2,
+
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "OnError"
+
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "MatrixSize",
+					"SuccessAccuracy": 1,
+					"StepSize": 1,
+					"NUp": 1,
+					"NDown": 2
+				}
+			]
+		},
+		"Kane": {
+			"Inherits": "Default",
+			"Parameters": {
+				"EndogenousCueOnset": 0,
+				"EndogenousCueDisplayDuration": 0,
+				"TaskCueOnset": 0,
+				"TaskCueDisplayDuration": 0.5,
+				"FixationPointOnset": 0.5,
+				"FixationPointOffset": -0.2,
+				"ExogenousCueOnset": -0.2,
+				"ExogenousCueDisplayDuration": 0.2,
+				"StimulusOnset": 1.7,
+				"StimulusDisplayDuration": 0.5,
+				"NoiseMaskOnset": 0,
+				"NoiseMaskDisplayDuration": 1,
+				"UserInputOnset": 2.5,
+
+				"MaxResponseTime": 10,
+
+				"StimulusType": "Matrix",
+				"MatrixSize": 3,
+
+				"ShowCorrectTrialResponseFeedback": "Always",
+
+				"StimulusValue": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Min": 3,
+						"Max": 6
+					}
+				},
+				"StimulusPosition": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Values": [ "Left", "Right" ]
+					}
+				},
+				"ExogenousCueValidity": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Values": [ "Valid", "Invalid" ]
+					}
+				}
+			}
+		},
+
+		"Debug": {
+			"Inherits": "Default",
+			"Parameters": {
+				"FixationPointOnset": 0,
+				"FixationPointOffset": 0,
+				"TaskCueOnset": 0,
+				"TaskCueDisplayDuration": 0,
+
+				"EndogenousCueType": "Arrow",
+				"EndogenousCueValidity": "Valid",
+				"EndogenousCueOnset": -1,
+				"EndogenousCueDisplayDuration": 1,
+
+				"ExogenousCueType": "Rectangle",
+				"ExogenousCueValidity": "Valid",
+				"ExogenousCueOnset": -0.5,
+				"ExogenousCueDisplayDuration": 0.5,
+
+				"StimulusValue": 2,
+				"StimulusType": "Matrix",
+				"StimulusPosition": "Center",
+				"StimulusOnset": 3,
+				"StimulusDisplayDuration": 0.25,
+				"MatrixSize": 3,
+
+				"ShowDistractor": true,
+
+				"NoiseMaskOnset": 0,
+				"NoiseMaskDisplayDuration": 0,
+
+				"UserInputOnset": 0.5,
+
+				"MaxResponseTime": 10,
+
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowCorrectTrialResponseFeedback": "Never"
+			}
+		},
+		"RobotTest": {
+			"Inherits": "Default",
+			"Parameters": {
+				"TaskName_Position": "StatusBarLeft",
+				"BlockCounter_Position": "StatusBarLeft",
+				"BlockCounter_Style": "Counter",
+				"TrialCounter_Position": "StatusBarLeft",
+				"TrialCounter_Style": "Counter",
+				"TrialResults_Position": "StatusBarRight",
+				"TrialResults_Style": "ColoredDiscrete"
+			},
+			"Trials": [
+				{ "Parameters": {
+					"StimulusType": "Number",
+					"StimulusValue": 6
+				}}, { "Parameters": {
+					"StimulusType": "Number",
+					"StimulusValue": 6,
+					"StimulusPosition": "Left",
+					"ShowDistractor": true
+				}}, { "Parameters": {
+					"StimulusType": "Symbol",
+					"StimulusValue": 2
+				}}, { "Parameters": {
+					"StimulusType": "Symbol",
+					"StimulusValue": 2,
+					"StimulusPosition": "Right",
+					"ShowDistractor": true
+				}}, { "Parameters": {
+					"StimulusType": "VerticalArrow",
+					"StimulusValue": 1
+				}}, { "Parameters": {
+					"StimulusType": "VerticalArrow",
+					"StimulusValue": 1,
+					"StimulusPosition": "Left",
+					"ShowDistractor": true
+				}}, { "Parameters": {
+					"StimulusType": "HorizontalArrow",
+					"StimulusValue": 2
+				}}, { "Parameters": {
+					"StimulusType": "HorizontalArrow",
+					"StimulusValue": 2,
+					"StimulusPosition": "Right",
+					"ShowDistractor": true
+				}}, { "Parameters": {
+					"StimulusType": "Matrix",
+					"MatrixSize": 2
+				}}, { "Parameters": {
+					"StimulusType": "Matrix",
+					"MatrixSize": 5
+				}}, { "Parameters": {
+					"StimulusType": "Matrix",
+					"StimulusValue": 0
+				}}, { "Parameters": {
+					"StimulusType": "Matrix",
+					"MatrixSize": 2,
+					"StimulusValue": 4
+				}}, { "Parameters": {
+					"StimulusType": "Matrix",
+					"MatrixSize": 5,
+					"StimulusValue": 25
+				}}, { "Parameters": {
+					"StimulusType": "Matrix",
+					"StimulusValue": 5,
+					"StimulusPosition": "Left",
+					"ShowDistractor": true
+				}}, { "Parameters": {
+					"StimulusOnset": 0
+				}}, { "Parameters": {
+					"StimulusOnset": 10
+				}}, { "Parameters": {
+					"StimulusDisplayDuration": 0
+				}}, { "Parameters": {
+					"StimulusDisplayDuration": 10
+				}}, { "Parameters": {
+					"NoiseMaskOnset": 0
+				}}, { "Parameters": {
+					"NoiseMaskOnset": 10
+				}}, { "Parameters": {
+					"NoiseMaskDisplayDuration": 0
+				}}, { "Parameters": {
+					"NoiseMaskDisplayDuration": 10
+				}}, { "Parameters": {
+					"UserInputOnset": 0
+				}}, { "Parameters": {
+					"UserInputOnset": 10
+				}}
+			]
+		}
+	}
+}

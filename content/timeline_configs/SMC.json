@@ -1,0 +1,1201 @@
+{
+	"Id": "SMC",
+	"Scene": "PatternComparison",
+	"Rules": {
+// ---- Begin Rules ----
+"XCIT_SMC_01_Practice_Rules": [
+	{"text": "XCIT_SMC_01_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_SMC_01_Practice.GameRules"}
+],
+"XCIT_SMC_01_Tutorial_Rules": [
+	{"text": "XCIT_SMC_01_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_SMC_01_Tutorial.GameRules"}
+],
+"XCIT_SMC_06_Practice_Rules": [
+	{"text": "XCIT_SMC_06_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_SMC_06_Practice.GameRules"}
+],
+"XCIT_SMC_06_Tutorial_Rules": [
+	{"text": "XCIT_SMC_06_Tutorial.RulesTitle","heading": 2},
+	{"text": "XCIT_SMC_06_Tutorial.GameRules"}
+],
+"XCIT_SMC_07_Practice_Rules": [
+	{"text": "XCIT_SMC_07_Practice.RulesTitle","heading": 2},
+	{"text": "XCIT_SMC_07_Practice.GameRules"}
+],
+// ---- End Rules ----
+	},
+	"EnumDefinitions": {},
+	"ParameterInfos": {
+		"MatrixSize": {
+			"Type": "Int",
+			"Min": 2,
+			"Max": 10
+		},
+		"ItemCount": {
+			"Type": "Int",
+			"Min": 1,
+			"Max": 25
+		},
+		"SymbolPoolCount": {
+			"Type": "Int",
+			"Min": 1,
+			"Max": 9
+		},
+		"ColorPoolCount": {
+			"Type": "Int",
+			"Min": 1,
+			"Max": 5
+		},
+		"HasDiscrepancy": {
+			"Type": "Bool"
+		},
+		"DiscrepancyType": {
+			"Type": "Enum",
+			"Values": [
+				"DeleteItem",
+				"RotateItem",
+				"ChangeColor",
+				"ChangeSymbol",
+				"MoveItem"
+			]
+		},
+		"InitialItemRotation": {
+			"Type": "Enum",
+			"Values": [
+				"None",
+				"AnyAngle",
+				"Modulo45",
+				"Modulo90"
+			]
+		},
+		"SetTransformation": {
+			"Type": "Enum",
+			"Values": [
+				"None",
+				"RotateClockwise",
+				"RotateCounterClockwise",
+				"RotateTwice",
+				"MirrorHorizontal",
+				"MirrorVertical"
+			]
+		},
+		"ShowTransformationHelper": {
+			"Type": "Bool"
+		},
+		"AnimateTransformation": {
+			"Type": "Bool"
+		},
+		"MaxResponseTime": {
+			"Type": "Float",
+			"Min": 1
+		},
+		"ShowAccuracyCheckFeedback": {
+			"Type": "Enum",
+			"Name": "ShowAccuracyCheckFeedback"
+		},
+		"ShowDiscrepancyFeedback": {
+			"Type": "Enum",
+			"Values": [
+				"OnError",
+				"Never"
+			]
+		},
+		"ShowAccuracyOnButtonFeedback": {
+			"Type": "Bool"
+		},
+		"ScoreLabel_Position": {
+			"Type": "Enum",
+			"Name": "HudWidgetPosition"
+		}
+	},
+	"Timelines": {
+// ---- Begin Instructions ----
+"XCIT_SMC_01_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_01_Practice.Objective"}]},
+			{"Content": [{"Text": "XCIT_SMC_01_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_01_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_01_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_01_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_01_Test.Objective"}]},
+			{"Content": [{"Text": "XCIT_SMC_01_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_SMC_01_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_01_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_01_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_01_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_01_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_SMC_01_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_SMC_01_Tutorial.GenerativeModel"}]},
+			{"Content": [{"Text": "XCIT_SMC_01_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_SMC_01_Tutorial.Response"}]},
+			{"Content": [{"Text": "XCIT_SMC_01_Tutorial.Constraint"}]},
+			{"Content": [{"Text": "XCIT_SMC_01_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_01_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_01_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_02_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_02_Test.Introduction"}]},
+			{"Content": [{"Text": "XCIT_SMC_02_Test.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_SMC_02_Test.GenerativeModel"}]},
+			{"Content": [{"Text": "XCIT_SMC_02_Test.Objective"}]},
+			{"Content": [{"Text": "XCIT_SMC_02_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_SMC_02_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_02_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_02_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_03_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_03_Test.Introduction"}]},
+			{"Content": [{"Text": "XCIT_SMC_03_Test.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_SMC_03_Test.GenerativeModel"}]},
+			{"Content": [{"Text": "XCIT_SMC_03_Test.Objective"}]},
+			{"Content": [{"Text": "XCIT_SMC_03_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_SMC_03_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_03_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_03_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_04_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_04_Test.Introduction"}]},
+			{"Content": [{"Text": "XCIT_SMC_04_Test.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_SMC_04_Test.GenerativeModel"}]},
+			{"Content": [{"Text": "XCIT_SMC_04_Test.Objective"}]},
+			{"Content": [{"Text": "XCIT_SMC_04_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_SMC_04_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_04_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_04_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_05_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_05_Test.Introduction"}]},
+			{"Content": [{"Text": "XCIT_SMC_05_Test.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_SMC_05_Test.Objective"}]},
+			{"Content": [{"Text": "XCIT_SMC_05_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_SMC_05_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_05_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_05_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_06_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_06_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_06_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_06_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_06_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_06_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_SMC_06_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_06_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_06_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_06_Tutorial_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_06_Tutorial.Job", "heading": 2}]},
+			{"Content": [{"Text": "XCIT_SMC_06_Tutorial.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_SMC_06_Tutorial.GenerativeModel"}]},
+			{"Content": [{"Text": "XCIT_SMC_06_Tutorial.YourJob"}]},
+			{"Content": [{"Text": "XCIT_SMC_06_Tutorial.Response"}]},
+			{"Content": [{"Text": "XCIT_SMC_06_Tutorial.Constraint"}]},
+			{"Content": [{"Text": "XCIT_SMC_06_Tutorial.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_06_Tutorial_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_06_Tutorial.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_07_Practice_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_07_Practice.Introduction"}]},
+			{"Content": [{"Text": "XCIT_SMC_07_Practice.Stimulus"}]},
+			{"Content": [{"Text": "XCIT_SMC_07_Practice.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_07_Practice_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_07_Practice.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_07_Test_Intro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_07_Test.TerminationRule"}]},
+			{"Content": [{"Text": "XCIT_SMC_07_Test.GetReady"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+"XCIT_SMC_07_Test_Outro":{
+	"blocks":[{
+		"ShowAgainOnNextBlockFailure": false,
+		"Instructions":[
+			{"Content": [{"Text": "XCIT_SMC_07_Test.TestEnd"}], "OK": "Menu.Ok"}
+		]
+	}]
+},
+// ---- End Instructions ----
+// ---- Begin Timeline ----
+    "XCIT_SMC_01": {
+        "blocks": [
+            {
+                "timeline": "XCIT_SMC_01_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_SMC_01_Tutorial",
+                "rulesName": "XCIT_SMC_01_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_SMC_01_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_SMC_01_Practice_Intro"
+            },
+            {
+                "name": "XCIT_SMC_01_Practice",
+                "rulesName": "XCIT_SMC_01_Practice_Rules",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 3,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_SMC_01_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_SMC_01_Test_Intro"
+            },
+            {
+                "name": "XCIT_SMC_01_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 50,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_SMC_01_Test_Outro"
+            }
+        ]
+    },
+    "XCIT_SMC_02": {
+        "blocks": [
+            {
+                "timeline": "XCIT_SMC_02_Test_Intro"
+            },
+            {
+                "name": "XCIT_SMC_02_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 50,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_SMC_02_Test_Outro"
+            }
+        ]
+    },
+    "XCIT_SMC_03": {
+        "blocks": [
+            {
+                "timeline": "XCIT_SMC_03_Test_Intro"
+            },
+            {
+                "name": "XCIT_SMC_03_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 50,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_SMC_03_Test_Outro"
+            }
+        ]
+    },
+    "XCIT_SMC_04": {
+        "blocks": [
+            {
+                "timeline": "XCIT_SMC_04_Test_Intro"
+            },
+            {
+                "name": "XCIT_SMC_04_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 50,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_SMC_04_Test_Outro"
+            }
+        ]
+    },
+    "XCIT_SMC_05": {
+        "blocks": [
+            {
+                "timeline": "XCIT_SMC_05_Test_Intro"
+            },
+            {
+                "name": "XCIT_SMC_05_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 50,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_SMC_05_Test_Outro"
+            }
+        ]
+    },
+    "XCIT_SMC_06": {
+        "blocks": [
+            {
+                "timeline": "XCIT_SMC_06_Tutorial_Intro"
+            },
+            {
+                "name": "XCIT_SMC_06_Tutorial",
+                "rulesName": "XCIT_SMC_06_Tutorial_Rules"
+            },
+            {
+                "timeline": "XCIT_SMC_06_Tutorial_Outro"
+            },
+            {
+                "timeline": "XCIT_SMC_06_Practice_Intro"
+            },
+            {
+                "name": "XCIT_SMC_06_Practice",
+                "rulesName": "XCIT_SMC_06_Practice_Rules",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 5,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_SMC_06_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_SMC_06_Test_Intro"
+            },
+            {
+                "name": "XCIT_SMC_06_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 50,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_SMC_06_Test_Outro"
+            }
+        ]
+    },
+    "XCIT_SMC_07": {
+        "blocks": [
+            {
+                "timeline": "XCIT_SMC_07_Practice_Intro"
+            },
+            {
+                "name": "XCIT_SMC_07_Practice",
+                "rulesName": "XCIT_SMC_07_Practice_Rules",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 5,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_SMC_07_Practice_Outro"
+            },
+            {
+                "timeline": "XCIT_SMC_07_Test_Intro"
+            },
+            {
+                "name": "XCIT_SMC_07_Test",
+                "exitRules": [
+                    {
+                        "Action": "EndBlock",
+                        "Trials": 50,
+                        "Type": "All",
+                        "Consecutive": false
+                    }
+                ]
+            },
+            {
+                "timeline": "XCIT_SMC_07_Test_Outro"
+            }
+        ]
+    },
+// ---- End Timeline ----
+		"Tutorial": {
+			"Blocks": [
+				{
+					"Name": "Tutorial"
+				}
+			]
+		},
+		"Demo": {
+			"Blocks": [
+				{
+					"Name": "Demo"
+				}
+			]
+		},
+		"Debug": {
+			"Blocks": [
+				{
+					"Name": "Debug",
+					"ExitRules":[
+						{
+							"Time": 10
+						}
+					]
+				}
+			]
+		},
+		"Cambridge":{
+			"Blocks":[
+				{
+					"Name": "Tutorial"
+				},
+				{
+					"Name":"Cambridge",
+					"ExitRules":[
+						{
+							"Time": 90
+						}
+					]
+				}
+			]
+		},
+		"ScienceFestival2019": {
+			"ExitRules": [
+				{
+					"Action": "EndTimeline",
+					"Blocks": 2,
+					"Type": "Failures",
+					"SuccessAccuracy": 0.1
+				}
+			],
+			"Blocks":[
+				{
+					"ShowAgainOnNextBlockFailure": true,
+					"Instructions":[
+						{"Content":[{"Text": "Tasks.PatternComparison.Instructions.Job"}]},
+						{"Content":[{"Text": "Tasks.PatternComparison.Instructions.StimulusResponse"}]},
+						{"Content":[{"Text": "Tasks.Common.Instructions.TutorialIntro"}], "OK": "Common.IAmReady"}
+					]
+				},
+				{
+					"Name":"Tutorial",
+					"ExitRules": [
+						{
+							"Action": "FailBlock",
+							"Trials": 2,
+							"Type": "Failures"
+						}
+					]
+				},
+				{
+					"Instructions":[
+						{"Content":[{"Text": "Tasks.Common.Instructions.TutorialOuttro"}]},
+						{"Content":[{"Text": "Tasks.Common.Instructions.Ready"}], "OK": "Common.IAmReady"}
+					]
+				},
+				{
+					"Name":"Evaluation_ScienceFestival2019",
+					"ExitRules":[
+						{
+							"Time": 120
+						}
+					]
+				},
+				{
+					"Instructions":[
+						{"Content": [{"Text": "Common.ThankYou"}, {"Text": "Instructions.YourScore"}, {"Text": "Common.Bye"}],"OK": "Common.Bye"}
+					]
+				}
+			]
+		},
+		"RobotTest": {
+			"Blocks": [
+				{ "Name": "RobotTest" },
+				{ "Name": "RobotTest" }
+			]
+		}
+	},
+	"Blocks": {
+		"Default": {
+			"Parameters": {
+				"MatrixSize": 5,
+				"ItemCount": 3,
+				"SymbolPoolCount": 5,
+				"ColorPoolCount": 1,
+				"InitialItemRotation": "None",
+				"HasDiscrepancy": {
+					"Distribution": {
+						"Type": "Bernoulli",
+						"Probability": 0.5
+					}
+				},
+				"DiscrepancyType": "ChangeSymbol",
+				"SetTransformation": "None",
+				"ShowTransformationHelper": false,
+				"AnimateTransformation": {"Reference": "ShowTransformationHelper"},
+				"MaxResponseTime": 30,
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowDiscrepancyFeedback": "OnError",
+				"ShowAccuracyOnButtonFeedback": false,
+				"ScoreLabel_Position": "Hidden"
+			}
+		},
+		"Tutorial": {
+			"Inherits": "Default",
+			"Parameters": {
+				"BlockCounter_Position": "Hidden"
+			},
+			"Trials": [
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"MatrixSize": 3,
+						"ItemCount": 2,
+						"HasDiscrepancy": false
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"MatrixSize": 3,
+						"ItemCount": 2,
+						"HasDiscrepancy": true
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters": {
+						"MatrixSize": 3,
+						"ItemCount": 3,
+						"HasDiscrepancy": false
+					}
+				}
+			]
+		},
+		"Debug": {
+            "Inherits": "Default",
+            "Parameters": {
+				"ItemCount": 2,
+				"SymbolPoolCount": 5,
+				"ColorPoolCount": 1,
+				"DiscrepancyType": "ChangeSymbol",
+				"ShowDiscrepancyFeedback": "Never",
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": true,
+				"TrialCounter_Position": "Hidden",
+				"BlockTimer_DisplayTime": true,
+				"BlockTimer_Position": "InformationPanel",
+				"UserInputTimer_CountUp": false,
+				"UserInputTimer_Position": "Hidden",
+				"ShowAccuracyOnButtonFeedback": true
+            }
+        },
+		"Demo": {
+			"Inherits": "Default",
+			"Parameters": {
+				"MatrixSize": 5,
+				"ItemCount": 3,
+				"SetTransformation": "None",
+				"ShowTransformationHelper": false,
+				"BlockCounter_Position": "Hidden"
+			},
+			"Adapt": [
+				{
+					"Type": "SampledUpdateRule",
+					"ParameterName": "ItemCount",
+					"SuccessAccuracy": 1,
+					"Success": {
+						"Type": "Weighted",
+						"Values": [
+							{
+								"Value": 2,
+								"Weight": 0.05
+							},
+							{
+								"Value": 1,
+								"Weight": 0.85
+							},
+							{
+								"Value": 0,
+								"Weight": 0.1
+							}
+						]
+					},
+					"Failure": {
+						"Type": "Weighted",
+						"Values": [
+							{
+								"Value": 0,
+								"Weight": 0.5
+							},
+							{
+								"Value": -1,
+								"Weight": 0.5
+							}
+						]
+					}
+				}
+			]
+		},
+		"Cambridge": {
+			"Inherits": "Default",
+			"Parameters":{
+				"ItemCount": 2,
+				"SymbolPoolCount": 5,
+				"ColorPoolCount": 1,
+				"DiscrepancyType": "ChangeSymbol",
+				"ShowDiscrepancyFeedback": "Never",
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": true,
+				"TrialCounter_Position": "Hidden",
+				"BlockTimer_DisplayTime": true,
+				"BlockTimer_Position": "InformationPanel",
+				"UserInputTimer_CountUp": false,
+				"UserInputTimer_Position": "Hidden"
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "ItemCount",
+					"StepSize": 1,
+					"NUp": 1,
+					"NDown": 1
+				}
+			]
+		},
+		"Evaluation_ScienceFestival2019": {
+			"Inherits": "Default",
+			"Parameters":{
+				"ItemCount": 3,
+				"SymbolPoolCount": 5,
+				"ColorPoolCount": 2,
+				"DiscrepancyType": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Values": [
+							"ChangeColor",
+							"ChangeSymbol",
+							"MoveItem"
+						]
+					}
+				},
+				"ShowDiscrepancyFeedback": "OnError",
+				"ShowAccuracyCheckFeedback": "Never",
+				"ShowAccuracyOnButtonFeedback": true,
+				"TrialCounter_Position": "Hidden",
+				"BlockTimer_DisplayTime": true,
+				"BlockTimer_Position": "InformationPanel",
+				"UserInputTimer_CountUp": false,
+				"UserInputTimer_Position": "Hidden",
+				"ScoreLabel_Position": "StatusBarRight"
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "ItemCount",
+					"StepSize": 1,
+					"NUp": 1,
+					"NDown": 2
+				}
+			]
+		},
+		"XCIT_SMC_Base": {
+			"Inherits": "Default",
+			"Parameters":{
+				"MatrixSize": 4,
+				"ItemCount": 8,
+				"SymbolPoolCount": 5,
+				"ColorPoolCount": 5,
+				"DiscrepancyType": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Values": [
+							"ChangeColor",
+							"ChangeSymbol"
+						]
+					}
+				},
+				"HasDiscrepancy": {
+					"Distribution": {
+						"Type": "Bernoulli",
+						"Probability": 0.5
+					}
+				},
+				"MaxResponseTime": 10,
+				"BlockTimer_Position": "InformationPanel",
+				"BlockTimer_DisplayTime": true,
+				"UserInputTimer_Position": "StatusBarCenter",
+				"ShowDiscrepancyFeedback": "Never",
+				"ShowAccuracyCheckFeedback": "Always",
+				"ShowAccuracyOnButtonFeedback": false
+			}
+		},
+		"XCIT_SMC_01_Test": {
+			"Inherits": "XCIT_SMC_Base",
+			"Parameters": {
+				"DiscrepancyType": "ChangeSymbol"			
+			}
+		},
+		"XCIT_SMC_01_Practice": {
+			"Inherits": "XCIT_SMC_01_Test",
+			"Parameters":{
+				"ItemCount": 6,
+				"ShowDiscrepancyFeedback": "OnError"
+			}
+		},
+		"XCIT_SMC_01_Tutorial": {
+			"Inherits": "XCIT_SMC_01_Test",
+			"Parameters":{
+				"ShowDiscrepancyFeedback": "OnError",
+				"MatrixSize": 3
+			},
+			"Trials":[
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters":{
+						"ItemCount": 3,
+						"HasDiscrepancy": false
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters":{
+						"ItemCount": 3,
+						"HasDiscrepancy": true
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters":{
+						"ItemCount": 4,
+						"HasDiscrepancy": false
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters":{
+						"ItemCount": 5,
+						"HasDiscrepancy": true
+					}
+				}
+			]
+		},
+		"XCIT_SMC_02_Test": {
+			"Inherits": "XCIT_SMC_Base",
+			"Parameters":{
+				"DiscrepancyType": "ChangeColor"
+			}
+		},
+		"XCIT_SMC_03_Test": {
+			"Inherits": "XCIT_SMC_Base",
+			"Parameters":{
+				"DiscrepancyType": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Values": [
+							"ChangeColor",
+							"ChangeSymbol"
+						]
+					}
+				}
+			}
+		},
+		"XCIT_SMC_04_Test": {
+			"Inherits": "XCIT_SMC_Base",
+			"RepeatTrials": true,
+			"Trials":[
+				{
+					"Parameters":{
+						"DiscrepancyType": "ChangeColor",
+						"SymbolPoolCount": 1,
+						"ColorPoolCount": 5
+					}
+				},
+				{
+					"Parameters":{
+						"DiscrepancyType": "ChangeColor",
+						"SymbolPoolCount": 1,
+						"ColorPoolCount": 5
+					}
+				},
+				{
+					"Parameters":{
+						"DiscrepancyType": "ChangeSymbol",
+						"SymbolPoolCount": 5,
+						"ColorPoolCount": 1
+					}
+				},
+				{
+					"Parameters":{
+						"DiscrepancyType": "ChangeSymbol",
+						"SymbolPoolCount": 5,
+						"ColorPoolCount": 1
+					}
+				}
+			]
+		},
+		"XCIT_SMC_05_Test": {
+			"Inherits": "XCIT_SMC_Base",
+			"Parameters":{
+				"ItemCount": 1,
+				"MaxResponseTime": 4
+			}
+		},
+		"XCIT_SMC_06_Test": {
+			"Inherits": "XCIT_SMC_Base",
+			"Parameters":{
+				"DiscrepancyType": "RotateItem",
+				"SymbolPoolCount": 1,
+				"ColorPoolCount": 1,
+				"ItemCount": 3,
+				"InitialItemRotation": "Modulo45",
+				"ShowTransformationHelper": true,
+				"AnimateTransformation": {"Reference": "ShowTransformationHelper"},
+				"SetTransformation": {
+					"Distribution": {
+						"Type": "Uniform",
+						"Values": [
+							"RotateClockwise",
+							"RotateCounterClockwise"
+						]
+					}
+				}
+			},
+			"Adapt": [
+				{
+					"Type": "SingleStaircase",
+					"ParameterName": "ItemCount",
+					"StepSize": 1,
+					"Min": 3,
+					"Max": 12,
+					"NUp": 2,
+					"NDown": 1
+				}
+			]
+		},
+		"XCIT_SMC_06_Practice": {
+			"Inherits": "XCIT_SMC_06_Test",
+			"Parameters":{
+				"ItemCount": 2,
+				"ShowDiscrepancyFeedback": "OnError"
+			}
+		},
+		"XCIT_SMC_06_Tutorial": {
+			"Inherits": "XCIT_SMC_06_Test",
+			"Parameters":{
+				"ShowDiscrepancyFeedback": "OnError",
+				"MatrixSize": 3,
+				"ColorPoolCount": 5
+			},
+			"Trials":[
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters":{
+						"ItemCount": 2,
+						"SetTransformation": "RotateClockwise",
+						"HasDiscrepancy": false
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters":{
+						"ItemCount": 2,
+						"SetTransformation": "RotateCounterClockwise",
+						"HasDiscrepancy": true
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters":{
+						"ItemCount": 3,
+						"SetTransformation": "RotateClockwise",
+						"HasDiscrepancy": false
+					}
+				},
+				{
+					"MinAccuracyRequired": 1,
+					"Parameters":{
+						"ItemCount": 3,
+						"SetTransformation": "RotateCounterClockwise",
+						"HasDiscrepancy": true
+					}
+				}
+			]
+		},
+		"XCIT_SMC_07_Practice": {
+			"Inherits": "XCIT_SMC_07_Test",
+			"Parameters":{
+				"ItemCount": 2,
+				"ShowDiscrepancyFeedback": "OnError"
+			}
+		},
+		"XCIT_SMC_07_Test": {
+			"Inherits": "XCIT_SMC_06_Test",
+			"Parameters":{
+				"ShowTransformationHelper": false
+			}
+		},
+		"RobotTest": {
+			"Inherits": "Default",
+			"Parameters": {
+				"TaskName_Position": "StatusBarLeft",
+				"BlockCounter_Position": "StatusBarLeft",
+				"BlockCounter_Style": "Counter",
+				"TrialCounter_Position": "StatusBarLeft",
+				"TrialCounter_Style": "Counter",
+				"TrialResults_Position": "StatusBarRight",
+				"TrialResults_Style": "ColoredDiscrete"
+			},
+			"Trials": [
+				{ "Parameters": {
+					"MatrixSize": 2,
+					"ItemCount": 3
+				}}, { "Parameters": {
+					"MatrixSize": 2,
+					"ItemCount": 5
+				}}, { "Parameters": {
+					"MatrixSize": 10,
+					"ItemCount": 3
+				}}, { "Parameters": {
+					"MatrixSize": 10,
+					"ItemCount": 25
+				}}, { "Parameters": {
+					"SymbolPoolCount": 1
+				}}, { "Parameters": {
+					"SymbolPoolCount": 5,
+					"ItemCount": 15
+				}}, { "Parameters": {
+					"ColorPoolCount": 1
+				}}, { "Parameters": {
+					"ColorPoolCount": 5,
+					"ItemCount": 15
+				}}, { "Parameters": {
+					"SymbolPoolCount": 1,
+					"ColorPoolCount": 1
+				}}, { "Parameters": {
+					"InitialItemRotation": "AnyAngle",
+					"DiscrepancyType": "RotateItem",
+					"SymbolPoolCount": 1
+				}}, { "Parameters": {
+					"InitialItemRotation": "Modulo90",
+					"DiscrepancyType": "RotateItem",
+					"SymbolPoolCount": 1
+				}}, { "Parameters": {
+					"InitialItemRotation": "Modulo45",
+					"DiscrepancyType": "RotateItem",
+					"SymbolPoolCount": 1
+				}}, { "Parameters": {
+					"DiscrepancyType": "ChangeSymbol"
+				}}, { "Parameters": {
+					"DiscrepancyType": "ChangeSymbol",
+					"SymbolPoolCount": 1
+				}}, { "Parameters": {
+					"DiscrepancyType": "ChangeColor"
+				}}, { "Parameters": {
+					"DiscrepancyType": "ChangeColor",
+					"ColorPoolCount": 1
+				}}, { "Parameters": {
+					"DiscrepancyType": "DeleteItem"
+				}}, { "Parameters": {
+					"DiscrepancyType": "DeleteItem",
+					"ItemCount": 1
+				}}, { "Parameters": {
+					"DiscrepancyType": "MoveItem"
+				}}, { "Parameters": {
+					"DiscrepancyType": "MoveItem",
+					"ItemCount": 16,
+					"MatrixSize": 4
+				}}, { "Parameters": {
+					"SetTransformation": "None"
+				}}, { "Parameters": {
+					"SetTransformation": "RotateClockwise"
+				}}, { "Parameters": {
+					"SetTransformation": "RotateCounterClockwise"
+				}}, { "Parameters": {
+					"SetTransformation": "RotateTwice"
+				}}, { "Parameters": {
+					"SetTransformation": "MirrorHorizontal"
+				}}, { "Parameters": {
+					"SetTransformation": "MirrorVertical"
+				}}, { "Parameters": {
+					"SetTransformation": "RotateClockwise",
+					"ShowTransformationHelper": true,
+					"AnimateTransformation": false
+				}}, { "Parameters": {
+					"SetTransformation": "MirrorHorizontal",
+					"ShowTransformationHelper": true,
+					"AnimateTransformation": false
+				}}, { "Parameters": {
+					"SetTransformation": "RotateTwice",
+					"ShowTransformationHelper": false,
+					"AnimateTransformation": true
+				}}, { "Parameters": {
+					"SetTransformation": "MirrorVertical",
+					"ShowTransformationHelper": false,
+					"AnimateTransformation": true
+				}}, { "Parameters": {
+					"SetTransformation": "MirrorHorizontal",
+					"ShowTransformationHelper": true,
+					"AnimateTransformation": true
+				}}, { "Parameters": {
+					"MaxResponseTime": 1
+				}}, { "Parameters": {
+					"MaxResponseTime": 1000
+				}}, { "Parameters": {
+					"ShowAccuracyCheckFeedback": "Never"
+				}}, { "Parameters": {
+					"ShowDiscrepancyFeedback": "Never"
+				}}, { "Parameters": {
+					"ShowAccuracyOnButtonFeedback": true
+				}}
+			]
+		}
+	}
+}
