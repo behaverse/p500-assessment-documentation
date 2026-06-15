@@ -1,20 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap');
-
 /* ===== Design tokens ===== */
 :root {
-    /* Editorial "lab paper" palette */
-    --paper: #f5f3ee;
+    /* Cool-grey surface palette, matching the existing left-to-right panel gradient */
+    --paper: #f8f9fa;           /* content surface: the lightest end of the panel gradient */
     --card: #ffffff;
     --ink: #1b1f24;
     --ink-muted: #586070;       /* darker than legacy #6c757d -> passes WCAG AA */
-    --line: #e5e2da;
-    --accent: #166e6a;          /* deep teal, complements the lavender task thumbnails */
+    --line: #e3e6ea;
+    --accent: #166e6a;          /* deep teal accent */
     --accent-ink: #0e514e;
     --chip: #ebf3f1;
     --shadow: 0 1px 2px rgba(20, 25, 30, .05), 0 8px 22px rgba(20, 25, 30, .07);
     --shadow-lift: 0 8px 18px rgba(20, 25, 30, .10), 0 22px 50px rgba(20, 25, 30, .14);
     --radius: 14px;
-    --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+    /* Use the app's existing font everywhere; no extra web font */
+    --font-display: 'Futura', 'Trebuchet MS', Arial, sans-serif;
 }
 
 /* Reset and Base Styles */
@@ -570,8 +569,8 @@ nav.collapsed {
 }
 
 .content-body h2 {
-    color: var(--ink);
-    font-weight: 600;
+    color: #495057;
+    font-weight: 400;
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
 }
@@ -678,11 +677,9 @@ nav.collapsed {
 }
 
 .engine-name {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    color: var(--ink);
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #343a40;
     margin: 0 0 1rem 0;
     text-align: center;
 }
@@ -881,10 +878,9 @@ nav.collapsed {
 
 .timeline-header h2 {
     margin: 0 0 0.5rem 0;
-    color: var(--ink);
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-    font-weight: 600;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 300;
 }
 
 .timeline-description {
@@ -896,7 +892,7 @@ nav.collapsed {
 /* Section Title Styling - Match parameters page style exactly */
 .section-title {
     background: none;
-    color: var(--ink);
+    color: #666;
     margin: 2rem 0 1rem 0;
     padding: 0.5rem 0;
     font-size: 0.9rem;
