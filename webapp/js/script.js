@@ -129,7 +129,8 @@ function buildHomeContent() {
         <header class="home-hero">
             <p class="home-eyebrow">Behaverse P500 study</p>
             <h1 class="home-title">Cognitive Assessment Engines</h1>
-            <p class="home-lede">A battery of cognitive tests spanning attention, perception, memory, reasoning, and motor control. Each engine instantiates a classic experimental paradigm &mdash; select one to explore its description, parameters, and trial timelines.</p>
+            <p class="home-lede">Documentation for the cognitive assessment engines used in the Behaverse <strong>P500 study</strong> &mdash; part of a larger battery of computerized tests spanning attention, perception, memory, reasoning, and motor control. Each <em>engine</em> is a customizable task that can instantiate many classic cognitive paradigms.</p>
+            <p class="home-lede">For every engine you'll find a short demo, a description with scientific background and references, full parameter specifications with a glossary, and the exact trial timelines used in the study. Select an engine below, or search across all of it.</p>
         </header>
         <div class="home-grid">${cards}</div>
     </section>`;

@@ -1532,6 +1532,8 @@ div.collapsible-content {
     color: var(--ink-muted);
     max-width: 64ch;
 }
+.home-lede strong { color: var(--ink); font-weight: 600; }
+.home-lede + .home-lede { margin-top: 0.85rem; }
 
 .home-grid {
     display: grid;
