@@ -356,7 +356,7 @@ class EnhancedTimelineHTMLGenerator:
                 image_path_with_ext = image_path
             html.append(f'''
             <div class="instruction-image">
-                <img src="../content/images/{image_path_with_ext}" alt="Instruction image" onerror="this.style.display='none'; this.parentNode.innerHTML='<em>Image: {image_path} (not found)</em>';">
+                <img src="../../../content/images/{image_path_with_ext}" alt="Instruction image" onerror="this.style.display='none'; this.parentNode.innerHTML='<em>Image: {image_path} (not found)</em>';">
             </div>''')
         
         return ''.join(html)
@@ -409,7 +409,7 @@ class EnhancedTimelineHTMLGenerator:
                     image_path_with_ext = image_path
                 html.append(f'''
                 <div class="rule-image">
-                    <img src="../content/images/{image_path_with_ext}" alt="Rule image" onerror="this.style.display='none'; this.parentNode.innerHTML='<em>Image: {image_path} (not found)</em>';">
+                    <img src="../../../content/images/{image_path_with_ext}" alt="Rule image" onerror="this.style.display='none'; this.parentNode.innerHTML='<em>Image: {image_path} (not found)</em>';">
                 </div>''')
         
         return ''.join(html)
