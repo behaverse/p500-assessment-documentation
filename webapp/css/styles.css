@@ -136,13 +136,13 @@ nav.collapsed {
 }
 
 .engine-item, .category-item, .sub-item {
-    padding: 0.4rem 0.6rem;
+    padding: 0.45rem 0.6rem;
     cursor: pointer;
     transition: background-color 0.2s ease;
     font-weight: 400;
     color: #2c3e50;
-    font-size: 0.85rem;
-    line-height: 1.2;
+    font-size: 0.95rem;
+    line-height: 1.25;
 }
 
 .engine-item {
@@ -152,7 +152,7 @@ nav.collapsed {
 
 .engine-item.home-item {
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 1rem;
     text-align: center;
     letter-spacing: 0.5px;
     background: rgba(0, 0, 0, 0.05);
@@ -1530,7 +1530,8 @@ div.collapsible-content {
     font-size: clamp(1rem, 1.3vw, 1.1rem);
     line-height: 1.62;
     color: var(--ink-muted);
-    max-width: 64ch;
+    /* full grid width (4 columns): the intro spans the same width as the card grid */
+    max-width: none;
 }
 .home-lede strong { color: var(--ink); font-weight: 600; }
 .home-lede + .home-lede { margin-top: 0.85rem; }
