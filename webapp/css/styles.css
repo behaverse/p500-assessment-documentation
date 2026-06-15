@@ -226,7 +226,7 @@ nav.collapsed {
 /* Main Content Area - Enhanced with header bar */
 .content-area {
     grid-area: content;
-    background: #f8f9fa; /* Very light gray background */
+    background: var(--paper);
     display: flex;
     flex-direction: column;
     min-width: 0; /* Important for Firefox */
@@ -235,8 +235,8 @@ nav.collapsed {
 }
 
 .content-header-bar {
-    background: #f8f9fa;
-    border-bottom: 1px solid #e9ecef;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
     padding: 0.4rem 0.6rem;
     display: flex;
     align-items: center;
@@ -570,8 +570,8 @@ nav.collapsed {
 }
 
 .content-body h2 {
-    color: #495057;
-    font-weight: 400;
+    color: var(--ink);
+    font-weight: 600;
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
 }
@@ -678,9 +678,11 @@ nav.collapsed {
 }
 
 .engine-name {
-    font-size: 1.8rem;
-    font-weight: 300;
-    color: #343a40;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ink);
     margin: 0 0 1rem 0;
     text-align: center;
 }
@@ -866,7 +868,7 @@ nav.collapsed {
     margin: 0 auto;
     padding: 2rem;
     font-family: 'Futura', 'Trebuchet MS', Arial, sans-serif;
-    background-color: #f8f9fa;
+    background-color: var(--paper);
     min-height: 100vh;
 }
 
@@ -879,9 +881,10 @@ nav.collapsed {
 
 .timeline-header h2 {
     margin: 0 0 0.5rem 0;
-    color: #333;
-    font-size: 1.5rem;
-    font-weight: 300;
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
 }
 
 .timeline-description {
@@ -893,7 +896,7 @@ nav.collapsed {
 /* Section Title Styling - Match parameters page style exactly */
 .section-title {
     background: none;
-    color: #666;
+    color: var(--ink);
     margin: 2rem 0 1rem 0;
     padding: 0.5rem 0;
     font-size: 0.9rem;
@@ -1760,7 +1763,13 @@ div.collapsible-content {
     line-height: 1.15;
     margin: 0.5rem 0 0.15rem;
 }
-.demo-domain { color: var(--ink-muted); font-size: 0.9rem; margin: 0 0 1rem; }
+.demo-domain { color: var(--ink-muted); font-size: 0.9rem; margin: 0 0 0.9rem; }
+.demo-desc {
+    color: var(--ink-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 0 0 1.1rem;
+}
 .demo-docs-link {
     display: inline-block;
     font-weight: 600;

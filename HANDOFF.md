@@ -67,6 +67,8 @@ These are real, verified issues worth addressing — listed roughly by impact.
 
 7. **Housekeeping.** `scripts/debug/` holds one-off debug scripts not part of the build; `update_webapp.py` is a stale legacy script (writes to `webapp/script.js`, references `migrated_content/`); `requirements.txt` uses unpinned `>=`. Archived material lives in `git_ignored/` (untracked).
 
+8. **Placeholder content.** Every timeline page's "About" section is lorem ipsum, and MOT has an empty engine description (OC/PC/SMC are stubs). Full inventory in [CONTENT_TODO.md](CONTENT_TODO.md).
+
 ## Conventions
 
 - **No emojis or decorative icons in README / docs files.** Hard rule for this project.

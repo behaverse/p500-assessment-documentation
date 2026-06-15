@@ -81,6 +81,26 @@ const ENGINE_DOMAIN = {
 // Display order on the landing page, grouped loosely by cognitive domain.
 const HOME_ORDER = ['DS', 'NB', 'SOS', 'OC', 'OOO', 'BM', 'RE', 'WO', 'BSAC', 'MOT', 'UFOV', 'SMC', 'PC', 'TH', 'SRM', 'BCS'];
 
+// Short demo description per engine (from behaverse.org cognitive-tests).
+const ENGINE_BLURB = {
+    DS: "The symbol span test measures participants' short term memory. After seeing a sequence of symbols, participants are asked to recall the sequence in order. The length of the sequence is adjusted to fit participants' abilities. This test engine can be parameterized to instantiate both forward and backward span tests using digits, letters or abstract symbols among others.",
+    NB: "Performance on this N-back task is thought to rely on working memory and sustained attention. Participants view a stream of stimuli (in this example, letters) and have to respond for each whether or not it was the same as the one shown N steps earlier (in this example, N=2). This engine supports multiple variants of test, including a variety of stimulus sets (e.g., digits, symbols, spatial locations) as well as multiple simultaneous N-back streams.",
+    SOS: "The self-ordered search task is a visuo-spatial working memory test. A token is successively hidden behind each of the boxes displayed on the screen. Participants click on the boxes to reveal their content and find the token. Once a token is found it is hidden inside one of the boxes that hasn't yet contained the token. Participants succeed when they are able to find all the tokens without reopening a box they were already told is empty or contained a token in the past. This test is procedurally generated and adapts to participants' performance. This engine can instantiate different versions of this test.",
+    OC: "This engine supports tests requiring people to click on buttons in a particular order. This example shows a variant of the Trail-Making-Test which measures an aspect of executive functions. In this test, participants are asked to click as fast as possible on letters and digits in a specified order. This engine supports multiple different tests, including a visual memorisation task (photographic memory) and the forward and backward spatial span tests.",
+    OOO: "This is a non-verbal deductive reasoning test. Participants are asked to identify which of the nine patterns shown on the screen is unrelated to the other eight. The difficulty of the problems increase as participants progress in the test.",
+    BM: "This is non-verbal fluid intelligence test based on the famous Raven Progressive Matrices. A matrix of 9 patterns is shown, with one piece missing. Participants are asked to understand the rules that govern the pattern and select the missing piece among a set of options. This test is procedural and can generate a large set of different problems of different kinds.",
+    RE: "In this test a sequence of symbols are presented in succession and participants are asked to detect each time a particular sequence of symbols occurred (e.g., 3-5-7). This engine supports multiple tests, including a multistream version of the Rapid Visual Processing Test, the AX-CPT (with and without distractors), and the sustained attention to response task.",
+    WO: "In this test, one of several images or groups of images are shown and participants are asked to classify them into one of two categories. This example shows a variant of the Eriksen flanker test which measures response inhibition. In this test, a central arrow is presented on the screen surrounded by four other arrows that point either in the same or the opposite direction. Participants are asked to report the direction of the central arrow and to ignore the other ones. This engine supports multiple different tests, including the Simon test and the Bivalent Shape test.",
+    BSAC: "This engine supports tasks that use different cues to direct peoples' attention to particular locations on the screen. This example shows a variant of the anti-saccade test which involves attentional control. In this task participants have to click on the button that is in the opposite direction of a salient flash that automatically attracts attention. This engine supports a variety of attentional cueing paradigms (exogenous and/or endogenous cueing) as well as a task-switching test.",
+    MOT: "Performing the multiple object tracking test (MOT) requires sustained attentional control. In this task a set of dots move randomly across the screen, some of which have been highlighted as targets and participants are asked to track their positions using their attention. This engine supports multiple variants of the MOT (e.g., report all target locations on each trial by clicking on them) as well as a short-term visual memory task.",
+    UFOV: "This is a variant of the Useful field of view test which requires participants to identify a symbol presented on the screen center and to locate a symbol in the periphery while at the same time ignoring visual distractors. This test is thought to rely on divided and selective attention. This engine supports multiple variants of this test, including different sets of symbols.",
+    SMC: "In this visual search test, participants are shown two sets of symbols which are either exactly the same or differ by one symbol (which may have a different color, shape or location across the two images). This engine supports several variants of this test, including a mental rotation version with and without indication of the rotation angle.",
+    PC: "This engine supports tasks that require participants to compare two visual shapes. This example shows a variant of the mental rotation test: participants are shown two polygons with one of the polygons being randomly rotated and possibly distorted. Participants need to mentally rotate the polygons to determine whether or not they are the same. This engine supports multiple tests focusing on perceptual abilities (e.g., comparing shapes in the presence of a distractor).",
+    TH: "This engine supports tasks where participants are required to rapidly move a disk into one of multiple locations on the screen. This example shows a variant of the stop-signal test: when a red disk appears around the aimed location, participants should stop their ongoing action. This engine supports multiple variants of the stop-signal task as well other tasks (e.g., simple and choice reaching tasks).",
+    SRM: "This test is similar to the Serial Reaction Time Task (SRTT) which is used to measure implicit motor learning. In this test, light-boxes are linked to response buttons. Each time a box lights up, participants are asked to press the button connected to it as fast as possible. This engine supports a wide range of tests, including simple and multiple choice tests and a variant of the test of variables of attention (TOVA) which is classically used to assess impulsivity and inattention.",
+    BCS: "This engine supports tasks where a multi-feature stimulus (top of the screen) must be classified along one of its features by clicking on corresponding buttons. This example shows a variant of the task-switching test which measures aspects of cognitive control. In this test, participants are asked to classify stimuli either based on their number or their shape depending on the text that is displayed on the screen center. This engine supports multiple variants of the task-switching test as well as variants of the Wisconsin Card Sorting test.",
+};
+
 // Build the landing-page engine matrix from loaded engine data.
 function buildHomeContent() {
     const order = HOME_ORDER.filter(id => engineData[id]);
@@ -107,7 +127,7 @@ function buildHomeContent() {
 
     engineData.HOME.content.body = `<section class="home">
         <header class="home-hero">
-            <p class="home-eyebrow">Behaverse &middot; P500</p>
+            <p class="home-eyebrow">Behaverse P500 study</p>
             <h1 class="home-title">Cognitive Assessment Engines</h1>
             <p class="home-lede">A battery of cognitive tests spanning attention, perception, memory, reasoning, and motor control. Each engine instantiates a classic experimental paradigm &mdash; select one to explore its description, parameters, and trial timelines.</p>
         </header>
@@ -180,6 +200,7 @@ function getDemoModal() {
                 <span class="demo-code"></span>
                 <h2 class="demo-title"></h2>
                 <p class="demo-domain"></p>
+                <p class="demo-desc"></p>
                 <a class="demo-docs-link" href="#">View full documentation &rarr;</a>
             </div>
         </div>`;
@@ -203,6 +224,7 @@ function openEngineDemo(code) {
     modal.querySelector('.demo-code').textContent = code;
     modal.querySelector('.demo-title').textContent = name;
     modal.querySelector('.demo-domain').textContent = ENGINE_DOMAIN[code] || '';
+    modal.querySelector('.demo-desc').textContent = ENGINE_BLURB[code] || '';
     modal.querySelector('.demo-docs-link').setAttribute('href', `#${code}/description`);
 
     demoLastFocus = document.activeElement;
