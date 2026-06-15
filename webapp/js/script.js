@@ -62,11 +62,52 @@ async function loadEnginesData() {
         
         // Merge with existing HOME data
         engineData = { ...engineData, ...data };
+        buildHomeContent();
         return true;
     } catch (error) {
         console.error('Failed to load content/engines.json:', error);
         return false;
     }
+}
+
+// Cognitive domain shown on each landing-page card (salvaged from the prior HOME list).
+const ENGINE_DOMAIN = {
+    DS: 'working memory', NB: 'working memory', SOS: 'spatial working memory', OC: 'spatial working memory',
+    OOO: 'reasoning', BM: 'fluid intelligence', RE: 'sustained attention',
+    WO: 'attention & flankers', BSAC: 'spatial attention', MOT: 'visual attention', UFOV: 'visual attention',
+    SMC: 'pattern matching', PC: 'visual perception',
+    TH: 'reaction time', SRM: 'reaction time', BCS: 'set-shifting'
+};
+// Display order on the landing page, grouped loosely by cognitive domain.
+const HOME_ORDER = ['DS', 'NB', 'SOS', 'OC', 'OOO', 'BM', 'RE', 'WO', 'BSAC', 'MOT', 'UFOV', 'SMC', 'PC', 'TH', 'SRM', 'BCS'];
+
+// Build the landing-page engine matrix from loaded engine data.
+function buildHomeContent() {
+    const order = HOME_ORDER.filter(id => engineData[id]);
+    for (const id of Object.keys(engineData)) {
+        if (id !== 'HOME' && !order.includes(id)) order.push(id);
+    }
+    const cards = order.map((id, i) => {
+        const name = engineData[id].name || id;
+        const domain = ENGINE_DOMAIN[id] || '';
+        return `<a class="ec" href="#${id}/description" style="--i:${i}" aria-label="${name} (${id})">
+            <span class="ec-media"><img src="assets/engines/${id}/thumbnail.jpg" alt="${name} screenshot" loading="lazy"></span>
+            <span class="ec-body">
+                <span class="ec-code">${id}</span>
+                <span class="ec-name">${name}</span>
+                ${domain ? `<span class="ec-domain">${domain}</span>` : ''}
+            </span>
+        </a>`;
+    }).join('');
+
+    engineData.HOME.content.body = `<section class="home">
+        <header class="home-hero">
+            <p class="home-eyebrow">Behaverse &middot; P500</p>
+            <h1 class="home-title">Cognitive Assessment Engines</h1>
+            <p class="home-lede">A battery of cognitive tests spanning attention, perception, memory, reasoning, and motor control. Each engine instantiates a classic experimental paradigm &mdash; select one to explore its description, parameters, and trial timelines.</p>
+        </header>
+        <div class="home-grid">${cards}</div>
+    </section>`;
 }
 
 // Initialize the application
