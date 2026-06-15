@@ -729,10 +729,8 @@ class EnhancedTimelineHTMLGenerator:
         </section>''')
             section_counter += 1
 
-        # Close Config section
+        # Sample Data section (sibling of About/Config, inside .timeline-content)
         html.append('''
-        </div>
-        
         <!-- Sample Data Section -->
         <h3 class="section-title">Sample Data</h3>
         <div class="timeline-sample-data">
