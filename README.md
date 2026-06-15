@@ -2,8 +2,6 @@
 
 Documentation platform for the cognitive-assessment "engines" used in the **P500** study. The deliverable is a static webapp under [webapp/](webapp/) that displays content generated from an Excel master spec and per-engine timeline configs. No framework, no build step at runtime — pure HTML/CSS/JS over generated data.
 
-> New to this repo? Start with [HANDOFF.md](HANDOFF.md) for the full architecture, data pipelines, and gotchas.
-
 ## Quick start
 
 ```bash
@@ -23,7 +21,6 @@ The webapp itself is static and needs no build to run. Python is only required w
 behaverse_assessment_documentation/
 ├── Makefile                  # build / serve / dist / clean targets
 ├── requirements.txt          # Python build-time dependencies
-├── HANDOFF.md                # Onboarding doc for new contributors / agents
 ├── content/                  # Source data + generated runtime data
 │   ├── Task spec.xlsx        # Master spreadsheet (build-time input)
 │   ├── timeline_names.xlsx   # Timeline naming reference (build-time input)
@@ -67,7 +64,7 @@ python3 scripts/generation/generate_timelines.py    # -> webapp/pages/timelines/
 - Changed an **engine description or parameter table**? The source is `content/Task spec.xlsx`; regenerate `engines.json`.
 - Changed a **timeline structure**? The source is `content/timeline_configs/*.json`; regenerate the timeline HTML pages.
 
-These two pipelines are independent and do not share output paths. See [HANDOFF.md](HANDOFF.md) for details.
+These two pipelines are independent and do not share output paths.
 
 ### Serve and sanity-check
 
@@ -96,8 +93,6 @@ make dist     # produces ./dist
 make clean    # removes ./dist
 ```
 
-See [HANDOFF.md](HANDOFF.md) for the full deployment plan and how this repo relates to a future general Behaverse documentation site.
-
 ## Status
 
 - **16 engines** documented: BCS, DS, NB, WO, UFOV, TH, SRM, SOS, SMC, RE, BM, BSAC, MOT, OC, OOO, PC.
@@ -105,7 +100,7 @@ See [HANDOFF.md](HANDOFF.md) for the full deployment plan and how this repo rela
 - Parameter tables with per-page search and filtering; global search across descriptions, parameters, and timelines.
 - Generated timeline pages under `webapp/pages/timelines/`.
 
-`content/timeline_configs/` contains a few extra task configs (e.g. ML, RSAC, SART, SRT, SS, TOVA) that are not in the 16-engine nav. They are not currently surfaced in the webapp — see [HANDOFF.md](HANDOFF.md).
+`content/timeline_configs/` contains a few extra task configs (e.g. ML, RSAC, SART, SRT, SS, TOVA) that are not in the 16-engine nav. They are not currently surfaced in the webapp.
 
 ## Troubleshooting
 
