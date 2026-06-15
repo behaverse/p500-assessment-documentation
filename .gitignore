@@ -58,3 +58,7 @@ node_modules/
 
 # Claude Code per-project settings (user-local permissions, not shared)
 .claude/
+CLAUDE.md
+
+
+git_ignored/
