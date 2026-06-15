@@ -356,7 +356,7 @@ class EnhancedTimelineHTMLGenerator:
                 image_path_with_ext = image_path
             html.append(f'''
             <div class="instruction-image">
-                <img src="../../../content/images/{image_path_with_ext}" alt="Instruction image" onerror="this.style.display='none'; this.parentNode.innerHTML='<em>Image: {image_path} (not found)</em>';">
+                <img src="content/images/{image_path_with_ext}" alt="Instruction image" onerror="this.style.display='none'; this.parentNode.innerHTML='<em>Image: {image_path} (not found)</em>';">
             </div>''')
         
         return ''.join(html)
@@ -409,7 +409,7 @@ class EnhancedTimelineHTMLGenerator:
                     image_path_with_ext = image_path
                 html.append(f'''
                 <div class="rule-image">
-                    <img src="../../../content/images/{image_path_with_ext}" alt="Rule image" onerror="this.style.display='none'; this.parentNode.innerHTML='<em>Image: {image_path} (not found)</em>';">
+                    <img src="content/images/{image_path_with_ext}" alt="Rule image" onerror="this.style.display='none'; this.parentNode.innerHTML='<em>Image: {image_path} (not found)</em>';">
                 </div>''')
         
         return ''.join(html)
@@ -540,9 +540,9 @@ class EnhancedTimelineHTMLGenerator:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{}</title>
-    <link rel="stylesheet" href="../../../css/styles.css">
-    <link rel="stylesheet" href="../../../css/parameters.css">
-    <script src="../../../js/timeline.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/parameters.css">
+    <script src="js/timeline.js"></script>
 </head>
 <body>
     <div class="container">'''.format(timeline_id)]
@@ -559,8 +559,8 @@ class EnhancedTimelineHTMLGenerator:
         <!-- Video/Media Section -->
         <div class="timeline-media">
             <div class="video-container">
-                <video controls poster="../../../assets/engines/{}/thumbnail.jpg" preload="metadata">
-                    <source src="../../../assets/engines/{}/video.mp4" type="video/mp4">
+                <video controls poster="assets/engines/{}/thumbnail.jpg" preload="metadata">
+                    <source src="assets/engines/{}/video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="timeline-actions">
