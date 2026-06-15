@@ -1,176 +1,123 @@
-# Behaverse Assessment Documentation
+# Behaverse Assessment Documentation (P500)
 
-A comprehensive documentation platform for cognitive assessment engines, featuring an interactive webapp with generated content from Excel specifications.
+Documentation platform for the cognitive-assessment "engines" used in the **P500** study. The deliverable is a static webapp under [webapp/](webapp/) that displays content generated from an Excel master spec and per-engine timeline configs. No framework, no build step at runtime — pure HTML/CSS/JS over generated data.
 
-## 🚀 Quick Start
+> New to this repo? Start with [HANDOFF.md](HANDOFF.md) for the full architecture, data pipelines, and gotchas.
+
+## Quick start
 
 ```bash
-# Install dependencies
+# Install Python build dependencies (only needed to regenerate content)
 pip install -r requirements.txt
 
-# Start the webapp
-cd webapp && python3 -m http.server 8000
-# Visit: http://localhost:8000
+# Serve the webapp at http://localhost:8000
+make serve
+# equivalently: cd webapp && python3 -m http.server 8000
 ```
 
-## 📁 Repository Structure
+The webapp itself is static and needs no build to run. Python is only required when you regenerate the generated data (see Development workflow).
+
+## Repository structure
 
 ```
 behaverse_assessment_documentation/
-├── 📂 content/                    # Source data and generated content
-│   ├── Task spec.xlsx             # Master spreadsheet with engine data
-│   ├── timeline_names.xlsx        # Timeline naming reference
-│   ├── engines.json               # Generated engine configuration
-│   ├── en.yaml                    # English language strings
-│   ├── timeline_configs/          # JSON timeline configuration files
-│   └── images/                    # Engine images and assets
-├── 📂 docs/                       # Project documentation
-│   ├── development/               # Development guides and fix summaries
-│   ├── guides/                    # User guides
-│   ├── specs/                     # Technical specifications
-│   └── archive/                   # Archived documentation
-├── 📂 scripts/                    # Python automation scripts
-│   ├── build/                     # Build scripts (excel_extractor.py)
-│   ├── generation/                # Content generation scripts
-│   │   └── generate_enhanced_timeline_pages.py
-│   ├── debug/                     # Debugging utilities
-│   ├── utils/                     # Utility modules
-│   └── legacy/                    # Archive of old scripts
-├── 📂 webapp/                     # Interactive web application
-│   ├── index.html                 # Main webapp interface
-│   ├── js/                        # JavaScript files
-│   │   ├── script.js              # Application logic
-│   │   └── timeline.js            # Timeline visualization
-│   ├── css/                       # Stylesheets
-│   │   ├── styles.css             # Main styling
-│   │   └── parameters.css         # Parameter table styling
-│   ├── pages/                     # Generated HTML pages (92 files)
-│   └── assets/                    # Media files and resources
-├── 📂 timeline_demo/              # Timeline demonstration files
-├── 📂 visual_references/          # UI mockups and visual guides
-└── 📂 likely_obselete/            # Archived/deprecated files (pending cleanup)
+├── Makefile                  # build / serve / dist / clean targets
+├── requirements.txt          # Python build-time dependencies
+├── HANDOFF.md                # Onboarding doc for new contributors / agents
+├── content/                  # Source data + generated runtime data
+│   ├── Task spec.xlsx        # Master spreadsheet (build-time input)
+│   ├── timeline_names.xlsx   # Timeline naming reference (build-time input)
+│   ├── timeline_configs/     # Per-engine timeline JSON (build-time input, non-standard JSON)
+│   ├── en.yaml               # Localization strings (runtime)
+│   ├── engines.json          # Generated engine config (runtime data source)
+│   ├── images/               # Engine images
+│   └── OrderedClicks/        # OrderedClicks level data
+├── scripts/                  # Python automation
+│   ├── build/excel_extractor.py              # Task spec.xlsx -> engines.json
+│   ├── generation/generate_enhanced_timeline_pages.py  # configs -> timeline HTML
+│   ├── generation/generate_timelines.py      # wrapper that chdirs to repo root
+│   ├── debug/                # One-off debugging scripts (not part of the build)
+│   └── utils/                # Helper scripts
+├── webapp/                   # Static web application (the deliverable)
+│   ├── index.html            # Shell + hardcoded engine nav
+│   ├── content -> ../content # Symlink so fetch('content/...') resolves
+│   ├── js/script.js          # Nav + content rendering
+│   ├── js/timeline.js        # Timeline category loader
+│   ├── css/                  # styles.css, parameters.css
+│   ├── pages/                # Generated HTML (parameters/, timelines/)
+│   └── assets/               # Engine videos and thumbnails
+└── .github/workflows/deploy.yml  # CI: build + deploy to GitHub Pages
 ```
 
-## 🛠️ Development Workflow
+## Development workflow
 
-### 1. Content Generation
+All Python scripts use **relative paths anchored at the repo root** — run them from the
+repo root (or use `make`, which does the right thing).
+
+### Regenerate content
+
 ```bash
-# Generate timeline pages from configuration
-cd scripts/generation
-python3 generate_enhanced_timeline_pages.py
+make build      # runs both generators below
 
-# Or use the wrapper script
-python3 generate_timelines.py
+# or individually:
+python3 scripts/build/excel_extractor.py            # -> content/engines.json
+python3 scripts/generation/generate_timelines.py    # -> webapp/pages/timelines/<engine>/*.html
 ```
 
-### 2. Webapp Development
+- Changed an **engine description or parameter table**? The source is `content/Task spec.xlsx`; regenerate `engines.json`.
+- Changed a **timeline structure**? The source is `content/timeline_configs/*.json`; regenerate the timeline HTML pages.
+
+These two pipelines are independent and do not share output paths. See [HANDOFF.md](HANDOFF.md) for details.
+
+### Serve and sanity-check
+
 ```bash
-cd webapp
-python3 -m http.server 8000
-
-# Validate JavaScript (optional)
-node -c js/script.js
+make serve
+node -c webapp/js/script.js webapp/js/timeline.js     # JS syntax check
 ```
 
-### 3. Adding New Engines
+Always click through the nav (engine -> category -> sub-item, including a timeline page) after changing generated content or JS before considering a change done.
 
-1. **Add engine data** to `content/Task spec.xlsx`
-2. **Add JSON config** in `content/timeline_configs/`
-3. **Run content generation** from `scripts/generation/`
-4. **Update webapp** with new engine entries
+### Add a new engine
 
-## 📊 Generated Content
+1. Add engine data to `content/Task spec.xlsx`.
+2. Add a timeline config in `content/timeline_configs/<ID>.json`.
+3. Run `make build`.
+4. Add the engine ID to the nav list in `webapp/index.html` (the nav is hardcoded).
 
-The system generates comprehensive documentation including:
+## Deploy
 
-- **📋 Parameter Tables**: Interactive parameter specifications with search/filter
-- **⏱️ Timeline Configurations**: Visual timeline structures and metadata  
-- **📖 Descriptions**: Rich content with glossaries and references
-- **📄 Data Dictionaries**: Complete data field specifications
+The site is built and published to GitHub Pages by [.github/workflows/deploy.yml](.github/workflows/deploy.yml) on every push to `main`. The workflow runs `make dist`, which copies `webapp/` into `dist/` and replaces the `webapp/content` symlink with a real copy of the runtime content (excluding the Excel build inputs).
 
-## 🧰 Key Components
+Build a deployable bundle locally to inspect it:
 
-### Excel Data Extractor (`scripts/build/excel_extractor.py`)
-- Parses `Task spec.xlsx` to extract engine parameters, descriptions, and metadata
-- Handles multiple sheets and complex data structures
-- Generates structured JSON data for template processing
-
-### Timeline Generator (`scripts/generation/generate_enhanced_timeline_pages.py`)
-- Processes JSON configuration files for timeline data
-- Extracts trial structures, block configurations, and metadata
-- Generates HTML pages for each timeline configuration
-
-### Webapp (`webapp/`)
-- **3-tier navigation**: Engines → Categories → Sub-items
-- **Dynamic content loading**: Fetches from `engines.json`
-- **Interactive features**: Parameter search, filtering, collapsible sections
-- **Responsive design**: Clean, professional interface
-
-## 🚦 Status
-
-### ✅ Working Features
-- **16 engines** documented: BCS, DS, NB, WO, UFOV, TH, SRM, SOS, SMC, RE, BM, BSAC, MOT, OC, OOO, PC
-- **Interactive webapp** with navigation and content display
-- **Parameter tables** with search and filtering
-- **Timeline pages** (92 generated pages)
-
-### 🔄 In Development
-- Enhanced parameter enum display
-- Timeline justification and instructions
-- Demo videos integration
-
-## 📈 Usage Statistics
-
-Current generated content:
-- **16 engines** documented
-- **92 HTML pages** in webapp
-- **22 timeline configurations**
-- **Interactive search** across all documentation
-
-## 🤝 Contributing
-
-1. **Fork the repository**
-2. **Create feature branch**: `git checkout -b feature/new-engine`  
-3. **Add your content** to the data sources
-4. **Run content generation** scripts
-5. **Test the webapp** locally
-6. **Submit pull request**
-
-## 📚 Documentation
-
-- **Development Docs**: `docs/development/` - Implementation guides, content mapping, fix summaries
-- **Technical Specs**: `docs/specs/`
-- **User Guides**: `docs/guides/`
-- **Visual References**: `docs/visual_references/`
-
-
-## 🔧 Troubleshooting
-
-### Common Issues
-
-**Build fails with missing files:**
 ```bash
-# Ensure all data files exist
-ls content/Task\ spec.xlsx
-ls content/timeline_configs/
+make dist     # produces ./dist
+make clean    # removes ./dist
 ```
 
-**Webapp shows "Loading...":**
+See [HANDOFF.md](HANDOFF.md) for the full deployment plan and how this repo relates to a future general Behaverse documentation site.
+
+## Status
+
+- **16 engines** documented: BCS, DS, NB, WO, UFOV, TH, SRM, SOS, SMC, RE, BM, BSAC, MOT, OC, OOO, PC.
+- Three-tier navigation (engine -> category -> sub-item) with deep-linkable URLs and keyboard accessibility.
+- Parameter tables with per-page search and filtering; global search across descriptions, parameters, and timelines.
+- Generated timeline pages under `webapp/pages/timelines/`.
+
+`content/timeline_configs/` contains a few extra task configs (e.g. ML, RSAC, SART, SRT, SS, TOVA) that are not in the 16-engine nav. They are not currently surfaced in the webapp — see [HANDOFF.md](HANDOFF.md).
+
+## Troubleshooting
+
+**Webapp stuck on "Loading...":**
 ```bash
-# Check JavaScript syntax
-node -c webapp/js/script.js
-
-# Verify engines.json is accessible
-curl http://localhost:8000/../content/engines.json
+node -c webapp/js/script.js                       # check JS syntax
+curl http://localhost:8000/content/engines.json | head -c 200   # verify data is reachable
 ```
 
-**Import errors in scripts:**
+**`webapp/content` symlink missing** (a fresh checkout or a clean operation can drop it):
 ```bash
-# Run from repository root
-cd /path/to/behaverse_assessment_documentation
-python3 scripts/generation/generate_enhanced_timeline_pages.py
+ln -s ../content webapp/content
 ```
 
----
-
-**🎯 Ready to explore cognitive assessment documentation at scale!**
+**Script import or path errors:** run scripts from the repo root, or use `make build`.
