@@ -62,3 +62,5 @@ CLAUDE.md
 
 
 git_ignored/
+# Playwright MCP scratch output
+.playwright-mcp/

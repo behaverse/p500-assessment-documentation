@@ -90,8 +90,13 @@ function buildHomeContent() {
     const cards = order.map((id, i) => {
         const name = engineData[id].name || id;
         const domain = ENGINE_DOMAIN[id] || '';
-        return `<a class="ec" href="#${id}/description" style="--i:${i}" aria-label="${name} (${id})">
-            <span class="ec-media"><img src="assets/engines/${id}/thumbnail.jpg" alt="${name} screenshot" loading="lazy"></span>
+        return `<a class="ec" href="#${id}/description" data-engine="${id}" style="--i:${i}" aria-label="Play ${name} (${id}) demo">
+            <span class="ec-media">
+                <img src="assets/engines/${id}/thumbnail.jpg" alt="${name} screenshot" loading="lazy">
+                <span class="ec-play" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+                </span>
+            </span>
             <span class="ec-body">
                 <span class="ec-code">${id}</span>
                 <span class="ec-name">${name}</span>
@@ -137,6 +142,13 @@ async function init() {
 // Delegated click handler for action links rendered into mainContent
 function setupContentActionHandler() {
     mainContent.addEventListener('click', async (event) => {
+        // Landing-page engine card -> open the demo lightbox
+        const card = event.target.closest('.ec[data-engine]');
+        if (card) {
+            event.preventDefault();
+            openEngineDemo(card.dataset.engine);
+            return;
+        }
         const target = event.target.closest('[data-action]');
         if (!target) return;
         event.preventDefault();
@@ -144,6 +156,75 @@ function setupContentActionHandler() {
             await selectCategory('description');
         }
     });
+}
+
+// ---------- Engine demo lightbox ----------
+let demoModal = null;
+let demoLastFocus = null;
+
+function getDemoModal() {
+    if (demoModal) return demoModal;
+    demoModal = document.createElement('div');
+    demoModal.className = 'demo-modal';
+    demoModal.id = 'demo-modal';
+    demoModal.setAttribute('role', 'dialog');
+    demoModal.setAttribute('aria-modal', 'true');
+    demoModal.setAttribute('aria-label', 'Engine demo');
+    demoModal.innerHTML = `
+        <div class="demo-card" role="document">
+            <button class="demo-close" type="button" aria-label="Close demo">&times;</button>
+            <div class="demo-video-wrap">
+                <video class="demo-video" controls autoplay muted loop playsinline preload="metadata"></video>
+            </div>
+            <div class="demo-meta">
+                <span class="demo-code"></span>
+                <h2 class="demo-title"></h2>
+                <p class="demo-domain"></p>
+                <a class="demo-docs-link" href="#">View full documentation &rarr;</a>
+            </div>
+        </div>`;
+    document.body.appendChild(demoModal);
+
+    const close = () => closeEngineDemo();
+    demoModal.querySelector('.demo-close').addEventListener('click', close);
+    demoModal.addEventListener('click', (e) => { if (e.target === demoModal) close(); });
+    demoModal.querySelector('.demo-docs-link').addEventListener('click', () => closeEngineDemo());
+    return demoModal;
+}
+
+function openEngineDemo(code) {
+    const engine = engineData[code];
+    if (!engine) return;
+    const modal = getDemoModal();
+    const name = engine.name || code;
+    const video = modal.querySelector('.demo-video');
+    video.poster = `assets/engines/${code}/thumbnail.jpg`;
+    video.src = `assets/engines/${code}/video.mp4`;
+    modal.querySelector('.demo-code').textContent = code;
+    modal.querySelector('.demo-title').textContent = name;
+    modal.querySelector('.demo-domain').textContent = ENGINE_DOMAIN[code] || '';
+    modal.querySelector('.demo-docs-link').setAttribute('href', `#${code}/description`);
+
+    demoLastFocus = document.activeElement;
+    modal.classList.add('active');
+    document.addEventListener('keydown', demoKeydown);
+    video.play().catch(() => { /* autoplay may be blocked; controls remain */ });
+    modal.querySelector('.demo-close').focus();
+}
+
+function closeEngineDemo() {
+    if (!demoModal || !demoModal.classList.contains('active')) return;
+    const video = demoModal.querySelector('.demo-video');
+    video.pause();
+    video.removeAttribute('src');
+    video.load();
+    demoModal.classList.remove('active');
+    document.removeEventListener('keydown', demoKeydown);
+    if (demoLastFocus && demoLastFocus.focus) demoLastFocus.focus();
+}
+
+function demoKeydown(e) {
+    if (e.key === 'Escape') closeEngineDemo();
 }
 
 // Set up event listeners
