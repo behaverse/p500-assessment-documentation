@@ -2,6 +2,8 @@
 
 Documentation platform for the cognitive-assessment "engines" used in the **P500** study. The deliverable is a static webapp under [webapp/](webapp/) that displays content generated from an Excel master spec and per-engine timeline configs. No framework, no build step at runtime — pure HTML/CSS/JS over generated data.
 
+**Live site:** https://behaverse.org/p500-assessment-documentation/ (deployed from `main` via GitHub Pages).
+
 ## Quick start
 
 ```bash
@@ -31,6 +33,7 @@ behaverse_assessment_documentation/
 │   └── OrderedClicks/        # OrderedClicks level data
 ├── scripts/                  # Python automation
 │   ├── build/excel_extractor.py              # Task spec.xlsx -> engines.json
+│   ├── build/slim_engines.py                 # strip unused timeline HTML from engines.json
 │   ├── generation/generate_enhanced_timeline_pages.py  # configs -> timeline HTML
 │   ├── generation/generate_timelines.py      # wrapper that chdirs to repo root
 │   ├── debug/                # One-off debugging scripts (not part of the build)
@@ -61,10 +64,12 @@ python3 scripts/build/excel_extractor.py            # -> content/engines.json
 python3 scripts/generation/generate_timelines.py    # -> webapp/pages/timelines/<engine>/*.html
 ```
 
-- Changed an **engine description or parameter table**? The source is `content/Task spec.xlsx`; regenerate `engines.json`.
+- Changed an **engine description or parameter table**? The source is `content/Task spec.xlsx`; regenerate `engines.json`, then run `python3 scripts/build/slim_engines.py` to drop unused timeline HTML.
 - Changed a **timeline structure**? The source is `content/timeline_configs/*.json`; regenerate the timeline HTML pages.
 
 These two pipelines are independent and do not share output paths.
+
+> **Asset paths in generated timeline pages must be root-relative** (`assets/...`, `content/images/...`) — never `../`-prefixed. The webapp fetches each timeline page and injects it into the root `index.html`, so relative URLs resolve against the site root, not the file. Under the GitHub Pages project subpath, `../` paths escape the subpath and 404. The generator already does this; preserve it.
 
 ### Serve and sanity-check
 
