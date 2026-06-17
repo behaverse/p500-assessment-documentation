@@ -14,6 +14,84 @@ class EnhancedTimelineResolver:
         self.localization = self._load_localization(localization_file)
         self.configs = {}
         self.load_all_configs()
+        self.instruments = self.load_instruments()
+
+    def load_instruments(self):
+        """Load per-timeline content (About text) from P500 Instruments.xlsx, keyed by instrument id."""
+        instruments = {}
+        path = Path("content/P500 Instruments.xlsx")
+        try:
+            if not path.exists():
+                print(f"Warning: instruments file not found at {path}")
+                return instruments
+            df = pd.read_excel(path, sheet_name="Tasks")
+
+            def clean(v):
+                s = '' if v is None else str(v)
+                return '' if s.strip().lower() in ('', 'nan') else s.strip()
+
+            for _, row in df.iterrows():
+                iid = clean(row.get('instrument')).upper()
+                if not iid:
+                    continue
+                adaptive_raw = row.get('adaptive?')
+                instruments[iid] = {
+                    'description': clean(row.get('description')),
+                    'measures': clean(row.get('what does it measure?')),
+                    'notes': clean(row.get('notes')),
+                    'adaptive': (adaptive_raw is True) or (str(adaptive_raw).strip().lower() == 'true'),
+                }
+            print(f"✓ Loaded {len(instruments)} instrument rows from P500 Instruments.xlsx")
+        except Exception as e:
+            print(f"Warning: Could not load instruments: {e}")
+        return instruments
+
+    @staticmethod
+    def _esc(s):
+        return str(s).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+
+    @staticmethod
+    def _split_paragraphs(s):
+        import re
+        chunks = re.split(r'\n\s*\n', str(s).strip())
+        return [' '.join(c.split()) for c in chunks if c.strip()]
+
+    @staticmethod
+    def _bullets(s):
+        items = []
+        for line in str(s).splitlines():
+            t = line.strip().lstrip('-•').strip()
+            if t:
+                items.append(t)
+        return items or [' '.join(str(s).split())]
+
+    def render_about(self, timeline_id):
+        """Build the About section body from the instruments data (or a placeholder)."""
+        data = self.instruments.get(timeline_id.upper())
+        if not data or not data.get('description'):
+            return ('\n        <div class="timeline-about">\n'
+                    '            <p class="about-empty"><em>Description not yet available for this timeline.</em></p>\n'
+                    '        </div>')
+        parts = ['\n        <div class="timeline-about">']
+        for para in self._split_paragraphs(data['description']):
+            parts.append(f'            <p>{self._esc(para)}</p>')
+        if data.get('adaptive'):
+            parts.append('            <p class="about-tag">Adaptive &mdash; difficulty adjusts to the participant&rsquo;s performance.</p>')
+        if data.get('measures'):
+            items = self._bullets(data['measures'])
+            parts.append('            <h4 class="about-subhead">What it measures</h4>')
+            if len(items) > 1:
+                parts.append('            <ul>' + ''.join(f'<li>{self._esc(i)}</li>' for i in items) + '</ul>')
+            else:
+                parts.append(f'            <p>{self._esc(items[0])}</p>')
+        if data.get('notes'):
+            parts.append('            <h4 class="about-subhead">Notes</h4>')
+            for para in self._split_paragraphs(data['notes']):
+                para = para.lstrip('-•').strip()
+                if para:
+                    parts.append(f'            <p>{self._esc(para)}</p>')
+        parts.append('        </div>')
+        return '\n'.join(parts)
     
     def _load_localization(self, localization_file):
         """Load localization strings"""
@@ -571,15 +649,7 @@ class EnhancedTimelineHTMLGenerator:
         </div>
         
         <!-- About Section -->
-        <h3 class="section-title">About</h3>
-        <div class="timeline-about">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-        </div>
-        
-        <!-- Config Section -->
-        <h3 class="section-title">Config</h3>
-        <div class="timeline-config"></div>'''.format(
+        <h3 class="section-title">About</h3>'''.format(
             timeline_id,
             f'<p class="timeline-description">{description}</p>' if description else '',
             engine_id,  # for video thumbnail path
@@ -587,6 +657,15 @@ class EnhancedTimelineHTMLGenerator:
             timeline_id,  # for test button
             self.get_timeline_duration(timeline_id, description)  # get duration
         ))
+
+        # About body comes from P500 Instruments.xlsx (keyed by timeline id)
+        html.append(self.resolver.render_about(timeline_id))
+
+        html.append('''
+
+        <!-- Config Section -->
+        <h3 class="section-title">Config</h3>
+        <div class="timeline-config"></div>''')
         
         # Group blocks hierarchically
         sections, section_order = self.group_blocks_hierarchically(timeline_data['blocks'], timeline_id)

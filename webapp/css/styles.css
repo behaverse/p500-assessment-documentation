@@ -979,6 +979,34 @@ nav.collapsed {
     margin-bottom: 0;
 }
 
+.timeline-about .about-subhead {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 1.25rem 0 0.4rem;
+}
+
+.timeline-about ul {
+    margin: 0.25rem 0 1rem 1.25rem;
+    color: #495057;
+    line-height: 1.6;
+    font-size: 0.875rem;
+}
+
+.timeline-about .about-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--accent-ink);
+    background: var(--chip);
+    border-radius: 999px;
+    padding: 0.18rem 0.6rem;
+    margin: 0.25rem 0 0.5rem;
+}
+
+.timeline-about .about-empty {
+    color: var(--ink-muted);
+}
+
 /* Timeline Config Section */
 .timeline-config {
     margin: 0 0 2rem 0;
