@@ -68,3 +68,6 @@ git_ignored/
 # Work-management docs (local only, not for the public repo)
 HANDOFF.md
 CONTENT_TODO.md
+
+# LibreOffice lock files (created while an .xlsx/.ods is open)
+.~lock.*#
