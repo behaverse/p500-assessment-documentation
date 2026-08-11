@@ -886,14 +886,6 @@ document.addEventListener('DOMContentLoaded', function() {
     timelineManager.setupCollapsibleSections();
 });
 
-/**
- * Test Timeline Function
- * Placeholder function for testing timeline functionality
- */
-function testTimeline(timelineId) {
-    alert(`Testing timeline: ${timelineId}\n\nThis is a placeholder function. In the future, this will launch the actual timeline test.`);
-}
-
 // Export for use in other modules
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = TimelineManager;

@@ -642,7 +642,7 @@ class EnhancedTimelineHTMLGenerator:
                     Your browser does not support the video tag.
                 </video>
                 <div class="timeline-actions">
-                    <button class="test-timeline-btn" onclick="testTimeline('{}')">Test this timeline</button>
+                    <a class="test-timeline-btn" href="https://behaverse.org/studyflow-modeler/run?diagram=behaverse&amp;task={}&amp;timeline={}" target="_blank" rel="noopener noreferrer">Try this timeline</a>
                     <span class="timeline-duration">Duration: {} minutes</span>
                 </div>
             </div>
@@ -654,7 +654,8 @@ class EnhancedTimelineHTMLGenerator:
             f'<p class="timeline-description">{description}</p>' if description else '',
             engine_id,  # for video thumbnail path
             engine_id,  # for video source path
-            timeline_id,  # for test button
+            engine_id,  # studyflow-modeler `task` query param
+            timeline_id,  # studyflow-modeler `timeline` query param
             self.get_timeline_duration(timeline_id, description)  # get duration
         ))
 
