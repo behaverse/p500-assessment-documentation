@@ -11,7 +11,7 @@ from clean_timeline_generator import CleanTimelineResolver, CleanHTMLGenerator
 def debug_oc_01_generation():
     """Debug the generation of OC_01 timeline."""
     # Get the base path
-    base_path = Path("/home/pedro/Repos/behaverse_assessment_documentation")
+    base_path = Path(__file__).resolve().parents[2]
     
     # OC Configuration
     oc_config_path = str(base_path / "data/content_temp/Configs/OC.json")

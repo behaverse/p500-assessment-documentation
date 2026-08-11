@@ -8,7 +8,7 @@ from clean_timeline_generator import CleanTimelineResolver
 
 def debug_bcs_02_extraction():
     """Debug what content is being extracted from BCS_02."""
-    base_path = Path("/home/pedro/Repos/behaverse_assessment_documentation")
+    base_path = Path(__file__).resolve().parents[2]
     
     # BCS Configuration
     bcs_config_path = str(base_path / "data/content_temp/Configs/BCS.json")

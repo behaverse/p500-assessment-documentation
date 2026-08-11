@@ -20,7 +20,7 @@ def remove_advanced_section(html_content):
 def main():
     """Fix the BCS_02 timeline HTML demo by removing the Advanced section."""
     # Get the base path
-    base_path = Path("/home/pedro/Repos/behaverse_assessment_documentation")
+    base_path = Path(__file__).resolve().parents[2]
     
     # Path to the BCS_02 timeline demo HTML file
     bcs_02_html_path = base_path / "webapp/bcs_02_timeline_demo.html"
