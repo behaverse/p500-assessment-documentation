@@ -933,7 +933,7 @@ nav.collapsed {
     margin-right: auto;
 }
 
-.test-timeline-btn {
+.try-timeline-btn {
     display: inline-block;
     background: var(--accent);
     color: white;
@@ -947,8 +947,8 @@ nav.collapsed {
     transition: background-color 0.2s ease;
 }
 
-.test-timeline-btn:hover,
-.test-timeline-btn:focus {
+.try-timeline-btn:hover,
+.try-timeline-btn:focus {
     background: var(--accent-ink);
     color: white;
 }

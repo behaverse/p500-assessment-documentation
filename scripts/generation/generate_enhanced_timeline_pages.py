@@ -642,7 +642,7 @@ class EnhancedTimelineHTMLGenerator:
                     Your browser does not support the video tag.
                 </video>
                 <div class="timeline-actions">
-                    <a class="test-timeline-btn" href="https://behaverse.org/studyflow-modeler/run?diagram=behaverse&amp;task={}&amp;timeline={}" target="_blank" rel="noopener noreferrer">Try this timeline</a>
+                    <a class="try-timeline-btn" href="https://behaverse.org/studyflow-modeler/run?diagram=behaverse&amp;task={}&amp;timeline={}" target="_blank" rel="noopener noreferrer">Try this timeline</a>
                     <span class="timeline-duration">Duration: {} minutes</span>
                 </div>
             </div>
