@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Behaverse Assessment Documentation</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/parameters.css">
+    <!-- ?v= is a cache buster. GitHub Pages serves CSS with max-age=14400 (4h) but
+         HTML with max-age=600 (10m), so a returning visitor can pick up new markup
+         while still holding a 4h-stale stylesheet. Bump ?v= whenever a CSS change
+         must land together with a markup change (e.g. a renamed class). -->
+    <link rel="stylesheet" href="css/styles.css?v=2">
+    <link rel="stylesheet" href="css/parameters.css?v=2">
 </head>
 <body>
     <div class="app-container">
